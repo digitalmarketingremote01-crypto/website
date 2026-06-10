@@ -92,10 +92,11 @@ p{color:var(--tx)}
 .logos-track{display:flex;gap:1.25rem;animation:scroll 40s linear infinite;width:max-content}
 .logos-track:hover{animation-play-state:paused}
 @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.logo-pill{display:flex;align-items:center;justify-content:center;padding:1rem;background:linear-gradient(135deg,#fff 0%,#fafafa 100%);border:1.5px solid #e5e7eb;border-radius:14px;white-space:nowrap;transition:all .3s cubic-bezier(.4,0,.2,1);box-shadow:0 4px 20px rgba(0,0,0,.08);min-height:64px;min-width:64px;position:relative}
-.logo-pill::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(230,57,70,.05),transparent);border-radius:14px;pointer-events:none}
-.logo-pill img{position:relative;z-index:1;max-width:32px;max-height:32px}
-.logo-pill:hover{border-color:var(--c2);box-shadow:0 12px 40px rgba(230,57,70,.15);transform:translateY(-4px);background:linear-gradient(135deg,#fff 0%,rgba(253,232,234,.5) 100%)}
+.logo-pill{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:1.5rem 1.25rem;background:#fff;border:1px solid #f0f0f0;border-radius:16px;text-align:center;transition:all .3s cubic-bezier(.4,0,.2,1);box-shadow:0 2px 12px rgba(0,0,0,.05);min-height:140px;min-width:120px;position:relative;gap:.75rem}
+.logo-pill::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(230,57,70,.02),transparent);border-radius:16px;pointer-events:none}
+.logo-pill img{position:relative;z-index:1;width:48px;height:48px;object-fit:contain}
+.logo-pill span{position:relative;z-index:1;font-size:.75rem;font-weight:600;color:var(--c1);line-height:1.3;white-space:normal;word-break:break-word;max-width:100%}
+.logo-pill:hover{border-color:var(--c2);box-shadow:0 8px 28px rgba(230,57,70,.12);transform:translateY(-4px);background:linear-gradient(135deg,#fff 0%,rgba(253,232,234,.3) 100%)}
 /* Pilot */
 .pilot{background:linear-gradient(135deg,#0c1529 0%,var(--c1) 100%);border-radius:24px;padding:3.5rem;position:relative;overflow:hidden;box-shadow:0 20px 60px rgba(230,57,70,.15),0 0 1px rgba(255,255,255,.1) inset}@media(max-width:768px){.pilot{padding:2.5rem}}
 .pilot::before{content:'';position:absolute;top:-60px;right:-60px;width:250px;height:250px;background:radial-gradient(circle,rgba(230,57,70,.12) 0%,transparent 70%)}
@@ -613,7 +614,7 @@ var logos=[
   {name:'Model Health',url:'https://modelhealth.ai',favicon:'https://icons.duckduckgo.com/ip3/modelhealth.ai.ico'},
   {name:'Tisch.company',url:'https://tisch.company',favicon:'https://icons.duckduckgo.com/ip3/tisch.company.ico'}
 ];
-(function(){var t=document.getElementById('lt'),h='';var a=logos.concat(logos);a.forEach(function(n){h+='<a href="'+n.url+'" target="_blank" rel="noopener" class="logo-pill" title="'+n.name+'"><img src="'+n.favicon+'" alt="'+n.name+'" style="width:28px;height:28px;object-fit:contain;border-radius:4px;"/></a>';});t.innerHTML=h;})();
+(function(){var t=document.getElementById('lt'),h='';var a=logos.concat(logos);a.forEach(function(n){h+='<a href="'+n.url+'" target="_blank" rel="noopener" class="logo-pill" title="'+n.name+'"><img src="'+n.favicon+'" alt="'+n.name+'" /><span>'+n.name+'</span></a>';});t.innerHTML=h;})();
 
 /* Cookie */
 function akC(){localStorage.setItem('dc','y');document.getElementById('ck').style.display='none';}
