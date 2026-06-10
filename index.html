@@ -91,8 +91,8 @@ p{color:var(--tx)}
 .logos-track{display:flex;gap:1.25rem;animation:scroll 40s linear infinite;width:max-content}
 .logos-track:hover{animation-play-state:paused}
 @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.logo-pill{display:flex;align-items:center;justify-content:center;padding:.75rem 1.25rem;background:linear-gradient(135deg,rgba(230,57,70,.1),rgba(230,57,70,.05));border:1.5px solid rgba(230,57,70,.2);border-radius:10px;white-space:nowrap;font-size:.8rem;font-weight:600;color:rgba(255,255,255,.9);letter-spacing:.02em;transition:all .2s;min-height:48px}
-.logo-pill:hover{background:linear-gradient(135deg,rgba(230,57,70,.15),rgba(230,57,70,.1));border-color:rgba(230,57,70,.4);transform:translateY(-2px)}
+.logo-pill{display:flex;align-items:center;padding:.5rem 1rem;background:var(--c1);border-radius:6px;white-space:nowrap;font-size:.75rem;font-weight:600;color:rgba(255,255,255,.85);letter-spacing:.02em;transition:background .2s}
+.logo-pill:hover{background:var(--c2)}
 /* Pilot */
 .pilot{background:linear-gradient(135deg,#0c1529 0%,var(--c1) 100%);border-radius:20px;padding:3rem;position:relative;overflow:hidden}@media(max-width:768px){.pilot{padding:2rem}}
 .pilot::before{content:'';position:absolute;top:-60px;right:-60px;width:250px;height:250px;background:radial-gradient(circle,rgba(230,57,70,.12) 0%,transparent 70%)}
