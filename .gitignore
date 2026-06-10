@@ -1,2 +1,2 @@
 .case-originals/
-crop_cases.py
+crop_*.py
