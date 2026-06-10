@@ -591,8 +591,24 @@ footer{background:#0f172a;color:rgba(255,255,255,.5);padding:3.25rem 0 1.75rem}
 
 <script>
 /* Logos */
-var logos=['Folien MC','Illuniva','Diamond Wallet','Stop Long Covid','Filix AI','WorldBuild','Rechnungshub','digifoot','Vertiko Space','neobim.ai','pv-glarecheck','LeadEasy','PM DigitalSolutions','Model Health','Tisch.company'];
-(function(){var t=document.getElementById('lt'),h='';var a=logos.concat(logos);a.forEach(function(n){h+='<div class="logo-pill">'+n+'</div>';});t.innerHTML=h;})();
+var logos=[
+  {name:'Folien MC',url:'https://folienmc.de'},
+  {name:'Illuniva',url:'https://illuniva.de'},
+  {name:'Diamond Wallet',url:'https://diamond-wallet.de'},
+  {name:'Stop Long Covid',url:'https://stop-long-covid.de'},
+  {name:'Filix AI',url:'https://filix.ai'},
+  {name:'WorldBuild',url:'https://worldbuild.de'},
+  {name:'Rechnungshub',url:'https://rechnungshub.de'},
+  {name:'digifoot',url:'https://digifoot.de'},
+  {name:'Vertiko Space',url:'https://vertiko.space'},
+  {name:'neobim.ai',url:'https://neobim.ai'},
+  {name:'pv-glarecheck',url:'https://pv-glarecheck.com'},
+  {name:'LeadEasy',url:'https://leadeasy.de'},
+  {name:'PM DigitalSolutions',url:'https://pmds-ka.de'},
+  {name:'Model Health',url:'https://modelhealth.ai'},
+  {name:'Tisch.company',url:'https://tisch.company'}
+];
+(function(){var t=document.getElementById('lt'),h='';var a=logos.concat(logos);a.forEach(function(n){var initials=n.name.split(' ').map(function(w){return w[0];}).join('').toUpperCase().slice(0,2);h+='<a href="'+n.url+'" target="_blank" rel="noopener" class="logo-pill" title="'+n.name+'">'+initials+'</a>';});t.innerHTML=h;})();
 
 /* Cookie */
 function akC(){localStorage.setItem('dc','y');document.getElementById('ck').style.display='none';}
