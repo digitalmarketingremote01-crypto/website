@@ -156,9 +156,11 @@ p{color:var(--tx)}
 .pts{width:48px;height:26px;background:var(--c1);border-radius:13px;position:relative;cursor:pointer;border:0;transition:background .2s}
 .pts::after{content:'';position:absolute;top:3px;left:3px;width:20px;height:20px;background:#fff;border-radius:50%;transition:transform .3s}
 .pts.on{background:var(--c2)}.pts.on::after{transform:translateX(22px)}
-.pg,.pgd{display:none;gap:1rem}
-.pg.show{display:grid;grid-template-columns:repeat(5,1fr)}
-.pgd.show{display:grid;grid-template-columns:repeat(4,1fr)}
+.pside{display:none}.pside.show{display:block}
+.pgrid{display:grid;gap:1rem}
+.pg4{grid-template-columns:repeat(4,1fr)}
+.pg3{grid-template-columns:repeat(3,1fr);max-width:840px;margin:0 auto}
+.pent{margin-top:1.25rem}
 .pc{background:#fff;border:1.5px solid rgba(230,57,70,.08);border-radius:12px;padding:1.25rem 1rem;text-align:center;position:relative;transition:all .3s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;box-shadow:0 4px 20px rgba(0,0,0,.06)}
 .pc:hover{box-shadow:0 20px 50px rgba(230,57,70,.1);transform:translateY(-8px)}
 .pc.hl{border-color:var(--c2);border-width:2px;background:linear-gradient(135deg,#fff 0%,rgba(253,232,234,.3) 100%);box-shadow:0 12px 40px rgba(230,57,70,.2)}
@@ -254,9 +256,9 @@ footer{background:#0f172a;color:rgba(255,255,255,.5);padding:3.25rem 0 1.75rem}
 .ty{display:none;min-height:60vh;align-items:center;justify-content:center;text-align:center;padding:7rem 1rem 3rem}.ty.active{display:flex}
 .ty-inner{max-width:460px}.ty-icon{font-size:3.5rem;margin-bottom:1rem}.ty-inner h1{margin-bottom:.75rem;font-size:1.75rem}.ty-inner p{color:var(--tx);margin-bottom:1.5rem}
 /* Responsive */
-@media(max-width:1024px){.hg{grid-template-columns:1fr;gap:2.5rem}.svc-grid{grid-template-columns:repeat(2,1fr)}.pg.show{grid-template-columns:repeat(3,1fr)}.pgd.show{grid-template-columns:repeat(2,1fr);max-width:100%}.proc-grid{grid-template-columns:repeat(3,1fr)}.proc-grid::before{display:none}.about-grid{grid-template-columns:1fr;gap:2.5rem}.about-photo img{height:400px}.ft-grid{grid-template-columns:1fr 1fr}.pilot-grid{grid-template-columns:1fr;gap:2rem}}
-@media(max-width:768px){.sec{padding:4rem 0}.nl,.nc .bo{display:none}.hb{display:flex}.svc-grid{grid-template-columns:1fr}.pg.show,.pgd.show{grid-template-columns:1fr}.proc-grid{grid-template-columns:repeat(2,1fr)}.cases-grid,.proof-grid{grid-template-columns:1fr}.ct-grid{grid-template-columns:1fr;gap:2rem}.fr,.hfr{grid-template-columns:1fr}.cta-btns,.hero-ctas{flex-direction:column;align-items:stretch}.ft-grid{grid-template-columns:1fr;gap:1.5rem}.ft-bot{flex-direction:column;text-align:center}.hero-stats{gap:1rem}.hfc{padding:1.5rem}.pilot-grid{gap:1.5rem}.case-top{height:200px}.proof{flex:0 0 calc(50% - 0.625rem);padding:1.5rem}}
-@media(max-width:480px){.pg.show,.pgd.show{grid-template-columns:1fr}.proc-grid{grid-template-columns:1fr}.mms{grid-template-columns:1fr 1fr}.ctn{padding:0 1rem}.hero-ctas,.cta-btns{gap:.5rem}.btn{padding:.75rem 1.25rem;font-size:.85rem}.case-top{height:190px}.case-label{font-size:1rem}.logo-pill{padding:.75rem;min-height:56px;min-width:56px}.logo-pill img{max-width:24px;max-height:24px}.lp{padding:3.5rem 0 2.5rem}.proof{flex:0 0 100%;padding:1.25rem;margin-bottom:0.5rem}}
+@media(max-width:1024px){.hg{grid-template-columns:1fr;gap:2.5rem}.svc-grid{grid-template-columns:repeat(2,1fr)}.pg4{grid-template-columns:repeat(2,1fr)}.pg3{grid-template-columns:repeat(3,1fr);max-width:100%}.proc-grid{grid-template-columns:repeat(3,1fr)}.proc-grid::before{display:none}.about-grid{grid-template-columns:1fr;gap:2.5rem}.about-photo img{height:400px}.ft-grid{grid-template-columns:1fr 1fr}.pilot-grid{grid-template-columns:1fr;gap:2rem}}
+@media(max-width:768px){.sec{padding:4rem 0}.nl,.nc .bo{display:none}.hb{display:flex}.svc-grid{grid-template-columns:1fr}.pg4,.pg3{grid-template-columns:1fr}.proc-grid{grid-template-columns:repeat(2,1fr)}.cases-grid,.proof-grid{grid-template-columns:1fr}.ct-grid{grid-template-columns:1fr;gap:2rem}.fr,.hfr{grid-template-columns:1fr}.cta-btns,.hero-ctas{flex-direction:column;align-items:stretch}.ft-grid{grid-template-columns:1fr;gap:1.5rem}.ft-bot{flex-direction:column;text-align:center}.hero-stats{gap:1rem}.hfc{padding:1.5rem}.pilot-grid{gap:1.5rem}.case-top{height:200px}.proof{flex:0 0 calc(50% - 0.625rem);padding:1.5rem}}
+@media(max-width:480px){.pg4,.pg3{grid-template-columns:1fr}.proc-grid{grid-template-columns:1fr}.mms{grid-template-columns:1fr 1fr}.ctn{padding:0 1rem}.hero-ctas,.cta-btns{gap:.5rem}.btn{padding:.75rem 1.25rem;font-size:.85rem}.case-top{height:190px}.case-label{font-size:1rem}.logo-pill{padding:.75rem;min-height:56px;min-width:56px}.logo-pill img{max-width:24px;max-height:24px}.lp{padding:3.5rem 0 2.5rem}.proof{flex:0 0 100%;padding:1.25rem;margin-bottom:0.5rem}}
 @media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
 </style>
 </head>
@@ -412,7 +414,8 @@ footer{background:#0f172a;color:rgba(255,255,255,.5);padding:3.25rem 0 1.75rem}
 </div>
 
 <!-- Single -->
-<div class="pg show" id="pgs">
+<div class="pside show" id="pgs">
+<div class="pgrid pg4">
 <div class="pc"><div class="pc-name">Starter</div><div class="pc-price">€499<span>/Mo.</span></div><div class="pc-cap">Budget bis €1.500</div>
 <ul class="pc-feats"><li>Google Ads oder Meta Ads</li><li>Monatliches Reporting-PDF</li><li>Conversion-Tracking Setup</li><li>Tag Manager Integration</li><li>Alle Kampagnen-Typen nach Bedarf</li><li>Kontinuierliche Optimierung</li></ul>
 <a href="#contact" class="btn bo bf bs">Anfragen</a></div>
@@ -428,14 +431,33 @@ footer{background:#0f172a;color:rgba(255,255,255,.5);padding:3.25rem 0 1.75rem}
 <div class="pc hl"><div class="pc-name">Scale</div><div class="pc-price">€1.799<span>/Mo.</span></div><div class="pc-cap">Budget bis €12.000</div>
 <ul class="pc-feats"><li>Google Ads oder Meta Ads</li><li>Monatliches Reporting-PDF</li><li>Conversion-Tracking Setup</li><li>Tag Manager Integration</li><li>Alle Kampagnen-Typen nach Bedarf</li><li>Kontinuierliche Optimierung</li></ul>
 <a href="#contact" class="btn bp bf bs">Anfragen</a></div>
+</div>
 
-<div class="pc"><div class="pc-name">Enterprise</div><div class="pc-price" style="font-size:1.3rem">Auf Anfrage</div><div class="pc-cap">Budget ab €12.000</div>
-<ul class="pc-feats"><li>Maßgeschneidertes Paket</li><li>Alle Leistungen inklusive</li><li>Budget und Scope individuell</li><li>Persönliches Angebot</li></ul>
-<a href="#contact" class="btn bo bf bs">Angebot anfragen</a></div>
+<div class="pilot pent"><div class="pilot-grid">
+<div>
+<div class="pilot-badge">⭐ Enterprise</div>
+<h2>Maßgeschneidertes Paket für Budgets ab €12.000/Monat</h2>
+<p>Für größere Werbebudgets entwickeln wir ein individuelles Setup — volle Leistungstiefe, eigene Strategie und persönliche Betreuung von Tag eins.</p>
+<div class="pilot-checks">
+<div class="pilot-check">Maßgeschneidertes Paket nach Ihren Zielen</div>
+<div class="pilot-check">Alle Leistungen inklusive</div>
+<div class="pilot-check">Budget und Scope individuell definiert</div>
+<div class="pilot-check">Persönlicher Ansprechpartner</div>
+</div>
+</div>
+<div class="pilot-side">
+<div style="font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.5rem">Enterprise</div>
+<div style="font-size:1.5rem;font-weight:800;color:#fff;line-height:1.3;margin-bottom:.5rem">Auf Anfrage</div>
+<div style="font-size:.75rem;color:rgba(255,255,255,.4);margin-bottom:1rem;line-height:1.5">Budget ab €12.000 / Monat</div>
+<a href="#contact" class="btn bp bf">Angebot anfragen →</a>
+<p style="font-size:.68rem;color:rgba(255,255,255,.3);margin-top:.75rem">Individuelles Angebot · Persönliche Beratung</p>
+</div>
+</div></div>
 </div>
 
 <!-- Dual -->
-<div class="pgd" id="pgd">
+<div class="pside" id="pgd">
+<div class="pgrid pg3">
 <div class="pc"><div class="pc-name">Dual Starter</div><div class="pc-price">€849<span>/Mo.</span></div><div class="pc-cap">Kombi bis €3.000</div>
 <ul class="pc-feats"><li>Google Ads + Meta Ads</li><li>Monatliches Reporting-PDF</li><li>Conversion-Tracking Setup</li><li>Pixel & Tag Manager</li><li>Alle Kampagnen-Typen</li><li>Kontinuierliche Optimierung</li></ul>
 <div class="pc-save">€149 gespart vs. separat</div>
@@ -450,11 +472,28 @@ footer{background:#0f172a;color:rgba(255,255,255,.5);padding:3.25rem 0 1.75rem}
 <ul class="pc-feats"><li>Google Ads + Meta Ads</li><li>Monatliches Reporting-PDF</li><li>Conversion-Tracking Setup</li><li>Pixel & Tag Manager</li><li>Alle Kampagnen-Typen</li><li>Kontinuierliche Optimierung</li></ul>
 <div class="pc-save">€499 gespart vs. separat</div>
 <a href="#contact" class="btn bo bf bs">Anfragen</a></div>
+</div>
 
-<div class="pc hl"><div class="pc-name">Dual Enterprise</div><div class="pc-price" style="font-size:1.3rem">Auf Anfrage</div><div class="pc-cap">Kombi ab €12.000</div>
-<ul class="pc-feats"><li>Google Ads + Meta Ads</li><li>Maßgeschneidertes Paket</li><li>Budget und Scope individuell</li><li>Persönliches Angebot</li></ul>
-<div class="pc-save">Maximale Ersparnis</div>
-<a href="#contact" class="btn bp bf bs">Angebot anfragen</a></div>
+<div class="pilot pent"><div class="pilot-grid">
+<div>
+<div class="pilot-badge">⭐ Dual Enterprise</div>
+<h2>Google + Meta — individuelles Komplettpaket ab €12.000/Monat</h2>
+<p>Beide Plattformen aus einer Hand, maßgeschneidert auf Ihre Ziele — mit maximaler Budget-Effizienz und persönlicher Betreuung.</p>
+<div class="pilot-checks">
+<div class="pilot-check">Google Ads + Meta Ads kombiniert</div>
+<div class="pilot-check">Maßgeschneidertes Paket nach Ihren Zielen</div>
+<div class="pilot-check">Budget und Scope individuell definiert</div>
+<div class="pilot-check">Maximale Ersparnis vs. separate Buchung</div>
+</div>
+</div>
+<div class="pilot-side">
+<div style="font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.5rem">Dual Enterprise</div>
+<div style="font-size:1.5rem;font-weight:800;color:#fff;line-height:1.3;margin-bottom:.5rem">Auf Anfrage</div>
+<div style="font-size:.75rem;color:rgba(255,255,255,.4);margin-bottom:1rem;line-height:1.5">Kombi-Budget ab €12.000 / Monat</div>
+<a href="#contact" class="btn bp bf">Angebot anfragen →</a>
+<p style="font-size:.68rem;color:rgba(255,255,255,.3);margin-top:.75rem">Maximale Ersparnis · Persönliche Beratung</p>
+</div>
+</div></div>
 </div>
 
 <p class="vat-note"><strong>Hinweis:</strong> Wir erheben keine Umsatzsteuer. Als im Ausland ansässiger Dienstleister gilt das Reverse-Charge-Verfahren (§ 13b UStG). Sie führen die USt. ggf. selbst ab. Details bei Ihrem Steuerberater.</p>
