@@ -85,14 +85,15 @@ p{color:var(--tx)}
 .hfc .cal a{color:var(--c2);font-weight:600}
 .fok{display:none;text-align:center;padding:1.5rem}.fok h3{color:var(--c3);margin-bottom:.3rem;font-size:1.1rem}.fok p{font-size:.85rem;color:rgba(255,255,255,.6)}
 /* Logos */
-#logos{padding:3rem 0;border-bottom:1.5px solid rgba(230,57,70,.1);background:#fff;box-shadow:0 4px 20px rgba(0,0,0,.04)}
-.logos-label{text-align:center;font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--mt);margin-bottom:1.25rem}
+#logos{padding:3.5rem 0;border-bottom:1.5px solid rgba(230,57,70,.1);background:linear-gradient(135deg,#fafafa 0%,#fff 100%);box-shadow:0 8px 30px rgba(0,0,0,.06)}
+.logos-label{text-align:center;font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--c1);margin-bottom:2rem;word-spacing:.2em}
 .logos-wrap{overflow:hidden;mask-image:linear-gradient(to right,transparent,#000 8%,#000 92%,transparent)}
 .logos-track{display:flex;gap:1.25rem;animation:scroll 40s linear infinite;width:max-content}
 .logos-track:hover{animation-play-state:paused}
 @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.logo-pill{display:flex;align-items:center;padding:.65rem 1.25rem;background:linear-gradient(135deg,var(--c1),rgba(26,26,46,.8));border:1.5px solid rgba(230,57,70,.15);border-radius:10px;white-space:nowrap;font-size:.8rem;font-weight:600;color:rgba(255,255,255,.9);letter-spacing:.02em;transition:all .3s ease;box-shadow:0 4px 15px rgba(0,0,0,.1)}
-.logo-pill:hover{background:linear-gradient(135deg,var(--c2),#d42828);border-color:var(--c2);color:#fff;transform:translateY(-2px);box-shadow:0 8px 25px rgba(230,57,70,.2)}
+.logo-pill{display:flex;align-items:center;justify-content:center;padding:1rem 1.5rem;background:linear-gradient(135deg,#fff 0%,#fafafa 100%);border:1.5px solid #e5e7eb;border-radius:14px;white-space:nowrap;font-size:.85rem;font-weight:600;color:var(--c1);letter-spacing:.5px;transition:all .3s cubic-bezier(.4,0,.2,1);box-shadow:0 4px 20px rgba(0,0,0,.08);min-height:56px;position:relative}
+.logo-pill::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(230,57,70,.05),transparent);border-radius:14px;pointer-events:none}
+.logo-pill:hover{border-color:var(--c2);box-shadow:0 12px 40px rgba(230,57,70,.15);transform:translateY(-4px);background:linear-gradient(135deg,#fff 0%,rgba(253,232,234,.5) 100%)}
 /* Pilot */
 .pilot{background:linear-gradient(135deg,#0c1529 0%,var(--c1) 100%);border-radius:24px;padding:3.5rem;position:relative;overflow:hidden;box-shadow:0 20px 60px rgba(230,57,70,.15),0 0 1px rgba(255,255,255,.1) inset}@media(max-width:768px){.pilot{padding:2.5rem}}
 .pilot::before{content:'';position:absolute;top:-60px;right:-60px;width:250px;height:250px;background:radial-gradient(circle,rgba(230,57,70,.12) 0%,transparent 70%)}
@@ -594,23 +595,23 @@ footer{background:#0f172a;color:rgba(255,255,255,.5);padding:3.25rem 0 1.75rem}
 <script>
 /* Logos */
 var logos=[
-  {name:'Folien MC',url:'https://folienmc.de'},
-  {name:'Illuniva',url:'https://illuniva.de'},
-  {name:'Diamond Wallet',url:'https://diamond-wallet.de'},
-  {name:'Stop Long Covid',url:'https://stop-long-covid.de'},
-  {name:'Filix AI',url:'https://filix.ai'},
-  {name:'WorldBuild',url:'https://worldbuild.de'},
-  {name:'Rechnungshub',url:'https://rechnungshub.de'},
-  {name:'digifoot',url:'https://digifoot.de'},
-  {name:'Vertiko Space',url:'https://vertiko.space'},
-  {name:'neobim.ai',url:'https://neobim.ai'},
-  {name:'pv-glarecheck',url:'https://pv-glarecheck.com'},
-  {name:'LeadEasy',url:'https://leadeasy.de'},
-  {name:'PM DigitalSolutions',url:'https://pmds-ka.de'},
-  {name:'Model Health',url:'https://modelhealth.ai'},
-  {name:'Tisch.company',url:'https://tisch.company'}
+  {name:'Folien MC',url:'https://folienmc.de',display:'Folien MC'},
+  {name:'Illuniva',url:'https://illuniva.de',display:'Illuniva'},
+  {name:'Diamond Wallet',url:'https://diamond-wallet.de',display:'Diamond'},
+  {name:'Stop Long Covid',url:'https://stop-long-covid.de',display:'Long COVID'},
+  {name:'Filix AI',url:'https://filix.ai',display:'Filix'},
+  {name:'WorldBuild',url:'https://worldbuild.de',display:'WorldBuild'},
+  {name:'Rechnungshub',url:'https://rechnungshub.de',display:'Rechnungshub'},
+  {name:'digifoot',url:'https://digifoot.de',display:'digifoot'},
+  {name:'Vertiko Space',url:'https://vertiko.space',display:'Vertiko'},
+  {name:'neobim.ai',url:'https://neobim.ai',display:'neobim'},
+  {name:'pv-glarecheck',url:'https://pv-glarecheck.com',display:'PV-Check'},
+  {name:'LeadEasy',url:'https://leadeasy.de',display:'LeadEasy'},
+  {name:'PM DigitalSolutions',url:'https://pmds-ka.de',display:'PMDS'},
+  {name:'Model Health',url:'https://modelhealth.ai',display:'Model H'},
+  {name:'Tisch.company',url:'https://tisch.company',display:'Tisch'}
 ];
-(function(){var t=document.getElementById('lt'),h='';var a=logos.concat(logos);a.forEach(function(n){var initials=n.name.split(' ').map(function(w){return w[0];}).join('').toUpperCase().slice(0,2);h+='<a href="'+n.url+'" target="_blank" rel="noopener" class="logo-pill" title="'+n.name+'">'+initials+'</a>';});t.innerHTML=h;})();
+(function(){var t=document.getElementById('lt'),h='';var a=logos.concat(logos);a.forEach(function(n){h+='<a href="'+n.url+'" target="_blank" rel="noopener" class="logo-pill" title="'+n.name+'">'+n.display+'</a>';});t.innerHTML=h;})();
 
 /* Cookie */
 function akC(){localStorage.setItem('dc','y');document.getElementById('ck').style.display='none';}
