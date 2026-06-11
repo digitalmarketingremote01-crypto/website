@@ -281,10 +281,10 @@ footer{background:#0f172a;color:rgba(255,255,255,.5);padding:3.25rem 0 1.75rem}
 <nav id="nav"><div class="ctn"><div class="nv">
 <a href="#" class="logo" onclick="showM();return false;">Digital<span>Marketing</span>Remote</a>
 <ul class="nl"><li><a href="#about">Über uns</a></li><li><a href="#services">Leistungen</a></li><li><a href="#pricing">Preise</a></li><li><a href="#cases">Erfolge</a></li><li><a href="#contact">Kontakt</a></li></ul>
-<div class="nc"><a href="#contact" class="btn bo bs">Anfragen</a><a href="https://calendly.com/digitalmarketingremote01/30min" target="_blank" rel="noopener" class="btn bp bs">Termin buchen</a></div>
+<div class="nc"><a href="#contact" class="btn bo bs">Anfragen</a><a href="https://calendly.com/digitalmarketingremote01/30min" onclick="calClick('nav_termin')" class="btn bp bs">Termin buchen</a></div>
 <button class="hb" onclick="togMenu()" aria-label="Menü"><span></span><span></span><span></span></button>
 </div></div></nav>
-<div class="mm" id="mmenu"><a href="#about" onclick="togMenu()">Über uns</a><a href="#services" onclick="togMenu()">Leistungen</a><a href="#pricing" onclick="togMenu()">Preise</a><a href="#cases" onclick="togMenu()">Erfolge</a><a href="#contact" onclick="togMenu()">Kontakt</a><a href="https://calendly.com/digitalmarketingremote01/30min" target="_blank" rel="noopener" class="btn bp">Kostenlosen Termin buchen →</a></div>
+<div class="mm" id="mmenu"><a href="#about" onclick="togMenu()">Über uns</a><a href="#services" onclick="togMenu()">Leistungen</a><a href="#pricing" onclick="togMenu()">Preise</a><a href="#cases" onclick="togMenu()">Erfolge</a><a href="#contact" onclick="togMenu()">Kontakt</a><a href="https://calendly.com/digitalmarketingremote01/30min" onclick="calClick('mobile_menu')" class="btn bp">Kostenlosen Termin buchen →</a></div>
 
 <main id="main">
 <!-- Hero -->
@@ -294,7 +294,7 @@ footer{background:#0f172a;color:rgba(255,255,255,.5);padding:3.25rem 0 1.75rem}
 <h1>Mehr Kunden. Weniger Streuverlust. <em>Messbare Ergebnisse.</em></h1>
 <p class="hero-sub">Die meisten Unternehmen verlieren 30–50 % ihres Werbebudgets durch schlechtes Tracking, falsche Zielgruppen oder fehlende Strategie. Wir analysieren zuerst, optimieren dann — und liefern Kampagnen, bei denen jeder Euro nachweislich arbeitet. Transparent. Datengetrieben. Monatlich kündbar.</p>
 <div class="hero-ctas">
-<a href="https://calendly.com/digitalmarketingremote01/30min" target="_blank" rel="noopener" class="btn bp bl">Kostenlose Erstberatung buchen →</a>
+<a href="https://calendly.com/digitalmarketingremote01/30min" onclick="calClick('hero_cta')" class="btn bp bl">Kostenlose Erstberatung buchen →</a>
 <a href="#pilot" class="btn bo bl">30-Tage-Pilotprojekt</a>
 </div>
 <div class="hero-stats">
@@ -325,7 +325,7 @@ footer{background:#0f172a;color:rgba(255,255,255,.5);padding:3.25rem 0 1.75rem}
 <button type="submit" id="hsbtn" class="btn bp bf">Anfrage absenden →</button>
 </form>
 <div class="fok" id="hok"><h3>✅ Danke!</h3><p>Wir melden uns innerhalb von 24 Stunden.</p></div>
-<span class="cal">Oder direkt: <a href="https://calendly.com/digitalmarketingremote01/30min" target="_blank" rel="noopener">Termin buchen →</a></span>
+<span class="cal">Oder direkt: <a href="https://calendly.com/digitalmarketingremote01/30min" onclick="calClick('hero_form_link')">Termin buchen →</a></span>
 </div>
 </div>
 </div></div></section>
@@ -359,7 +359,7 @@ footer{background:#0f172a;color:rgba(255,255,255,.5);padding:3.25rem 0 1.75rem}
 <div style="font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.5rem">Ihr Einstieg</div>
 <div style="font-size:1.15rem;font-weight:800;color:#fff;line-height:1.3;margin-bottom:.5rem">Paket nach Ihrem<br>Business-Modell</div>
 <div style="font-size:.75rem;color:rgba(255,255,255,.4);margin-bottom:1rem;line-height:1.5">Das passende Paket und Budget wird in der kostenlosen Erstberatung gemeinsam definiert.</div>
-<a href="https://calendly.com/digitalmarketingremote01/30min" target="_blank" rel="noopener" class="btn bp bf">Erstberatung buchen →</a>
+<a href="https://calendly.com/digitalmarketingremote01/30min" onclick="calClick('pilot_cta')" class="btn bp bf">Erstberatung buchen →</a>
 <p style="font-size:.68rem;color:rgba(255,255,255,.3);margin-top:.75rem">Monatlich kündbar · Keine Vorabkosten</p>
 </div>
 </div></div>
@@ -582,7 +582,7 @@ footer{background:#0f172a;color:rgba(255,255,255,.5);padding:3.25rem 0 1.75rem}
 <h2>Lassen Sie uns über Ihre Kampagnen sprechen</h2>
 <p>30 Minuten, unverbindlich. Wir analysieren Ihre Situation und zeigen, was mit den richtigen Kampagnen möglich ist — ohne Verkaufsdruck.</p>
 <div class="ct-btns">
-<a href="https://calendly.com/digitalmarketingremote01/30min" target="_blank" rel="noopener" class="btn bp bl">📅 Kostenlosen Termin buchen</a>
+<a href="https://calendly.com/digitalmarketingremote01/30min" onclick="calClick('contact_termin')" class="btn bp bl">📅 Kostenlosen Termin buchen</a>
 <a href="https://api.whatsapp.com/send/?phone=%2B923217509379&text=Hallo%2C%20ich%20interessiere%20mich%20f%C3%BCr%20Ihre%20Dienstleistungen.&type=phone_number" target="_blank" rel="noopener" class="btn bwa bl">💬 WhatsApp Nachricht</a>
 <a href="https://api.whatsapp.com/send/?phone=%2B923217509379&text=Hallo%2C%20ich%20m%C3%B6chte%20einen%20R%C3%BCckruf%20anfragen.&type=phone_number" target="_blank" rel="noopener" class="btn bo bl">📞 Rückruf anfragen</a>
 </div>
@@ -609,7 +609,7 @@ footer{background:#0f172a;color:rgba(255,255,255,.5);padding:3.25rem 0 1.75rem}
 <h2>Bereit, Ihr Werbebudget profitabel einzusetzen?</h2>
 <p>Kostenlose Erstberatung — 30 Minuten, unverbindlich, mit konkreten Empfehlungen für Ihr Business.</p>
 <div class="cta-btns">
-<a href="https://calendly.com/digitalmarketingremote01/30min" target="_blank" rel="noopener" class="btn bw bl">Erstberatung buchen →</a>
+<a href="https://calendly.com/digitalmarketingremote01/30min" onclick="calClick('cta_band')" class="btn bw bl">Erstberatung buchen →</a>
 <a href="https://api.whatsapp.com/send/?phone=%2B923217509379&text=Hallo%2C%20ich%20m%C3%B6chte%20mehr%20erfahren.&type=phone_number" target="_blank" rel="noopener" class="btn bg2 bl">💬 WhatsApp schreiben</a>
 </div>
 </div></section>
@@ -655,7 +655,7 @@ footer{background:#0f172a;color:rgba(255,255,255,.5);padding:3.25rem 0 1.75rem}
 <div id="ty-form" class="ty"><div class="ty-inner">
 <div class="ty-icon">🎉</div><h1>Vielen Dank!</h1>
 <p>Ihre Anfrage ist eingegangen. Wir melden uns innerhalb von 24 Stunden — per E-Mail, WhatsApp oder Rückruf, wie Sie es gewünscht haben.</p>
-<a href="https://calendly.com/digitalmarketingremote01/30min" target="_blank" rel="noopener" class="btn bp bl">Oder direkt Termin buchen →</a>
+<a href="https://calendly.com/digitalmarketingremote01/30min" onclick="calClick('thankyou_cta')" class="btn bp bl">Oder direkt Termin buchen →</a>
 <br><br><a href="#" onclick="showM();return false;" class="btn bo">Zurück zur Startseite</a>
 </div></div>
 
@@ -673,7 +673,7 @@ footer{background:#0f172a;color:rgba(255,255,255,.5);padding:3.25rem 0 1.75rem}
 <div class="ft-soc"><a href="https://www.facebook.com/digitalmarketingremote/" target="_blank" class="ft-sb">fb</a><a href="https://www.instagram.com/digitalmarketing.remote/" target="_blank" class="ft-sb">ig</a><a href="https://www.linkedin.com/in/mdanyalshahzad/" target="_blank" class="ft-sb">in</a></div><div style="margin-top:1rem;display:flex;gap:.75rem;align-items:center"><span style="font-size:.7rem;color:rgba(255,255,255,.5)">🔒 SSL Encrypted</span><span style="font-size:.7rem;color:rgba(255,255,255,.5)">✓ DSGVO Compliant</span></div></div>
 <div class="ft-col"><h4>Leistungen</h4><ul><li><a href="#services">Google Ads</a></li><li><a href="#services">Meta Ads</a></li><li><a href="#services">E-Commerce & Lead-Gen</a></li><li><a href="#services">YouTube Ads</a></li><li><a href="#services">Tracking & Analytics</a></li></ul></div>
 <div class="ft-col"><h4>Unternehmen</h4><ul><li><a href="#about">Über uns</a></li><li><a href="#cases">Erfolgsgeschichten</a></li><li><a href="#pricing">Preise</a></li><li><a href="#pilot">Pilotprojekt</a></li></ul></div>
-<div class="ft-col"><h4>Kontakt</h4><ul><li><a href="https://calendly.com/digitalmarketingremote01/30min" target="_blank" rel="noopener">Termin buchen</a></li><li><a href="https://api.whatsapp.com/send/?phone=%2B923217509379" target="_blank">WhatsApp</a></li><li><a href="#" onclick="showL('imp');return false;">Impressum</a></li><li><a href="#" onclick="showL('ds');return false;">Datenschutz</a></li></ul></div>
+<div class="ft-col"><h4>Kontakt</h4><ul><li><a href="https://calendly.com/digitalmarketingremote01/30min" onclick="calClick('footer_termin')">Termin buchen</a></li><li><a href="https://api.whatsapp.com/send/?phone=%2B923217509379" target="_blank">WhatsApp</a></li><li><a href="#" onclick="showL('imp');return false;">Impressum</a></li><li><a href="#" onclick="showL('ds');return false;">Datenschutz</a></li></ul></div>
 </div>
 <div class="ft-bot"><span>© 2024–2026 Digital Marketing Remote · Mohammad Danyal Shahzad</span><div style="display:flex;gap:1rem"><a href="#" onclick="showL('imp');return false;">Impressum</a><a href="#" onclick="showL('ds');return false;">Datenschutzerklärung</a></div></div>
 </div></footer>
@@ -701,6 +701,9 @@ var logos=[
   {name:'Tisch.company',url:'https://tisch.company',favicon:'https://icons.duckduckgo.com/ip3/tisch.company.ico'}
 ];
 (function(){var t=document.getElementById('lt'),h='';var a=logos.concat(logos);a.forEach(function(n){h+='<a href="'+n.url+'" target="_blank" rel="noopener" class="logo-pill" title="'+n.name+'"><img src="'+n.favicon+'" alt="'+n.name+'" /><span>'+n.name+'</span></a>';});t.innerHTML=h;})();
+
+/* CTA click tracking — fires before same-tab navigation */
+function calClick(label){window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'calendly_click','btn_label':label});}
 
 /* Cookie */
 function akC(){localStorage.setItem('dc','y');document.getElementById('ck').style.display='none';}
@@ -785,7 +788,7 @@ document.getElementById('minn').innerHTML=
 '<div class="mhd"><div class="mt2">'+d.tag+'</div><h2>'+d.t+'</h2><p class="mmt">'+d.m+'</p></div>'+
 '<div class="mms">'+m+'</div>'+imgs+
 '<div class="mbd"><div class="msc"><h4>Herausforderung</h4><p>'+d.h+'</p></div><div class="msc"><h4>Strategie</h4><p>'+d.s+'</p></div><div class="msc"><h4>Ergebnis</h4><p>'+d.r+'</p></div>'+
-'<div style="margin-top:1.25rem;text-align:center"><a href="https://calendly.com/digitalmarketingremote01/30min" target="_blank" rel="noopener" class="btn bp">Ähnliche Ergebnisse besprechen →</a></div></div>';
+'<div style="margin-top:1.25rem;text-align:center"><a href="https://calendly.com/digitalmarketingremote01/30min" onclick="calClick(\'modal_case\')" class="btn bp">Ähnliche Ergebnisse besprechen →</a></div></div>';
 document.getElementById('mov').classList.add('open');document.body.style.overflow='hidden';}
 function closeMd(){document.getElementById('mov').classList.remove('open');document.body.style.overflow='';}
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMd();});
