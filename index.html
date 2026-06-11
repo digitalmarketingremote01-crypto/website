@@ -729,7 +729,7 @@ f.addEventListener('submit',async function(e){e.preventDefault();
 var ds=f.querySelector('[name="dsgvo"]');if(ds&&!ds.checked){alert('Bitte stimmen Sie der Datenschutzerklärung zu.');return;}
 btn.textContent='Wird gesendet…';btn.disabled=true;
 try{var r=await fetch(this.action,{method:'POST',body:new FormData(this),headers:{'Accept':'application/json'}});
-if(r.ok){this.style.display='none';ok.style.display='block';if(redir)setTimeout(function(){window.location.hash='#danke';showTY('form');},1500);}
+if(r.ok){this.style.display='none';ok.style.display='block';if(redir)setTimeout(function(){window.location.hash='#danke';showTY('form');window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'form_submission'});},1500);}
 else{btn.textContent='Fehler — erneut versuchen';btn.disabled=false;}}
 catch(err){btn.textContent='Fehler — erneut versuchen';btn.disabled=false;}});}
 initForm(document.getElementById('hform'),document.getElementById('hsbtn'),document.getElementById('hok'),true);
@@ -740,8 +740,11 @@ function hideAll(){['main','imp-page','ds-page','ty-form','ty-cal'].forEach(func
 function showM(){hideAll();document.getElementById('main').style.display='block';window.scrollTo(0,0);}
 function showL(p){hideAll();var el=document.getElementById(p+'-page');el.style.display='block';el.classList.add('active');window.scrollTo(0,0);}
 function showTY(t){hideAll();var el=document.getElementById('ty-'+t);el.style.display='flex';el.classList.add('active');window.scrollTo(0,0);}
-window.addEventListener('message',function(e){if(e.data&&e.data.event==='calendly.event_scheduled')showTY('cal');});
-function handleHash(){if(location.hash==='#danke-termin')showTY('cal');else if(location.hash==='#danke')showTY('form');}
+window.addEventListener('message',function(e){if(e.data&&e.data.event==='calendly.event_scheduled'){showTY('cal');window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'calendly_booking'});}});
+function handleHash(){
+  if(location.hash==='#danke-termin'){showTY('cal');window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'calendly_booking'});}
+  else if(location.hash==='#danke'){showTY('form');window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'form_submission'});}
+}
 handleHash();
 window.addEventListener('hashchange',handleHash);
 if(location.hash==='#danke-formular')showTY('form');
