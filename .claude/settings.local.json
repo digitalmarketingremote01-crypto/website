@@ -45,7 +45,15 @@
       "Bash(curl -sfL --max-time 20 -o fonts/plus-jakarta-sans.woff2 \"https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko20yygg_vb.woff2\")",
       "Bash(curl -s -o /dev/null -w \"logo check: %{http_code}\\\\n\" https://www.digitalmarketingremote.com/logos/folienmc.png)",
       "Bash(python3 -)",
-      "Bash(git rm *)"
+      "Bash(git rm *)",
+      "mcp__Claude_in_Chrome__switch_browser",
+      "Bash(git checkout *)",
+      "Bash(sips -c 505 2049 --cropOffset 45 0 case-ki-startup-shopify.png)",
+      "Bash(sips -g pixelHeight case-ki-startup-shopify.png)",
+      "Bash(python3 -c ' *)",
+      "Bash(curl -s -o /dev/null -w '%{http_code}' https://www.digitalmarketingremote.com/case-autofolierung.png)",
+      "Bash(echo \"screenshot live: $\\(curl -s -o /dev/null -w '%{http_code}' https://www.digitalmarketingremote.com/case-autofolierung.png\\)\")",
+      "Bash(git commit -q -m ' *)"
     ]
   }
 }
