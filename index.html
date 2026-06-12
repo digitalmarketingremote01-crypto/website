@@ -232,15 +232,27 @@ p{color:var(--tx)}
 .faq-item.open .faq-a{display:block}
 /* Contact */
 .ct-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.25rem;align-items:start}
-.ct-btns{display:flex;flex-direction:column;gap:.5rem;margin-top:1.75rem}
-.cform{background:#fff;border:1.5px solid rgba(230,57,70,.08);border-radius:16px;padding:2rem;box-shadow:0 8px 30px rgba(0,0,0,.08)}
-.cform h3{margin-bottom:.25rem}.cform>p{font-size:.8rem;color:var(--mt);margin-bottom:1.25rem}
+.ct-btns{display:flex;flex-direction:column;gap:.625rem;margin-top:1.75rem}
+.ct-card{display:flex;align-items:center;gap:.875rem;padding:.875rem 1.1rem;border:1.5px solid var(--bd);border-radius:12px;text-decoration:none;color:var(--c1);transition:all .25s;background:#fff}
+.ct-card:hover{border-color:var(--c2);box-shadow:0 4px 16px rgba(230,57,70,.12);transform:translateY(-2px)}
+.ct-card-ico{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.15rem;flex-shrink:0}
+.ct-card strong{display:block;font-size:.875rem;font-weight:700;color:var(--c1);margin-bottom:.1rem}
+.ct-card span{font-size:.72rem;color:var(--mt)}
+.cform{background:#fff;border:1.5px solid rgba(230,57,70,.1);border-radius:16px;padding:0;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,.09)}
+.cform-hd{background:var(--c1);padding:1.25rem 1.75rem}
+.cform-hd h3{color:#fff;margin:0;font-size:1.05rem;font-weight:700}
+.cform-hd p{color:rgba(255,255,255,.5);font-size:.75rem;margin:.25rem 0 0}
+.cform-bd{padding:1.5rem 1.75rem}
 .fg{margin-bottom:.875rem}.fr{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
-.fg label{display:block;font-size:.78rem;font-weight:600;color:var(--c1);margin-bottom:.25rem}
-.fg input,.fg textarea,.fg select{width:100%;padding:.75rem 1rem;border:1.5px solid rgba(230,57,70,.15);border-radius:10px;font-size:.875rem;color:var(--c1);background:#fff;font-family:inherit;transition:all .3s ease;box-shadow:0 2px 8px rgba(0,0,0,.04)}
-.fg input:focus,.fg textarea:focus,.fg select:focus{outline:0;border-color:var(--c2);box-shadow:0 0 0 4px rgba(230,57,70,.1),0 4px 12px rgba(230,57,70,.15)}
-.fg textarea{resize:vertical;min-height:90px}
+.fg label{display:block;font-size:.78rem;font-weight:600;color:var(--c1);margin-bottom:.3rem}
+.fg input,.fg textarea,.fg select{width:100%;padding:.8rem 1rem;border:1.5px solid #e2e6ea;border-radius:10px;font-size:.875rem;color:var(--c1);background:#fff;font-family:inherit;transition:all .25s;box-shadow:none}
+.fg input:focus,.fg textarea:focus,.fg select:focus{outline:0;border-color:var(--c2);box-shadow:0 0 0 3px rgba(230,57,70,.1)}
+.fg textarea{resize:vertical;min-height:100px}
+.fg .hchip{border:1.5px solid #e2e6ea;border-radius:8px;padding:.4rem .875rem;font-size:.78rem;font-weight:600;color:var(--c1);background:#fff}
+.fg .hchip.sel{border-color:var(--c2);background:var(--c2l);color:var(--c2)}
 .priv{display:flex;align-items:flex-start;gap:.4rem;font-size:.72rem;color:var(--mt);margin:.75rem 0}.priv input{width:auto;margin-top:3px;flex-shrink:0}.priv a{color:var(--c2);text-decoration:underline}
+.form-trust{display:flex;gap:1rem;margin-top:.75rem;flex-wrap:wrap}
+.form-trust span{font-size:.68rem;color:var(--mt)}
 /* CTA */
 .cta-band{background:linear-gradient(135deg,var(--c1) 0%,#2a2a45 100%);padding:6rem 0;text-align:center;box-shadow:0 -10px 40px rgba(230,57,70,.1)}
 .cta-band h2{color:#fff;margin-bottom:.75rem}.cta-band p{color:rgba(255,255,255,.65);max-width:480px;margin:0 auto 1.75rem;font-size:1rem}
@@ -590,14 +602,26 @@ footer{background:#0f172a;color:rgba(255,255,255,.5);padding:3.25rem 0 1.75rem}
 <h2>Lassen Sie uns über Ihre Kampagnen sprechen</h2>
 <p>30 Minuten, unverbindlich. Wir analysieren Ihre Situation und zeigen, was mit den richtigen Kampagnen möglich ist — ohne Verkaufsdruck.</p>
 <div class="ct-btns">
-<a href="https://calendly.com/digitalmarketingremote01/30min" onclick="calClick('contact_termin')" class="btn bp bl">📅 Kostenlosen Termin buchen</a>
-<a href="https://api.whatsapp.com/send/?phone=%2B923217509379&text=Hallo%2C%20ich%20interessiere%20mich%20f%C3%BCr%20Ihre%20Dienstleistungen.&type=phone_number" target="_blank" rel="noopener" class="btn bwa bl">💬 WhatsApp Nachricht</a>
-<a href="https://api.whatsapp.com/send/?phone=%2B923217509379&text=Hallo%2C%20ich%20m%C3%B6chte%20einen%20R%C3%BCckruf%20anfragen.&type=phone_number" target="_blank" rel="noopener" class="btn bo bl">📞 Rückruf anfragen</a>
+<a href="https://calendly.com/digitalmarketingremote01/30min" onclick="calClick('contact_termin')" class="ct-card">
+  <div class="ct-card-ico" style="background:#eef2ff">📅</div>
+  <div><strong>Kostenlosen Termin buchen</strong><span>30 Min. · Unverbindlich · Sofort buchbar</span></div>
+</a>
+<a href="https://api.whatsapp.com/send/?phone=%2B923217509379&text=Hallo%2C%20ich%20interessiere%20mich%20f%C3%BCr%20Ihre%20Dienstleistungen.&type=phone_number" target="_blank" rel="noopener" class="ct-card">
+  <div class="ct-card-ico" style="background:#e8f8ef">💬</div>
+  <div><strong>WhatsApp Nachricht</strong><span>Antwort meist innerhalb 1 Stunde</span></div>
+</a>
+<a href="https://api.whatsapp.com/send/?phone=%2B923217509379&text=Hallo%2C%20ich%20m%C3%B6chte%20einen%20R%C3%BCckruf%20anfragen.&type=phone_number" target="_blank" rel="noopener" class="ct-card">
+  <div class="ct-card-ico" style="background:#fff0f0">📞</div>
+  <div><strong>Rückruf anfragen</strong><span>Mo–Fr · 9–17 Uhr deutscher Zeit</span></div>
+</a>
 </div>
 </div>
 <div class="cform">
-<h3>Rückruf anfordern</h3>
-<p>Formular ausfüllen — wir melden uns innerhalb von 24 Stunden.</p>
+<div class="cform-hd">
+<h3>Anfrage senden</h3>
+<p>Wir melden uns innerhalb von 24 Stunden persönlich bei Ihnen.</p>
+</div>
+<div class="cform-bd">
 <form id="cform" action="https://script.google.com/macros/s/AKfycbzh2cM4CE_41OMhJIDtNvhWoyowjRlRpdRrgvboM7mEWyremHsMMlyiHIpEHQpsCorIzQ/exec" method="POST" novalidate>
 <div class="fr"><div class="fg"><label for="cv">Vorname *</label><input type="text" id="cv" name="vorname" required placeholder="Max"></div><div class="fg"><label for="cn">Nachname</label><input type="text" id="cn" name="nachname" placeholder="Mustermann"></div></div>
 <div class="fr"><div class="fg"><label for="cph">Telefon *</label><input type="tel" id="cph" name="telefon" required placeholder="+49 170 1234567"></div><div class="fg"><label for="ce">E-Mail *</label><input type="email" id="ce" name="email" required placeholder="max@firma.de"></div></div>
@@ -607,8 +631,14 @@ footer{background:#0f172a;color:rgba(255,255,255,.5);padding:3.25rem 0 1.75rem}
 <div class="priv"><input type="checkbox" id="cds" name="dsgvo" required><label for="cds">Ich habe die <a href="#" onclick="showL('ds');return false;">Datenschutzerklärung</a> gelesen und stimme zu. *</label></div>
 <input type="hidden" name="_subject" value="Kontaktformular – Digital Marketing Remote">
 <button type="submit" id="csbtn" class="btn bp bf" style="margin-top:.75rem">Anfrage absenden →</button>
+<div class="form-trust">
+<span>🔒 DSGVO-konform</span>
+<span>⚡ Antwort in 24 Stunden</span>
+<span>✓ Kostenlos &amp; unverbindlich</span>
+</div>
 </form>
 <div class="fok" id="cok"><h3>✅ Vielen Dank!</h3><p>Wir melden uns innerhalb von 24 Stunden.</p></div>
+</div>
 </div>
 </div></div></section>
 
