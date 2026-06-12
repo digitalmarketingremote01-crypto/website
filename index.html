@@ -531,24 +531,6 @@ footer{background:#0f172a;color:rgba(255,255,255,.5);padding:3.25rem 0 1.75rem}
 </div>
 </div></section>
 
-<!-- Proof -->
-<section class="sec" style="background:var(--c1)"><div class="ctn">
-<div class="sh"><span class="sl" style="color:#fbbf24">Kundenstimmen</span><h2 style="color:#fff">Was unsere Kunden sagen</h2></div>
-<div class="proof-slider"><div class="proof-track" id="proofTrack">
-<div class="proof"><div class="proof-stars">★★★★★</div><p class="proof-text">"Wir haben 4 Monate lang mit einer Berliner Agentur gearbeitet und jeden Monat Budget verloren. Mit Digital Marketing Remote lief die erste Kampagne in 9 Tagen profitabel."</p><div class="proof-author"><div class="proof-av">MR</div><div><div class="proof-name">Markus R.</div><div class="proof-role">Geschäftsführer · E-Commerce · München</div></div></div></div>
-<div class="proof"><div class="proof-stars">★★★★★</div><p class="proof-text">"Das monatliche Reporting ist detaillierter als alles, was ich von lokalen Agenturen bekommen habe. ROAS von 2,1x auf 5,8x in 10 Wochen — die Zahlen sprechen für sich."</p><div class="proof-author"><div class="proof-av">SK</div><div><div class="proof-name">Sandra K.</div><div class="proof-role">Marketingleiterin · SaaS · Hamburg</div></div></div></div>
-<div class="proof"><div class="proof-stars">★★★★★</div><p class="proof-text">"Das Team hat mir vor dem Start erklärt, warum mein bisheriges Setup Geld verbrennt. Dann haben sie es repariert. Erste qualifizierte Leads kamen in der dritten Woche."</p><div class="proof-author"><div class="proof-av">TB</div><div><div class="proof-name">Thomas B.</div><div class="proof-role">Inhaber · Handwerk & Dienstleistung · Stuttgart</div></div></div></div>
-<div class="proof"><div class="proof-stars">★★★★★</div><p class="proof-text">"Unser Meta-Ads-Setup war chaotisch. In 2 Wochen hat Digital Marketing Remote alles neu aufgebaut. Monat darauf: 3x mehr Leads bei 40 % weniger Budget. Absolute Empfehlung."</p><div class="proof-author"><div class="proof-av">AW</div><div><div class="proof-name">Andreas W.</div><div class="proof-role">Gründer · Dienstleistungen · Berlin</div></div></div></div>
-<div class="proof"><div class="proof-stars">★★★★★</div><p class="proof-text">"Sehr professionell, schnell und effektiv. Die Kampagnen liefen von Anfang an profitabel. Der Support ist jederzeit erreichbar und hilft schnell bei Fragen."</p><div class="proof-author"><div class="proof-av">JK</div><div><div class="proof-name">Julia K.</div><div class="proof-role">Geschäftsführerin · Online-Handel · Köln</div></div></div></div>
-<div class="proof"><div class="proof-stars">★★★★★</div><p class="proof-text">"Nach 6 Monaten mit einer anderen Agentur ohne Ergebnisse bin ich zu Digital Marketing Remote gewechselt. Nach 3 Wochen erste Sales. Jetzt 5x ROI. Mehr kann ich nicht sagen."</p><div class="proof-author"><div class="proof-av">DM</div><div><div class="proof-name">Daniel M.</div><div class="proof-role">Founder · SaaS-Startup · Düsseldorf</div></div></div></div>
-<div class="proof"><div class="proof-stars">★★★★★</div><p class="proof-text">"Absolut kompetent und zuverlässig. Die Strategie war auf den Punkt und die Umsetzung perfekt. Kosten pro Conversion gesunken um 60%. Sehr empfehlenswert."</p><div class="proof-author"><div class="proof-av">LW</div><div><div class="proof-name">Lena W.</div><div class="proof-role">Marketing Manager · Fashion · Berlin</div></div></div></div>
-<div class="proof"><div class="proof-stars">★★★★★</div><p class="proof-text">"Transparente Kommunikation, faire Preise und messbare Ergebnisse. Das ist genau das, was wir gesucht haben. Die monatlichen Reports sind aussagekräftig."</p><div class="proof-author"><div class="proof-av">RH</div><div><div class="proof-name">Robert H.</div><div class="proof-role">CEO · B2B-Handel · Frankfurt</div></div></div></div>
-<div class="proof"><div class="proof-stars">★★★★★</div><p class="proof-text">"Die beste Entscheidung für unser Unternehmen. Innerhalb von 2 Monaten hatten wir 3x mehr Anfragen. Das Team ist sehr engagiert und zuverlässig."</p><div class="proof-author"><div class="proof-av">MS</div><div><div class="proof-name">Michael S.</div><div class="proof-role">Geschäftsführer · Handwerk · Stuttgart</div></div></div></div>
-<div class="proof"><div class="proof-stars">★★★★★</div><p class="proof-text">"Schnelle Reaktion auf Anfragen, professionelle Beratung und vor allem: Ergebnisse! Der Umsatz ist um 150% gewachsen. Vielen Dank!"</p><div class="proof-author"><div class="proof-av">NK</div><div><div class="proof-name">Nicole K.</div><div class="proof-role">Inhaberin · Consulting · München</div></div></div></div>
-<div class="proof"><div class="proof-stars">★★★★★</div><p class="proof-text">"Professionelle Agentur mit echten Ergebnissen. Keine leeren Versprechen. Die Zusammenarbeit ist angenehm und die Support ist hervorragend."</p><div class="proof-author"><div class="proof-av">PB</div><div><div class="proof-name">Peter B.</div><div class="proof-role">Director · Tech-Startup · Hamburg</div></div></div></div>
-</div></div>
-</div></section>
-
 <!-- FAQ -->
 <section class="sec" style="background:var(--bg)"><div class="ctn">
 <div class="sh"><span class="sl">FAQ</span><h2>Häufige Fragen</h2></div>
@@ -792,20 +774,6 @@ document.getElementById('minn').innerHTML=
 document.getElementById('mov').classList.add('open');document.body.style.overflow='hidden';}
 function closeMd(){document.getElementById('mov').classList.remove('open');document.body.style.overflow='';}
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMd();});
-/* Testimonials Slider */
-(function(){var track=document.getElementById('proofTrack');if(!track)return;var slider=track.parentElement,proofs=track.querySelectorAll('.proof'),total=proofs.length,page=0;if(total===0)return;
-function perView(){var w=window.innerWidth;return w<=480?1:(w<=768?2:4);}
-function pageCount(){return Math.ceil(total/perView());}
-var nav=document.createElement('div');nav.className='proof-nav';
-var prev=document.createElement('button');prev.className='proof-arrow';prev.setAttribute('aria-label','Vorherige Bewertungen');prev.innerHTML='&#8249;';
-var dots=document.createElement('div');dots.className='proof-dots';
-var next=document.createElement('button');next.className='proof-arrow';next.setAttribute('aria-label','Nächste Bewertungen');next.innerHTML='&#8250;';
-nav.appendChild(prev);nav.appendChild(dots);nav.appendChild(next);slider.parentElement.appendChild(nav);
-prev.onclick=function(){if(page>0){page--;render();}};
-next.onclick=function(){if(page<pageCount()-1){page++;render();}};
-function buildDots(){dots.innerHTML='';var pc=pageCount();for(var i=0;i<pc;i++){var d=document.createElement('button');d.className='proof-dot'+(i===page?' active':'');d.setAttribute('aria-label','Seite '+(i+1));(function(i){d.onclick=function(){page=i;render();};})(i);dots.appendChild(d);}}
-function render(){var pv=perView(),pc=pageCount();if(page>pc-1)page=pc-1;if(page<0)page=0;var first=Math.min(page*pv,Math.max(0,total-pv));track.style.transform='translateX('+(-proofs[first].offsetLeft)+'px)';buildDots();prev.disabled=page<=0;next.disabled=page>=pc-1;}
-var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(render,150);});render();})();
 document.querySelectorAll('.case').forEach(function(c){c.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();c.click();}});});
 </script>
 </body></html>
