@@ -89,13 +89,15 @@ Section order: Hero → Logos → Pilot → About → Services → Process → C
 - Calendly redirect hash: #danke-termin
 - Form emails: Google Apps Script "Formspree | Form Script" (owner digitalmarketingremote01@gmail.com)
 
-## Email — IMPORTANT
-- support@digitalmarketingremote.com is displayed site-wide but has NO mail hosting
-  (domain on Vercel DNS, no MX records) — incoming mail to it bounces.
-- Until MX is set up, GAS sends lead notifications + uses replyTo
-  digitalmarketingremote01@gmail.com (hotfix 2026-06-13, deployment v4).
-- After user sets up mail hosting (e.g. Zoho Mail free): add MX via `vercel dns add`,
-  then revert GAS recipient/replyTo to support@.
+## Email — RESOLVED 2026-06-13
+- support@digitalmarketingremote.com now works via **forwardemail.net** (free forwarding).
+  DNS on Vercel: MX mx1/mx2.forwardemail.net (10/20) + TXT
+  `forward-email=support:digitalmarketingremote01@gmail.com`. Mail to support@ forwards
+  to the Gmail inbox (verified delivered). Add via `vercel dns add` if ever re-doing.
+- GAS deployment v5: lead notification recipient + auto-reply replyTo reverted to
+  support@digitalmarketingremote.com. Notifications still land in digitalmarketingremote01.
+- To SEND as support@ from Gmail (optional polish): Gmail Settings → Accounts → "Send mail
+  as" → add support@, SMTP smtp.forwardemail.net:465, password = a forwardemail.net app pw.
 
 ## Schema.org
 - ProfessionalService schema in `<head>` (line ~28)
