@@ -81,12 +81,21 @@ Section order: Hero → Logos → Pilot → About → Services → Process → C
 - Legal pages are standalone: /impressum, /datenschutz (vercel.json cleanUrls)
 
 ## Integrations
-- Google Tag Manager: GTM-MFXPMZ8W
+- Google Tag Manager: GTM-MFXPMZ8W (Google Ads Conversion ID constant: 18174154684 — bare number, GTM adds AW- prefix)
 - Google Analytics 4: G-N6G3MVTEH5
 - Facebook Pixel: 957297367335870
 - Microsoft Clarity: x4vko0dld9
 - Calendly booking: digitalmarketingremote01@gmail.com
 - Calendly redirect hash: #danke-termin
+- Form emails: Google Apps Script "Formspree | Form Script" (owner digitalmarketingremote01@gmail.com)
+
+## Email — IMPORTANT
+- support@digitalmarketingremote.com is displayed site-wide but has NO mail hosting
+  (domain on Vercel DNS, no MX records) — incoming mail to it bounces.
+- Until MX is set up, GAS sends lead notifications + uses replyTo
+  digitalmarketingremote01@gmail.com (hotfix 2026-06-13, deployment v4).
+- After user sets up mail hosting (e.g. Zoho Mail free): add MX via `vercel dns add`,
+  then revert GAS recipient/replyTo to support@.
 
 ## Schema.org
 - ProfessionalService schema in `<head>` (line ~28)
