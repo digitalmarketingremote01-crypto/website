@@ -327,7 +327,7 @@ footer{background:#0f172a;color:rgba(255,255,255,.5);padding:3.25rem 0 1.75rem}
 <form id="hform" action="https://script.google.com/macros/s/AKfycbzh2cM4CE_41OMhJIDtNvhWoyowjRlRpdRrgvboM7mEWyremHsMMlyiHIpEHQpsCorIzQ/exec" method="POST" novalidate>
 <div class="hfr"><div class="hfg"><label for="hv">Vorname *</label><input type="text" id="hv" name="vorname" required placeholder="Max"></div><div class="hfg"><label for="hp">Telefon *</label><input type="tel" id="hp" name="telefon" required placeholder="+49 170 1234567"></div></div>
 <div class="hfg"><label for="he">E-Mail *</label><input type="email" id="he" name="email" required placeholder="max@firma.de"></div>
-<div class="hfg"><label>Bevorzugter Kontaktweg</label><div class="hchips">
+<div class="hfg"><label>Bevorzugter Kontaktweg *</label><div class="hchips">
 <label class="hchip"><input type="checkbox" name="kontakt" value="E-Mail" onchange="tc(this)">📧 E-Mail</label>
 <label class="hchip"><input type="checkbox" name="kontakt" value="WhatsApp" onchange="tc(this)">💬 WhatsApp</label>
 <label class="hchip"><input type="checkbox" name="kontakt" value="Rückruf" onchange="tc(this)">📞 Rückruf</label>
@@ -626,7 +626,7 @@ footer{background:#0f172a;color:rgba(255,255,255,.5);padding:3.25rem 0 1.75rem}
 <div class="fr"><div class="fg"><label for="cv">Vorname *</label><input type="text" id="cv" name="vorname" required placeholder="Max"></div><div class="fg"><label for="cn">Nachname</label><input type="text" id="cn" name="nachname" placeholder="Mustermann"></div></div>
 <div class="fr"><div class="fg"><label for="cph">Telefon *</label><input type="tel" id="cph" name="telefon" required placeholder="+49 170 1234567"></div><div class="fg"><label for="ce">E-Mail *</label><input type="email" id="ce" name="email" required placeholder="max@firma.de"></div></div>
 <div class="fg"><label for="cu">Unternehmen / Website</label><input type="text" id="cu" name="unternehmen" placeholder="Muster GmbH · www.muster.de"></div>
-<div class="fg"><label>Bevorzugter Kontaktweg</label><div class="hchips"><label class="hchip"><input type="checkbox" name="kontakt" value="E-Mail" onchange="tc(this)">📧 E-Mail</label><label class="hchip"><input type="checkbox" name="kontakt" value="WhatsApp" onchange="tc(this)">💬 WhatsApp</label><label class="hchip"><input type="checkbox" name="kontakt" value="Rückruf" onchange="tc(this)">📞 Rückruf</label></div></div>
+<div class="fg"><label>Bevorzugter Kontaktweg *</label><div class="hchips"><label class="hchip"><input type="checkbox" name="kontakt" value="E-Mail" onchange="tc(this)">📧 E-Mail</label><label class="hchip"><input type="checkbox" name="kontakt" value="WhatsApp" onchange="tc(this)">💬 WhatsApp</label><label class="hchip"><input type="checkbox" name="kontakt" value="Rückruf" onchange="tc(this)">📞 Rückruf</label></div></div>
 <div class="fg"><label for="cmsg">Kurze Beschreibung Ihres Projekts</label><textarea id="cmsg" name="nachricht" placeholder="Was vermarkten Sie? Was ist Ihr Hauptziel? Haben Sie bereits Kampagnen?"></textarea></div>
 <div class="priv"><input type="checkbox" id="cds" name="dsgvo" required><label for="cds">Ich habe die <a href="#" onclick="showL('ds');return false;">Datenschutzerklärung</a> gelesen und stimme zu. *</label></div>
 <input type="hidden" name="_subject" value="Kontaktformular – Digital Marketing Remote">
@@ -773,6 +773,8 @@ var f=document.getElementById(id);if(!f)return;
 f.addEventListener('submit',function(e){
 var ds=f.querySelector('[name="dsgvo"]');
 if(ds&&!ds.checked){e.preventDefault();alert('Bitte stimmen Sie der Datenschutzerklärung zu.');return;}
+var kc=f.querySelectorAll('[name="kontakt"]:checked');
+if(kc.length===0){e.preventDefault();alert('Bitte wählen Sie einen bevorzugten Kontaktweg aus.');return;}
 var ef=f.querySelector('[type="email"]');
 var rt=f.querySelector('[name="_replyto"]');
 if(ef&&rt)rt.value=ef.value;
