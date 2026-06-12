@@ -312,7 +312,7 @@ footer{background:#0f172a;color:rgba(255,255,255,.5);padding:3.25rem 0 1.75rem}
 </div>
 <h3>Kostenlose Erstberatung anfragen</h3>
 <p>30 Minuten, unverbindlich — wir melden uns innerhalb von 24 Stunden.</p>
-<form id="hform" action="https://formsubmit.co/ajax/digitalmarketingremote01@gmail.com" method="POST" novalidate>
+<form id="hform" action="https://formsubmit.co/digitalmarketingremote01@gmail.com" method="POST" novalidate>
 <div class="hfr"><div class="hfg"><label for="hv">Vorname *</label><input type="text" id="hv" name="vorname" required placeholder="Max"></div><div class="hfg"><label for="hp">Telefon *</label><input type="tel" id="hp" name="telefon" required placeholder="+49 170 1234567"></div></div>
 <div class="hfg"><label for="he">E-Mail *</label><input type="email" id="he" name="email" required placeholder="max@firma.de"></div>
 <div class="hfg"><label>Bevorzugter Kontaktweg</label><div class="hchips">
@@ -325,6 +325,8 @@ footer{background:#0f172a;color:rgba(255,255,255,.5);padding:3.25rem 0 1.75rem}
 <input type="hidden" name="_captcha" value="false">
 <input type="hidden" name="_autoresponse" value="Vielen Dank für Ihre Anfrage an Digital Marketing Remote! Wir haben Ihre Nachricht erhalten und melden uns innerhalb von 24 Stunden. Falls Sie direkt einen Termin buchen möchten: https://calendly.com/digitalmarketingremote01/30min — Mit freundlichen Grüßen, Ihr Digital Marketing Remote Team">
 <input type="hidden" name="_template" value="table">
+<input type="hidden" name="_replyto" id="h_replyto">
+<input type="hidden" name="_next" value="https://www.digitalmarketingremote.com/#danke">
 <button type="submit" id="hsbtn" class="btn bp bf">Anfrage absenden →</button>
 </form>
 <div class="fok" id="hok"><h3>✅ Danke!</h3><p>Wir melden uns innerhalb von 24 Stunden.</p></div>
@@ -601,7 +603,7 @@ footer{background:#0f172a;color:rgba(255,255,255,.5);padding:3.25rem 0 1.75rem}
 <div class="cform">
 <h3>Rückruf anfordern</h3>
 <p>Formular ausfüllen — wir melden uns innerhalb von 24 Stunden.</p>
-<form id="cform" action="https://formsubmit.co/ajax/digitalmarketingremote01@gmail.com" method="POST" novalidate>
+<form id="cform" action="https://formsubmit.co/digitalmarketingremote01@gmail.com" method="POST" novalidate>
 <div class="fr"><div class="fg"><label for="cv">Vorname *</label><input type="text" id="cv" name="vorname" required placeholder="Max"></div><div class="fg"><label for="cn">Nachname</label><input type="text" id="cn" name="nachname" placeholder="Mustermann"></div></div>
 <div class="fr"><div class="fg"><label for="cph">Telefon *</label><input type="tel" id="cph" name="telefon" required placeholder="+49 170 1234567"></div><div class="fg"><label for="ce">E-Mail *</label><input type="email" id="ce" name="email" required placeholder="max@firma.de"></div></div>
 <div class="fg"><label for="cu">Unternehmen / Website</label><input type="text" id="cu" name="unternehmen" placeholder="Muster GmbH · www.muster.de"></div>
@@ -612,6 +614,8 @@ footer{background:#0f172a;color:rgba(255,255,255,.5);padding:3.25rem 0 1.75rem}
 <input type="hidden" name="_captcha" value="false">
 <input type="hidden" name="_autoresponse" value="Vielen Dank für Ihre Anfrage an Digital Marketing Remote! Wir haben Ihre Nachricht erhalten und melden uns innerhalb von 24 Stunden. Falls Sie direkt einen Termin buchen möchten: https://calendly.com/digitalmarketingremote01/30min — Mit freundlichen Grüßen, Ihr Digital Marketing Remote Team">
 <input type="hidden" name="_template" value="table">
+<input type="hidden" name="_replyto" id="c_replyto">
+<input type="hidden" name="_next" value="https://www.digitalmarketingremote.com/#danke">
 <button type="submit" id="csbtn" class="btn bp bf" style="margin-top:.75rem">Anfrage absenden →</button>
 </form>
 <div class="fok" id="cok"><h3>✅ Vielen Dank!</h3><p>Wir melden uns innerhalb von 24 Stunden.</p></div>
@@ -744,16 +748,17 @@ document.getElementById('pgs').classList.toggle('show',!dual);document.getElemen
 document.getElementById('pl1').classList.toggle('act',!dual);document.getElementById('pl2').classList.toggle('act',dual);}
 
 /* Forms */
-function initForm(f,btn,ok,redir){
-f.addEventListener('submit',async function(e){e.preventDefault();
-var ds=f.querySelector('[name="dsgvo"]');if(ds&&!ds.checked){alert('Bitte stimmen Sie der Datenschutzerklärung zu.');return;}
-btn.textContent='Wird gesendet…';btn.disabled=true;
-try{var fd=new FormData(this);var ef=this.querySelector('[type="email"]');if(ef&&ef.value)fd.append('_replyto',ef.value);var r=await fetch(this.action,{method:'POST',body:fd,headers:{'Accept':'application/json'}});
-if(r.ok){this.style.display='none';ok.style.display='block';if(redir)setTimeout(function(){window.location.hash='#danke';showTY('form');window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'form_submission'});},1500);}
-else{btn.textContent='Fehler — erneut versuchen';btn.disabled=false;}}
-catch(err){btn.textContent='Fehler — erneut versuchen';btn.disabled=false;}});}
-initForm(document.getElementById('hform'),document.getElementById('hsbtn'),document.getElementById('hok'),true);
-initForm(document.getElementById('cform'),document.getElementById('csbtn'),document.getElementById('cok'),true);
+['hform','cform'].forEach(function(id){
+var f=document.getElementById(id);if(!f)return;
+f.addEventListener('submit',function(e){
+var ds=f.querySelector('[name="dsgvo"]');
+if(ds&&!ds.checked){e.preventDefault();alert('Bitte stimmen Sie der Datenschutzerklärung zu.');return;}
+var ef=f.querySelector('[type="email"]');
+var rt=f.querySelector('[name="_replyto"]');
+if(ef&&rt)rt.value=ef.value;
+window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'form_submission'});
+});
+});
 
 /* Pages */
 function hideAll(){['main','imp-page','ds-page','ty-form','ty-cal'].forEach(function(id){var e=document.getElementById(id);if(e){e.style.display='none';e.classList.remove('active');}});}
