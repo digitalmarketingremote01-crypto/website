@@ -30,7 +30,22 @@
       "Bash(vercel whoami *)",
       "Bash(vercel projects *)",
       "Bash(vercel link *)",
-      "Bash(vercel --prod)"
+      "Bash(vercel --prod)",
+      "mcp__Claude_in_Chrome__get_page_text",
+      "mcp__Claude_in_Chrome__read_network_requests",
+      "Bash(curl -sI \"https://texttoui.in/favicon.ico\")",
+      "Bash(curl -sI \"https://texttoui.in\" -L)",
+      "Bash(curl -s \"https://texttoui.in\" -A \"Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/120.0.0.0 Safari/537.36\")",
+      "mcp__Claude_in_Chrome__form_input",
+      "WebSearch",
+      "WebFetch(domain:formspree.io)",
+      "WebFetch(domain:help.formspree.io)",
+      "WebFetch(domain:web2phone.co.uk)",
+      "WebFetch(domain:toolradar.com)",
+      "Bash(curl -sfL --max-time 20 -o fonts/plus-jakarta-sans.woff2 \"https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko20yygg_vb.woff2\")",
+      "Bash(curl -s -o /dev/null -w \"logo check: %{http_code}\\\\n\" https://www.digitalmarketingremote.com/logos/folienmc.png)",
+      "Bash(python3 -)",
+      "Bash(git rm *)"
     ]
   }
 }

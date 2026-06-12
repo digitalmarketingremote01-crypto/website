@@ -54,21 +54,31 @@ Then deploy with `vercel --prod`.
 ---
 
 ## Website Structure
+Section order: Hero → Logos → Pilot → About → Services → Process → Cases → Reviews → Pricing → FAQ → Contact → CTA
 - Hero section with stats badge, headline, subheading, CTA buttons, hero form
-- About section (founder background, 72 projects / 15 countries / €2M revenue)
+- Logo strip: 3 own clients (Loganberry, PieseFord, Khayos Art) + anonymized industry pills
+- About section (founder background, 72 projects / 15 countries / €1.7M revenue)
 - Services (Google Ads, Meta Ads, E-Commerce/Lead-Gen/SaaS, SEA, YouTube Ads, Tracking & Analytics)
-- Process (4 steps: Erstberatung → Audit & Strategie → Onboarding & Freigabe → Optimierung)
-- Case Studies (6 real client results with screenshots)
-- Pricing (3 tiers: Starter €499, Growth €899, Scale €1,499 + Auf Anfrage pilot banner)
-- FAQs (accordion, Schema.org FAQPage markup in `<head>`)
-- Contact / Calendly booking section
-- Footer
+- Process (6 steps)
+- Case Studies (6, anonymized; only the Loganberry "E-Commerce Brand Launch" case has a screenshot)
+- Pricing (4 single tiers €499–€1,799 + 3 dual tiers + Enterprise; B2B-only § 14 BGB note)
+- FAQs (accordion, Schema.org FAQPage markup in `<head>` — keep in sync, all 10)
+- Contact forms (Google Apps Script) / Calendly
+- Footer (Impressum/Datenschutz links to standalone pages + Cookie-Einstellungen)
 
 ## Key Numbers (always use these)
 - 72 projects total in 15 countries
-- 57 projects in 13 countries for German investment partner
-- Over €2 million generated revenue for clients
+- 57 projects in 13 countries — done by founder as INDEPENDENT CONSULTANT for a German
+  investment company (Craft AEC GmbH). Never present their end-clients as DMR clients.
+- Over €1.7 million generated revenue (verifiable) — do NOT claim €2M
 - Since 2022
+- Own direct clients (safe to name/show): Loganberry Official, PieseFord, Khayos Art
+
+## Legal Constraints (LEARNED — do not violate)
+- ALL tracking must stay consent-gated (loadTracking() only after cookie opt-in)
+- Never name or show logos/screenshots of Craft AEC's end-clients (no permission)
+- Only advertise numbers that are provable (UWG § 5)
+- Legal pages are standalone: /impressum, /datenschutz (vercel.json cleanUrls)
 
 ## Integrations
 - Google Tag Manager: GTM-MFXPMZ8W
