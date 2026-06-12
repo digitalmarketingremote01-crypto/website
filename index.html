@@ -534,6 +534,38 @@ footer{background:#0f172a;color:rgba(255,255,255,.5);padding:3.25rem 0 1.75rem}
 </div>
 </div></section>
 
+<!-- Reviews -->
+<section class="sec" style="background:var(--c1)"><div class="ctn">
+<div class="sh"><span class="sl" style="color:#fbbf24">Kundenstimmen</span><h2 style="color:#fff">Was unsere Kunden sagen</h2></div>
+<div class="proof-slider"><div class="proof-track" id="proofTrack">
+
+<div class="proof">
+<div class="proof-stars">★★★★★</div>
+<p class="proof-text">"I am really happy that you give so much transparency. This gives me a good feeling."</p>
+<div class="proof-author"><div class="proof-av">F</div><div><div class="proof-name">Flo</div><div class="proof-role">SEO / Marketing · Deutschland</div></div></div>
+</div>
+
+<div class="proof">
+<div class="proof-stars">★★★★★</div>
+<p class="proof-text">"Contractor was absolutely amazing, helped with Google Ads, so many urgent tasks were completed efficiently even presentations. Trust me, you're not wasting your time."</p>
+<div class="proof-author"><div class="proof-av">UP</div><div><div class="proof-name">Verified Client</div><div class="proof-role">Google Ads Manager · Upwork ✓</div></div></div>
+</div>
+
+<div class="proof">
+<div class="proof-stars">★★★★★</div>
+<p class="proof-text">"I had the privilege of working with Mohammad Danyal Shahzad as a GA4 (Google Analytics) consultant for our company. Highly professional and results-driven."</p>
+<div class="proof-author"><div class="proof-av">GA</div><div><div class="proof-name">Verified Client</div><div class="proof-role">GA4 Analytics Consultant · Upwork ✓</div></div></div>
+</div>
+
+<div class="proof">
+<div class="proof-stars">★★★★★</div>
+<p class="proof-text">"Thank you."</p>
+<div class="proof-author"><div class="proof-av">AR</div><div><div class="proof-name">Verified Client</div><div class="proof-role">Google Ads · Auto Parts · Romania · Upwork ✓</div></div></div>
+</div>
+
+</div></div>
+</div></section>
+
 <!-- FAQ -->
 <section class="sec" style="background:var(--bg)"><div class="ctn">
 <div class="sh"><span class="sl">FAQ</span><h2>Häufige Fragen</h2></div>
@@ -781,5 +813,24 @@ document.getElementById('mov').classList.add('open');document.body.style.overflo
 function closeMd(){document.getElementById('mov').classList.remove('open');document.body.style.overflow='';}
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMd();});
 document.querySelectorAll('.case').forEach(function(c){c.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();c.click();}});});
+
+/* Reviews slider */
+(function(){
+var track=document.getElementById('proofTrack');if(!track)return;
+var slider=track.parentElement,proofs=track.querySelectorAll('.proof'),total=proofs.length,page=0;
+if(total===0)return;
+function perView(){var w=window.innerWidth;return w<=480?1:(w<=768?2:4);}
+function pageCount(){return Math.ceil(total/perView());}
+var nav=document.createElement('div');nav.className='proof-nav';
+var prev=document.createElement('button');prev.className='proof-arrow';prev.setAttribute('aria-label','Vorherige Bewertungen');prev.innerHTML='&#8249;';
+var dots=document.createElement('div');dots.className='proof-dots';
+var next=document.createElement('button');next.className='proof-arrow';next.setAttribute('aria-label','Nächste Bewertungen');next.innerHTML='&#8250;';
+nav.appendChild(prev);nav.appendChild(dots);nav.appendChild(next);slider.parentElement.appendChild(nav);
+prev.onclick=function(){if(page>0){page--;render();}};
+next.onclick=function(){if(page<pageCount()-1){page++;render();}};
+function buildDots(){dots.innerHTML='';var pc=pageCount();for(var i=0;i<pc;i++){var d=document.createElement('button');d.className='proof-dot'+(i===page?' active':'');d.setAttribute('aria-label','Seite '+(i+1));(function(i){d.onclick=function(){page=i;render();};})(i);dots.appendChild(d);}}
+function render(){var pv=perView(),pc=pageCount();if(page>pc-1)page=pc-1;if(page<0)page=0;var first=Math.min(page*pv,Math.max(0,total-pv));track.style.transform='translateX('+(-proofs[first].offsetLeft)+'px)';buildDots();prev.disabled=page<=0;next.disabled=page>=pc-1;}
+var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(render,150);});render();
+})();
 </script>
 </body></html>
