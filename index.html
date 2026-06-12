@@ -728,7 +728,7 @@ function showTY(t){hideAll();var el=document.getElementById('ty-'+t);el.style.di
 window.addEventListener('message',function(e){if(e.data&&e.data.event==='calendly.event_scheduled'){showTY('cal');window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'calendly_booking'});}});
 function handleHash(){
   if(location.hash==='#danke-termin'){showTY('cal');window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'calendly_booking'});}
-  else if(location.hash==='#danke'){showTY('form');window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'form_submission'});}
+  else if(location.hash==='#danke'){showTY('form');}
 }
 handleHash();
 window.addEventListener('hashchange',handleHash);
