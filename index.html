@@ -108,7 +108,7 @@ p{color:var(--tx)}
 #logos{padding:3.5rem 0;border-bottom:1.5px solid rgba(230,57,70,.1);background:linear-gradient(135deg,#fafafa 0%,#fff 100%);box-shadow:0 8px 30px rgba(0,0,0,.06)}
 .logos-label{text-align:center;font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--c1);margin-bottom:2rem;word-spacing:.2em}
 .logos-wrap{overflow:hidden;mask-image:linear-gradient(to right,transparent,#000 8%,#000 92%,transparent)}
-.logos-track{display:flex;gap:1.25rem;animation:scroll 61s linear infinite;width:max-content}
+.logos-track{display:flex;gap:1.25rem;animation:scroll 50s linear infinite;width:max-content}
 .logos-track:hover{animation-play-state:paused}
 @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .logo-pill{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1rem;background:#fff;border:1px solid #f0f0f0;border-radius:16px;text-align:center;transition:all .3s cubic-bezier(.4,0,.2,1);box-shadow:0 2px 12px rgba(0,0,0,.05);height:130px;width:120px;position:relative;gap:.5rem}
@@ -698,25 +698,24 @@ footer{background:#0f172a;color:rgba(255,255,255,.5);padding:3.25rem 0 1.75rem}
 <script>
 /* Logos */
 var logos=[
-  {name:'Zeromouse',url:'https://zeromouse.ai',favicon:'https://icons.duckduckgo.com/ip3/zeromouse.ai.ico'},
-  {name:'PV Glarecheck',url:'https://pv-glarecheck.com',favicon:'https://icons.duckduckgo.com/ip3/pv-glarecheck.com.ico'},
-  {name:'Texttoui',url:'https://texttoui.com',favicon:'https://icons.duckduckgo.com/ip3/texttoui.com.ico'},
-  {name:'Folien MC',url:'https://folienmc.de',favicon:'https://icons.duckduckgo.com/ip3/folienmc.de.ico'},
-  {name:'Neocheck',url:'https://neocheck.com',favicon:'https://icons.duckduckgo.com/ip3/neocheck.com.ico'},
-  {name:'Loganberry Official',url:'https://loganberryofficial.com',favicon:'https://icons.duckduckgo.com/ip3/loganberryofficial.com.ico'},
-  {name:'Neobim',url:'https://neobim.ai',favicon:'https://icons.duckduckgo.com/ip3/neobim.ai.ico'},
-  {name:'Illuniva',url:'https://illuniva.de',favicon:'https://icons.duckduckgo.com/ip3/illuniva.de.ico'},
-  {name:'Diamond Wallet',url:'https://diamond-wallet.de',favicon:'https://icons.duckduckgo.com/ip3/diamond-wallet.de.ico'},
-  {name:'Stop Long Covid',url:'https://stop-long-covid.de',favicon:'https://icons.duckduckgo.com/ip3/stop-long-covid.de.ico'},
-  {name:'Filix AI',url:'https://filix.ai',favicon:'https://icons.duckduckgo.com/ip3/filix.ai.ico'},
-  {name:'WorldBuild',url:'https://worldbuild.de',favicon:'https://icons.duckduckgo.com/ip3/worldbuild.de.ico'},
-  {name:'Rechnungshub',url:'https://rechnungshub.de',favicon:'https://icons.duckduckgo.com/ip3/rechnungshub.de.ico'},
-  {name:'Digifoot',url:'https://digifoot.de',favicon:'https://icons.duckduckgo.com/ip3/digifoot.de.ico'},
-  {name:'Vertiko Space',url:'https://vertiko.space',favicon:'https://icons.duckduckgo.com/ip3/vertiko.space.ico'},
-  {name:'LeadEasy',url:'https://leadeasy.de',favicon:'https://icons.duckduckgo.com/ip3/leadeasy.de.ico'},
-  {name:'PM DigitalSolutions',url:'https://pmds-ka.de',favicon:'https://icons.duckduckgo.com/ip3/pmds-ka.de.ico'},
-  {name:'Model Health',url:'https://modelhealth.ai',favicon:'https://icons.duckduckgo.com/ip3/modelhealth.ai.ico'},
-  {name:'Tisch.company',url:'https://tisch.company',favicon:'https://icons.duckduckgo.com/ip3/tisch.company.ico'}
+  {name:'Zeromouse',url:'https://zeromouse.ai',favicon:'https://www.google.com/s2/favicons?domain=zeromouse.ai&sz=64'},
+  {name:'PV Glarecheck',url:'https://pv-glarecheck.com',favicon:'https://www.google.com/s2/favicons?domain=pv-glarecheck.com&sz=64'},
+  {name:'Texttoui',url:'https://texttoui.in',favicon:'https://texttoui.in/favicon.svg'},
+  {name:'Folien MC',url:'https://folienmc.de',favicon:'https://www.google.com/s2/favicons?domain=folienmc.de&sz=64'},
+  {name:'Neocheck',url:'https://neocheck.in',favicon:'https://www.google.com/s2/favicons?domain=neocheck.in&sz=64'},
+  {name:'Loganberry Official',url:'https://loganberryofficial.com',favicon:'https://www.google.com/s2/favicons?domain=loganberryofficial.com&sz=64'},
+  {name:'Neobim',url:'https://neobim.ai',favicon:'https://www.google.com/s2/favicons?domain=neobim.ai&sz=64'},
+  {name:'Illuniva',url:'https://illuniva.de',favicon:'https://www.google.com/s2/favicons?domain=illuniva.de&sz=64'},
+  {name:'Diamond Wallet',url:'https://diamond-wallet.de',favicon:'https://www.google.com/s2/favicons?domain=diamond-wallet.de&sz=64'},
+  {name:'Stop Long Covid',url:'https://stop-long-covid.de',favicon:'https://www.google.com/s2/favicons?domain=stop-long-covid.de&sz=64'},
+  {name:'Filix AI',url:'https://filix.ai',favicon:'https://www.google.com/s2/favicons?domain=filix.ai&sz=64'},
+  {name:'WorldBuild',url:'https://worldbuild.de',favicon:'https://www.google.com/s2/favicons?domain=worldbuild.de&sz=64'},
+  {name:'Rechnungshub',url:'https://rechnungshub.de',favicon:'https://www.google.com/s2/favicons?domain=rechnungshub.de&sz=64'},
+  {name:'Digifoot',url:'https://digifoot.de',favicon:'https://www.google.com/s2/favicons?domain=digifoot.de&sz=64'},
+  {name:'Vertiko Space',url:'https://vertiko.space',favicon:'https://www.google.com/s2/favicons?domain=vertiko.space&sz=64'},
+  {name:'PM DigitalSolutions',url:'https://pmds-ka.de',favicon:'https://www.google.com/s2/favicons?domain=pmds-ka.de&sz=64'},
+  {name:'Model Health',url:'https://modelhealth.ai',favicon:'https://www.google.com/s2/favicons?domain=modelhealth.ai&sz=64'},
+  {name:'Tisch.company',url:'https://tisch.company',favicon:'https://www.google.com/s2/favicons?domain=tisch.company&sz=64'}
 ];
 (function(){var t=document.getElementById('lt'),h='';var a=logos.concat(logos);a.forEach(function(n){h+='<a href="'+n.url+'" target="_blank" rel="noopener" class="logo-pill" title="'+n.name+'"><img src="'+n.favicon+'" alt="'+n.name+'" /><span>'+n.name+'</span></a>';});t.innerHTML=h;})();
 
