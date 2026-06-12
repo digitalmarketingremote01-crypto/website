@@ -748,7 +748,7 @@ function initForm(f,btn,ok,redir){
 f.addEventListener('submit',async function(e){e.preventDefault();
 var ds=f.querySelector('[name="dsgvo"]');if(ds&&!ds.checked){alert('Bitte stimmen Sie der Datenschutzerklärung zu.');return;}
 btn.textContent='Wird gesendet…';btn.disabled=true;
-try{var r=await fetch(this.action,{method:'POST',body:new FormData(this),headers:{'Accept':'application/json'}});
+try{var fd=new FormData(this);var ef=this.querySelector('[type="email"]');if(ef&&ef.value)fd.append('_replyto',ef.value);var r=await fetch(this.action,{method:'POST',body:fd,headers:{'Accept':'application/json'}});
 if(r.ok){this.style.display='none';ok.style.display='block';if(redir)setTimeout(function(){window.location.hash='#danke';showTY('form');window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'form_submission'});},1500);}
 else{btn.textContent='Fehler — erneut versuchen';btn.disabled=false;}}
 catch(err){btn.textContent='Fehler — erneut versuchen';btn.disabled=false;}});}
