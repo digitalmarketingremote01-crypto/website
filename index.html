@@ -324,7 +324,7 @@ footer{background:#0f172a;color:rgba(255,255,255,.5);padding:3.25rem 0 1.75rem}
 </div>
 <h3>Kostenlose Erstberatung anfragen</h3>
 <p>30 Minuten, unverbindlich — wir melden uns innerhalb von 24 Stunden.</p>
-<form id="hform" action="https://script.google.com/macros/s/AKfycbzh2cM4CE_41OMhJIDtNvhWoyowjRlRpdRrgvboM7mEWyremHsMMlyiHIpEHQpsCorIzQ/exec" method="POST" novalidate>
+<form id="hform" action="https://script.google.com/macros/s/AKfycbzh2cM4CE_41OMhJIDtNvhWoyowjRlRpdRrgvboM7mEWyremHsMMlyiHIpEHQpsCorIzQ/exec" method="POST" target="gas_iframe" novalidate>
 <div class="hfr"><div class="hfg"><label for="hv">Vorname *</label><input type="text" id="hv" name="vorname" required placeholder="Max"></div><div class="hfg"><label for="hp">Telefon *</label><input type="tel" id="hp" name="telefon" required placeholder="+49 170 1234567"></div></div>
 <div class="hfg"><label for="he">E-Mail *</label><input type="email" id="he" name="email" required placeholder="max@firma.de"></div>
 <div class="hfg"><label>Bevorzugter Kontaktweg *</label><div class="hchips">
@@ -622,7 +622,7 @@ footer{background:#0f172a;color:rgba(255,255,255,.5);padding:3.25rem 0 1.75rem}
 <p>Wir melden uns innerhalb von 24 Stunden persönlich bei Ihnen.</p>
 </div>
 <div class="cform-bd">
-<form id="cform" action="https://script.google.com/macros/s/AKfycbzh2cM4CE_41OMhJIDtNvhWoyowjRlRpdRrgvboM7mEWyremHsMMlyiHIpEHQpsCorIzQ/exec" method="POST" novalidate>
+<form id="cform" action="https://script.google.com/macros/s/AKfycbzh2cM4CE_41OMhJIDtNvhWoyowjRlRpdRrgvboM7mEWyremHsMMlyiHIpEHQpsCorIzQ/exec" method="POST" target="gas_iframe" novalidate>
 <div class="fr"><div class="fg"><label for="cv">Vorname *</label><input type="text" id="cv" name="vorname" required placeholder="Max"></div><div class="fg"><label for="cn">Nachname</label><input type="text" id="cn" name="nachname" placeholder="Mustermann"></div></div>
 <div class="fr"><div class="fg"><label for="cph">Telefon *</label><input type="tel" id="cph" name="telefon" required placeholder="+49 170 1234567"></div><div class="fg"><label for="ce">E-Mail *</label><input type="email" id="ce" name="email" required placeholder="max@firma.de"></div></div>
 <div class="fg"><label for="cu">Unternehmen / Website</label><input type="text" id="cu" name="unternehmen" placeholder="Muster GmbH · www.muster.de"></div>
@@ -771,19 +771,14 @@ document.getElementById('pl1').classList.toggle('act',!dual);document.getElement
 ['hform','cform'].forEach(function(id){
 var f=document.getElementById(id);if(!f)return;
 f.addEventListener('submit',function(e){
-e.preventDefault();
 var ds=f.querySelector('[name="dsgvo"]');
-if(ds&&!ds.checked){alert('Bitte stimmen Sie der Datenschutzerklärung zu.');return;}
+if(ds&&!ds.checked){e.preventDefault();alert('Bitte stimmen Sie der Datenschutzerklärung zu.');return;}
 var kc=f.querySelectorAll('[name="kontakt"]:checked');
-if(kc.length===0){alert('Bitte wählen Sie einen bevorzugten Kontaktweg aus.');return;}
+if(kc.length===0){e.preventDefault();alert('Bitte wählen Sie einen bevorzugten Kontaktweg aus.');return;}
 var btn=f.querySelector('[type="submit"]');
 if(btn){btn.disabled=true;btn.textContent='Wird gesendet…';}
-var fd=new FormData(f);
-fetch(f.action,{method:'POST',body:fd,mode:'no-cors'})
-.finally(function(){
 window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'form_submission'});
-window.location.hash='danke';
-});
+setTimeout(function(){window.location.hash='danke';},1500);
 });
 });
 
@@ -862,4 +857,5 @@ function render(){var pv=perView(),pc=pageCount();if(page>pc-1)page=pc-1;if(page
 var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(render,150);});render();
 })();
 </script>
+<iframe name="gas_iframe" style="display:none" aria-hidden="true"></iframe>
 </body></html>
