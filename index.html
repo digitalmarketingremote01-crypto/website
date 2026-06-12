@@ -110,19 +110,6 @@ p{color:var(--tx)}
 .hfc .cal a{color:var(--c2);font-weight:600}
 .fok{display:none;text-align:center;padding:1.5rem}.fok h3{color:var(--c3);margin-bottom:.3rem;font-size:1.1rem}.fok p{font-size:.85rem;color:rgba(255,255,255,.6)}
 /* Logos */
-#logos{padding:3.5rem 0;border-bottom:1.5px solid rgba(200,16,46,.1);background:linear-gradient(135deg,#fafafa 0%,#fff 100%);box-shadow:0 8px 30px rgba(0,0,0,.06)}
-.logos-label{text-align:center;font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--c1);margin-bottom:2rem;word-spacing:.2em}
-.logos-wrap{overflow:hidden;mask-image:linear-gradient(to right,transparent,#000 8%,#000 92%,transparent)}
-.logos-track{display:flex;gap:1.25rem;animation:scroll 50s linear infinite;width:max-content}
-.logos-track:hover{animation-play-state:paused}
-@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.logo-pill{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:.5rem;background:#fff;border:1px solid #f0f0f0;border-radius:16px;text-align:center;transition:all .3s cubic-bezier(.4,0,.2,1);box-shadow:0 2px 12px rgba(0,0,0,.05);height:auto;width:100px;position:relative;gap:.35rem}
-.logo-pill::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(200,16,46,.02),transparent);border-radius:16px;pointer-events:none}
-.logo-pill.ind{width:auto;min-width:0;padding:.85rem 1.25rem;justify-content:center}
-.logo-pill.ind span{font-size:.78rem;font-weight:600;color:var(--mt);white-space:nowrap}
-.logo-pill img{position:relative;z-index:1;width:48px;height:48px;object-fit:contain}
-.logo-pill span{position:relative;z-index:1;font-size:.65rem;font-weight:600;color:var(--c1);line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
-.logo-pill:hover{border-color:var(--c2);box-shadow:0 8px 28px rgba(200,16,46,.12);transform:translateY(-4px);background:linear-gradient(135deg,#fff 0%,rgba(253,232,234,.3) 100%)}
 /* Pilot */
 .pilot{background:linear-gradient(135deg,#0c1529 0%,var(--c1) 100%);border-radius:24px;padding:3.5rem;position:relative;overflow:hidden;box-shadow:0 20px 60px rgba(200,16,46,.15),0 0 1px rgba(255,255,255,.1) inset}@media(max-width:768px){.pilot{padding:2.5rem}}
 .pilot::before{content:'';position:absolute;top:-60px;right:-60px;width:250px;height:250px;background:radial-gradient(circle,rgba(200,16,46,.12) 0%,transparent 70%)}
@@ -285,9 +272,7 @@ footer{background:#0f172a;color:rgba(255,255,255,.5);padding:3.25rem 0 1.75rem}
 /* Responsive */
 @media(max-width:1024px){.hg{grid-template-columns:1fr;gap:2.5rem}.svc-grid{grid-template-columns:repeat(2,1fr)}.pg4{grid-template-columns:repeat(2,1fr)}.pg3{grid-template-columns:repeat(3,1fr);max-width:100%}.proc-grid{grid-template-columns:repeat(3,1fr)}.proc-grid::before{display:none}.about-grid{grid-template-columns:1fr;gap:2.5rem}.about-photo img{height:400px}.ft-grid{grid-template-columns:1fr 1fr}.pilot-grid{grid-template-columns:1fr;gap:2rem}}
 @media(max-width:768px){.sec{padding:4rem 0}.nl,.nc .bo{display:none}.hb{display:flex}.svc-grid{grid-template-columns:1fr}.pg4,.pg3{grid-template-columns:1fr}.proc-grid{grid-template-columns:repeat(2,1fr)}.cases-grid,.proof-grid{grid-template-columns:1fr}.ct-grid{grid-template-columns:1fr;gap:2rem}.fr,.hfr{grid-template-columns:1fr}.cta-btns,.hero-ctas{flex-direction:column;align-items:stretch}.ft-grid{grid-template-columns:1fr;gap:1.5rem}.ft-bot{flex-direction:column;text-align:center}.hero-stats{gap:1rem}.hfc{padding:1.5rem}.pilot-grid{gap:1.5rem}.case-top{height:200px}.proof{flex:0 0 calc(50% - 0.625rem);padding:1.5rem}}
-@media(max-width:480px){.pg4,.pg3{grid-template-columns:1fr}.proc-grid{grid-template-columns:1fr}.mms{grid-template-columns:1fr 1fr}.ctn{padding:0 1rem}.hero-ctas,.cta-btns{gap:.5rem}.btn{padding:.75rem 1.25rem;font-size:.85rem}.case-top{height:190px}.case-label{font-size:1rem}.logo-pill{padding:.75rem;min-height:56px;min-width:56px}.logo-pill.ind{width:auto;min-width:0;padding:.85rem 1.25rem;justify-content:center}
-.logo-pill.ind span{font-size:.78rem;font-weight:600;color:var(--mt);white-space:nowrap}
-.logo-pill img{max-width:24px;max-height:24px}.lp{padding:3.5rem 0 2.5rem}.proof{flex:0 0 100%;padding:1.25rem;margin-bottom:0.5rem}}
+@media(max-width:480px){.pg4,.pg3{grid-template-columns:1fr}.proc-grid{grid-template-columns:1fr}.mms{grid-template-columns:1fr 1fr}.ctn{padding:0 1rem}.hero-ctas,.cta-btns{gap:.5rem}.btn{padding:.75rem 1.25rem;font-size:.85rem}.case-top{height:190px}.case-label{font-size:1rem}.lp{padding:3.5rem 0 2.5rem}.proof{flex:0 0 100%;padding:1.25rem;margin-bottom:0.5rem}}
 @media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
 </style>
 </head>
@@ -347,12 +332,6 @@ footer{background:#0f172a;color:rgba(255,255,255,.5);padding:3.25rem 0 1.75rem}
 </div>
 </div>
 </div></div></section>
-
-<!-- Logos -->
-<div id="logos"><div class="ctn">
-<p class="logos-label">Projekterfahrung aus 72 Projekten · 15 Ländern · 12 Branchen</p>
-<div class="logos-wrap"><div class="logos-track" id="lt"></div></div>
-</div></div>
 
 <!-- Pilot -->
 <section id="pilot" class="sec"><div class="ctn">
@@ -685,23 +664,6 @@ footer{background:#0f172a;color:rgba(255,255,255,.5);padding:3.25rem 0 1.75rem}
 <div class="mov" id="mov" onclick="if(event.target===this)closeMd()"><div class="mdl"><button class="mx" onclick="closeMd()">✕</button><div id="minn"></div></div></div>
 
 <script>
-/* Logos */
-var logos=[
-  {name:'KI-Startups'},
-  {name:'E-Commerce'},
-  {name:'SaaS & Software'},
-  {name:'Solarenergie'},
-  {name:'Konsumgüter'},
-  {name:'B2B PropTech'},
-  {name:'Handwerk & Lokales'},
-  {name:'Design-Tools'},
-  {name:'Gesundheitswesen'},
-  {name:'FinTech'},
-  {name:'Bauwesen'},
-  {name:'Automotive'}
-];
-(function(){var t=document.getElementById('lt'),h='';var a=logos.concat(logos);a.forEach(function(n){if(n.favicon){h+='<a href="'+n.url+'" target="_blank" rel="noopener" class="logo-pill" title="'+n.name+'"><img src="'+n.favicon+'" alt="'+n.name+'" /><span>'+n.name+'</span></a>';}else{h+='<div class="logo-pill ind"><span>'+n.name+'</span></div>';}});t.innerHTML=h;})();
-
 /* CTA click tracking — fires before same-tab navigation */
 function calClick(label){window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'calendly_click','btn_label':label});}
 
