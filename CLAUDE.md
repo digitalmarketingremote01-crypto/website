@@ -94,8 +94,12 @@ Section order: Hero → Logos → Pilot → About → Services → Process → C
   DNS on Vercel: MX mx1/mx2.forwardemail.net (10/20) + TXT
   `forward-email=support:digitalmarketingremote01@gmail.com`. Mail to support@ forwards
   to the Gmail inbox (verified delivered). Add via `vercel dns add` if ever re-doing.
-- GAS deployment v5: lead notification recipient + auto-reply replyTo reverted to
-  support@digitalmarketingremote.com. Notifications still land in digitalmarketingremote01.
+- GAS deployment v6 (2026-06-13): lead notification recipient + auto-reply replyTo =
+  support@digitalmarketingremote.com. Auto-reply "not a bot" line replaced with warm
+  personal line ("…und ich, Danyal, schaue sie mir persönlich an…"). To change the email
+  templates, edit Code.gs then Deploy → Manage deployments → edit → Version: New version.
+- Calendly account timezone = **Central European Time** (was US Eastern — fixed 2026-06-13,
+  it caused "5am" times in host notifications). Profile → Time Zone.
 - To SEND as support@ from Gmail (optional polish): Gmail Settings → Accounts → "Send mail
   as" → add support@, SMTP smtp.forwardemail.net:465, password = a forwardemail.net app pw.
 
