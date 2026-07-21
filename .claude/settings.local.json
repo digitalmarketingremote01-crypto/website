@@ -350,7 +350,10 @@
       "Bash(grep -o '<div class=\"hfc\">.\\\\{0,90\\\\}' index.html)",
       "Bash(grep -o '\\\\-\\\\-c3:#15803d\\\\|footer p,.ft-brand p{color:rgba\\(255,255,255,.72\\)}\\\\|<div class=\"ft-col\"><h3>')",
       "Bash(npx -y lighthouse@12 \"https://www.digitalmarketingremote.com/\" --only-categories=performance,accessibility,best-practices,seo --form-factor=mobile --screenEmulation.mobile --output=json --output-path=/tmp/lh_mobile2.json --chrome-flags=\"--headless=new --no-sandbox\" --quiet)",
-      "Bash(npx -y lighthouse@12 \"https://www.digitalmarketingremote.com/\" --only-categories=performance,accessibility,best-practices,seo --preset=desktop --output=json --output-path=/tmp/lh_desktop2.json --chrome-flags=\"--headless=new --no-sandbox\" --quiet)"
+      "Bash(npx -y lighthouse@12 \"https://www.digitalmarketingremote.com/\" --only-categories=performance,accessibility,best-practices,seo --preset=desktop --output=json --output-path=/tmp/lh_desktop2.json --chrome-flags=\"--headless=new --no-sandbox\" --quiet)",
+      "Bash(npx -y lighthouse@12 \"https://www.digitalmarketingremote.com/\" --only-categories=performance,accessibility,best-practices,seo --form-factor=mobile --screenEmulation.mobile --output=json --output-path=/tmp/lh_mobile3.json --chrome-flags=\"--headless=new --no-sandbox\" --quiet)",
+      "Bash(npx -y lighthouse@12 \"https://www.digitalmarketingremote.com/\" --only-categories=performance,accessibility,best-practices,seo --preset=desktop --output=json --output-path=/tmp/lh_desktop3.json --chrome-flags=\"--headless=new --no-sandbox\" --quiet)",
+      "Bash(mv ~/Downloads/dmr-pool-2026-07-21.json /Users/mdanyalshahzad/Documents/Danyal/Pipeline/)"
     ]
   }
 }
