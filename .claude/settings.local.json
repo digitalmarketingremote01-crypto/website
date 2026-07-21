@@ -342,7 +342,12 @@
       "Bash(grep -o \"img1[^;]\\\\{0,180\\\\}\" index.html)",
       "Bash(npx -y lighthouse@12 \"https://www.digitalmarketingremote.com/\" --only-categories=performance,accessibility,best-practices,seo --form-factor=mobile --screenEmulation.mobile --output=json --output-path=/tmp/lh_mobile.json --chrome-flags=\"--headless=new --no-sandbox\" --quiet)",
       "Bash(awk '{print $5}')",
-      "Bash(npx -y lighthouse@12 \"https://www.digitalmarketingremote.com/\" --only-categories=performance,accessibility,best-practices,seo --preset=desktop --output=json --output-path=/tmp/lh_desktop.json --chrome-flags=\"--headless=new --no-sandbox\" --quiet)"
+      "Bash(npx -y lighthouse@12 \"https://www.digitalmarketingremote.com/\" --only-categories=performance,accessibility,best-practices,seo --preset=desktop --output=json --output-path=/tmp/lh_desktop.json --chrome-flags=\"--headless=new --no-sandbox\" --quiet)",
+      "Bash(grep -o '<div class=\"ft-col\"><div class=\"ft-logo\".\\\\{0,260\\\\}' index.html)",
+      "Bash(grep -o '<footer.\\\\{0,400\\\\}' index.html)",
+      "Bash(grep -o '\\\\.hfc h3\\\\b[^{,]*' index.html)",
+      "Bash(grep -o '\\\\.ft-col h4\\\\b[^{,]*' en/index.html)",
+      "Bash(grep -o '<div class=\"hfc\">.\\\\{0,90\\\\}' index.html)"
     ]
   }
 }

@@ -48,7 +48,7 @@ if(localStorage.getItem('dc')==='y')loadTracking();
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","speakable":{"@type":"SpeakableSpecification","cssSelector":["#hero h1",".hero-sub","#pricing h2"]},"url":"https://www.digitalmarketingremote.com/"}</script>
 <style>
 @font-face{font-family:'Plus Jakarta Sans';font-style:normal;font-weight:400 800;font-display:swap;src:url('fonts/plus-jakarta-sans.woff2') format('woff2')}
-:root{--c1:#1a1a2e;--c2:#c8102e;--c2d:#9e0b22;--c2l:#fbe7ea;--c3:#16a34a;--bg:#f8f9fa;--bd:#e5e7eb;--tx:#374151;--mt:#6b7280;--r:12px;--rs:8px}
+:root{--c1:#1a1a2e;--c2:#c8102e;--c2d:#9e0b22;--c2l:#fbe7ea;--c3:#15803d;--bg:#f8f9fa;--bd:#e5e7eb;--tx:#374151;--mt:#6b7280;--r:12px;--rs:8px}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:var(--c1);background:#fff;line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
@@ -101,7 +101,7 @@ p{color:var(--tx)}
 .hfc-stats{display:flex;gap:.5rem;margin-bottom:1.25rem}
 .hfc-stat{flex:1;text-align:center;padding:.6rem .5rem;background:rgba(255,255,255,.06);border-radius:var(--rs)}
 .hfc-sv{font-size:.95rem;font-weight:800;color:#fff}.hfc-sl{font-size:.58rem;color:rgba(255,255,255,.45);margin-top:1px}
-.hfc h3{font-size:1.05rem;color:#fff;margin-bottom:.2rem}.hfc>p{font-size:.78rem;color:rgba(255,255,255,.5);margin-bottom:1.125rem}
+.hfc h2{font-size:1.05rem;color:#fff;margin-bottom:.2rem;font-weight:800;line-height:1.3}.hfc>p{font-size:.78rem;color:rgba(255,255,255,.5);margin-bottom:1.125rem}
 .hfr{display:grid;grid-template-columns:1fr 1fr;gap:.625rem;margin-bottom:.625rem}
 .hfg{margin-bottom:.625rem}
 .hfg label{display:block;font-size:.72rem;font-weight:600;color:rgba(255,255,255,.7);margin-bottom:.2rem}
@@ -217,12 +217,12 @@ p{color:var(--tx)}
 .proof-arrow{width:44px;height:44px;border-radius:50%;border:1.5px solid rgba(255,255,255,.25);background:rgba(255,255,255,.06);color:#fff;font-size:1.5rem;line-height:0;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .25s;padding:0;flex-shrink:0}
 .proof-arrow:hover:not(:disabled){background:var(--c2);border-color:var(--c2);transform:translateY(-2px)}
 .proof-arrow:disabled{opacity:.3;cursor:default}
-.proof-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.3);cursor:pointer;transition:all .3s;border:0;padding:0}.proof-dot.active{background:var(--c2);width:24px;border-radius:4px}
+.proof-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.3);cursor:pointer;transition:all .3s;border:0;padding:8px;box-sizing:content-box;background-clip:content-box}.proof-dot.active{background:var(--c2);width:24px;border-radius:4px}
 .proof-stars{color:#fbbf24;font-size:.85rem;margin-bottom:.5rem;letter-spacing:2px}
 .proof-text{color:rgba(255,255,255,.8);font-size:.85rem;margin-bottom:1rem;line-height:1.75;font-style:italic;flex:1}
 .proof-author{display:flex;align-items:center;gap:.6rem}
 .proof-av{width:34px;height:34px;border-radius:50%;background:var(--c2);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.78rem;flex-shrink:0}
-.proof-name{font-weight:700;color:#fff;font-size:.825rem}.proof-role{font-size:.7rem;color:rgba(255,255,255,.45)}
+.proof-name{font-weight:700;color:#fff;font-size:.825rem}.proof-role{font-size:.7rem;color:rgba(255,255,255,.72)}
 /* FAQ */
 .faq-list{max-width:740px;margin:0 auto}
 .faq-item{border-bottom:1px solid var(--bd)}
@@ -259,11 +259,14 @@ p{color:var(--tx)}
 .cta-band h2{color:#fff;margin-bottom:.75rem}.cta-band p{color:rgba(255,255,255,.65);max-width:480px;margin:0 auto 1.75rem;font-size:1rem}
 .cta-btns{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap}
 /* Footer */
-footer{background:#0f172a;color:rgba(255,255,255,.5);padding:3.25rem 0 1.75rem}
+footer{background:#0f172a;color:rgba(255,255,255,.72);padding:3.25rem 0 1.75rem}
+footer p,.ft-brand p{color:rgba(255,255,255,.72)}
+footer .logo span{color:#ff6b81}
+.ft-sb{color:rgba(255,255,255,.75)!important}
 .ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:2.5rem}
 .ft-brand p{font-size:.8rem;margin-top:.5rem;max-width:240px;line-height:1.7}
-.ft-col h4{color:#fff;font-size:.78rem;font-weight:700;margin-bottom:1rem}.ft-col li{margin-bottom:.4rem}
-.ft-col a{font-size:.8rem;color:rgba(255,255,255,.4);transition:color .2s}.ft-col a:hover{color:#fff}
+.ft-col h3{color:#fff;font-size:.78rem;font-weight:700;margin-bottom:1rem}.ft-col li{margin-bottom:.4rem}
+.ft-col a{font-size:.8rem;color:rgba(255,255,255,.72);transition:color .2s}.ft-col a:hover{color:#fff}
 .ft-soc{display:flex;gap:.4rem;margin-top:.75rem}
 .ft-sb{width:30px;height:30px;border-radius:6px;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:700;color:rgba(255,255,255,.5)}.ft-sb:hover{background:var(--c2);color:#fff}
 .ft-bot{border-top:1px solid rgba(255,255,255,.06);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.75rem;font-size:.7rem}
@@ -358,7 +361,7 @@ body.mcta-on{padding-bottom:64px}
 <div class="hfc-stat"><div class="hfc-sv">72</div><div class="hfc-sl">Gründer-geführt</div></div>
 <div class="hfc-stat"><div class="hfc-sv">15</div><div class="hfc-sl">Länder</div></div>
 </div>
-<h3>Kostenlose Analyse anfragen</h3>
+<h2>Kostenlose Analyse anfragen</h2>
 <p>Sagen Sie uns kurz, worum es geht: neues Projekt oder laufende Kampagnen. Sie bekommen einen schriftlichen Report mit klaren Empfehlungen — kostenlos, unverbindlich, kein Verkaufsgespräch. Wir melden uns in der Regel innerhalb von 24 Stunden.</p>
 <form id="hform" action="https://script.google.com/macros/s/AKfycbzh2cM4CE_41OMhJIDtNvhWoyowjRlRpdRrgvboM7mEWyremHsMMlyiHIpEHQpsCorIzQ/exec" method="POST" target="gas_iframe" novalidate>
 <div class="hfr"><div class="hfg"><label for="hv">Vorname *</label><input type="text" id="hv" name="vorname" required placeholder="Max"></div><div class="hfg"><label for="hp">Telefon *</label><input type="tel" id="hp" name="telefon" required placeholder="+49 170 1234567"></div></div>
@@ -721,9 +724,9 @@ body.mcta-on{padding-bottom:64px}
 <div class="ft-grid">
 <div class="ft-brand"><div class="logo" style="color:#fff">Digital<span style="color:var(--c2)">Marketing</span>Remote</div><p>Performance-Marketing für den DACH-Markt. Datengetrieben, transparent, ergebnisorientiert.</p>
 <div class="ft-soc"><a href="https://www.facebook.com/digitalmarketingremote/" target="_blank" rel="noopener" class="ft-sb">fb</a><a href="https://www.instagram.com/digitalmarketing.remote/" target="_blank" rel="noopener" class="ft-sb">ig</a><a href="https://www.linkedin.com/company/121143999/" target="_blank" rel="noopener" class="ft-sb" title="LinkedIn Unternehmensseite">in</a><a href="https://www.linkedin.com/in/mdanyalshahzad/" target="_blank" rel="noopener" class="ft-sb" title="LinkedIn Persönlich">in↗</a></div></div>
-<div class="ft-col"><h4>Leistungen</h4><ul><li><a href="#services">Google Ads</a></li><li><a href="#services">Meta Ads</a></li><li><a href="#services">E-Commerce & Lead-Gen</a></li><li><a href="#services">YouTube Ads</a></li><li><a href="#services">Tracking & Analytics</a></li></ul></div>
-<div class="ft-col"><h4>Unternehmen</h4><ul><li><a href="#about">Über uns</a></li><li><a href="#cases">Erfolgsgeschichten</a></li><li><a href="#pricing">Preise</a></li><li><a href="#pilot">Pilotprojekt</a></li></ul></div>
-<div class="ft-col"><h4>Kontakt</h4><ul><li><a href="https://calendly.com/digitalmarketingremote01/30min" onclick="calClick('footer_termin')">Termin buchen</a></li><li><a href="https://api.whatsapp.com/send/?phone=%2B923217509379" target="_blank">WhatsApp</a></li><li><a href="/impressum">Impressum</a></li><li><a href="/datenschutz">Datenschutz</a></li><li><a href="#" onclick="ckSettings();return false;">Cookie-Einstellungen</a></li></ul></div>
+<div class="ft-col"><h3>Leistungen</h3><ul><li><a href="#services">Google Ads</a></li><li><a href="#services">Meta Ads</a></li><li><a href="#services">E-Commerce & Lead-Gen</a></li><li><a href="#services">YouTube Ads</a></li><li><a href="#services">Tracking & Analytics</a></li></ul></div>
+<div class="ft-col"><h3>Unternehmen</h3><ul><li><a href="#about">Über uns</a></li><li><a href="#cases">Erfolgsgeschichten</a></li><li><a href="#pricing">Preise</a></li><li><a href="#pilot">Pilotprojekt</a></li></ul></div>
+<div class="ft-col"><h3>Kontakt</h3><ul><li><a href="https://calendly.com/digitalmarketingremote01/30min" onclick="calClick('footer_termin')">Termin buchen</a></li><li><a href="https://api.whatsapp.com/send/?phone=%2B923217509379" target="_blank">WhatsApp</a></li><li><a href="/impressum">Impressum</a></li><li><a href="/datenschutz">Datenschutz</a></li><li><a href="#" onclick="ckSettings();return false;">Cookie-Einstellungen</a></li></ul></div>
 </div>
 <div class="ft-bot"><span>© 2024–2026 Digital Marketing Remote · Mohammad Danyal Shahzad</span><div style="display:flex;gap:1rem"><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutzerklärung</a><a href="#" onclick="ckSettings();return false;">Cookie-Einstellungen</a></div></div>
 </div></footer>
