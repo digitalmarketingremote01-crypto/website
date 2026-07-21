@@ -17,12 +17,16 @@ Single-page HTML website for Digital Marketing Remote, a DACH-focused performanc
 - **Custom Domain**: https://www.digitalmarketingremote.com
 - **Linked**: `.vercel/project.json` exists in this directory
 
-### Deploy to Production
-After making any changes to `index.html`, always deploy with:
+### Deploy to Production (UPDATED 2026-07-21 — user directive: GitHub → Vercel)
+Preferred flow is now **git push → GitHub → Vercel auto-deploy**:
 ```
-vercel --prod
+git add -A && git commit -m "..." && git push github HEAD:main
 ```
-That's it. Do NOT use `git push` — deploy directly via Vercel CLI.
+GitHub push access works via SSH key `~/.ssh/id_ed25519_dmr` (added to the account 2026-07-21;
+`~/.ssh/config` maps github.com to it). The `github` remote uses the SSH URL.
+Pushing to GitHub triggers a Vercel production deploy automatically (verified 2026-07-21).
+`vercel --prod` still works as a fallback/hotfix path.
+NOTE: the `origin` (GitLab) remote is still unauthenticated — pushes there fail.
 
 ### If Vercel CLI is not authenticated
 Check auth status with:
