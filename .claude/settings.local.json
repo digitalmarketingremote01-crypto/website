@@ -339,7 +339,10 @@
       "Bash(vercel ls *)",
       "Bash(python3 -c \"import PIL; print\\('PIL:', PIL.__version__\\)\")",
       "Bash(sips -g pixelWidth -g pixelHeight danyal-hero.webp case-ecommerce-brand.webp case-solar-webapp.webp)",
-      "Bash(grep -o \"img1[^;]\\\\{0,180\\\\}\" index.html)"
+      "Bash(grep -o \"img1[^;]\\\\{0,180\\\\}\" index.html)",
+      "Bash(npx -y lighthouse@12 \"https://www.digitalmarketingremote.com/\" --only-categories=performance,accessibility,best-practices,seo --form-factor=mobile --screenEmulation.mobile --output=json --output-path=/tmp/lh_mobile.json --chrome-flags=\"--headless=new --no-sandbox\" --quiet)",
+      "Bash(awk '{print $5}')",
+      "Bash(npx -y lighthouse@12 \"https://www.digitalmarketingremote.com/\" --only-categories=performance,accessibility,best-practices,seo --preset=desktop --output=json --output-path=/tmp/lh_desktop.json --chrome-flags=\"--headless=new --no-sandbox\" --quiet)"
     ]
   }
 }
