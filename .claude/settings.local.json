@@ -360,7 +360,13 @@
       "Bash(awk '{print \"font size:\", $5, \"bytes\"}')",
       "Bash(npx -y lighthouse@12 \"https://www.digitalmarketingremote.com/\" --only-categories=performance --form-factor=mobile --screenEmulation.mobile --output=json --output-path=/tmp/lh_m_rerun.json --chrome-flags=\"--headless=new --no-sandbox\" --quiet)",
       "Bash(npx -y lighthouse@12 \"https://www.digitalmarketingremote.com/\" --only-categories=performance,accessibility --form-factor=mobile --screenEmulation.mobile --output=json --output-path=/tmp/lh_m_v4.json --chrome-flags=\"--headless=new --no-sandbox\" --quiet)",
-      "Bash(npx -y lighthouse@12 \"https://www.digitalmarketingremote.com/\" --only-categories=performance,accessibility,best-practices,seo --form-factor=mobile --screenEmulation.mobile --output=json --output-path=/tmp/lh_m_v5.json --chrome-flags=\"--headless=new --no-sandbox\" --quiet)"
+      "Bash(npx -y lighthouse@12 \"https://www.digitalmarketingremote.com/\" --only-categories=performance,accessibility,best-practices,seo --form-factor=mobile --screenEmulation.mobile --output=json --output-path=/tmp/lh_m_v5.json --chrome-flags=\"--headless=new --no-sandbox\" --quiet)",
+      "Bash(npx -y lighthouse@12 \"https://www.digitalmarketingremote.com/\" --only-categories=performance,accessibility,best-practices,seo --preset=desktop --output=json --output-path=/tmp/lh_D.json --chrome-flags=\"--headless=new --no-sandbox\" --quiet)",
+      "Bash(command -v weasyprint wkhtmltopdf pandoc)",
+      "Bash(python3 -c \"import weasyprint; print\\('weasyprint-py ok'\\)\")",
+      "Bash(python3 scripts/tailor_cv.py dmr-pool-2026-07-21-deepfit.json)",
+      "Bash(./tools/verify-site.sh)",
+      "Bash(bash -x ./tools/verify-site.sh)"
     ]
   }
 }

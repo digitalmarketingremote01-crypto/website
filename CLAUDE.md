@@ -141,3 +141,46 @@ Section order: Hero → Logos → Pilot → About → Services → Process → C
 ## Schema.org
 - ProfessionalService schema in `<head>` (line ~28)
 - FAQPage schema in `<head>` (line ~29) — always update when FAQs change
+
+---
+
+## Verification before saying "done" — MANDATORY
+
+Automated checks confirm code shipped. They do NOT confirm the page looks right.
+Lighthouse scored 100/100 while the founder photo was cropped headless, the hero copy
+was unreadable, and two stray buttons sat under the desktop footer. Never report "done"
+on green checks alone.
+
+### Step 1 — automated (fast)
+```
+tools/verify-site.sh          # pages live, local==live, conversion chain, mobile-UI leak, consent
+tools/verify-site.sh --full   # + Lighthouse mobile & desktop (~3 min)
+```
+Fails loudly. If anything fails, it is not done.
+
+### Step 2 — visual sweep (never skip)
+Look at the WHOLE page, top to bottom, at BOTH widths — as a first-time visitor, not as
+the person who wrote the change:
+
+- **Mobile (390px):** Chrome cannot resize below display width. Load the site, then
+  `document.body.innerHTML='<iframe src="/?v=1" style="width:390px;height:780px">'`
+  (same-origin, so `contentDocument` is readable). Step down the page with
+  `#main{transform:translateY(-Npx)}` and screenshot every ~700px. Force lazy images
+  first (`img.loading='eager'; img.src=img.src`) or they stay blank and you learn nothing.
+- **Desktop (full width):** scroll to `document.documentElement.scrollHeight` and screenshot
+  the BOTTOM too — the stray-buttons bug lived below the footer and survived a day because
+  only the top and middle were ever checked.
+
+### Step 3 — check the opposite state
+Every mobile-only change must be verified NOT to affect desktop, and vice versa.
+Mobile-only UI needs a base `display:none` outside the media query, or it leaks to desktop.
+
+### Step 4 — read the copy as a visitor
+Read new/changed text in the language a visitor reads it. If it needs a second read, rewrite it.
+
+### Known testing gotchas
+- Inside a background iframe, scroll events, smooth-scroll and `setInterval` are throttled or
+  dead — dispatch `new Event('scroll')` manually; never conclude "broken" from that alone.
+- Inline `style=` beats CSS: grep for inline colours when fixing contrast.
+- `set -o pipefail` + `grep -q` on a big variable = false FAIL (SIGPIPE). Use `grep -q <<<"$var"`.
+- Verify against the LIVE URL with a cache-buster, never local files or a warm tab.
