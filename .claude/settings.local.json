@@ -370,7 +370,18 @@
       "Bash(python3 scripts/tailor_cv.py dmr-top50-2026-07-21.json)",
       "Bash(cp \"/private/tmp/claude-501/-Users-mdanyalshahzad-Documents-Danyal-Freelancing-Digital-Marketing-Remote-Website/8cab568d-2f24-49c7-bcdb-72126e1be98d/scratchpad/conn.csv\" \"/Users/mdanyalshahzad/Documents/Danyal/Pipeline/linkedin-connections-by-country.csv\" && echo saved)",
       "Bash(python3 scripts/tailor_cv.py dmr-apply-2026-07-21.json)",
-      "Bash(awk '/proofTrack/{f=1} f{print NR\": \"$0} /prev.onclick|next.onclick|buildDots|render\\\\\\(\\\\\\);/{if\\(f\\)c++} c>6{exit}' index.html)"
+      "Bash(awk '/proofTrack/{f=1} f{print NR\": \"$0} /prev.onclick|next.onclick|buildDots|render\\\\\\(\\\\\\);/{if\\(f\\)c++} c>6{exit}' index.html)",
+      "Bash(echo \"4432236398|Senior Paid User Acquisition Specialist|MobiSystems|Applied|2026-07-21|Easy|no free-text questions; stored CV\")",
+      "Bash(echo \"4442718961|Digital Advertising Manager|IntelliPro|Applied|2026-07-21|Easy|screening: YouTube 3y, Google Ads 4y, AdServices 4y, Bachelors Yes; \\\\$140-160k posted\")",
+      "Bash(npx -y lighthouse@12 \"https://www.digitalmarketingremote.com/\" --only-categories=performance,accessibility,best-practices,seo --form-factor=mobile --screenEmulation.mobile --output=json --output-path=/tmp/lh_m_now.json --chrome-flags=\"--headless=new --no-sandbox\" --quiet)",
+      "Bash(npx -y lighthouse@12 \"https://www.digitalmarketingremote.com/\" --only-categories=performance,accessibility,best-practices,seo --preset=desktop --output=json --output-path=/tmp/lh_d_now.json --chrome-flags=\"--headless=new --no-sandbox\" --quiet)",
+      "Bash(npx -y lighthouse@12 \"https://www.digitalmarketingremote.com/\" --only-categories=performance --form-factor=mobile --screenEmulation.mobile --output=json --output-path=/tmp/lh_m_r2.json --chrome-flags=\"--headless=new --no-sandbox\" --quiet)",
+      "Bash(echo \"4427604025|Marketing Operations Manager|Leadership Connect|Skipped|2026-07-21|Easy|ABORTED: form asks 'legally authorized to work in Canada?' - hard work-auth gate\")",
+      "Bash(awk '{print $3, $4}')",
+      "Bash(grep -o '<section class=\"cta[^>]*>.\\\\{0,700\\\\}' index.html)",
+      "Bash(grep -o '<section class=\"cta[^>]*>.\\\\{0,700\\\\}' en/index.html)",
+      "Bash(awk '/id=\"reviews\"|proof-slider/{f=1} f&&/<section|<\\\\/main>|partner-teaser|<footer/{print NR\": \"substr\\($0,1,120\\)} /<footer/{exit}' en/index.html)",
+      "Bash(SP=\"/private/tmp/claude-501/-Users-mdanyalshahzad-Documents-Danyal-Freelancing-Digital-Marketing-Remote-Website/7c061e5a-e826-413d-8c03-9c1c19bf03f4\"; ls \"$SP\"; cp \"/Users/mdanyalshahzad/Documents/Danyal/Freelancing/Digital Marketing Remote/Website/case-solar-webapp.png\" \"$SP/scratchpad/demand-gen-audit.png\" && ls -la \"$SP/scratchpad/\")"
     ]
   }
 }
