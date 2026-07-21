@@ -1,3 +1,6 @@
+.DS_Store
 .case-originals/
-crop_*.py
+.claude/settings.local.json
 .vercel
+.vercel/
+crop_*.py

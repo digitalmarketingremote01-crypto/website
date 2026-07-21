@@ -1,0 +1,9 @@
+# Private / non-website files — never deploy these publicly
+legal/
+gtm_import_bc.json
+DMR-Google-Ads-Kampagne-Komplett-DE.xlsx
+DMR-Keyword-Recherche-Google-Ads-DE.xlsx
+build_gads_kit.py
+.DS_Store
+CLAUDE.md
+.claude/

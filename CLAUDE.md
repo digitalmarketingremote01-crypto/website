@@ -65,6 +65,22 @@ Section order: Hero → Logos → Pilot → About → Services → Process → C
 - FAQs (accordion, Schema.org FAQPage markup in `<head>` — keep in sync, all 10)
 - Contact forms (Google Apps Script) / Calendly
 - Footer (Impressum/Datenschutz links to standalone pages + Cookie-Einstellungen)
+- White-Label partner pages (added 2026-06-21): `/partner` (DE, `partner.html`) +
+  `/en/partner` (EN, `en/partner.html`) — B2B agency-outsourcing offering. Linked from the
+  homepage nav ("Für Agenturen") + a teaser band before the footer. A SEPARATE campaign
+  drives these. hreflang DE/EN/x-default. EN page uses absolute asset paths (`/fonts/…`).
+  NO legal bindings advertised here (no NDA/AVV/Kundenschutz); the "your client stays
+  yours" promise is kept on purpose. Each page has its own Service + FAQPage schema.
+- BILINGUAL (added 2026-06-21): site is fully DE/EN. German = `/`, `/partner`, `/impressum`,
+  `/datenschutz`. English mirror = `/en`, `/en/partner`, `/en/impressum`, `/en/datenschutz`
+  (files under `en/`, absolute asset paths `/fonts/…` `/case-*.webp`). DE⇄EN switcher in
+  nav+footer on every page + hreflang de/en/x-default. EN homepage has a **€/£/$ currency
+  toggle** (`setCur()`, `.cur[data-eur]` spans; £/$ approx, invoiced in EUR). EN pages reuse
+  the same consent-gated tracking + conversion dataLayer events (form_submission /
+  calendly_booking) so PRIMARY conversions fire on EN too — DO NOT alter German conversion
+  buttons/text/tracking (user rule). When editing site content, update BOTH languages.
+- Images: all case studies + hero are right-sized WebP (`*.webp`, ~88% lighter than the
+  PNG/JPEG originals which are KEPT in repo). `og:image` stays `danyal-hero.jpeg` for social.
 
 ## Key Numbers (always use these)
 - 72 projects total in 15 countries
@@ -79,6 +95,14 @@ Section order: Hero → Logos → Pilot → About → Services → Process → C
 - Never name or show logos/screenshots of Craft AEC's end-clients (no permission)
 - Only advertise numbers that are provable (UWG § 5)
 - Legal pages are standalone: /impressum, /datenschutz (vercel.json cleanUrls)
+- Minimize self-binding language site-wide (user directive 2026-06-21): no guarantees/
+  promises that bind DMR, the agency, or employees unless absolutely necessary (legally
+  mandatory) or morally required. KEPT by user choice: homepage Performance-Garantie (free
+  2nd month = own waived fee, no cash out). REMOVED 2026-06-21: "Vertrag nach deutschem
+  Recht" public claim, hard "innerhalb von 24 Stunden" → "in der Regel innerhalb von 24
+  Stunden". Keep protective/mandatory text (Impressum disclaimers, Datenschutz) — removing
+  it adds exposure. Audit new copy for: Garantie, versprechen, verpflichten, "nach
+  deutschem Recht", advertised NDAs/AVV.
 
 ## Integrations
 - Google Tag Manager: GTM-MFXPMZ8W (Google Ads Conversion ID constant: 18174154684 — bare number, GTM adds AW- prefix)
@@ -98,8 +122,15 @@ Section order: Hero → Logos → Pilot → About → Services → Process → C
   support@digitalmarketingremote.com. Auto-reply "not a bot" line replaced with warm
   personal line ("…und ich, Danyal, schaue sie mir persönlich an…"). To change the email
   templates, edit Code.gs then Deploy → Manage deployments → edit → Version: New version.
-- Calendly account timezone = **Central European Time** (was US Eastern — fixed 2026-06-13,
-  it caused "5am" times in host notifications). Profile → Time Zone.
+- Calendly account/display timezone = **Pakistan Standard Time (Karachi, GMT+5)** — set
+  2026-06-14 to MATCH the host's Google Calendar (also PKT). It was on CET, which caused a
+  3-hour gap between Calendly notifications (CET) and the Google Calendar event (PKT). Host
+  now sees bookings in his real local time; clients still auto-see their own zone. Set at
+  Profile → Time Zone. DO NOT set this back to CET. (History: was US-Eastern → CET on
+  2026-06-13 → PKT on 2026-06-14.)
+- Calendly **Availability schedule** timezone stays **Central European Time** ON PURPOSE
+  (Availability → Schedules, bottom) so slots are offered during German business hours
+  (9–17 CET). This is separate from the account/display TZ above — do not "align" them.
 - To SEND as support@ from Gmail (optional polish): Gmail Settings → Accounts → "Send mail
   as" → add support@, SMTP smtp.forwardemail.net:465, password = a forwardemail.net app pw.
 

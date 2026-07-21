@@ -2,20 +2,22 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<!-- Consent-gated tracking (DSGVO/TDDDG-konform): no tracking loads before opt-in -->
+<!-- Tracking (DSGVO/TDDDG): Google via Consent Mode v2 advanced — GTM/GA4 always load, cookieless pings until opt-in; Meta Pixel + Clarity load only after opt-in -->
 <script>
 window.dataLayer=window.dataLayer||[];
 function gtag(){dataLayer.push(arguments);}
 gtag('consent','default',{ad_storage:'denied',analytics_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:500});
+gtag('set','url_passthrough',true);
+if(localStorage.getItem('dc')==='y')gtag('consent','update',{ad_storage:'granted',analytics_storage:'granted',ad_user_data:'granted',ad_personalization:'granted'});
+/* GTM + GA4 always on (Consent Mode v2 advanced): only cookieless pings until opt-in, full tracking after */
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MFXPMZ8W');
+var ga=document.createElement('script');ga.async=true;ga.src='https://www.googletagmanager.com/gtag/js?id=G-N6G3MVTEH5';document.head.appendChild(ga);
+gtag('js',new Date());gtag('config','G-N6G3MVTEH5');
+/* Meta Pixel + Microsoft Clarity load only after opt-in (no consent-mode support) */
 var _trkLoaded=false;
 function loadTracking(){
 if(_trkLoaded)return;_trkLoaded=true;
 gtag('consent','update',{ad_storage:'granted',analytics_storage:'granted',ad_user_data:'granted',ad_personalization:'granted'});
-/* Google Tag Manager */
-(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MFXPMZ8W');
-/* Google Analytics 4 */
-var ga=document.createElement('script');ga.async=true;ga.src='https://www.googletagmanager.com/gtag/js?id=G-N6G3MVTEH5';document.head.appendChild(ga);
-gtag('js',new Date());gtag('config','G-N6G3MVTEH5');
 /* Meta Pixel */
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','957297367335870');fbq('track','PageView');
 /* Microsoft Clarity */
@@ -29,6 +31,9 @@ if(localStorage.getItem('dc')==='y')loadTracking();
 <meta name="description" content="Google Ads & Meta Ads Management für deutsche Unternehmen. Über €1,7 Mio. Umsatz generiert, 72 Projekte, 15 Länder. Kostenlose Erstberatung buchen.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://www.digitalmarketingremote.com/">
+<link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/">
+<link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/en">
+<link rel="alternate" hreflang="x-default" href="https://www.digitalmarketingremote.com/">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -38,8 +43,8 @@ if(localStorage.getItem('dc')==='y')loadTracking();
 <meta property="og:description" content="72 Projekte. 15 Länder. Über €1,7 Mio. generierter Umsatz. Performance-Marketing, das liefert.">
 <meta property="og:image" content="https://www.digitalmarketingremote.com/danyal-hero.jpeg">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Digital Marketing Remote","description":"Google Ads und Meta Ads Management für deutsche KMUs — vollständig remote.","url":"https://www.digitalmarketingremote.com","email":"support@digitalmarketingremote.com","telephone":"+923217509379","address":{"@type":"PostalAddress","streetAddress":"Bahria Town","addressLocality":"Lahore","postalCode":"54000","addressCountry":"PK"},"areaServed":[{"@type":"Country","name":"Germany"},{"@type":"Country","name":"Austria"},{"@type":"Country","name":"Switzerland"}],"sameAs":["https://www.facebook.com/digitalmarketingremote/","https://www.instagram.com/digitalmarketing.remote/","https://www.linkedin.com/company/121143999/"],"founder":{"@type":"Person","name":"Mohammad Danyal Shahzad","jobTitle":"Performance Marketing Specialist"}}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Sie arbeiten remote aus Pakistan — wie funktioniert das zuverlässig?","acceptedAnswer":{"@type":"Answer","text":"Seit 2024 betreuen wir ausschließlich Projekte für den deutschsprachigen Raum — 57 davon hat unser Gründer als unabhängiger Consultant für ein einzelnes deutsches Unternehmen in 13 Ländern umgesetzt. Die Zusammenarbeit läuft vollständig digital: WhatsApp für schnelle Abstimmung, E-Mail für formelle Kommunikation, monatliches Reporting-PDF mit allen KPIs. Kampagnen-Texte erstellen wir auf Deutsch. Die gesamte übrige Kommunikation — PDF-Reports, Meetings, WhatsApp-Anrufe und WhatsApp-Nachrichten — erfolgt auf Englisch."}},{"@type":"Question","name":"Was genau ist das 30-Tage-Pilotprojekt?","acceptedAnswer":{"@type":"Answer","text":"In der kostenlosen Erstberatung analysieren wir Ihr Business-Modell und definieren gemeinsam das realistische Mindestbudget für Ihr Projekt. Sie starten mit voller Transparenz und klaren KPIs. Wenn die vereinbarten Ziele im ersten Monat nicht erreicht werden, übernehmen wir den zweiten Monat ohne Managementgebühr."}},{"@type":"Question","name":"Wie ist der Vertrag geregelt?","acceptedAnswer":{"@type":"Answer","text":"Wir arbeiten mit einem schriftlichen Dienstleistungsvertrag nach deutschem Recht. Leistungsumfang, Laufzeit, Kündigungsfristen und ein DSGVO-konformer Auftragsverarbeitungsvertrag (AVV) sind enthalten. Monatlich kündbar — keine Mindestlaufzeit."}},{"@type":"Question","name":"Wo werden meine Daten gespeichert? Ist das DSGVO-konform?","acceptedAnswer":{"@type":"Answer","text":"Alle Kampagnendaten bleiben in Ihrem eigenen Google Ads- und Meta Ads-Konto — Sie behalten die vollständige Eigentümerschaft. Wir arbeiten ausschließlich mit Zugriffsrechten. Reporting erhalten Sie als monatliches PDF mit allen KPIs. Ein DSGVO-AVV wird standardmäßig abgeschlossen."}},{"@type":"Question","name":"Wie realistisch sind Ergebnisse mit Performance-Marketing?","acceptedAnswer":{"@type":"Answer","text":"Ergebnisse hängen von Ihrem Markt, Ihrem Produkt und Ihrem Budget ab — deshalb versprechen wir keine pauschalen Zeiträume. Was wir versprechen: transparente Daten ab Tag eins, kontinuierliche Optimierung und ehrliche Kommunikation darüber, was in Ihrer Branche realistisch ist. Im Erstgespräch setzen wir gemeinsam realistische Erwartungen."}},{"@type":"Question","name":"Wie hoch sollte mein Werbebudget sein?","acceptedAnswer":{"@type":"Answer","text":"Das hängt vollständig von Ihrer Branche und Ihrem Geschäftsmodell ab. In der kostenlosen Erstberatung analysieren wir Ihren Markt und empfehlen ein realistisches Mindestbudget — basierend auf Wettbewerb, Suchvolumen und Ihren Zielen. Kein Pauschalwert, sondern eine individuelle Empfehlung."}},{"@type":"Question","name":"Was ist der Unterschied zwischen Einzel- und Dual-Paketen?","acceptedAnswer":{"@type":"Answer","text":"Einzel-Pakete: Google Ads oder Meta Ads. Dual-Pakete: beide Plattformen gleichzeitig mit koordinierter Strategie und Cross-Platform-Optimierung — günstiger als zwei separate Pakete."}},{"@type":"Question","name":"Wann sind Sie erreichbar?","acceptedAnswer":{"@type":"Answer","text":"Montag bis Freitag, 9:00–17:00 Uhr deutscher Zeit. WhatsApp-Nachrichten werden in der Regel innerhalb weniger Stunden beantwortet. Kampagnen-Texte erstellen wir auf Deutsch. Die gesamte übrige Kommunikation — PDF-Reports, Meetings, WhatsApp-Anrufe und WhatsApp-Nachrichten — erfolgt auf Englisch."}},{"@type":"Question","name":"Was passiert, wenn die Kampagnen die vereinbarten Ziele nicht erreichen?","acceptedAnswer":{"@type":"Answer","text":"Dafür gibt es unsere Performance-Garantie: Wenn die gemeinsam definierten KPIs im ersten Monat nicht erreicht werden, übernehmen wir den zweiten Monat ohne Managementgebühr. Wir setzen nur KPIs an, die wir für realistisch halten — faire Partnerschaft statt leerer Versprechen."}},{"@type":"Question","name":"Wie lange dauert es, bis die erste Kampagne live geht?","acceptedAnswer":{"@type":"Answer","text":"Nach Erstberatung, Audit und Ihrer Freigabe beginnt die technische Umsetzung: Tracking-Setup, Pixel- und Tag-Integration sowie Kampagnen-Aufbau. Dieser Prozess dauert in der Regel 7–14 Werktage. Wir starten erst, wenn das technische Fundament sauber steht."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Digital Marketing Remote","description":"Google Ads und Meta Ads Management für deutsche KMUs — vollständig remote.","url":"https://www.digitalmarketingremote.com","email":"support@digitalmarketingremote.com","telephone":"+923217509379","address":{"@type":"PostalAddress","streetAddress":"The Cube Plaza, 2nd Floor, Nishtar Block, Bahria Town, Iqbal Town","addressLocality":"Lahore","addressCountry":"PK"},"areaServed":[{"@type":"Country","name":"Germany"},{"@type":"Country","name":"Austria"},{"@type":"Country","name":"Switzerland"}],"sameAs":["https://www.facebook.com/digitalmarketingremote/","https://www.instagram.com/digitalmarketing.remote/","https://www.linkedin.com/company/121143999/"],"founder":{"@type":"Person","name":"Mohammad Danyal Shahzad","jobTitle":"Performance Marketing Specialist"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Sie arbeiten remote aus Pakistan — wie funktioniert das zuverlässig?","acceptedAnswer":{"@type":"Answer","text":"Seit 2024 betreuen wir ausschließlich Projekte für den deutschsprachigen Raum — 57 davon hat unser Gründer als unabhängiger Consultant für ein einzelnes deutsches Unternehmen in 13 Ländern umgesetzt. Die Zusammenarbeit läuft vollständig digital: WhatsApp für schnelle Abstimmung, E-Mail für formelle Kommunikation, monatliches Reporting-PDF mit allen KPIs. Kampagnen-Texte erstellen wir auf Deutsch. Die gesamte übrige Kommunikation — PDF-Reports, Meetings, WhatsApp-Anrufe und WhatsApp-Nachrichten — erfolgt auf Englisch."}},{"@type":"Question","name":"Was genau ist das 30-Tage-Pilotprojekt?","acceptedAnswer":{"@type":"Answer","text":"In der kostenlosen Erstberatung analysieren wir Ihr Business-Modell und definieren gemeinsam das realistische Mindestbudget für Ihr Projekt. Sie starten mit voller Transparenz und klaren KPIs. Wenn die vereinbarten Ziele im ersten Monat nicht erreicht werden, übernehmen wir den zweiten Monat ohne Managementgebühr."}},{"@type":"Question","name":"Wie ist der Vertrag geregelt?","acceptedAnswer":{"@type":"Answer","text":"Wir arbeiten mit einem klaren, schriftlichen Dienstleistungsvertrag. Leistungsumfang, Laufzeit, Kündigungsfristen und ein DSGVO-konformer Auftragsverarbeitungsvertrag (AVV) sind enthalten. Monatlich kündbar — keine Mindestlaufzeit."}},{"@type":"Question","name":"Wo werden meine Daten gespeichert? Ist das DSGVO-konform?","acceptedAnswer":{"@type":"Answer","text":"Alle Kampagnendaten bleiben in Ihrem eigenen Google Ads- und Meta Ads-Konto — Sie behalten die vollständige Eigentümerschaft. Wir arbeiten ausschließlich mit Zugriffsrechten. Reporting erhalten Sie als monatliches PDF mit allen KPIs. Ein DSGVO-AVV wird standardmäßig abgeschlossen."}},{"@type":"Question","name":"Wie realistisch sind Ergebnisse mit Performance-Marketing?","acceptedAnswer":{"@type":"Answer","text":"Ergebnisse hängen von Ihrem Markt, Ihrem Produkt und Ihrem Budget ab — deshalb versprechen wir keine pauschalen Zeiträume. Was wir versprechen: transparente Daten ab Tag eins, kontinuierliche Optimierung und ehrliche Kommunikation darüber, was in Ihrer Branche realistisch ist. Im Erstgespräch setzen wir gemeinsam realistische Erwartungen."}},{"@type":"Question","name":"Wie hoch sollte mein Werbebudget sein?","acceptedAnswer":{"@type":"Answer","text":"Das hängt vollständig von Ihrer Branche und Ihrem Geschäftsmodell ab. In der kostenlosen Erstberatung analysieren wir Ihren Markt und empfehlen ein realistisches Mindestbudget — basierend auf Wettbewerb, Suchvolumen und Ihren Zielen. Kein Pauschalwert, sondern eine individuelle Empfehlung."}},{"@type":"Question","name":"Was ist der Unterschied zwischen Einzel- und Dual-Paketen?","acceptedAnswer":{"@type":"Answer","text":"Einzel-Pakete: Google Ads oder Meta Ads. Dual-Pakete: beide Plattformen gleichzeitig mit koordinierter Strategie und Cross-Platform-Optimierung — günstiger als zwei separate Pakete."}},{"@type":"Question","name":"Wann sind Sie erreichbar?","acceptedAnswer":{"@type":"Answer","text":"Montag bis Freitag, 9:00–17:00 Uhr deutscher Zeit. WhatsApp-Nachrichten werden in der Regel innerhalb weniger Stunden beantwortet. Kampagnen-Texte erstellen wir auf Deutsch. Die gesamte übrige Kommunikation — PDF-Reports, Meetings, WhatsApp-Anrufe und WhatsApp-Nachrichten — erfolgt auf Englisch."}},{"@type":"Question","name":"Was passiert, wenn die Kampagnen die vereinbarten Ziele nicht erreichen?","acceptedAnswer":{"@type":"Answer","text":"Ziele im ersten Monat nicht erreicht? Der zweite Monat kostet keine Managementgebühr. Wir setzen nur KPIs an, die wir für realistisch halten — faire Partnerschaft statt leerer Versprechen."}},{"@type":"Question","name":"Wie lange dauert es, bis die erste Kampagne live geht?","acceptedAnswer":{"@type":"Answer","text":"Nach Erstberatung, Audit und Ihrer Freigabe beginnt die technische Umsetzung: Tracking-Setup, Pixel- und Tag-Integration sowie Kampagnen-Aufbau. Dieser Prozess dauert in der Regel 7–14 Werktage. Wir starten erst, wenn das technische Fundament sauber steht."}},{"@type":"Question","name":"Ich habe noch keine Kampagne — lohnt sich das Gespräch trotzdem?","acceptedAnswer":{"@type":"Answer","text":"Ja, gerade dann. Wenn Sie noch nichts geschaltet haben, gibt es kein Konto zu auditieren — stattdessen analysieren wir Ihr Produkt, Ihren Markt und Ihre Wettbewerber, recherchieren die relevanten Keywords und erstellen daraus eine schriftliche Go-to-Market-Empfehlung: passende Kanäle, Kampagnen-Struktur und ein realistisches Startbudget. Kostenlos und unverbindlich — genau wie das Konto-Audit für laufende Kampagnen."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","speakable":{"@type":"SpeakableSpecification","cssSelector":["#hero h1",".hero-sub","#pricing h2"]},"url":"https://www.digitalmarketingremote.com/"}</script>
 <style>
 @font-face{font-family:'Plus Jakarta Sans';font-style:normal;font-weight:400 800;font-display:swap;src:url('fonts/plus-jakarta-sans.woff2') format('woff2')}
@@ -64,14 +69,16 @@ p{color:var(--tx)}
 .bwa{background:#25D366;color:#fff;border-color:#25D366}.bwa:hover{background:#1da851;transform:translateY(-2px)}
 .bl{padding:.95rem 1.875rem;font-size:1rem}.bs{padding:.5rem 1rem;font-size:.85rem}.bf{width:100%}
 /* Cookie */
-#ck{position:fixed;bottom:0;left:0;right:0;z-index:9999;background:var(--c1);color:#fff;padding:1rem 1.25rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap;box-shadow:0 -4px 24px rgba(0,0,0,.3)}
+#ck{position:fixed;bottom:1rem;left:50%;transform:translateX(-50%);width:min(720px,calc(100% - 2rem));z-index:9999;background:var(--c1);color:#fff;padding:1.15rem 1.35rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap;border-radius:14px;box-shadow:0 12px 44px rgba(0,0,0,.45)}
 #ck p{flex:1;font-size:.8rem;min-width:180px;line-height:1.5;color:#fff}#ck a{color:#4ade80;text-decoration:underline}
-.ckb{padding:.45rem 1rem;border-radius:6px;font-size:.8rem;cursor:pointer;font-weight:600;border:none}.cka{background:var(--c3);color:#fff}.ckd{background:transparent;color:#fff;border:1px solid #fff}
+.ckb{padding:.6rem 1.3rem;border-radius:8px;font-size:.85rem;cursor:pointer;font-weight:600;border:none}.cka{background:var(--c3);color:#fff}.ckd{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.55)}
 /* Nav */
 #nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,.97);border-bottom:1px solid var(--bd);backdrop-filter:blur(10px);transition:box-shadow .3s}
 #nav.sc{box-shadow:0 2px 20px rgba(0,0,0,.08)}
 .nv{display:flex;align-items:center;justify-content:space-between;height:68px}
 .logo{font-size:1.05rem;font-weight:800;letter-spacing:-.5px}.logo span{color:var(--c2)}
+.nv-l{display:flex;align-items:center;gap:.5rem}
+.lang-pill{display:none;font-size:.7rem;font-weight:700;color:var(--c2);border:1.5px solid var(--c2);border-radius:20px;padding:.15rem .55rem;text-decoration:none;line-height:1.4}
 .nl{display:flex;gap:1.75rem}.nl a{font-size:.85rem;font-weight:500;color:var(--tx);transition:color .2s}.nl a:hover{color:var(--c2)}
 .nc{display:flex;gap:.625rem}
 .hb{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:0;border:0}.hb span{width:22px;height:2px;background:var(--c1);border-radius:2px;display:block}
@@ -203,7 +210,7 @@ p{color:var(--tx)}
 .msc{margin-bottom:.75rem}.msc h4{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--mt);margin-bottom:.25rem}.msc p{font-size:.85rem;color:var(--tx);line-height:1.7}
 /* Proof */
 .proof-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
-.proof-slider{position:relative;overflow:hidden}.proof-track{display:flex;gap:1.25rem;transition:transform .5s ease;width:100%}.proof{background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.12);border-radius:16px;padding:2rem;box-shadow:0 8px 32px rgba(200,16,46,.1);transition:all .3s ease;flex:0 0 calc(50% - 0.625rem);min-width:0}
+.proof-slider{position:relative;overflow:hidden}.proof-track{display:flex;gap:1.25rem;transition:transform .5s ease;width:100%}.proof{background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.12);border-radius:16px;padding:2rem;box-shadow:0 8px 32px rgba(200,16,46,.1);transition:all .3s ease;flex:0 0 calc(50% - 0.625rem);min-width:0;display:flex;flex-direction:column}
 .proof:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18);transform:translateY(-4px)}
 .proof-nav{display:flex;justify-content:center;align-items:center;gap:1.25rem;margin-top:2rem}
 .proof-dots{display:flex;gap:.5rem;align-items:center}
@@ -212,7 +219,7 @@ p{color:var(--tx)}
 .proof-arrow:disabled{opacity:.3;cursor:default}
 .proof-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.3);cursor:pointer;transition:all .3s;border:0;padding:0}.proof-dot.active{background:var(--c2);width:24px;border-radius:4px}
 .proof-stars{color:#fbbf24;font-size:.85rem;margin-bottom:.5rem;letter-spacing:2px}
-.proof-text{color:rgba(255,255,255,.8);font-size:.85rem;margin-bottom:1rem;line-height:1.75;font-style:italic}
+.proof-text{color:rgba(255,255,255,.8);font-size:.85rem;margin-bottom:1rem;line-height:1.75;font-style:italic;flex:1}
 .proof-author{display:flex;align-items:center;gap:.6rem}
 .proof-av{width:34px;height:34px;border-radius:50%;background:var(--c2);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.78rem;flex-shrink:0}
 .proof-name{font-weight:700;color:#fff;font-size:.825rem}.proof-role{font-size:.7rem;color:rgba(255,255,255,.45)}
@@ -268,53 +275,91 @@ footer{background:#0f172a;color:rgba(255,255,255,.5);padding:3.25rem 0 1.75rem}
 .addr{background:var(--bg);border-radius:var(--rs);padding:1rem;margin:.75rem 0;font-size:.875rem;line-height:1.8;color:var(--tx)}
 /* Thank You */
 .ty{display:none;min-height:60vh;align-items:center;justify-content:center;text-align:center;padding:7rem 1rem 3rem}.ty.active{display:flex}
-.ty-inner{max-width:460px}.ty-icon{font-size:3.5rem;margin-bottom:1rem}.ty-inner h1{margin-bottom:.75rem;font-size:1.75rem}.ty-inner p{color:var(--tx);margin-bottom:1.5rem}
+.ty-inner{max-width:460px}.ty-icon{font-size:3.5rem;margin-bottom:1rem}.ty-inner h1,.ty-inner h2{margin-bottom:.75rem;font-size:1.75rem}.ty-inner p{color:var(--tx);margin-bottom:1.5rem}
 /* Responsive */
 @media(max-width:1024px){.hg{grid-template-columns:1fr;gap:2.5rem}.svc-grid{grid-template-columns:repeat(2,1fr)}.pg4{grid-template-columns:repeat(2,1fr)}.pg3{grid-template-columns:repeat(3,1fr);max-width:100%}.proc-grid{grid-template-columns:repeat(3,1fr)}.proc-grid::before{display:none}.about-grid{grid-template-columns:1fr;gap:2.5rem}.about-photo img{height:400px}.ft-grid{grid-template-columns:1fr 1fr}.pilot-grid{grid-template-columns:1fr;gap:2rem}}
-@media(max-width:768px){.sec{padding:4rem 0}.nl,.nc{display:none}.hb{display:flex}.svc-grid{grid-template-columns:1fr}.pg4,.pg3{grid-template-columns:1fr}.proc-grid{grid-template-columns:repeat(2,1fr)}.cases-grid,.proof-grid{grid-template-columns:1fr}.ct-grid{grid-template-columns:1fr;gap:2rem}.fr,.hfr{grid-template-columns:1fr}.cta-btns,.hero-ctas{flex-direction:column;align-items:stretch}.ft-grid{grid-template-columns:1fr;gap:1.5rem}.ft-bot{flex-direction:column;text-align:center}.hero-stats{gap:1rem}.hfc{padding:1.5rem}.pilot-grid{gap:1.5rem}.case-top{height:200px}.proof{flex:0 0 calc(50% - 0.625rem);padding:1.5rem}}
+@media(max-width:768px){.sec{padding:4rem 0}.nl,.nc{display:none}.hb{display:flex}.lang-pill{display:inline-flex}.svc-grid{grid-template-columns:1fr}.pg4,.pg3{grid-template-columns:1fr}.proc-grid{grid-template-columns:repeat(2,1fr)}.cases-grid,.proof-grid{grid-template-columns:1fr}.ct-grid{grid-template-columns:1fr;gap:2rem}.fr,.hfr{grid-template-columns:1fr}.cta-btns,.hero-ctas{flex-direction:column;align-items:stretch}.ft-grid{grid-template-columns:1fr;gap:1.5rem}.ft-bot{flex-direction:column;text-align:center}.hero-stats{gap:1rem}.hfc{padding:1.5rem}.pilot-grid{gap:1.5rem}.case-top{height:200px}.proof{flex:0 0 calc(50% - 0.625rem);padding:1.5rem}}
 @media(max-width:480px){.pg4,.pg3{grid-template-columns:1fr}.proc-grid{grid-template-columns:1fr}.mms{grid-template-columns:1fr 1fr}.ctn{padding:0 1rem}.hero-ctas,.cta-btns{gap:.5rem}.btn{padding:.75rem 1.25rem;font-size:.85rem}.case-top{height:190px}.case-label{font-size:1rem}.lp{padding:3.5rem 0 2.5rem}.proof{flex:0 0 100%;padding:1.25rem;margin-bottom:0.5rem}}
+/* ===== MOBILE OPTIMISATION (added 2026-07-21): swipe carousels + compaction to cut page length ===== */
+@media(max-width:768px){
+/* horizontal swipe rows: cases + pricing. Native touch swipe both ways + arrow buttons (.msw-nav) */
+.msw{display:flex!important;grid-template-columns:none!important;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;gap:.85rem;padding:.25rem .25rem 1rem;margin:0 -1rem;padding-left:1rem;padding-right:1rem;scrollbar-width:none}
+.msw::-webkit-scrollbar{display:none}
+.msw>*{scroll-snap-align:center;flex:0 0 86%;min-width:86%}
+.msw-nav{display:flex;align-items:center;justify-content:center;gap:.75rem;margin-top:.25rem}
+.msw-btn{width:38px;height:38px;border-radius:50%;border:1.5px solid rgba(200,16,46,.25);background:#fff;color:var(--c2);font-size:1.1rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+.msw-btn:disabled{opacity:.3}
+.msw-hint{font-size:.72rem;color:var(--mt);text-align:center;margin-top:-.25rem}
+/* compaction: fewer tall stacked cards */
+.svc-grid{grid-template-columns:repeat(2,1fr)!important;gap:.85rem}
+.svc{padding:1.25rem 1rem}
+.proc-grid{grid-template-columns:repeat(2,1fr)!important;gap:1rem}
+.sec{padding:3rem 0}
+.sh{margin-bottom:1.75rem}
+/* sticky mobile CTA — visible after the hero, hidden while cookie banner shows */
+#mcta{position:fixed;left:0;right:0;bottom:0;z-index:9000;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);border-top:1px solid rgba(0,0,0,.08);padding:.6rem .9rem;display:none;gap:.5rem;box-shadow:0 -4px 20px rgba(0,0,0,.1)}
+#mcta.on{display:flex}
+#mcta .btn{flex:1;padding:.7rem .5rem;font-size:.82rem}
+body.mcta-on{padding-bottom:64px}
+}
+@media(max-width:480px){.msw>*{flex:0 0 89%;min-width:89%}.svc-grid{gap:.6rem}}
+/* mobile round 2: compact the tallest sections (about / services / pilot / contact) */
+@media(max-width:768px){
+.about-photo img{height:230px!important;object-position:top center}
+.about-content>p{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.about-content.open>p{-webkit-line-clamp:unset;overflow:visible}
+.abt-more{display:inline-block;margin:.35rem 0 .9rem;background:none;border:none;padding:0;color:var(--c2);font-weight:700;font-size:.82rem;cursor:pointer;text-decoration:underline}
+.highlights .hl-text span{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.about-content.open .hl-text span{-webkit-line-clamp:unset;overflow:visible}
+.svc p{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;font-size:.82rem}
+.svc h3{font-size:.95rem}
+.pilot{padding:1.75rem 1.25rem}
+.ct-card{padding:.9rem 1rem}
+.sec{padding:2.5rem 0}
+.sh h2{font-size:1.5rem}
+}
 @media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
 </style>
 </head>
 <body>
 <!-- Cookie -->
-<div id="ck"><p>Wir möchten Cookies und Tracking-Tools (Google Analytics, Google Ads, Meta Pixel, Microsoft Clarity) verwenden, um unsere Website zu verbessern. Diese werden erst nach Ihrer Einwilligung geladen — Ihre Wahl können Sie jederzeit über „Cookie-Einstellungen" im Footer ändern. <a href="/datenschutz" target="_blank" rel="noopener">Datenschutzerklärung</a></p><button class="ckb ckd" onclick="dkC()">Nur notwendige</button><button class="ckb cka" onclick="akC()">Alle akzeptieren</button></div>
+<div id="ck"><p><strong>🍪 Dürfen wir messen, was funktioniert?</strong> Mit Ihrem Okay nutzen wir Cookies für Google Analytics & Ads, Meta Pixel und Microsoft Clarity. Ohne Okay sendet Google nur cookielose, anonyme Signale (Consent Mode v2) — Meta Pixel & Clarity bleiben aus. Änderbar jederzeit über „Cookie-Einstellungen" im Footer. <a href="/datenschutz" target="_blank" rel="noopener">Datenschutzerklärung</a></p><button class="ckb ckd" onclick="dkC()">Nur notwendige</button><button class="ckb cka" onclick="akC()">Alle akzeptieren</button></div>
 
 <!-- Nav -->
 <nav id="nav"><div class="ctn"><div class="nv">
-<a href="#" class="logo" onclick="showM();return false;">Digital<span>Marketing</span>Remote</a>
-<ul class="nl"><li><a href="#about">Über uns</a></li><li><a href="#services">Leistungen</a></li><li><a href="#pricing">Preise</a></li><li><a href="#cases">Erfolge</a></li><li><a href="#contact">Kontakt</a></li></ul>
+<div class="nv-l"><a href="#" class="logo" onclick="showM();return false;">Digital<span>Marketing</span>Remote</a><a href="/en" class="lang-pill">EN</a></div>
+<ul class="nl"><li><a href="#about">Über uns</a></li><li><a href="#services">Leistungen</a></li><li><a href="#pricing">Preise</a></li><li><a href="#cases">Erfolge</a></li><li><a href="#contact">Kontakt</a></li><li><a href="/partner">Für Agenturen</a></li><li><a href="/en" style="font-weight:700">EN</a></li></ul>
 <div class="nc"><a href="#contact" class="btn bo bs">Anfragen</a><a href="https://calendly.com/digitalmarketingremote01/30min" onclick="calClick('nav_termin')" class="btn bp bs">Termin buchen</a></div>
 <button class="hb" onclick="togMenu()" aria-label="Menü"><span></span><span></span><span></span></button>
 </div></div></nav>
-<div class="mm" id="mmenu"><a href="#about" onclick="togMenu()">Über uns</a><a href="#services" onclick="togMenu()">Leistungen</a><a href="#pricing" onclick="togMenu()">Preise</a><a href="#cases" onclick="togMenu()">Erfolge</a><a href="#contact" onclick="togMenu()">Kontakt</a><a href="https://calendly.com/digitalmarketingremote01/30min" onclick="calClick('mobile_menu')" class="btn bp">Kostenlosen Termin buchen →</a></div>
+<div class="mm" id="mmenu"><a href="#about" onclick="togMenu()">Über uns</a><a href="#services" onclick="togMenu()">Leistungen</a><a href="#pricing" onclick="togMenu()">Preise</a><a href="#cases" onclick="togMenu()">Erfolge</a><a href="#contact" onclick="togMenu()">Kontakt</a><a href="/partner" onclick="togMenu()">Für Agenturen</a><a href="https://calendly.com/digitalmarketingremote01/30min" onclick="calClick('mobile_menu')" class="btn bp">Kostenlosen Termin buchen →</a></div>
 
 <main id="main">
 <!-- Hero -->
 <section id="hero"><div class="ctn"><div class="hg">
 <div>
-<div class="hey">🏆 72 Projekte · 15 Länder · Vollständig Remote</div>
+<div class="hey">🏆 Gründer-geführt · 72 Projekte · 15 Länder · Vollständig Remote</div>
 <h1>Mehr Kunden. Weniger Streuverlust. <em>Messbare Ergebnisse.</em></h1>
-<p class="hero-sub">Schlechtes Tracking, ungenaue Zielgruppen und fehlende Strategie verbrennen Werbebudget — Tag für Tag. Wir analysieren zuerst, optimieren dann — und liefern Kampagnen, bei denen jeder Euro nachweislich arbeitet. Transparent. Datengetrieben. Monatlich kündbar.</p>
+<p class="hero-sub">Schlechtes Tracking, ungenaue Zielgruppen und fehlende Strategie verbrennen Werbebudget — Tag für Tag. Starten Sie mit einer <strong>kostenlosen Analyse</strong>: schriftlicher Report mit konkreten Empfehlungen — für laufende Kampagnen als Konto-Audit, vor dem Start als Produkt- und Keyword-Strategie. Unverbindlich. Transparent. Datengetrieben. Monatlich kündbar.</p>
 <div class="hero-ctas">
 <a href="https://calendly.com/digitalmarketingremote01/30min" onclick="calClick('hero_cta')" class="btn bp bl">Kostenlose Erstberatung buchen →</a>
 <a href="#pilot" class="btn bo bl">30-Tage-Pilotprojekt</a>
 </div>
 <div class="hero-stats">
-<div><div class="hs-n">€<span>1,7</span>M+</div><div class="hs-l">Generierter Umsatz</div></div>
-<div><div class="hs-n"><span>72</span></div><div class="hs-l">Projekte betreut</div></div>
-<div><div class="hs-n"><span>15</span></div><div class="hs-l">Länder weltweit</div></div>
+<div><div class="hs-n">€<span>1,7</span>M+</div><div class="hs-l">Vom Gründer generiert</div></div>
+<div><div class="hs-n"><span>72</span></div><div class="hs-l">Projekte (Gründer)</div></div>
+<div><div class="hs-n"><span>15</span></div><div class="hs-l">Länder</div></div>
 </div>
 </div>
 <div>
 <div class="hfc">
 <div class="hfc-stats">
-<div class="hfc-stat"><div class="hfc-sv">€1,7M+</div><div class="hfc-sl">Umsatz generiert</div></div>
-<div class="hfc-stat"><div class="hfc-sv">72</div><div class="hfc-sl">Projekte</div></div>
+<div class="hfc-stat"><div class="hfc-sv">€1,7M+</div><div class="hfc-sl">Vom Gründer</div></div>
+<div class="hfc-stat"><div class="hfc-sv">72</div><div class="hfc-sl">Gründer-geführt</div></div>
 <div class="hfc-stat"><div class="hfc-sv">15</div><div class="hfc-sl">Länder</div></div>
 </div>
-<h3>Kostenlose Erstberatung anfragen</h3>
-<p>30 Minuten, unverbindlich — wir melden uns innerhalb von 24 Stunden.</p>
+<h3>Kostenlose Analyse anfragen</h3>
+<p>Schriftlicher Report mit konkreten Empfehlungen — kostenlos, unverbindlich, kein Verkaufsgespräch. Wir melden uns in der Regel innerhalb von 24 Stunden.</p>
 <form id="hform" action="https://script.google.com/macros/s/AKfycbzh2cM4CE_41OMhJIDtNvhWoyowjRlRpdRrgvboM7mEWyremHsMMlyiHIpEHQpsCorIzQ/exec" method="POST" target="gas_iframe" novalidate>
 <div class="hfr"><div class="hfg"><label for="hv">Vorname *</label><input type="text" id="hv" name="vorname" required placeholder="Max"></div><div class="hfg"><label for="hp">Telefon *</label><input type="tel" id="hp" name="telefon" required placeholder="+49 170 1234567"></div></div>
 <div class="hfg"><label for="he">E-Mail *</label><input type="email" id="he" name="email" required placeholder="max@firma.de"></div>
@@ -327,7 +372,7 @@ footer{background:#0f172a;color:rgba(255,255,255,.5);padding:3.25rem 0 1.75rem}
 <input type="hidden" name="_subject" value="Erstberatung – Digital Marketing Remote">
 <button type="submit" id="hsbtn" class="btn bp bf">Anfrage absenden →</button>
 </form>
-<div class="fok" id="hok"><h3>✅ Danke!</h3><p>Wir melden uns innerhalb von 24 Stunden.</p></div>
+<div class="fok" id="hok"><h3>✅ Danke!</h3><p>Wir melden uns in der Regel innerhalb von 24 Stunden.</p></div>
 <span class="cal">Oder direkt: <a href="https://calendly.com/digitalmarketingremote01/30min" onclick="calClick('hero_form_link')">Termin buchen →</a></span>
 </div>
 </div>
@@ -348,8 +393,8 @@ footer{background:#0f172a;color:rgba(255,255,255,.5);padding:3.25rem 0 1.75rem}
 <div class="pilot-check">Monatlich kündbar — kein Jahresvertrag, keine versteckten Kosten</div>
 </div>
 <div class="pilot-guarantee">
-<strong>🛡️ Performance-Garantie</strong>
-<p>Wenn die vorab gemeinsam definierten KPIs im ersten Monat nicht erreicht werden, übernehmen wir den zweiten Monat ohne Managementgebühr. Faire Partnerschaft — kein Risiko für Sie. Die Details werden im Dienstleistungsvertrag schriftlich festgehalten.</p>
+<strong>🛡️ Faire Konditionen</strong>
+<p>Ziele im ersten Monat nicht erreicht? Der zweite Monat kostet keine Managementgebühr. Faire Partnerschaft. Die Details werden im Dienstleistungsvertrag schriftlich festgehalten.</p>
 </div>
 </div>
 <div class="pilot-side">
@@ -365,7 +410,7 @@ footer{background:#0f172a;color:rgba(255,255,255,.5);padding:3.25rem 0 1.75rem}
 <!-- About -->
 <section id="about" class="sec" style="background:var(--bg)"><div class="ctn"><div class="about-grid">
 <div class="about-photo">
-<img src="danyal-hero.jpeg" alt="Mohammad Danyal Shahzad – Gründer Digital Marketing Remote" loading="lazy" width="540" height="520">
+<img src="danyal-hero.webp" alt="Mohammad Danyal Shahzad – Gründer Digital Marketing Remote" loading="lazy" width="540" height="520">
 <div class="about-caption"><strong>Mohammad Danyal Shahzad</strong><span>Gründer & Performance Marketing Specialist · Lahore, Pakistan</span></div>
 </div>
 <div class="about-content">
@@ -374,10 +419,10 @@ footer{background:#0f172a;color:rgba(255,255,255,.5);padding:3.25rem 0 1.75rem}
 <p>Digital Marketing Remote verbindet unternehmerische Praxis mit datengetriebenem Performance-Marketing. Bevor ich meine erste Kampagne startete, habe ich ein Hotel betrieben, ein Düngemittel-Vertriebsunternehmen aufgebaut und ein Fast-Food- und Pizzarestaurant gegründet — und weiß deshalb aus erster Hand: Jeder Euro, der in Werbung fließt, ist eine echte Geschäftsentscheidung, die sich rechnen muss.</p>
 <p>Seit 2022 betreut unser Gründer Performance-Marketing-Kampagnen mit Fokus auf den DACH-Markt — insgesamt 72 Projekte in 15 Ländern. Darunter 57 Projekte in 13 Märkten, die er als unabhängiger Performance-Marketing-Consultant für ein deutsches Investment-Unternehmen analysiert, aufgebaut und skaliert hat. Ergebnis: über €1,7 Millionen nachweislich generierter Umsatz.</p>
 <div class="highlights">
-<div class="hl-item"><div class="hl-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><div class="hl-text"><strong>Erfahrung, die zählt</strong><span>15 Jahre Business-Praxis + spezialisiertes Performance-Marketing seit 2022</span></div></div>
+<div class="hl-item"><div class="hl-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><div class="hl-text"><strong>Erfahrung, die zählt</strong><span>10 Jahre Unternehmer-Praxis (2011–2021) + spezialisiertes Performance-Marketing seit 2022</span></div></div>
 <div class="hl-item"><div class="hl-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><div class="hl-text"><strong>72 Projekte · 15 Länder</strong><span>DACH-Fokus mit Erfahrung in ganz Europa, Nordamerika und Asien</span></div></div>
-<div class="hl-item"><div class="hl-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><div class="hl-text"><strong>Klare Kommunikation</strong><span>Schriftliche Deliverables auf Deutsch, Beratung auf Englisch. Erreichbar Mo–Fr 9:00–17:00 Uhr deutscher Zeit.</span></div></div>
-<div class="hl-item"><div class="hl-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg></div><div class="hl-text"><strong>Methode: Analyse zuerst</strong><span>Erst Audit-Report mit Empfehlungen. Dann Strategie. Dann Umsetzung — auf Ihre Freigabe.</span></div></div>
+<div class="hl-item"><div class="hl-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><div class="hl-text"><strong>Klare Kommunikation</strong><span>Kampagnen-Texte auf Deutsch, alle Reports & Kommunikation auf Englisch. Erreichbar Mo–Fr 9:00–17:00 Uhr deutscher Zeit.</span></div></div>
+<div class="hl-item"><div class="hl-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg></div><div class="hl-text"><strong>Methode: Analyse zuerst</strong><span>Erst Analyse-Report mit Empfehlungen — Konto-Audit oder Strategie vor dem Start. Dann Umsetzung, auf Ihre Freigabe.</span></div></div>
 </div>
 <div class="remote-tag">✅ Vollständig remote — transparent, zuverlässig, ohne Kompromisse bei Qualität</div>
 </div>
@@ -400,8 +445,8 @@ footer{background:#0f172a;color:rgba(255,255,255,.5);padding:3.25rem 0 1.75rem}
 <section id="process" class="sec" style="background:var(--bg)"><div class="ctn">
 <div class="sh"><span class="sl">So arbeiten wir</span><h2>Von der Erstberatung zum messbaren Wachstum</h2></div>
 <div class="proc-grid">
-<div class="proc-step"><div class="proc-num">1</div><h3>Erstberatung</h3><p>30 Minuten: Ihre Ziele, Ihre Situation, unsere Einschätzung.</p></div>
-<div class="proc-step"><div class="proc-num">2</div><h3>Audit & Analyse</h3><p>Schriftlicher Report mit Marktanalyse und konkreten Empfehlungen.</p></div>
+<div class="proc-step"><div class="proc-num">1</div><h3>Kostenlose Erstberatung</h3><p>30 Minuten: Ihre Ziele, Ihre Situation, unsere Einschätzung. <strong style="color:var(--c3)">Gratis &amp; unverbindlich.</strong></p></div>
+<div class="proc-step"><div class="proc-num">2</div><h3>Audit &amp; Analyse</h3><p>Schriftlicher Report mit Marktanalyse und konkreten Empfehlungen — bei laufenden Kampagnen als Konto-Audit, vor dem Start als Produkt-, Keyword- und Strategie-Analyse. <strong style="color:var(--c3)">Kostenlos.</strong></p></div>
 <div class="proc-step"><div class="proc-num">3</div><h3>Onboarding & Freigabe</h3><p>Schriftlicher Vertrag, Zugriffsrechte und Ihre Freigabe — dann starten wir.</p></div>
 <div class="proc-step"><div class="proc-num">4</div><h3>Strategie</h3><p>KPIs, Kanäle, Budget-Roadmap — individuell für Ihr Business.</p></div>
 <div class="proc-step"><div class="proc-num">5</div><h3>Implementierung</h3><p>Tracking, Accounts, Kampagnen — live auf Ihre Freigabe.</p></div>
@@ -413,22 +458,22 @@ footer{background:#0f172a;color:rgba(255,255,255,.5);padding:3.25rem 0 1.75rem}
 <section id="cases" class="sec" style="background:var(--bg)"><div class="ctn">
 <div class="sh"><span class="sl">Erfolgsgeschichten</span><h2>Echte Ergebnisse. Keine leeren Versprechen.</h2><p>Echte Kampagnendaten aus der Arbeit unseres Gründers — Screenshots anonymisiert, ohne Kundennamen und Datumsangaben.</p></div>
 <div class="cases-grid">
-<div class="case" onclick="openMd('ai')" tabindex="0"><div class="case-top"><div class="case-bg" style="background-image:url('case-ki-startup-ads.png')"><div class="case-label">KI-E-Commerce<br>Startup</div><div class="case-tag">DACH · 11 Märkte</div></div></div>
+<div class="case" onclick="openMd('ai')" tabindex="0"><div class="case-top"><div class="case-bg" style="background-image:url('case-ki-startup-ads.webp')"><div class="case-label">KI-E-Commerce<br>Startup</div><div class="case-tag">DACH · 11 Märkte</div></div></div>
 <div class="case-body"><div class="case-niche">E-Commerce · KI · Pet Supplies · International</div><div class="case-title">Von Deutschland in 11 Märkte — €1,7 Mio. Umsatz in 18 Monaten</div><div class="case-nums"><div><div class="cn-v">€1,7M</div><div class="cn-l">Umsatz</div></div><div><div class="cn-v">11</div><div class="cn-l">Länder</div></div><div><div class="cn-v">511%</div><div class="cn-l">ROAS</div></div></div><div class="case-link">Details ansehen →</div></div></div>
 
-<div class="case" onclick="openMd('pv')" tabindex="0"><div class="case-top"><div class="case-bg" style="background-image:url('case-solar-webapp.png')"><div class="case-label">Solar<br>Web-App</div><div class="case-tag">SaaS · Deutschland</div></div></div>
+<div class="case" onclick="openMd('pv')" tabindex="0"><div class="case-top"><div class="case-bg" style="background-image:url('case-solar-webapp.webp')"><div class="case-label">Solar<br>Web-App</div><div class="case-tag">SaaS · Deutschland</div></div></div>
 <div class="case-body"><div class="case-niche">SaaS · Solarenergie · Deutschland</div><div class="case-title">392 Registrierungen in 5 Wochen — €2,65 CPA</div><div class="case-nums"><div><div class="cn-v">392</div><div class="cn-l">Sign-ups</div></div><div><div class="cn-v">€2,65</div><div class="cn-l">CPA</div></div><div><div class="cn-v">584%</div><div class="cn-l">ROAS</div></div></div><div class="case-link">Details ansehen →</div></div></div>
 
-<div class="case" onclick="openMd('saas')" tabindex="0"><div class="case-top"><div class="case-bg" style="background-image:url('case-design-saas.png')"><div class="case-label">Design-Tool<br>SaaS</div><div class="case-tag">SaaS · Deutschland</div></div></div>
+<div class="case" onclick="openMd('saas')" tabindex="0"><div class="case-top"><div class="case-bg" style="background-image:url('case-design-saas.webp')"><div class="case-label">Design-Tool<br>SaaS</div><div class="case-tag">SaaS · Deutschland</div></div></div>
 <div class="case-body"><div class="case-niche">SaaS · Design-Plugin · Deutschland</div><div class="case-title">504 Downloads in 26 Tagen — ROAS 918 %</div><div class="case-nums"><div><div class="cn-v">504</div><div class="cn-l">Downloads</div></div><div><div class="cn-v">€1,09</div><div class="cn-l">CPA</div></div><div><div class="cn-v">918%</div><div class="cn-l">ROAS</div></div></div><div class="case-link">Details ansehen →</div></div></div>
 
-<div class="case" onclick="openMd('auto')" tabindex="0"><div class="case-top"><div class="case-bg" style="background-image:url('case-autofolierung.png')"><div class="case-label">Premium-<br>Autofolierung</div><div class="case-tag">Lokal · Karlsruhe</div></div></div>
+<div class="case" onclick="openMd('auto')" tabindex="0"><div class="case-top"><div class="case-bg" style="background-image:url('case-autofolierung.webp')"><div class="case-label">Premium-<br>Autofolierung</div><div class="case-tag">Lokal · Karlsruhe</div></div></div>
 <div class="case-body"><div class="case-niche">Handwerk · Premium-Service · Karlsruhe</div><div class="case-title">9 High-Ticket-Anfragen bei €95 CPA</div><div class="case-nums"><div><div class="cn-v">957</div><div class="cn-l">Klicks</div></div><div><div class="cn-v">9</div><div class="cn-l">Anfragen</div></div><div><div class="cn-v">€95</div><div class="cn-l">CPA</div></div></div><div class="case-link">Details ansehen →</div></div></div>
 
-<div class="case" onclick="openMd('neo')" tabindex="0"><div class="case-top"><div class="case-bg" style="background-image:url('case-proptech.png')"><div class="case-label">B2B PropTech<br>SaaS</div><div class="case-tag">International · B2B</div></div></div>
-<div class="case-body"><div class="case-niche">B2B SaaS · Bauwesen · International</div><div class="case-title">37 qualifizierte B2B-Leads — €12,99 CPA</div><div class="case-nums"><div><div class="cn-v">37</div><div class="cn-l">Leads</div></div><div><div class="cn-v">€12,99</div><div class="cn-l">CPA</div></div><div><div class="cn-v">€481</div><div class="cn-l">Budget</div></div></div><div class="case-link">Details ansehen →</div></div></div>
+<div class="case" onclick="openMd('neo')" tabindex="0"><div class="case-top"><div class="case-bg" style="background-image:url('case-proptech.webp')"><div class="case-label">B2B PropTech<br>SaaS</div><div class="case-tag">International · B2B</div></div></div>
+<div class="case-body"><div class="case-niche">B2B SaaS · Bauwesen · International</div><div class="case-title">63 qualifizierte B2B-Leads — €11,45 CPA</div><div class="case-nums"><div><div class="cn-v">63</div><div class="cn-l">Leads</div></div><div><div class="cn-v">€11,45</div><div class="cn-l">CPA</div></div><div><div class="cn-v">€721</div><div class="cn-l">Budget</div></div></div><div class="case-link">Details ansehen →</div></div></div>
 
-<div class="case" onclick="openMd('ecom')" tabindex="0"><div class="case-top"><div class="case-bg" style="background-image:url('https://www.digitalmarketingremote.com/case-ecommerce-brand.png')"><div class="case-label">E-Commerce<br>Brand Launch</div><div class="case-tag">Konsumgüter · International</div></div></div>
+<div class="case" onclick="openMd('ecom')" tabindex="0"><div class="case-top"><div class="case-bg" style="background-image:url('https://www.digitalmarketingremote.com/case-ecommerce-brand.webp')"><div class="case-label">E-Commerce<br>Brand Launch</div><div class="case-tag">Konsumgüter · International</div></div></div>
 <div class="case-body"><div class="case-niche">E-Commerce · Konsumgüter · International</div><div class="case-title">Von Null auf 2.350 Conversions in 11 Monaten</div><div class="case-nums"><div><div class="cn-v">2.350</div><div class="cn-l">Conversions</div></div><div><div class="cn-v">294%</div><div class="cn-l">ROAS</div></div><div><div class="cn-v">11 Mo.</div><div class="cn-l">Laufzeit</div></div></div><div class="case-link">Details ansehen →</div></div></div>
 </div>
 </div></section>
@@ -436,6 +481,10 @@ footer{background:#0f172a;color:rgba(255,255,255,.5);padding:3.25rem 0 1.75rem}
 <!-- Pricing -->
 <section id="pricing" class="sec"><div class="ctn">
 <div class="sh"><span class="sl">Transparente Preise</span><h2>Feste Managementgebühr. Kein Aufschlag auf Ihr Werbebudget.</h2><p>Ihr Werbebudget fließt zu 100 % in Ihre Kampagnen. Sie zahlen nur die Managementgebühr.</p></div>
+<div style="max-width:860px;margin:0 auto 2rem;background:#f0fdf4;border:1.5px solid #86efac;border-radius:12px;padding:1rem 1.5rem;text-align:center">
+<strong style="display:block;color:var(--c3);font-size:.9rem;margin-bottom:.4rem">Sie riskieren nichts</strong>
+<div style="display:flex;flex-wrap:wrap;gap:.35rem 1.25rem;justify-content:center;font-size:.8rem;color:var(--tx)"><span>✓ Kostenlose Erstberatung</span><span>✓ Kostenloses Audit — auch vor dem Kampagnenstart</span><span>✓ Keine Einrichtungsgebühr</span><span>✓ Monatlich kündbar</span><span>✓ Ziele verfehlt? Monat 2 ohne Managementgebühr</span></div>
+</div>
 <div class="price-toggle">
 <span class="ptl act" id="pl1">Eine Plattform</span>
 <button class="pts" id="pts" onclick="togPr()" aria-label="Plattform wechseln"></button>
@@ -445,19 +494,19 @@ footer{background:#0f172a;color:rgba(255,255,255,.5);padding:3.25rem 0 1.75rem}
 <!-- Single -->
 <div class="pside show" id="pgs">
 <div class="pgrid pg4">
-<div class="pc"><div class="pc-name">Starter</div><div class="pc-price">€499<span>/Mo.</span></div><div class="pc-cap">Budget bis €1.500</div>
+<div class="pc"><div class="pc-name">Starter</div><div class="pc-price">€349<span>/Mo.</span></div><div class="pc-cap">Budget bis €1.500</div>
 <ul class="pc-feats"><li>Google Ads oder Meta Ads</li><li>Monatliches Reporting-PDF</li><li>Conversion-Tracking Setup</li><li>Tag Manager Integration</li><li>Alle Kampagnen-Typen nach Bedarf</li><li>Kontinuierliche Optimierung</li></ul>
 <a href="#contact" class="btn bo bf bs">Anfragen</a></div>
 
-<div class="pc hl"><div class="pc-name">Growth</div><div class="pc-price">€799<span>/Mo.</span></div><div class="pc-cap">Budget bis €3.000</div>
+<div class="pc hl"><div class="pc-name">Growth</div><div class="pc-price">€549<span>/Mo.</span></div><div class="pc-cap">Budget bis €3.000</div>
 <ul class="pc-feats"><li>Google Ads oder Meta Ads</li><li>Monatliches Reporting-PDF</li><li>Conversion-Tracking Setup</li><li>Tag Manager Integration</li><li>Alle Kampagnen-Typen nach Bedarf</li><li>Kontinuierliche Optimierung</li></ul>
 <a href="#contact" class="btn bp bf bs">Anfragen</a></div>
 
-<div class="pc"><div class="pc-name">Pro</div><div class="pc-price">€1.199<span>/Mo.</span></div><div class="pc-cap">Budget bis €6.000</div>
+<div class="pc"><div class="pc-name">Pro</div><div class="pc-price">€899<span>/Mo.</span></div><div class="pc-cap">Budget bis €6.000</div>
 <ul class="pc-feats"><li>Google Ads oder Meta Ads</li><li>Monatliches Reporting-PDF</li><li>Conversion-Tracking Setup</li><li>Tag Manager Integration</li><li>Alle Kampagnen-Typen nach Bedarf</li><li>Kontinuierliche Optimierung</li></ul>
 <a href="#contact" class="btn bo bf bs">Anfragen</a></div>
 
-<div class="pc hl"><div class="pc-name">Scale</div><div class="pc-price">€1.799<span>/Mo.</span></div><div class="pc-cap">Budget bis €12.000</div>
+<div class="pc hl"><div class="pc-name">Scale</div><div class="pc-price">€1.499<span>/Mo.</span></div><div class="pc-cap">Budget bis €12.000</div>
 <ul class="pc-feats"><li>Google Ads oder Meta Ads</li><li>Monatliches Reporting-PDF</li><li>Conversion-Tracking Setup</li><li>Tag Manager Integration</li><li>Alle Kampagnen-Typen nach Bedarf</li><li>Kontinuierliche Optimierung</li></ul>
 <a href="#contact" class="btn bp bf bs">Anfragen</a></div>
 </div>
@@ -487,19 +536,19 @@ footer{background:#0f172a;color:rgba(255,255,255,.5);padding:3.25rem 0 1.75rem}
 <!-- Dual -->
 <div class="pside" id="pgd">
 <div class="pgrid pg3">
-<div class="pc"><div class="pc-name">Dual Starter</div><div class="pc-price">€849<span>/Mo.</span></div><div class="pc-cap">Budget bis €3.000</div>
-<ul class="pc-feats"><li>Google Ads + Meta Ads</li><li>Monatliches Reporting-PDF</li><li>Conversion-Tracking Setup</li><li>Pixel & Tag Manager</li><li>Alle Kampagnen-Typen</li><li>Kontinuierliche Optimierung</li></ul>
-<div class="pc-save">€149 gespart vs. separat</div>
-<a href="#contact" class="btn bo bf bs">Anfragen</a></div>
-
-<div class="pc hl"><div class="pc-name">Dual Growth</div><div class="pc-price">€1.299<span>/Mo.</span></div><div class="pc-cap">Budget bis €6.000</div>
+<div class="pc"><div class="pc-name">Dual Starter</div><div class="pc-price">€799<span>/Mo.</span></div><div class="pc-cap">Budget bis €3.000</div>
 <ul class="pc-feats"><li>Google Ads + Meta Ads</li><li>Monatliches Reporting-PDF</li><li>Conversion-Tracking Setup</li><li>Pixel & Tag Manager</li><li>Alle Kampagnen-Typen</li><li>Kontinuierliche Optimierung</li></ul>
 <div class="pc-save">€299 gespart vs. separat</div>
+<a href="#contact" class="btn bo bf bs">Anfragen</a></div>
+
+<div class="pc hl"><div class="pc-name">Dual Growth</div><div class="pc-price">€1.199<span>/Mo.</span></div><div class="pc-cap">Budget bis €6.000</div>
+<ul class="pc-feats"><li>Google Ads + Meta Ads</li><li>Monatliches Reporting-PDF</li><li>Conversion-Tracking Setup</li><li>Pixel & Tag Manager</li><li>Alle Kampagnen-Typen</li><li>Kontinuierliche Optimierung</li></ul>
+<div class="pc-save">€599 gespart vs. separat</div>
 <a href="#contact" class="btn bp bf bs">Anfragen</a></div>
 
-<div class="pc"><div class="pc-name">Dual Pro</div><div class="pc-price">€1.899<span>/Mo.</span></div><div class="pc-cap">Budget bis €12.000</div>
+<div class="pc"><div class="pc-name">Dual Pro</div><div class="pc-price">€1.799<span>/Mo.</span></div><div class="pc-cap">Budget bis €12.000</div>
 <ul class="pc-feats"><li>Google Ads + Meta Ads</li><li>Monatliches Reporting-PDF</li><li>Conversion-Tracking Setup</li><li>Pixel & Tag Manager</li><li>Alle Kampagnen-Typen</li><li>Kontinuierliche Optimierung</li></ul>
-<div class="pc-save">€499 gespart vs. separat</div>
+<div class="pc-save">€1.199 gespart vs. separat</div>
 <a href="#contact" class="btn bo bf bs">Anfragen</a></div>
 </div>
 
@@ -536,7 +585,7 @@ footer{background:#0f172a;color:rgba(255,255,255,.5);padding:3.25rem 0 1.75rem}
 
 <div class="faq-item"><button class="faq-q" onclick="togF(this)">Was genau ist das 30-Tage-Pilotprojekt?<span class="faq-icon">+</span></button><div class="faq-a">In der kostenlosen Erstberatung analysieren wir Ihr Business-Modell und definieren gemeinsam das realistische Mindestbudget für Ihr Projekt. Sie starten mit voller Transparenz und klaren KPIs. Wenn die vereinbarten Ziele im ersten Monat nicht erreicht werden, übernehmen wir den zweiten Monat ohne Managementgebühr.</div></div>
 
-<div class="faq-item"><button class="faq-q" onclick="togF(this)">Wie ist der Vertrag geregelt?<span class="faq-icon">+</span></button><div class="faq-a">Wir arbeiten mit einem schriftlichen Dienstleistungsvertrag nach deutschem Recht. Leistungsumfang, Laufzeit, Kündigungsfristen und ein DSGVO-konformer Auftragsverarbeitungsvertrag (AVV) sind enthalten. Monatlich kündbar — keine Mindestlaufzeit.</div></div>
+<div class="faq-item"><button class="faq-q" onclick="togF(this)">Wie ist der Vertrag geregelt?<span class="faq-icon">+</span></button><div class="faq-a">Wir arbeiten mit einem klaren, schriftlichen Dienstleistungsvertrag. Leistungsumfang, Laufzeit, Kündigungsfristen und ein DSGVO-konformer Auftragsverarbeitungsvertrag (AVV) sind enthalten. Monatlich kündbar — keine Mindestlaufzeit.</div></div>
 
 <div class="faq-item"><button class="faq-q" onclick="togF(this)">Wo werden meine Daten gespeichert? Ist das DSGVO-konform?<span class="faq-icon">+</span></button><div class="faq-a">Alle Kampagnendaten bleiben in Ihrem eigenen Google Ads- und Meta Ads-Konto — Sie behalten die vollständige Eigentümerschaft. Wir arbeiten ausschließlich mit Zugriffsrechten. Reporting erhalten Sie als monatliches PDF mit allen KPIs. Ein DSGVO-AVV wird standardmäßig abgeschlossen.</div></div>
 
@@ -548,9 +597,10 @@ footer{background:#0f172a;color:rgba(255,255,255,.5);padding:3.25rem 0 1.75rem}
 
 <div class="faq-item"><button class="faq-q" onclick="togF(this)">Wann sind Sie erreichbar?<span class="faq-icon">+</span></button><div class="faq-a">Montag bis Freitag, 9:00–17:00 Uhr deutscher Zeit. WhatsApp-Nachrichten werden in der Regel innerhalb weniger Stunden beantwortet. Kampagnen-Texte erstellen wir auf Deutsch. Die gesamte übrige Kommunikation — PDF-Reports, Meetings, WhatsApp-Anrufe und WhatsApp-Nachrichten — erfolgt auf Englisch.</div></div>
 
-<div class="faq-item"><button class="faq-q" onclick="togF(this)">Was passiert, wenn die Kampagnen die vereinbarten Ziele nicht erreichen?<span class="faq-icon">+</span></button><div class="faq-a">Dafür gibt es unsere Performance-Garantie: Wenn die gemeinsam definierten KPIs im ersten Monat nicht erreicht werden, übernehmen wir den zweiten Monat ohne Managementgebühr. Wir setzen nur KPIs an, die wir für realistisch halten — faire Partnerschaft statt leerer Versprechen.</div></div>
+<div class="faq-item"><button class="faq-q" onclick="togF(this)">Was passiert, wenn die Kampagnen die vereinbarten Ziele nicht erreichen?<span class="faq-icon">+</span></button><div class="faq-a">Ziele im ersten Monat nicht erreicht? Der zweite Monat kostet keine Managementgebühr. Wir setzen nur KPIs an, die wir für realistisch halten — faire Partnerschaft statt leerer Versprechen.</div></div>
 
 <div class="faq-item"><button class="faq-q" onclick="togF(this)">Wie lange dauert es, bis die erste Kampagne live geht?<span class="faq-icon">+</span></button><div class="faq-a">Nach Erstberatung, Audit und Ihrer Freigabe beginnt die technische Umsetzung: Tracking-Setup, Pixel- und Tag-Integration sowie Kampagnen-Aufbau. Dieser Prozess dauert in der Regel 7–14 Werktage. Wir starten erst, wenn das technische Fundament sauber steht.</div></div>
+<div class="faq-item"><button class="faq-q" onclick="togF(this)">Ich habe noch keine Kampagne — lohnt sich das Gespräch trotzdem?<span class="faq-icon">+</span></button><div class="faq-a">Ja, gerade dann. Wenn Sie noch nichts geschaltet haben, gibt es kein Konto zu auditieren — stattdessen analysieren wir Ihr Produkt, Ihren Markt und Ihre Wettbewerber, recherchieren die relevanten Keywords und erstellen daraus eine schriftliche Go-to-Market-Empfehlung: passende Kanäle, Kampagnen-Struktur und ein realistisches Startbudget. Kostenlos und unverbindlich — genau wie das Konto-Audit für laufende Kampagnen.</div></div>
 </div>
 </div></section>
 
@@ -578,7 +628,7 @@ footer{background:#0f172a;color:rgba(255,255,255,.5);padding:3.25rem 0 1.75rem}
 <div class="cform">
 <div class="cform-hd">
 <h3>Anfrage senden</h3>
-<p>Wir melden uns innerhalb von 24 Stunden persönlich bei Ihnen.</p>
+<p>Wir melden uns in der Regel innerhalb von 24 Stunden persönlich bei Ihnen.</p>
 </div>
 <div class="cform-bd">
 <form id="cform" action="https://script.google.com/macros/s/AKfycbzh2cM4CE_41OMhJIDtNvhWoyowjRlRpdRrgvboM7mEWyremHsMMlyiHIpEHQpsCorIzQ/exec" method="POST" target="gas_iframe" novalidate>
@@ -592,11 +642,11 @@ footer{background:#0f172a;color:rgba(255,255,255,.5);padding:3.25rem 0 1.75rem}
 <button type="submit" id="csbtn" class="btn bp bf" style="margin-top:.75rem">Anfrage absenden →</button>
 <div class="form-trust">
 <span>🔒 DSGVO-konform</span>
-<span>⚡ Antwort in 24 Stunden</span>
+<span>⚡ Antwort meist in 24 Stunden</span>
 <span>✓ Kostenlos &amp; unverbindlich</span>
 </div>
 </form>
-<div class="fok" id="cok"><h3>✅ Vielen Dank!</h3><p>Wir melden uns innerhalb von 24 Stunden.</p></div>
+<div class="fok" id="cok"><h3>✅ Vielen Dank!</h3><p>Wir melden uns in der Regel innerhalb von 24 Stunden.</p></div>
 </div>
 </div>
 </div></div></section>
@@ -614,6 +664,12 @@ footer{background:#0f172a;color:rgba(255,255,255,.5);padding:3.25rem 0 1.75rem}
 <section class="sec" style="background:var(--c1)"><div class="ctn">
 <div class="sh"><span class="sl" style="color:#fbbf24">Kundenstimmen</span><h2 style="color:#fff">Was unsere Kunden sagen</h2></div>
 <div class="proof-slider"><div class="proof-track" id="proofTrack">
+
+<div class="proof">
+<div class="proof-stars">★★★★★</div>
+<p class="proof-text">„Unsere Google Ads sind dieses Jahr von null auf 2.350 Conversions bei 294 % ROAS gewachsen — alles betreut von Danyal. Profitabel, transparent und immer für uns da, wenn wir ihn brauchten. Ich würde jederzeit wieder mit ihm arbeiten."</p>
+<div class="proof-author"><div class="proof-av">AS</div><div><div class="proof-name">Abdullah Sohail</div><div class="proof-role">Loganberry Official · E-Commerce-Marke · Direkte Zusammenarbeit ✓</div></div></div>
+</div>
 
 <div class="proof">
 <div class="proof-stars">★★★★★</div>
@@ -635,18 +691,30 @@ footer{background:#0f172a;color:rgba(255,255,255,.5);padding:3.25rem 0 1.75rem}
 
 <!-- Thank You: Form -->
 <div id="ty-form" class="ty"><div class="ty-inner">
-<div class="ty-icon">🎉</div><h1>Vielen Dank!</h1>
-<p>Ihre Anfrage ist eingegangen. Wir melden uns innerhalb von 24 Stunden — per E-Mail, WhatsApp oder Rückruf, wie Sie es gewünscht haben.</p>
+<div class="ty-icon">🎉</div><h2>Vielen Dank!</h2>
+<p>Ihre Anfrage ist eingegangen. Wir melden uns in der Regel innerhalb von 24 Stunden — per E-Mail, WhatsApp oder Rückruf, wie Sie es gewünscht haben.</p>
 <a href="https://calendly.com/digitalmarketingremote01/30min" onclick="calClick('thankyou_cta')" class="btn bp bl">Oder direkt Termin buchen →</a>
 <br><br><a href="#" onclick="showM();return false;" class="btn bo">Zurück zur Startseite</a>
 </div></div>
 
 <!-- Thank You: Calendly -->
 <div id="ty-cal" class="ty"><div class="ty-inner">
-<div class="ty-icon">✅</div><h1>Termin bestätigt!</h1>
+<div class="ty-icon">✅</div><h2>Termin bestätigt!</h2>
 <p>Ihr Beratungstermin ist gebucht. Sie erhalten eine Bestätigung per E-Mail. Wir bereiten uns auf Ihre spezifische Situation vor.</p>
 <a href="#" onclick="showM();return false;" class="btn bo bl" style="margin-top:1rem">Zurück zur Startseite</a>
 </div></div>
+
+<!-- Agency / White-Label teaser -->
+<section class="sec" style="padding:3.5rem 0"><div class="ctn">
+<div style="background:linear-gradient(135deg,#0c1529,var(--c1));border-radius:20px;padding:2.5rem;display:flex;flex-wrap:wrap;gap:1.5rem 2rem;align-items:center;justify-content:space-between">
+<div style="flex:1;min-width:280px">
+<span class="sl" style="color:#fca5a5">Für Agenturen &amp; Dienstleister</span>
+<h2 style="color:#fff;font-size:1.5rem;margin:.15rem 0 .5rem">Sie sind selbst eine Agentur?</h2>
+<p style="color:rgba(255,255,255,.65);font-size:.95rem;max-width:600px">Lagern Sie Google &amp; Meta Ads an uns aus — unsichtbar unter Ihrer Marke. White-Label-Reporting, Ihre Kunden bleiben Ihre Kunden.</p>
+</div>
+<a href="/partner" class="btn bw bl">White-Label-Partnerschaft →</a>
+</div>
+</div></section>
 
 <!-- Footer -->
 <footer><div class="ctn">
@@ -660,6 +728,7 @@ footer{background:#0f172a;color:rgba(255,255,255,.5);padding:3.25rem 0 1.75rem}
 <div class="ft-bot"><span>© 2024–2026 Digital Marketing Remote · Mohammad Danyal Shahzad</span><div style="display:flex;gap:1rem"><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutzerklärung</a><a href="#" onclick="ckSettings();return false;">Cookie-Einstellungen</a></div></div>
 </div></footer>
 
+<div id="mcta"><a href="#contact" class="btn bo bs">Anfragen</a><a href="https://calendly.com/digitalmarketingremote01/30min" onclick="calClick('mobile_sticky')" class="btn bp bs">Termin buchen →</a></div>
 <!-- Modal -->
 <div class="mov" id="mov" onclick="if(event.target===this)closeMd()"><div class="mdl"><button class="mx" onclick="closeMd()">✕</button><div id="minn"></div></div></div>
 
@@ -669,7 +738,7 @@ function calClick(label){window.dataLayer=window.dataLayer||[];window.dataLayer.
 
 /* Cookie consent — akC loads tracking, dkC blocks it, ckSettings reopens choice (Art. 7 Abs. 3 DSGVO withdrawal) */
 function akC(){localStorage.setItem('dc','y');document.getElementById('ck').style.display='none';loadTracking();}
-function dkC(){var was=_trkLoaded;localStorage.setItem('dc','n');document.getElementById('ck').style.display='none';if(was)location.reload();}
+function dkC(){var was=_trkLoaded;localStorage.setItem('dc','n');document.getElementById('ck').style.display='none';gtag('consent','update',{ad_storage:'denied',analytics_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});if(was)location.reload();}
 function ckSettings(){document.getElementById('ck').style.display='flex';}
 (function(){if(localStorage.getItem('dc'))document.getElementById('ck').style.display='none';})();
 
@@ -693,6 +762,10 @@ document.getElementById('pl1').classList.toggle('act',!dual);document.getElement
 ['hform','cform'].forEach(function(id){
 var f=document.getElementById(id);if(!f)return;
 f.addEventListener('submit',function(e){
+var empty=false;f.querySelectorAll('input[required]:not([type="checkbox"])').forEach(function(i){if(!i.value.trim())empty=true;});
+if(empty){e.preventDefault();alert('Bitte füllen Sie alle Pflichtfelder aus.');return;}
+var em=f.querySelector('[name="email"]');
+if(em&&!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em.value.trim())){e.preventDefault();alert('Bitte geben Sie eine gültige E-Mail-Adresse ein.');return;}
 var ds=f.querySelector('[name="dsgvo"]');
 if(ds&&!ds.checked){e.preventDefault();alert('Bitte stimmen Sie der Datenschutzerklärung zu.');return;}
 var kc=f.querySelectorAll('[name="kontakt"]:checked');
@@ -709,37 +782,41 @@ setTimeout(function(){showTY('form');window.location.hash='danke';if(btn){btn.di
 function hideAll(){['main','ty-form','ty-cal'].forEach(function(id){var e=document.getElementById(id);if(e){e.style.display='none';e.classList.remove('active');}});}
 function showM(){hideAll();document.getElementById('main').style.display='block';window.scrollTo(0,0);if(location.hash){history.replaceState(null,'',location.pathname);}}
 function showTY(t){hideAll();var el=document.getElementById('ty-'+t);el.style.display='flex';el.classList.add('active');window.scrollTo(0,0);}
-function handleHash(){
-  if(location.hash==='#danke-termin'){showTY('cal');window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'calendly_booking'});}
+function handleHash(initial){
+  if(location.hash==='#danke-termin'){showTY('cal');
+    /* initial===true + fresh calB flag = this pageload follows an in-popup booking that already pushed the event */
+    var skip=false;
+    if(initial===true){try{var t=+sessionStorage.getItem('calB')||0;skip=(Date.now()-t<120000);sessionStorage.removeItem('calB');}catch(e){}}
+    if(!skip){window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'calendly_booking'});}}
   else if(location.hash==='#danke'){showTY('form');}
 }
-handleHash();
-window.addEventListener('hashchange',handleHash);
+handleHash(true);
+window.addEventListener('hashchange',function(){handleHash(false);});
 if(location.hash==='#danke-formular')showTY('form');
 
 /* Modal data */
 var cs={
-ai:{tag:'E-Commerce · KI · Pet Supplies · DACH & International',t:'KI-E-Commerce Startup — Von Deutschland in 11 Märkte',m:'18 Monate · Google Ads + Meta Ads',ms:[{v:'€1,7 Mio.',l:'Gesamtumsatz'},{v:'11',l:'Länder'},{v:'511%',l:'ROAS (Google)'}],img1:'case-ki-startup-ads.png',img2:'case-ki-startup-shopify.png',
+ai:{tag:'E-Commerce · KI · Pet Supplies · DACH & International',t:'KI-E-Commerce Startup — Von Deutschland in 11 Märkte',m:'18 Monate · Google Ads + Meta Ads',ms:[{v:'€1,7 Mio.',l:'Gesamtumsatz'},{v:'11',l:'Länder'},{v:'511%',l:'ROAS (Google)'}],img1:'case-ki-startup-ads.webp',img2:'case-ki-startup-shopify.webp',
 h:'Markteinführung eines KI-Produkts im E-Commerce-Segment — gefolgt von Skalierung in 10 weitere europäische und internationale Märkte. Null bestehende Markenbekanntheit bei einem erklärungsbedürftigen Produkt.',
-s:'Multi-Channel-Ansatz mit lokalisierten Google und Meta Ads für jeden Markt. Server-Side-Tracking für lückenlose Datenerfassung. Schrittweise Expansion basierend auf den Lernkurven aus dem deutschen Markt.',
+s:'Multi-Channel-Ansatz mit lokalisierten Google und Meta Ads für jeden Markt. GA4- und Google-Tag-Manager-Tracking für lückenlose Datenerfassung. Schrittweise Expansion basierend auf den Lernkurven aus dem deutschen Markt.',
 r:'€1,7 Mio. Gesamtumsatz (Shopify-Dashboard verifiziert). €1,1 Mio. direkt über Google Ads zugeordnet (ROAS 511 %). Erfolgreiche Präsenz in 11 Ländern innerhalb von 18 Monaten.'},
-pv:{tag:'SaaS Web-App · Solarenergie · Deutschland',t:'Solar Web-App — 392 Registrierungen in 5 Wochen',m:'5 Wochen · Google Ads Search',ms:[{v:'392',l:'Sign-ups'},{v:'€2,65',l:'CPA'},{v:'584%',l:'ROAS'}],img1:'case-solar-webapp.png',
+pv:{tag:'SaaS Web-App · Solarenergie · Deutschland',t:'Solar Web-App — 392 Registrierungen in 5 Wochen',m:'5 Wochen · Google Ads Search',ms:[{v:'392',l:'Sign-ups'},{v:'€2,65',l:'CPA'},{v:'584%',l:'ROAS'}],img1:'case-solar-webapp.webp',
 h:'Spezialisierte Web-App für Photovoltaik-Analysen sollte auf dem deutschen Markt eingeführt werden — Ziel: qualifizierte Fachleute zur Registrierung bewegen.',
 s:'Google Ads Kampagne mit präziser Keyword-Aussteuerung auf Fachbegriffe. Kontinuierliche A/B-Tests der Anzeigentexte und Landingpage-Optimierung.',
 r:'6.650 Klicks und 392 Registrierungen in 5 Wochen. CPA €2,65 — deutlich unter Benchmark für B2B-SaaS im deutschen Markt.'},
-saas:{tag:'SaaS-Plugin · Design-Software · Deutschland',t:'Design-Tool SaaS — 504 Downloads in 26 Tagen',m:'26 Tage · Google Ads Search',ms:[{v:'504',l:'Downloads'},{v:'€1,09',l:'CPA'},{v:'918%',l:'ROAS'}],img1:'case-design-saas.png',
+saas:{tag:'SaaS-Plugin · Design-Software · Deutschland',t:'Design-Tool SaaS — 504 Downloads in 26 Tagen',m:'26 Tage · Google Ads Search',ms:[{v:'504',l:'Downloads'},{v:'€1,09',l:'CPA'},{v:'918%',l:'ROAS'}],img1:'case-design-saas.webp',
 h:'Neues Plugin für eine führende Design-Plattform — Ziel: qualifizierte Nutzer zum Download bewegen.',
 s:'Google Ads mit Zielgruppenansprache auf Designer und Entwickler. Nahtlose Nutzerführung von der Anzeige zum Download.',
 r:'2.560 Klicks und 504 Downloads in unter einem Monat. CPA €1,09 — außergewöhnlich im deutschen SaaS-Markt.'},
-auto:{tag:'Premium-Autofolierung · Karlsruhe',t:'Premium-Autofolierung — 9 High-Ticket-Anfragen',m:'3 Monate · Google Ads Search · Lokal',ms:[{v:'957',l:'Klicks'},{v:'9',l:'Buchungen'},{v:'€95',l:'CPA'}],img1:'case-autofolierung.png',
+auto:{tag:'Premium-Autofolierung · Karlsruhe',t:'Premium-Autofolierung — 9 High-Ticket-Anfragen',m:'3 Monate · Google Ads Search · Lokal',ms:[{v:'957',l:'Klicks'},{v:'9',l:'Buchungen'},{v:'€95',l:'CPA'}],img1:'case-autofolierung.webp',
 h:'Premium-Automobilkunden in einem kompetitiven lokalen Markt gewinnen — bei Auftragswerten von €1.500 bis €5.000+.',
 s:'Lokal ausgerichtete Google Ads Search-Kampagnen für die Region Karlsruhe. High-Intent-Keywords und konsequentes Filtern von niedrigwertigem Traffic.',
 r:'957 Klicks und 9 verifizierte Buchungsanfragen bei €858 Gesamtbudget. CPA €95 im Premium-Segment — hervorragend.'},
-neo:{tag:'B2B SaaS · Bauwesen · International',t:'B2B PropTech — 37 qualifizierte Leads bei €12,99 CPA',m:'3 Monate · Google Ads Search · B2B',ms:[{v:'37',l:'B2B Leads'},{v:'€12,99',l:'CPA'},{v:'€481',l:'Budget'}],img1:'case-proptech.png',
+neo:{tag:'B2B SaaS · Bauwesen · International',t:'B2B PropTech — 63 qualifizierte Leads bei €11,45 CPA',m:'3 Monate · Google Ads Search · B2B',ms:[{v:'63',l:'B2B Leads'},{v:'€11,45',l:'CPA'},{v:'€721',l:'Budget'}],img1:'case-proptech.webp',
 h:'Deutsche B2B-Software im Bereich Bauwesen in einem internationalen Markt eingeführt — Ziel: qualifizierte Fachleute zur App-Registrierung bewegen.',
 s:'Google Ads Lead-Generierung mit enger Zielgruppe auf Architekten und Projektentwickler. Strikte Budgetkontrolle.',
-r:'398 Klicks und 37 verifizierte Registrierungen bei nur €481 Budget. CPA €12,99 — herausragend für B2B-SaaS.'},
-ecom:{tag:'E-Commerce · Konsumgüter · International',t:'E-Commerce Brand Launch — Von Null in 11 Monaten',m:'11 Monate · Google Ads',ms:[{v:'2.350',l:'Conversions'},{v:'294%',l:'ROAS'},{v:'11 Mo.',l:'Laufzeit'}],img1:'case-ecommerce-brand.png',
+r:'542 Klicks und 63 verifizierte Registrierungen bei €721 Budget. CPA €11,45 — herausragend für B2B-SaaS.'},
+ecom:{tag:'E-Commerce · Konsumgüter · International',t:'E-Commerce Brand Launch — Von Null in 11 Monaten',m:'11 Monate · Google Ads',ms:[{v:'2.350',l:'Conversions'},{v:'294%',l:'ROAS'},{v:'11 Mo.',l:'Laufzeit'}],img1:'case-ecommerce-brand.webp',
 h:'Neue Konsumgüter-Marke ohne Markenbekanntheit von Null eingeführt und über den eigenen Online-Shop profitabel skaliert.',
 s:'Vollständige Google Ads Strategie — Marktanalyse, Keyword-Recherche, Search-Kampagnen kombiniert, 11 Monate kontinuierliche Optimierung.',
 r:'2.350 Conversions und stabiler ROAS von 294 % über die gesamte Laufzeit.'}
@@ -777,6 +854,71 @@ next.onclick=function(){if(page<pageCount()-1){page++;render();}};
 function buildDots(){dots.innerHTML='';var pc=pageCount();for(var i=0;i<pc;i++){var d=document.createElement('button');d.className='proof-dot'+(i===page?' active':'');d.setAttribute('aria-label','Seite '+(i+1));(function(i){d.onclick=function(){page=i;render();};})(i);dots.appendChild(d);}}
 function render(){var pv=perView(),pc=pageCount();if(page>pc-1)page=pc-1;if(page<0)page=0;var first=Math.min(page*pv,Math.max(0,total-pv));track.style.transform='translateX('+(-proofs[first].offsetLeft)+'px)';buildDots();prev.disabled=page<=0;next.disabled=page>=pc-1;}
 var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(render,150);});render();
+})();
+
+/* Calendly popup — booking stays on-site; widget JS loads only after a booking click; a scheduled event routes through the existing #danke-termin flow */
+var _calLd=null;
+function _calLoad(){if(window.Calendly&&window.Calendly.initPopupWidget)return Promise.resolve();
+if(!_calLd){var l=document.createElement('link');l.rel='stylesheet';l.href='https://assets.calendly.com/assets/external/widget.css';document.head.appendChild(l);
+_calLd=new Promise(function(res,rej){var s=document.createElement('script');s.src='https://assets.calendly.com/assets/external/widget.js';s.async=true;s.onload=res;s.onerror=rej;document.head.appendChild(s);setTimeout(rej,4000);});}
+return _calLd;}
+document.addEventListener('click',function(e){var a=e.target&&e.target.closest?e.target.closest('a[href*="calendly.com/"]'):null;if(!a)return;
+e.preventDefault();
+_calLoad().then(function(){Calendly.initPopupWidget({url:a.href});})
+.catch(function(){_calLd=null;window.location.href=a.href;});});
+window.addEventListener('message',function(e){
+if(e.origin==='https://calendly.com'&&e.data&&e.data.event==='calendly.event_scheduled'){
+try{sessionStorage.setItem('calB',String(Date.now()))}catch(err){}
+if(window.Calendly&&Calendly.closePopupWidget)Calendly.closePopupWidget();
+if(location.hash==='#danke-termin'){window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'calendly_booking'});}
+else{location.hash='#danke-termin';}
+}});
+
+/* Mobile swipe carousels (cases + pricing) + sticky mobile CTA — mobile only, desktop untouched */
+(function(){
+var MQ=window.matchMedia('(max-width:768px)');
+function nav(el){
+  if(el.dataset.mswNav)return;el.dataset.mswNav='1';
+  var w=document.createElement('div');w.className='msw-nav';
+  var p=document.createElement('button');p.className='msw-btn';p.type='button';p.setAttribute('aria-label','Zurück');p.textContent='‹';
+  var n=document.createElement('button');n.className='msw-btn';n.type='button';n.setAttribute('aria-label','Weiter');n.textContent='›';
+  w.appendChild(p);w.appendChild(n);el.parentNode.insertBefore(w,el.nextSibling);
+  function step(dir){var c=el.firstElementChild;if(!c)return;var d=c.getBoundingClientRect().width+14;var max=el.scrollWidth-el.clientWidth;var t=Math.max(0,Math.min(max,el.scrollLeft+dir*d));try{el.scrollTo({left:t,behavior:'smooth'});}catch(e){el.scrollLeft=t;}upd(t);setTimeout(function(){if(Math.abs(el.scrollLeft-t)>4)el.scrollLeft=t;upd();},320);}
+  p.onclick=function(){step(-1);};n.onclick=function(){step(1);};
+  function upd(pos){var sl=(pos==null?el.scrollLeft:pos);p.disabled=sl<8;n.disabled=sl>=el.scrollWidth-el.clientWidth-8;}
+  el.addEventListener('scroll',upd,{passive:true});setTimeout(upd,60);
+}
+function setup(){
+  if(!MQ.matches)return;
+  document.querySelectorAll('.cases-grid,.pgrid').forEach(function(el){el.classList.add('msw');nav(el);});
+}
+setup();MQ.addEventListener?MQ.addEventListener('change',setup):MQ.addListener(setup);
+/* sticky CTA: appears past the hero, hides while the cookie banner is open */
+var bar=document.getElementById('mcta');
+function ckOpen(){var c=document.getElementById('ck');return c&&getComputedStyle(c).display!=='none';}
+var pastHero=false;
+function tog(){
+  if(!bar)return;
+  var on=MQ.matches&&pastHero&&!ckOpen();
+  bar.classList.toggle('on',on);document.body.classList.toggle('mcta-on',on);
+}
+/* position-based: works no matter which element scrolls */
+var hero=document.getElementById('hero')||document.querySelector('.hg');
+function check(){
+  if(hero){var b=hero.getBoundingClientRect().bottom;pastHero=b<80;}
+  tog();
+}
+document.addEventListener('scroll',check,{passive:true,capture:true});
+window.addEventListener('resize',check);
+setInterval(check,700);check();
+})();
+
+/* mobile: "mehr lesen" for the About block (kept full on desktop) */
+(function(){if(!window.matchMedia('(max-width:768px)').matches)return;
+var a=document.querySelector('.about-content');if(!a||a.dataset.more)return;a.dataset.more='1';
+var b=document.createElement('button');b.className='abt-more';b.type='button';b.textContent='Mehr über uns lesen ↓';
+var last=a.querySelectorAll('p');if(!last.length)return;last[last.length-1].insertAdjacentElement('afterend',b);
+b.onclick=function(){var o=a.classList.toggle('open');b.textContent=o?'Weniger anzeigen ↑':'Mehr über uns lesen ↓';};
 })();
 </script>
 <iframe name="gas_iframe" style="display:none" aria-hidden="true"></iframe>

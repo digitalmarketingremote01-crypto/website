@@ -1,0 +1,755 @@
+{
+ "exportFormatVersion": 2,
+ "exportTime": "2026-06-22 16:25:01",
+ "containerVersion": {
+  "path": "accounts/6355298786/containers/252420858/versions/0",
+  "accountId": "6355298786",
+  "containerId": "252420858",
+  "container": {
+   "path": "accounts/6355298786/containers/252420858",
+   "accountId": "6355298786",
+   "containerId": "252420858",
+   "name": "Digital Marketing Remote | Web",
+   "publicId": "GTM-MFXPMZ8W",
+   "usageContext": [
+    "WEB"
+   ],
+   "fingerprint": "1778764444904",
+   "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6355298786/containers/252420858/workspaces?apiLink=container",
+   "features": {
+    "supportUserPermissions": true,
+    "supportEnvironments": true,
+    "supportWorkspaces": true,
+    "supportGtagConfigs": false,
+    "supportBuiltInVariables": true,
+    "supportClients": false,
+    "supportFolders": true,
+    "supportTags": true,
+    "supportTemplates": true,
+    "supportTriggers": true,
+    "supportVariables": true,
+    "supportVersions": true,
+    "supportZones": true,
+    "supportTransformations": false
+   },
+   "tagIds": [
+    "GTM-MFXPMZ8W"
+   ]
+  },
+  "tag": [
+   {
+    "accountId": "6355298786",
+    "containerId": "252420858",
+    "tagId": "80",
+    "name": "BC | Book a call",
+    "type": "gaawe",
+    "parameter": [
+     {
+      "type": "BOOLEAN",
+      "key": "sendEcommerceData",
+      "value": "false"
+     },
+     {
+      "type": "LIST",
+      "key": "eventSettingsTable",
+      "list": [
+       {
+        "type": "MAP",
+        "map": [
+         {
+          "type": "TEMPLATE",
+          "key": "parameter",
+          "value": "click text"
+         },
+         {
+          "type": "TEMPLATE",
+          "key": "parameterValue",
+          "value": "{{Click Text}}"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "TEMPLATE",
+      "key": "eventName",
+      "value": "BC | Book a call"
+     },
+     {
+      "type": "TEMPLATE",
+      "key": "measurementIdOverride",
+      "value": "{{DMR | Measurement ID}}"
+     }
+    ],
+    "firingTriggerId": [
+     "80"
+    ],
+    "tagFiringOption": "ONCE_PER_EVENT",
+    "monitoringMetadata": {
+     "type": "MAP"
+    },
+    "consentSettings": {
+     "consentStatus": "NOT_SET"
+    }
+   },
+   {
+    "accountId": "6355298786",
+    "containerId": "252420858",
+    "tagId": "81",
+    "name": "BC | Book a free call",
+    "type": "gaawe",
+    "parameter": [
+     {
+      "type": "BOOLEAN",
+      "key": "sendEcommerceData",
+      "value": "false"
+     },
+     {
+      "type": "LIST",
+      "key": "eventSettingsTable",
+      "list": [
+       {
+        "type": "MAP",
+        "map": [
+         {
+          "type": "TEMPLATE",
+          "key": "parameter",
+          "value": "click text"
+         },
+         {
+          "type": "TEMPLATE",
+          "key": "parameterValue",
+          "value": "{{Click Text}}"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "TEMPLATE",
+      "key": "eventName",
+      "value": "BC | Book a free call"
+     },
+     {
+      "type": "TEMPLATE",
+      "key": "measurementIdOverride",
+      "value": "{{DMR | Measurement ID}}"
+     }
+    ],
+    "firingTriggerId": [
+     "81"
+    ],
+    "tagFiringOption": "ONCE_PER_EVENT",
+    "monitoringMetadata": {
+     "type": "MAP"
+    },
+    "consentSettings": {
+     "consentStatus": "NOT_SET"
+    }
+   },
+   {
+    "accountId": "6355298786",
+    "containerId": "252420858",
+    "tagId": "82",
+    "name": "BC | Book a consultation",
+    "type": "gaawe",
+    "parameter": [
+     {
+      "type": "BOOLEAN",
+      "key": "sendEcommerceData",
+      "value": "false"
+     },
+     {
+      "type": "LIST",
+      "key": "eventSettingsTable",
+      "list": [
+       {
+        "type": "MAP",
+        "map": [
+         {
+          "type": "TEMPLATE",
+          "key": "parameter",
+          "value": "click text"
+         },
+         {
+          "type": "TEMPLATE",
+          "key": "parameterValue",
+          "value": "{{Click Text}}"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "TEMPLATE",
+      "key": "eventName",
+      "value": "BC | Book a consultation"
+     },
+     {
+      "type": "TEMPLATE",
+      "key": "measurementIdOverride",
+      "value": "{{DMR | Measurement ID}}"
+     }
+    ],
+    "firingTriggerId": [
+     "82"
+    ],
+    "tagFiringOption": "ONCE_PER_EVENT",
+    "monitoringMetadata": {
+     "type": "MAP"
+    },
+    "consentSettings": {
+     "consentStatus": "NOT_SET"
+    }
+   },
+   {
+    "accountId": "6355298786",
+    "containerId": "252420858",
+    "tagId": "83",
+    "name": "BC | Book a free consultation",
+    "type": "gaawe",
+    "parameter": [
+     {
+      "type": "BOOLEAN",
+      "key": "sendEcommerceData",
+      "value": "false"
+     },
+     {
+      "type": "LIST",
+      "key": "eventSettingsTable",
+      "list": [
+       {
+        "type": "MAP",
+        "map": [
+         {
+          "type": "TEMPLATE",
+          "key": "parameter",
+          "value": "click text"
+         },
+         {
+          "type": "TEMPLATE",
+          "key": "parameterValue",
+          "value": "{{Click Text}}"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "TEMPLATE",
+      "key": "eventName",
+      "value": "BC | Book a free consultation"
+     },
+     {
+      "type": "TEMPLATE",
+      "key": "measurementIdOverride",
+      "value": "{{DMR | Measurement ID}}"
+     }
+    ],
+    "firingTriggerId": [
+     "83"
+    ],
+    "tagFiringOption": "ONCE_PER_EVENT",
+    "monitoringMetadata": {
+     "type": "MAP"
+    },
+    "consentSettings": {
+     "consentStatus": "NOT_SET"
+    }
+   },
+   {
+    "accountId": "6355298786",
+    "containerId": "252420858",
+    "tagId": "84",
+    "name": "BC | Inquire",
+    "type": "gaawe",
+    "parameter": [
+     {
+      "type": "BOOLEAN",
+      "key": "sendEcommerceData",
+      "value": "false"
+     },
+     {
+      "type": "LIST",
+      "key": "eventSettingsTable",
+      "list": [
+       {
+        "type": "MAP",
+        "map": [
+         {
+          "type": "TEMPLATE",
+          "key": "parameter",
+          "value": "click text"
+         },
+         {
+          "type": "TEMPLATE",
+          "key": "parameterValue",
+          "value": "{{Click Text}}"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "TEMPLATE",
+      "key": "eventName",
+      "value": "BC | Inquire"
+     },
+     {
+      "type": "TEMPLATE",
+      "key": "measurementIdOverride",
+      "value": "{{DMR | Measurement ID}}"
+     }
+    ],
+    "firingTriggerId": [
+     "84"
+    ],
+    "tagFiringOption": "ONCE_PER_EVENT",
+    "monitoringMetadata": {
+     "type": "MAP"
+    },
+    "consentSettings": {
+     "consentStatus": "NOT_SET"
+    }
+   },
+   {
+    "accountId": "6355298786",
+    "containerId": "252420858",
+    "tagId": "85",
+    "name": "BC | Send request",
+    "type": "gaawe",
+    "parameter": [
+     {
+      "type": "BOOLEAN",
+      "key": "sendEcommerceData",
+      "value": "false"
+     },
+     {
+      "type": "LIST",
+      "key": "eventSettingsTable",
+      "list": [
+       {
+        "type": "MAP",
+        "map": [
+         {
+          "type": "TEMPLATE",
+          "key": "parameter",
+          "value": "click text"
+         },
+         {
+          "type": "TEMPLATE",
+          "key": "parameterValue",
+          "value": "{{Click Text}}"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "TEMPLATE",
+      "key": "eventName",
+      "value": "BC | Send request"
+     },
+     {
+      "type": "TEMPLATE",
+      "key": "measurementIdOverride",
+      "value": "{{DMR | Measurement ID}}"
+     }
+    ],
+    "firingTriggerId": [
+     "85"
+    ],
+    "tagFiringOption": "ONCE_PER_EVENT",
+    "monitoringMetadata": {
+     "type": "MAP"
+    },
+    "consentSettings": {
+     "consentStatus": "NOT_SET"
+    }
+   },
+   {
+    "accountId": "6355298786",
+    "containerId": "252420858",
+    "tagId": "86",
+    "name": "BC | Book a partner call",
+    "type": "gaawe",
+    "parameter": [
+     {
+      "type": "BOOLEAN",
+      "key": "sendEcommerceData",
+      "value": "false"
+     },
+     {
+      "type": "LIST",
+      "key": "eventSettingsTable",
+      "list": [
+       {
+        "type": "MAP",
+        "map": [
+         {
+          "type": "TEMPLATE",
+          "key": "parameter",
+          "value": "click text"
+         },
+         {
+          "type": "TEMPLATE",
+          "key": "parameterValue",
+          "value": "{{Click Text}}"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "TEMPLATE",
+      "key": "eventName",
+      "value": "BC | Book a partner call"
+     },
+     {
+      "type": "TEMPLATE",
+      "key": "measurementIdOverride",
+      "value": "{{DMR | Measurement ID}}"
+     }
+    ],
+    "firingTriggerId": [
+     "86"
+    ],
+    "tagFiringOption": "ONCE_PER_EVENT",
+    "monitoringMetadata": {
+     "type": "MAP"
+    },
+    "consentSettings": {
+     "consentStatus": "NOT_SET"
+    }
+   },
+   {
+    "accountId": "6355298786",
+    "containerId": "252420858",
+    "tagId": "87",
+    "name": "BC | Message on WhatsApp",
+    "type": "gaawe",
+    "parameter": [
+     {
+      "type": "BOOLEAN",
+      "key": "sendEcommerceData",
+      "value": "false"
+     },
+     {
+      "type": "LIST",
+      "key": "eventSettingsTable",
+      "list": [
+       {
+        "type": "MAP",
+        "map": [
+         {
+          "type": "TEMPLATE",
+          "key": "parameter",
+          "value": "click text"
+         },
+         {
+          "type": "TEMPLATE",
+          "key": "parameterValue",
+          "value": "{{Click Text}}"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "TEMPLATE",
+      "key": "eventName",
+      "value": "BC | Message on WhatsApp"
+     },
+     {
+      "type": "TEMPLATE",
+      "key": "measurementIdOverride",
+      "value": "{{DMR | Measurement ID}}"
+     }
+    ],
+    "firingTriggerId": [
+     "87"
+    ],
+    "tagFiringOption": "ONCE_PER_EVENT",
+    "monitoringMetadata": {
+     "type": "MAP"
+    },
+    "consentSettings": {
+     "consentStatus": "NOT_SET"
+    }
+   },
+   {
+    "accountId": "6355298786",
+    "containerId": "252420858",
+    "tagId": "88",
+    "name": "BC | Partner-Gespräch buchen",
+    "type": "gaawe",
+    "parameter": [
+     {
+      "type": "BOOLEAN",
+      "key": "sendEcommerceData",
+      "value": "false"
+     },
+     {
+      "type": "LIST",
+      "key": "eventSettingsTable",
+      "list": [
+       {
+        "type": "MAP",
+        "map": [
+         {
+          "type": "TEMPLATE",
+          "key": "parameter",
+          "value": "click text"
+         },
+         {
+          "type": "TEMPLATE",
+          "key": "parameterValue",
+          "value": "{{Click Text}}"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "TEMPLATE",
+      "key": "eventName",
+      "value": "BC | Partner-Gespräch buchen"
+     },
+     {
+      "type": "TEMPLATE",
+      "key": "measurementIdOverride",
+      "value": "{{DMR | Measurement ID}}"
+     }
+    ],
+    "firingTriggerId": [
+     "88"
+    ],
+    "tagFiringOption": "ONCE_PER_EVENT",
+    "monitoringMetadata": {
+     "type": "MAP"
+    },
+    "consentSettings": {
+     "consentStatus": "NOT_SET"
+    }
+   }
+  ],
+  "trigger": [
+   {
+    "accountId": "6355298786",
+    "containerId": "252420858",
+    "triggerId": "80",
+    "name": "T | BC | Book a call",
+    "type": "CLICK",
+    "filter": [
+     {
+      "type": "CONTAINS",
+      "parameter": [
+       {
+        "type": "TEMPLATE",
+        "key": "arg0",
+        "value": "{{Click Text}}"
+       },
+       {
+        "type": "TEMPLATE",
+        "key": "arg1",
+        "value": "Book a call"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "accountId": "6355298786",
+    "containerId": "252420858",
+    "triggerId": "81",
+    "name": "T | BC | Book a free call",
+    "type": "CLICK",
+    "filter": [
+     {
+      "type": "CONTAINS",
+      "parameter": [
+       {
+        "type": "TEMPLATE",
+        "key": "arg0",
+        "value": "{{Click Text}}"
+       },
+       {
+        "type": "TEMPLATE",
+        "key": "arg1",
+        "value": "Book a free call"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "accountId": "6355298786",
+    "containerId": "252420858",
+    "triggerId": "82",
+    "name": "T | BC | Book a consultation",
+    "type": "CLICK",
+    "filter": [
+     {
+      "type": "CONTAINS",
+      "parameter": [
+       {
+        "type": "TEMPLATE",
+        "key": "arg0",
+        "value": "{{Click Text}}"
+       },
+       {
+        "type": "TEMPLATE",
+        "key": "arg1",
+        "value": "Book a consultation"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "accountId": "6355298786",
+    "containerId": "252420858",
+    "triggerId": "83",
+    "name": "T | BC | Book a free consultation",
+    "type": "CLICK",
+    "filter": [
+     {
+      "type": "CONTAINS",
+      "parameter": [
+       {
+        "type": "TEMPLATE",
+        "key": "arg0",
+        "value": "{{Click Text}}"
+       },
+       {
+        "type": "TEMPLATE",
+        "key": "arg1",
+        "value": "Book a free consultation"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "accountId": "6355298786",
+    "containerId": "252420858",
+    "triggerId": "84",
+    "name": "T | BC | Inquire",
+    "type": "CLICK",
+    "filter": [
+     {
+      "type": "CONTAINS",
+      "parameter": [
+       {
+        "type": "TEMPLATE",
+        "key": "arg0",
+        "value": "{{Click Text}}"
+       },
+       {
+        "type": "TEMPLATE",
+        "key": "arg1",
+        "value": "Inquire"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "accountId": "6355298786",
+    "containerId": "252420858",
+    "triggerId": "85",
+    "name": "T | BC | Send request",
+    "type": "CLICK",
+    "filter": [
+     {
+      "type": "CONTAINS",
+      "parameter": [
+       {
+        "type": "TEMPLATE",
+        "key": "arg0",
+        "value": "{{Click Text}}"
+       },
+       {
+        "type": "TEMPLATE",
+        "key": "arg1",
+        "value": "Send request"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "accountId": "6355298786",
+    "containerId": "252420858",
+    "triggerId": "86",
+    "name": "T | BC | Book a partner call",
+    "type": "CLICK",
+    "filter": [
+     {
+      "type": "CONTAINS",
+      "parameter": [
+       {
+        "type": "TEMPLATE",
+        "key": "arg0",
+        "value": "{{Click Text}}"
+       },
+       {
+        "type": "TEMPLATE",
+        "key": "arg1",
+        "value": "Book a partner call"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "accountId": "6355298786",
+    "containerId": "252420858",
+    "triggerId": "87",
+    "name": "T | BC | Message on WhatsApp",
+    "type": "CLICK",
+    "filter": [
+     {
+      "type": "CONTAINS",
+      "parameter": [
+       {
+        "type": "TEMPLATE",
+        "key": "arg0",
+        "value": "{{Click Text}}"
+       },
+       {
+        "type": "TEMPLATE",
+        "key": "arg1",
+        "value": "Message on WhatsApp"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "accountId": "6355298786",
+    "containerId": "252420858",
+    "triggerId": "88",
+    "name": "T | BC | Partner-Gespräch buchen",
+    "type": "CLICK",
+    "filter": [
+     {
+      "type": "CONTAINS",
+      "parameter": [
+       {
+        "type": "TEMPLATE",
+        "key": "arg0",
+        "value": "{{Click Text}}"
+       },
+       {
+        "type": "TEMPLATE",
+        "key": "arg1",
+        "value": "Partner-Gespräch buchen"
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}
