@@ -174,7 +174,7 @@ p{color:var(--tx)}
 .cases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;row-gap:2rem}
 .case{background:#fff;border:1.5px solid rgba(200,16,46,.08);border-radius:16px;overflow:hidden;transition:all .3s cubic-bezier(.4,0,.2,1);cursor:pointer;box-shadow:0 4px 25px rgba(0,0,0,.08);display:flex;flex-direction:column}
 .case:hover{box-shadow:0 20px 60px rgba(200,16,46,.2);transform:translateY(-6px)}
-.case-top{height:150px;position:relative;padding:0;margin:0;background:#fff;overflow:hidden;border-bottom:1px solid rgba(0,0,0,.06)}.case-bg{position:absolute;inset:0;background-size:contain;background-position:center;background-repeat:no-repeat;background-color:#fff;padding:12px;background-origin:content-box;transition:transform .4s ease}.case:hover .case-bg{transform:scale(1.04)}
+.case-top{height:128px;position:relative;padding:0;margin:0;background:#fff;overflow:hidden;border-bottom:1px solid rgba(0,0,0,.06)}.case-bg{position:absolute;inset:0;background-size:contain;background-position:center;background-repeat:no-repeat;background-color:#fff;padding:9px 10px;background-origin:content-box;transition:transform .4s ease}.case:hover .case-bg{transform:scale(1.04)}
 .case-body{padding:1.25rem 1.5rem;margin:0;flex:1;display:flex;flex-direction:column}
 .case-niche{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--c2);margin-bottom:.5rem}
 .case-title{font-size:.95rem;font-weight:700;color:var(--c1);margin-bottom:.875rem;line-height:1.5}
@@ -251,8 +251,8 @@ footer{background:#0f172a;color:rgba(255,255,255,.5);padding:3.25rem 0 1.75rem}
 .ty{display:none;min-height:60vh;align-items:center;justify-content:center;text-align:center;padding:7rem 1rem 3rem}.ty.active{display:flex}
 .ty-inner{max-width:460px}.ty-icon{font-size:3.5rem;margin-bottom:1rem}.ty-inner h1,.ty-inner h2{margin-bottom:.75rem;font-size:1.75rem}.ty-inner p{color:var(--tx);margin-bottom:1.5rem}
 @media(max-width:1024px){.hg{grid-template-columns:1fr;gap:2.5rem}.svc-grid{grid-template-columns:repeat(2,1fr)}.pg4{grid-template-columns:repeat(2,1fr)}.pg3{grid-template-columns:repeat(3,1fr);max-width:100%}.proc-grid{grid-template-columns:repeat(3,1fr)}.proc-grid::before{display:none}.about-grid{grid-template-columns:1fr;gap:2.5rem}.about-photo img{height:400px}.ft-grid{grid-template-columns:1fr 1fr}.pilot-grid{grid-template-columns:1fr;gap:2rem}}
-@media(max-width:768px){.sec{padding:4rem 0}.nl,.nc{display:none}.hb{display:flex}.lang-pill{display:inline-flex}.svc-grid{grid-template-columns:1fr}.pg4,.pg3{grid-template-columns:1fr}.proc-grid{grid-template-columns:repeat(2,1fr)}.cases-grid,.proof-grid{grid-template-columns:1fr}.ct-grid{grid-template-columns:1fr;gap:2rem}.fr,.hfr{grid-template-columns:1fr}.cta-btns,.hero-ctas{flex-direction:column;align-items:stretch}.ft-grid{grid-template-columns:1fr;gap:1.5rem}.ft-bot{flex-direction:column;text-align:center}.hero-stats{gap:1rem}.hfc{padding:1.5rem}.pilot-grid{gap:1.5rem}.case-top{height:200px}.proof{flex:0 0 calc(50% - 0.625rem);padding:1.5rem}}
-@media(max-width:480px){.pg4,.pg3{grid-template-columns:1fr}.proc-grid{grid-template-columns:1fr}.mms{grid-template-columns:1fr 1fr}.ctn{padding:0 1rem}.hero-ctas,.cta-btns{gap:.5rem}.btn{padding:.75rem 1.25rem;font-size:.85rem}.case-top{height:190px}.proof{flex:0 0 100%;padding:1.25rem;margin-bottom:0.5rem}}
+@media(max-width:768px){.sec{padding:4rem 0}.nl,.nc{display:none}.hb{display:flex}.lang-pill{display:inline-flex}.svc-grid{grid-template-columns:1fr}.pg4,.pg3{grid-template-columns:1fr}.proc-grid{grid-template-columns:repeat(2,1fr)}.cases-grid,.proof-grid{grid-template-columns:1fr}.ct-grid{grid-template-columns:1fr;gap:2rem}.fr,.hfr{grid-template-columns:1fr}.cta-btns,.hero-ctas{flex-direction:column;align-items:stretch}.ft-grid{grid-template-columns:1fr;gap:1.5rem}.ft-bot{flex-direction:column;text-align:center}.hero-stats{gap:1rem}.hfc{padding:1.5rem}.pilot-grid{gap:1.5rem}.case-top{height:150px}.proof{flex:0 0 calc(50% - 0.625rem);padding:1.5rem}}
+@media(max-width:480px){.pg4,.pg3{grid-template-columns:1fr}.proc-grid{grid-template-columns:1fr}.mms{grid-template-columns:1fr 1fr}.ctn{padding:0 1rem}.hero-ctas,.cta-btns{gap:.5rem}.btn{padding:.75rem 1.25rem;font-size:.85rem}.case-top{height:150px}.proof{flex:0 0 100%;padding:1.25rem;margin-bottom:0.5rem}}
 /* ===== MOBILE OPTIMISATION (added 2026-07-21): swipe carousels + compaction to cut page length ===== */
 @media(max-width:768px){
 /* horizontal swipe rows: cases + pricing. Native touch swipe both ways + arrow buttons (.msw-nav) */
@@ -278,8 +278,7 @@ body.mcta-on{padding-bottom:64px}
 @media(max-width:480px){.msw>*{flex:0 0 89%;min-width:89%}.svc-grid{gap:.6rem}}
 /* mobile round 2: compact the tallest sections (about / services / pilot / contact) */
 @media(max-width:768px){
-.about-photo img{height:320px!important;object-position:58% 28%;transform:scale(1.45);transform-origin:58% 34%}
-.about-photo{overflow:hidden}
+.about-photo img{height:auto!important;transform:none!important;object-fit:cover;object-position:center}
 .about-content>p{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 .about-content.open>p{-webkit-line-clamp:unset;overflow:visible}
 .abt-more{display:inline-block;margin:.35rem 0 .9rem;background:none;border:none;padding:0;color:var(--c2);font-weight:700;font-size:.82rem;cursor:pointer;text-decoration:underline}
@@ -314,7 +313,7 @@ body.mcta-on{padding-bottom:64px}
 <div>
 <div class="hey">🏆 Founder-led · 72 projects · 15 countries · Fully remote</div>
 <h1>More customers. Less waste. <em>Measurable results.</em></h1>
-<p class="hero-sub">Poor tracking, vague audiences and missing strategy burn ad budget — day after day. Start with a <strong>free analysis</strong> — written, with no strings attached. Already running campaigns? We review your account and show you where budget is being lost. Not started yet? We look at your product, market and keywords and recommend the right way to launch.</p>
+<p class="hero-sub">A new project about to launch — or campaigns already running? Both start with a <strong>free analysis</strong>, and you choose which: a <strong>project analysis</strong>, where we assess market, audience and keywords and tell you honestly what potential is realistic. Or an <strong>account audit</strong>, where we review your live campaigns and show where budget is being lost. Both free, no obligation.</p>
 <div class="hero-ctas">
 <a href="https://calendly.com/digitalmarketingremote01/30min" onclick="calClick('hero_cta')" class="btn bp bl">Book a free consultation →</a>
 <a href="#pilot" class="btn bo bl">30-day pilot project</a>
@@ -333,7 +332,7 @@ body.mcta-on{padding-bottom:64px}
 <div class="hfc-stat"><div class="hfc-sv">15</div><div class="hfc-sl">Countries</div></div>
 </div>
 <h3>Request a free analysis</h3>
-<p>Written report with clear recommendations — free, no obligation, no sales call. Also if you have not launched yet. We usually get back within 24 hours.</p>
+<p>Just tell us what it is about: a new project, or campaigns already running. You get a written report with clear recommendations — free, no obligation, no sales call.</p>
 <form id="hform" action="https://script.google.com/macros/s/AKfycbzh2cM4CE_41OMhJIDtNvhWoyowjRlRpdRrgvboM7mEWyremHsMMlyiHIpEHQpsCorIzQ/exec" method="POST" target="gas_iframe" novalidate>
 <div class="hfr"><div class="hfg"><label for="hv">First name *</label><input type="text" id="hv" name="vorname" required placeholder="Alex"></div><div class="hfg"><label for="hp">Phone *</label><input type="tel" id="hp" name="telefon" required placeholder="+44 7700 900000"></div></div>
 <div class="hfg"><label for="he">Email *</label><input type="email" id="he" name="email" required placeholder="alex@company.com"></div>
@@ -396,7 +395,7 @@ body.mcta-on{padding-bottom:64px}
 <div class="hl-item"><div class="hl-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><div class="hl-text"><strong>Experience that counts</strong><span>10 years in business (2011–2021) + specialised performance marketing since 2022</span></div></div>
 <div class="hl-item"><div class="hl-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><div class="hl-text"><strong>72 projects · 15 countries</strong><span>DACH focus with experience across Europe, North America and Asia</span></div></div>
 <div class="hl-item"><div class="hl-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><div class="hl-text"><strong>Clear communication</strong><span>Campaign copy in German, all reports & communication in English. Available Mon–Fri 9:00–17:00 German time.</span></div></div>
-<div class="hl-item"><div class="hl-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg></div><div class="hl-text"><strong>Method: analysis first</strong><span>Analyse first, then act: you get a written report with clear recommendations. Nothing is launched until you approve it.</span></div></div>
+<div class="hl-item"><div class="hl-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg></div><div class="hl-text"><strong>Method: analysis first</strong><span>Analyse first, then act — for a brand-new project just as much as for an existing account. Nothing is launched until you approve it.</span></div></div>
 </div>
 <div class="remote-tag">✅ Fully remote — transparent, reliable, no compromise on quality</div>
 </div>
@@ -420,7 +419,7 @@ body.mcta-on{padding-bottom:64px}
 <div class="sh"><span class="sl">How we work</span><h2>From first call to measurable growth</h2></div>
 <div class="proc-grid">
 <div class="proc-step"><div class="proc-num">1</div><h3>Free initial consultation</h3><p>30 minutes: your goals, your situation, our assessment. <strong style="color:var(--c3)">Free &amp; no obligation.</strong></p></div>
-<div class="proc-step"><div class="proc-num">2</div><h3>Audit &amp; analysis</h3><p>We review your ad account — or, if nothing is running yet, your product, market and keywords. You get a written report with clear recommendations. <strong style="color:var(--c3)">Free.</strong></p></div>
+<div class="proc-step"><div class="proc-num">2</div><h3>Audit &amp; analysis</h3><p>New project? We assess market, audience and keywords and estimate the realistic potential. Campaigns already live? We review your account. Either way: a written report with clear recommendations. <strong style="color:var(--c3)">Free.</strong></p></div>
 <div class="proc-step"><div class="proc-num">3</div><h3>Onboarding & approval</h3><p>Written contract, access rights and your approval — then we start.</p></div>
 <div class="proc-step"><div class="proc-num">4</div><h3>Strategy</h3><p>KPIs, channels, budget roadmap — tailored to your business.</p></div>
 <div class="proc-step"><div class="proc-num">5</div><h3>Implementation</h3><p>Tracking, accounts, campaigns — live on your approval.</p></div>
@@ -457,7 +456,7 @@ body.mcta-on{padding-bottom:64px}
 <div class="sh"><span class="sl">Transparent pricing</span><h2>Fixed management fee. No markup on your ad budget.</h2><p>Your ad budget flows 100% into your campaigns. You only pay the management fee.</p></div>
 <div style="max-width:860px;margin:0 auto 2rem;background:#f0fdf4;border:1.5px solid #86efac;border-radius:12px;padding:1rem 1.5rem;text-align:center">
 <strong style="display:block;color:var(--c3);font-size:.9rem;margin-bottom:.4rem">You risk nothing</strong>
-<div style="display:flex;flex-wrap:wrap;gap:.35rem 1.25rem;justify-content:center;font-size:.8rem;color:var(--tx)"><span>✓ Free initial consultation</span><span>✓ Free analysis — even with no campaign running</span><span>✓ No setup fee</span><span>✓ Cancel monthly</span><span>✓ Goals missed? Month 2 with no management fee</span></div>
+<div style="display:flex;flex-wrap:wrap;gap:.35rem 1.25rem;justify-content:center;font-size:.8rem;color:var(--tx)"><span>✓ Free initial consultation</span><span>✓ Free project analysis or account audit — your choice</span><span>✓ No setup fee</span><span>✓ Cancel monthly</span><span>✓ Goals missed? Month 2 with no management fee</span></div>
 </div>
 <div class="price-toggle">
 <span class="ptl act" id="pl1">One platform</span>
