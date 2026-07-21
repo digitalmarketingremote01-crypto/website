@@ -259,7 +259,13 @@ footer .logo span{color:#ff6b81}
 .ty{display:none;min-height:60vh;align-items:center;justify-content:center;text-align:center;padding:7rem 1rem 3rem}.ty.active{display:flex}
 .ty-inner{max-width:460px}.ty-icon{font-size:3.5rem;margin-bottom:1rem}.ty-inner h1,.ty-inner h2{margin-bottom:.75rem;font-size:1.75rem}.ty-inner p{color:var(--tx);margin-bottom:1.5rem}
 @media(max-width:1024px){.hg{grid-template-columns:1fr;gap:2.5rem}.svc-grid{grid-template-columns:repeat(2,1fr)}.pg4{grid-template-columns:repeat(2,1fr)}.pg3{grid-template-columns:repeat(3,1fr);max-width:100%}.proc-grid{grid-template-columns:repeat(3,1fr)}.proc-grid::before{display:none}.about-grid{grid-template-columns:1fr;gap:2.5rem}.about-photo img{height:400px}.ft-grid{grid-template-columns:1fr 1fr}.pilot-grid{grid-template-columns:1fr;gap:2rem}}
-@media(max-width:768px){.sec{padding:4rem 0}.nl,.nc{display:none}.hb{display:flex}.lang-pill{display:inline-flex}.svc-grid{grid-template-columns:1fr}.pg4,.pg3{grid-template-columns:1fr}.proc-grid{grid-template-columns:repeat(2,1fr)}.cases-grid,.proof-grid{grid-template-columns:1fr}.ct-grid{grid-template-columns:1fr;gap:2rem}.fr,.hfr{grid-template-columns:1fr}.cta-btns,.hero-ctas{flex-direction:column;align-items:stretch}.ft-grid{grid-template-columns:1fr;gap:1.5rem}.ft-bot{flex-direction:column;text-align:center}.hero-stats{gap:1rem}.hfc{padding:1.5rem}.pilot-grid{gap:1.5rem}.case-top{height:150px}.proof{flex:0 0 calc(50% - 0.625rem);padding:1.5rem}}
+@media(max-width:768px){.sec{padding:4rem 0}.nl,.nc{display:none}.hb{display:flex}.lang-pill{display:inline-flex}.svc-grid{grid-template-columns:1fr}.pg4,.pg3{grid-template-columns:1fr}.proc-grid{grid-template-columns:repeat(2,1fr)}.cases-grid,.proof-grid{grid-template-columns:1fr}.ct-grid{grid-template-columns:1fr;gap:2rem}.fr,.hfr{grid-template-columns:1fr}.cta-btns,.hero-ctas{flex-direction:column;align-items:stretch}.ft-grid{grid-template-columns:1fr;gap:1.5rem}.ft-bot{flex-direction:column;text-align:center}.hero-stats{gap:1rem}.hfc{padding:1.5rem}.pilot-grid{gap:1.5rem}.case-top{height:150px}
+/* reviews: same swipe carousel as cases/pricing */
+.proof-slider{overflow:visible}
+.proof-track{overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;transform:none!important;scrollbar-width:none;padding-bottom:.25rem}
+.proof-track::-webkit-scrollbar{display:none}
+.proof{flex:0 0 86%;scroll-snap-align:center;padding:1.5rem}
+.proof-nav{margin-top:1.25rem;gap:1rem}.proof{flex:0 0 calc(50% - 0.625rem);padding:1.5rem}}
 @media(max-width:480px){.pg4,.pg3{grid-template-columns:1fr}.proc-grid{grid-template-columns:1fr}.mms{grid-template-columns:1fr 1fr}.ctn{padding:0 1rem}.hero-ctas,.cta-btns{gap:.5rem}.btn{padding:.75rem 1.25rem;font-size:.85rem}.case-top{height:150px}.proof{flex:0 0 100%;padding:1.25rem;margin-bottom:0.5rem}}
 /* ===== MOBILE OPTIMISATION (added 2026-07-21): swipe carousels + compaction to cut page length ===== */
 @media(max-width:768px){
@@ -830,17 +836,23 @@ document.querySelectorAll('.case').forEach(function(c){c.addEventListener('keydo
 var track=document.getElementById('proofTrack');if(!track)return;
 var slider=track.parentElement,proofs=track.querySelectorAll('.proof'),total=proofs.length,page=0;
 if(total===0)return;
-function perView(){var w=window.innerWidth;return w<=480?1:2;}
+var PMQ=window.matchMedia('(max-width:768px)');
+function perView(){return PMQ.matches?1:2;}
+function cardStep(){return proofs[0]?proofs[0].getBoundingClientRect().width+20:0;}
 function pageCount(){return Math.ceil(total/perView());}
 var nav=document.createElement('div');nav.className='proof-nav';
 var prev=document.createElement('button');prev.className='proof-arrow';prev.setAttribute('aria-label','Previous reviews');prev.innerHTML='&#8249;';
 var dots=document.createElement('div');dots.className='proof-dots';
 var next=document.createElement('button');next.className='proof-arrow';next.setAttribute('aria-label','Next reviews');next.innerHTML='&#8250;';
 nav.appendChild(prev);nav.appendChild(dots);nav.appendChild(next);slider.parentElement.appendChild(nav);
-prev.onclick=function(){if(page>0){page--;render();}};
-next.onclick=function(){if(page<pageCount()-1){page++;render();}};
-function buildDots(){dots.innerHTML='';var pc=pageCount();for(var i=0;i<pc;i++){var d=document.createElement('button');d.className='proof-dot'+(i===page?' active':'');d.setAttribute('aria-label','Page '+(i+1));(function(i){d.onclick=function(){page=i;render();};})(i);dots.appendChild(d);}}
-function render(){var pv=perView(),pc=pageCount();if(page>pc-1)page=pc-1;if(page<0)page=0;var first=Math.min(page*pv,Math.max(0,total-pv));track.style.transform='translateX('+(-proofs[first].offsetLeft)+'px)';buildDots();prev.disabled=page<=0;next.disabled=page>=pc-1;}
+prev.onclick=function(){if(PMQ.matches){track.scrollBy({left:-cardStep(),behavior:'smooth'});return;}if(page>0){page--;render();}};
+next.onclick=function(){if(PMQ.matches){track.scrollBy({left:cardStep(),behavior:'smooth'});return;}if(page<pageCount()-1){page++;render();}};
+function buildDots(){dots.innerHTML='';var pc=pageCount();for(var i=0;i<pc;i++){var d=document.createElement('button');d.className='proof-dot'+(i===page?' active':'');d.setAttribute('aria-label','Page '+(i+1));(function(i){d.onclick=function(){if(PMQ.matches){track.scrollTo({left:i*cardStep(),behavior:'smooth'});return;}page=i;render();};})(i);dots.appendChild(d);}}
+function render(){var pv=perView(),pc=pageCount();if(page>pc-1)page=pc-1;if(page<0)page=0;
+if(PMQ.matches){track.style.transform='';buildDots();prev.disabled=false;next.disabled=false;return;}
+var first=Math.min(page*pv,Math.max(0,total-pv));track.style.transform='translateX('+(-proofs[first].offsetLeft)+'px)';buildDots();prev.disabled=page<=0;next.disabled=page>=pc-1;}
+/* mobile: native swipe drives the active dot */
+var st;track.addEventListener('scroll',function(){if(!PMQ.matches)return;clearTimeout(st);st=setTimeout(function(){var s=cardStep();if(!s)return;var i=Math.round(track.scrollLeft/s);if(i!==page){page=Math.max(0,Math.min(total-1,i));buildDots();}},90);});
 var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(render,150);});render();
 })();
 

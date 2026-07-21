@@ -366,7 +366,11 @@
       "Bash(python3 -c \"import weasyprint; print\\('weasyprint-py ok'\\)\")",
       "Bash(python3 scripts/tailor_cv.py dmr-pool-2026-07-21-deepfit.json)",
       "Bash(./tools/verify-site.sh)",
-      "Bash(bash -x ./tools/verify-site.sh)"
+      "Bash(bash -x ./tools/verify-site.sh)",
+      "Bash(python3 scripts/tailor_cv.py dmr-top50-2026-07-21.json)",
+      "Bash(cp \"/private/tmp/claude-501/-Users-mdanyalshahzad-Documents-Danyal-Freelancing-Digital-Marketing-Remote-Website/8cab568d-2f24-49c7-bcdb-72126e1be98d/scratchpad/conn.csv\" \"/Users/mdanyalshahzad/Documents/Danyal/Pipeline/linkedin-connections-by-country.csv\" && echo saved)",
+      "Bash(python3 scripts/tailor_cv.py dmr-apply-2026-07-21.json)",
+      "Bash(awk '/proofTrack/{f=1} f{print NR\": \"$0} /prev.onclick|next.onclick|buildDots|render\\\\\\(\\\\\\);/{if\\(f\\)c++} c>6{exit}' index.html)"
     ]
   }
 }
