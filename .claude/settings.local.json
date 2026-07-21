@@ -353,7 +353,9 @@
       "Bash(npx -y lighthouse@12 \"https://www.digitalmarketingremote.com/\" --only-categories=performance,accessibility,best-practices,seo --preset=desktop --output=json --output-path=/tmp/lh_desktop2.json --chrome-flags=\"--headless=new --no-sandbox\" --quiet)",
       "Bash(npx -y lighthouse@12 \"https://www.digitalmarketingremote.com/\" --only-categories=performance,accessibility,best-practices,seo --form-factor=mobile --screenEmulation.mobile --output=json --output-path=/tmp/lh_mobile3.json --chrome-flags=\"--headless=new --no-sandbox\" --quiet)",
       "Bash(npx -y lighthouse@12 \"https://www.digitalmarketingremote.com/\" --only-categories=performance,accessibility,best-practices,seo --preset=desktop --output=json --output-path=/tmp/lh_desktop3.json --chrome-flags=\"--headless=new --no-sandbox\" --quiet)",
-      "Bash(mv ~/Downloads/dmr-pool-2026-07-21.json /Users/mdanyalshahzad/Documents/Danyal/Pipeline/)"
+      "Bash(mv ~/Downloads/dmr-pool-2026-07-21.json /Users/mdanyalshahzad/Documents/Danyal/Pipeline/)",
+      "Bash(python3 scripts/deep_fit_filter.py dmr-pool-2026-07-21.json)",
+      "Bash(grep -o '\\\\.msw-nav{display:none}.\\\\{0,25\\\\}' index.html)"
     ]
   }
 }
