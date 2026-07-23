@@ -183,6 +183,13 @@ p{color:var(--tx)}
 .pc-feats li{display:flex;align-items:flex-start;gap:.2rem;font-size:.75rem;color:var(--tx);padding:.25rem 0;white-space:normal;word-break:break-word;max-width:100%;line-height:1.3}
 .pc-feats li::before{content:'✓';color:var(--c3);font-weight:700;flex-shrink:0;margin-top:2px}
 .pc-save{font-size:.7rem;color:var(--c3);font-weight:600;text-align:center;margin-bottom:.625rem}
+.pc-inc{max-width:860px;margin:0 auto 1.5rem;background:var(--bg);border:1.5px solid rgba(0,0,0,.06);border-radius:12px;padding:.9rem 1.25rem}
+.pc-inc-h{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--c1);margin-bottom:.6rem;text-align:center}
+.pc-inc-chips{display:flex;flex-wrap:wrap;gap:.45rem .55rem;justify-content:center}
+.pc-inc-chips span{font-size:.75rem;color:var(--tx);background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:20px;padding:.28rem .65rem;display:inline-flex;align-items:center;gap:.3rem;line-height:1.3}
+.pc-inc-chips span::before{content:'✓';color:var(--c3);font-weight:700}
+.pc-tag{font-size:.72rem;color:var(--mt);font-weight:600;margin:.1rem 0 .5rem}
+.pc>.btn{margin-top:auto}
 .vat-note{text-align:center;font-size:.75rem;color:var(--mt);margin-top:2rem;padding:1rem;background:var(--bg);border-radius:var(--rs);line-height:1.6}
 /* Cases */
 .cases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;row-gap:2rem}
@@ -376,7 +383,7 @@ body{padding-bottom:64px}
 <div class="hfc-stat"><div class="hfc-sv">15</div><div class="hfc-sl">Länder</div></div>
 </div>
 <h2>Kostenlose Analyse anfragen</h2>
-<p>Sagen Sie uns kurz, worum es geht: neues Projekt oder laufende Kampagnen. Sie bekommen einen schriftlichen Report mit klaren Empfehlungen — kostenlos, unverbindlich, kein Verkaufsgespräch. Wir melden uns in der Regel innerhalb von 24 Stunden.</p>
+<p>Kurz beschreiben, worum es geht — Sie bekommen einen schriftlichen Report mit klaren Empfehlungen. Kostenlos, unverbindlich, kein Verkaufsgespräch.</p>
 <form id="hform" action="https://script.google.com/macros/s/AKfycbzh2cM4CE_41OMhJIDtNvhWoyowjRlRpdRrgvboM7mEWyremHsMMlyiHIpEHQpsCorIzQ/exec" method="POST" target="gas_iframe" novalidate>
 <div class="hfr"><div class="hfg"><label for="hv">Vorname *</label><input type="text" id="hv" name="vorname" required placeholder="Max"></div><div class="hfg"><label for="hp">Telefon *</label><input type="tel" id="hp" name="telefon" required placeholder="+49 170 1234567"></div></div>
 <div class="hfg"><label for="he">E-Mail *</label><input type="email" id="he" name="email" required placeholder="max@firma.de"></div>
@@ -401,7 +408,7 @@ body{padding-bottom:64px}
 <div>
 <div class="pilot-badge">🚀 30-Tage-Pilotprojekt</div>
 <h2>Testen Sie Ihre Kampagnen-Performance — ohne Langzeitrisiko</h2>
-<p>Wir analysieren Ihr Business-Modell und definieren das realistische Mindestbudget für Ihr Projekt. Sie erhalten klare KPIs, monatliches Reporting und volle Transparenz — von Tag eins.</p>
+<p>Klare KPIs, monatliches Reporting und volle Transparenz — von Tag eins. Sie sehen genau, was Ihr Budget bewirkt.</p>
 <div class="pilot-checks">
 <div class="pilot-check">Kostenlose Voranalyse Ihres Marktes und Geschäftsmodells</div>
 <div class="pilot-check">Wir definieren das realistische Mindestbudget für Ihr Projekt</div>
@@ -411,7 +418,7 @@ body{padding-bottom:64px}
 </div>
 <div class="pilot-guarantee">
 <strong>🛡️ Faire Konditionen</strong>
-<p>Ziele im ersten Monat nicht erreicht? Der zweite Monat kostet keine Managementgebühr. Faire Partnerschaft. Die Details werden im Dienstleistungsvertrag schriftlich festgehalten.</p>
+<p>Ziele im ersten Monat nicht erreicht? Der zweite Monat kostet keine Managementgebühr — schriftlich im Dienstleistungsvertrag festgehalten.</p>
 </div>
 </div>
 <div class="pilot-side">
@@ -481,7 +488,7 @@ body{padding-bottom:64px}
 <div class="sh"><span class="sl">So arbeiten wir</span><h2>Von der Erstberatung zum messbaren Wachstum</h2></div>
 <div class="proc-grid">
 <div class="proc-step"><div class="proc-num">1</div><h3>Kostenlose Erstberatung</h3><p>30 Minuten: Ihre Ziele, Ihre Situation, unsere Einschätzung. <strong style="color:var(--c3)">Gratis &amp; unverbindlich.</strong></p></div>
-<div class="proc-step"><div class="proc-num">2</div><h3>Audit &amp; Analyse</h3><p>Neues Projekt? Wir bewerten Markt, Zielgruppe und Keywords und schätzen das realistische Potenzial ein. Laufende Kampagnen? Wir prüfen Ihr Konto. In beiden Fällen: schriftlicher Report mit klaren Empfehlungen. <strong style="color:var(--c3)">Kostenlos.</strong></p></div>
+<div class="proc-step"><div class="proc-num">2</div><h3>Audit &amp; Analyse</h3><p>Neues Projekt? Wir bewerten Markt, Zielgruppe und Keywords. Laufende Kampagnen? Wir prüfen Ihr Konto. Beides mit schriftlichem Report und klaren Empfehlungen. <strong style="color:var(--c3)">Kostenlos.</strong></p></div>
 <div class="proc-step"><div class="proc-num">3</div><h3>Onboarding & Freigabe</h3><p>Schriftlicher Vertrag, Zugriffsrechte und Ihre Freigabe — dann starten wir.</p></div>
 <div class="proc-step"><div class="proc-num">4</div><h3>Strategie</h3><p>KPIs, Kanäle, Budget-Roadmap — individuell für Ihr Business.</p></div>
 <div class="proc-step"><div class="proc-num">5</div><h3>Implementierung</h3><p>Tracking, Accounts, Kampagnen — live auf Ihre Freigabe.</p></div>
@@ -493,12 +500,12 @@ body{padding-bottom:64px}
 <section id="services" class="sec"><div class="ctn">
 <div class="sh"><span class="sl">Leistungen</span><h2>Was Sie von uns bekommen</h2><p>Alles, was Ihre Kampagnen brauchen — von der Strategie bis zum monatlichen Reporting.</p></div>
 <div class="svc-grid">
-<div class="svc"><div class="svc-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div><h3>Google Ads</h3><p>Search, Display und Performance Max — konfiguriert für Ihren Markt, kontinuierlich optimiert für maximalen Return on Ad Spend. Wir wählen die Kampagnentypen, die für Ihr Ziel und Budget den größten Return liefern.</p></div>
-<div class="svc"><div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></div><h3>Meta Ads</h3><p>Facebook & Instagram Kampagnen mit präzisem Targeting, Creative-Testing und Pixel-Tracking für messbare Conversions. Präzises Zielgruppen-Targeting für Conversions, die sich messen und skalieren lassen.</p></div>
-<div class="svc"><div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div><h3>E-Commerce, Lead-Gen & SaaS</h3><p>Ob Online-Shop, Lead-Generierung oder SaaS-Launch — wir bauen die Performance-Strategie, die zu Ihrem Geschäftsmodell passt. Wir bauen das System, das Ihre Zielgruppe in zahlende Kunden verwandelt.</p></div>
-<div class="svc"><div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg></div><h3>SEA — Suchanzeigen</h3><p>High-Intent Keywords, strukturierte negative Listen und Gebotsstrategien, die Ihr Budget schützen und Conversions maximieren. Kein verschwendetes Budget für Klicks, die nie kaufen.</p></div>
-<div class="svc"><div class="svc-icon"><svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></div><h3>YouTube Ads</h3><p>Video-Kampagnen für Markenbekanntheit und Lead-Generierung — von der Zielgruppe bis zur Conversion-Analyse. Sichtbarkeit genau dann, wenn potenzielle Kunden bereit sind, mehr zu erfahren.</p></div>
-<div class="svc"><div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg></div><h3>Tracking & Analytics</h3><p>GA4, Tag Manager, Meta Pixel — vollständige Einrichtung, damit jede Conversion korrekt erfasst und jede Entscheidung datenbasiert wird. Ohne sauberes Tracking optimieren Sie blind — wir sorgen dafür, dass jede Conversion zählt.</p></div>
+<div class="svc"><div class="svc-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div><h3>Google Ads</h3><p>Search, Display &amp; Performance Max — konfiguriert für Ihren Markt und laufend auf maximalen Return on Ad Spend optimiert.</p></div>
+<div class="svc"><div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></div><h3>Meta Ads</h3><p>Facebook- &amp; Instagram-Kampagnen mit präzisem Zielgruppen-Targeting, Creative-Testing und Pixel-Tracking für messbare, skalierbare Conversions.</p></div>
+<div class="svc"><div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div><h3>E-Commerce, Lead-Gen & SaaS</h3><p>Ob Online-Shop, Lead-Generierung oder SaaS-Launch — die Performance-Strategie, die Ihre Zielgruppe in zahlende Kunden verwandelt.</p></div>
+<div class="svc"><div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg></div><h3>SEA — Suchanzeigen</h3><p>High-Intent Keywords, strukturierte Negativ-Listen und Gebotsstrategien — kein verschwendetes Budget für Klicks, die nie kaufen.</p></div>
+<div class="svc"><div class="svc-icon"><svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></div><h3>YouTube Ads</h3><p>Video-Kampagnen für Markenbekanntheit und Lead-Generierung — Sichtbarkeit genau dann, wenn Ihre Zielgruppe bereit ist, mehr zu erfahren.</p></div>
+<div class="svc"><div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg></div><h3>Tracking & Analytics</h3><p>GA4, Tag Manager &amp; Meta Pixel — sauber eingerichtet, damit jede Conversion zählt und jede Entscheidung datenbasiert ist.</p></div>
 </div>
 </div></section>
 
@@ -511,8 +518,8 @@ body{padding-bottom:64px}
 <div class="about-content">
 <span class="sl">Warum Digital Marketing Remote</span>
 <h2>Ihr Werbebudget verdient jemanden, der weiß, was auf dem Spiel steht.</h2>
-<p>Digital Marketing Remote verbindet unternehmerische Praxis mit datengetriebenem Performance-Marketing. Bevor ich meine erste Kampagne startete, habe ich ein Hotel betrieben, ein Düngemittel-Vertriebsunternehmen aufgebaut und ein Fast-Food- und Pizzarestaurant gegründet — und weiß deshalb aus erster Hand: Jeder Euro, der in Werbung fließt, ist eine echte Geschäftsentscheidung, die sich rechnen muss.</p>
-<p>Seit 2022 betreut unser Gründer Performance-Marketing-Kampagnen mit Fokus auf den DACH-Markt — insgesamt 72 Projekte in 15 Ländern. Darunter 57 Projekte in 13 Märkten, die er als unabhängiger Performance-Marketing-Consultant für ein deutsches Investment-Unternehmen analysiert, aufgebaut und skaliert hat. Ergebnis: über €1,7 Millionen nachweislich generierter Umsatz.</p>
+<p>Bevor ich meine erste Kampagne startete, habe ich ein Hotel betrieben, ein Düngemittel-Vertriebsunternehmen aufgebaut und ein Restaurant gegründet — ich weiß aus erster Hand, dass jeder Euro Werbung eine Geschäftsentscheidung ist, die sich rechnen muss.</p>
+<p>Seit 2022 betreue ich Performance-Marketing mit Fokus auf den DACH-Markt: 72 Projekte in 15 Ländern, davon 57 als unabhängiger Consultant für ein deutsches Investment-Unternehmen — über €1,7 Millionen nachweislich generierter Umsatz.</p>
 <div class="highlights">
 <div class="hl-item"><div class="hl-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><div class="hl-text"><strong>Erfahrung, die zählt</strong><span>10 Jahre Unternehmer-Praxis (2011–2021) + spezialisiertes Performance-Marketing seit 2022</span></div></div>
 <div class="hl-item"><div class="hl-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><div class="hl-text"><strong>72 Projekte · 15 Länder</strong><span>DACH-Fokus mit Erfahrung in ganz Europa, Nordamerika und Asien</span></div></div>
@@ -538,21 +545,21 @@ body{padding-bottom:64px}
 
 <!-- Single -->
 <div class="pside show" id="pgs">
+<div class="pc-inc">
+<div class="pc-inc-h">In jedem Paket enthalten</div>
+<div class="pc-inc-chips"><span>Google Ads oder Meta Ads</span><span>Conversion-Tracking &amp; Tag Manager</span><span>Alle Kampagnen-Typen nach Bedarf</span><span>Monatliches Reporting-PDF</span><span>Laufende Optimierung</span></div>
+</div>
 <div class="pgrid pg4">
-<div class="pc"><div class="pc-name">Starter</div><div class="pc-price">€349<span>/Mo.</span></div><div class="pc-cap">Budget bis €1.500</div>
-<ul class="pc-feats"><li>Google Ads oder Meta Ads</li><li>Monatliches Reporting-PDF</li><li>Conversion-Tracking Setup</li><li>Tag Manager Integration</li><li>Alle Kampagnen-Typen nach Bedarf</li><li>Kontinuierliche Optimierung</li></ul>
+<div class="pc"><div class="pc-name">Starter</div><div class="pc-price">€349<span>/Mo.</span></div><div class="pc-cap">Budget bis €1.500</div><div class="pc-tag">Für den Einstieg</div>
 <a href="#contact" class="btn bo bf bs">Anfragen</a></div>
 
-<div class="pc hl"><div class="pc-name">Growth</div><div class="pc-price">€549<span>/Mo.</span></div><div class="pc-cap">Budget bis €3.000</div>
-<ul class="pc-feats"><li>Google Ads oder Meta Ads</li><li>Monatliches Reporting-PDF</li><li>Conversion-Tracking Setup</li><li>Tag Manager Integration</li><li>Alle Kampagnen-Typen nach Bedarf</li><li>Kontinuierliche Optimierung</li></ul>
+<div class="pc hl"><div class="pc-name">Growth</div><div class="pc-price">€549<span>/Mo.</span></div><div class="pc-cap">Budget bis €3.000</div><div class="pc-tag">Beliebt</div>
 <a href="#contact" class="btn bp bf bs">Anfragen</a></div>
 
-<div class="pc"><div class="pc-name">Pro</div><div class="pc-price">€899<span>/Mo.</span></div><div class="pc-cap">Budget bis €6.000</div>
-<ul class="pc-feats"><li>Google Ads oder Meta Ads</li><li>Monatliches Reporting-PDF</li><li>Conversion-Tracking Setup</li><li>Tag Manager Integration</li><li>Alle Kampagnen-Typen nach Bedarf</li><li>Kontinuierliche Optimierung</li></ul>
+<div class="pc"><div class="pc-name">Pro</div><div class="pc-price">€899<span>/Mo.</span></div><div class="pc-cap">Budget bis €6.000</div><div class="pc-tag">Für Wachstum</div>
 <a href="#contact" class="btn bo bf bs">Anfragen</a></div>
 
-<div class="pc hl"><div class="pc-name">Scale</div><div class="pc-price">€1.499<span>/Mo.</span></div><div class="pc-cap">Budget bis €12.000</div>
-<ul class="pc-feats"><li>Google Ads oder Meta Ads</li><li>Monatliches Reporting-PDF</li><li>Conversion-Tracking Setup</li><li>Tag Manager Integration</li><li>Alle Kampagnen-Typen nach Bedarf</li><li>Kontinuierliche Optimierung</li></ul>
+<div class="pc hl"><div class="pc-name">Scale</div><div class="pc-price">€1.499<span>/Mo.</span></div><div class="pc-cap">Budget bis €12.000</div><div class="pc-tag">Für Skalierung</div>
 <a href="#contact" class="btn bp bf bs">Anfragen</a></div>
 </div>
 <div class="msw-nav"><button class="msw-btn" type="button" aria-label="Zurück">‹</button><button class="msw-btn" type="button" aria-label="Weiter">›</button></div>
@@ -581,20 +588,18 @@ body{padding-bottom:64px}
 
 <!-- Dual -->
 <div class="pside" id="pgd">
+<div class="pc-inc">
+<div class="pc-inc-h">In jedem Dual-Paket enthalten</div>
+<div class="pc-inc-chips"><span>Google Ads + Meta Ads kombiniert</span><span>Koordinierte Cross-Platform-Strategie</span><span>Conversion-Tracking, Pixel &amp; Tag Manager</span><span>Monatliches Reporting-PDF</span><span>Laufende Optimierung</span></div>
+</div>
 <div class="pgrid pg3">
-<div class="pc"><div class="pc-name">Dual Starter</div><div class="pc-price">€799<span>/Mo.</span></div><div class="pc-cap">Budget bis €3.000</div>
-<ul class="pc-feats"><li>Google Ads + Meta Ads</li><li>Monatliches Reporting-PDF</li><li>Conversion-Tracking Setup</li><li>Pixel & Tag Manager</li><li>Alle Kampagnen-Typen</li><li>Kontinuierliche Optimierung</li></ul>
-<div class="pc-save">€299 gespart vs. separat</div>
+<div class="pc"><div class="pc-name">Dual Starter</div><div class="pc-price">€799<span>/Mo.</span></div><div class="pc-cap">Budget bis €3.000</div><div class="pc-save">€299 gespart vs. separat</div>
 <a href="#contact" class="btn bo bf bs">Anfragen</a></div>
 
-<div class="pc hl"><div class="pc-name">Dual Growth</div><div class="pc-price">€1.199<span>/Mo.</span></div><div class="pc-cap">Budget bis €6.000</div>
-<ul class="pc-feats"><li>Google Ads + Meta Ads</li><li>Monatliches Reporting-PDF</li><li>Conversion-Tracking Setup</li><li>Pixel & Tag Manager</li><li>Alle Kampagnen-Typen</li><li>Kontinuierliche Optimierung</li></ul>
-<div class="pc-save">€599 gespart vs. separat</div>
+<div class="pc hl"><div class="pc-name">Dual Growth</div><div class="pc-price">€1.199<span>/Mo.</span></div><div class="pc-cap">Budget bis €6.000</div><div class="pc-save">€599 gespart vs. separat</div>
 <a href="#contact" class="btn bp bf bs">Anfragen</a></div>
 
-<div class="pc"><div class="pc-name">Dual Pro</div><div class="pc-price">€1.799<span>/Mo.</span></div><div class="pc-cap">Budget bis €12.000</div>
-<ul class="pc-feats"><li>Google Ads + Meta Ads</li><li>Monatliches Reporting-PDF</li><li>Conversion-Tracking Setup</li><li>Pixel & Tag Manager</li><li>Alle Kampagnen-Typen</li><li>Kontinuierliche Optimierung</li></ul>
-<div class="pc-save">€1.199 gespart vs. separat</div>
+<div class="pc"><div class="pc-name">Dual Pro</div><div class="pc-price">€1.799<span>/Mo.</span></div><div class="pc-cap">Budget bis €12.000</div><div class="pc-save">€1.199 gespart vs. separat</div>
 <a href="#contact" class="btn bo bf bs">Anfragen</a></div>
 </div>
 <div class="msw-nav"><button class="msw-btn" type="button" aria-label="Zurück">‹</button><button class="msw-btn" type="button" aria-label="Weiter">›</button></div>

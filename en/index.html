@@ -173,6 +173,13 @@ p{color:var(--tx)}
 .pc-feats li{display:flex;align-items:flex-start;gap:.2rem;font-size:.75rem;color:var(--tx);padding:.25rem 0;white-space:normal;word-break:break-word;max-width:100%;line-height:1.3}
 .pc-feats li::before{content:'✓';color:var(--c3);font-weight:700;flex-shrink:0;margin-top:2px}
 .pc-save{font-size:.7rem;color:var(--c3);font-weight:600;text-align:center;margin-bottom:.625rem}
+.pc-inc{max-width:860px;margin:0 auto 1.5rem;background:var(--bg);border:1.5px solid rgba(0,0,0,.06);border-radius:12px;padding:.9rem 1.25rem}
+.pc-inc-h{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--c1);margin-bottom:.6rem;text-align:center}
+.pc-inc-chips{display:flex;flex-wrap:wrap;gap:.45rem .55rem;justify-content:center}
+.pc-inc-chips span{font-size:.75rem;color:var(--tx);background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:20px;padding:.28rem .65rem;display:inline-flex;align-items:center;gap:.3rem;line-height:1.3}
+.pc-inc-chips span::before{content:'✓';color:var(--c3);font-weight:700}
+.pc-tag{font-size:.72rem;color:var(--mt);font-weight:600;margin:.1rem 0 .5rem}
+.pc>.btn{margin-top:auto}
 .vat-note{text-align:center;font-size:.75rem;color:var(--mt);margin-top:2rem;padding:1rem;background:var(--bg);border-radius:var(--rs);line-height:1.6}
 .cases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;row-gap:2rem}
 .case{background:#fff;border:1.5px solid rgba(200,16,46,.08);border-radius:16px;overflow:hidden;transition:all .3s cubic-bezier(.4,0,.2,1);cursor:pointer;box-shadow:0 4px 25px rgba(0,0,0,.08);display:flex;flex-direction:column}
@@ -349,7 +356,7 @@ body{padding-bottom:64px}
 <div class="hfc-stat"><div class="hfc-sv">15</div><div class="hfc-sl">Countries</div></div>
 </div>
 <h2>Request a free analysis</h2>
-<p>Just tell us what it is about: a new project, or campaigns already running. You get a written report with clear recommendations — free, no obligation, no sales call.</p>
+<p>Just tell us what it's about — you get a written report with clear recommendations. Free, no obligation, no sales call.</p>
 <form id="hform" action="https://script.google.com/macros/s/AKfycbzh2cM4CE_41OMhJIDtNvhWoyowjRlRpdRrgvboM7mEWyremHsMMlyiHIpEHQpsCorIzQ/exec" method="POST" target="gas_iframe" novalidate>
 <div class="hfr"><div class="hfg"><label for="hv">First name *</label><input type="text" id="hv" name="vorname" required placeholder="Alex"></div><div class="hfg"><label for="hp">Phone *</label><input type="tel" id="hp" name="telefon" required placeholder="+44 7700 900000"></div></div>
 <div class="hfg"><label for="he">Email *</label><input type="email" id="he" name="email" required placeholder="alex@company.com"></div>
@@ -374,7 +381,7 @@ body{padding-bottom:64px}
 <div>
 <div class="pilot-badge">🚀 30-day pilot project</div>
 <h2>Test your campaign performance — without long-term risk</h2>
-<p>We analyse your business model and define the realistic minimum budget for your project. You get clear KPIs, monthly reporting and full transparency — from day one.</p>
+<p>Clear KPIs, monthly reporting and full transparency — from day one. You see exactly what your budget delivers.</p>
 <div class="pilot-checks">
 <div class="pilot-check">Free pre-analysis of your market and business model</div>
 <div class="pilot-check">We define the realistic minimum budget for your project</div>
@@ -384,7 +391,7 @@ body{padding-bottom:64px}
 </div>
 <div class="pilot-guarantee">
 <strong>🛡️ Fair terms</strong>
-<p>Didn't reach the agreed goals in month one? The second month comes with no management fee. A fair partnership. The details are set out in writing in the service agreement.</p>
+<p>Didn't reach the agreed goals in month one? The second month comes with no management fee — set out in writing in the service agreement.</p>
 </div>
 </div>
 <div class="pilot-side">
@@ -454,7 +461,7 @@ body{padding-bottom:64px}
 <div class="sh"><span class="sl">How we work</span><h2>From first call to measurable growth</h2></div>
 <div class="proc-grid">
 <div class="proc-step"><div class="proc-num">1</div><h3>Free initial consultation</h3><p>30 minutes: your goals, your situation, our assessment. <strong style="color:var(--c3)">Free &amp; no obligation.</strong></p></div>
-<div class="proc-step"><div class="proc-num">2</div><h3>Audit &amp; analysis</h3><p>New project? We assess market, audience and keywords and estimate the realistic potential. Campaigns already live? We review your account. Either way: a written report with clear recommendations. <strong style="color:var(--c3)">Free.</strong></p></div>
+<div class="proc-step"><div class="proc-num">2</div><h3>Audit &amp; analysis</h3><p>New project? We assess market, audience and keywords. Campaigns already live? We review your account. Either way, a written report with clear recommendations. <strong style="color:var(--c3)">Free.</strong></p></div>
 <div class="proc-step"><div class="proc-num">3</div><h3>Onboarding & approval</h3><p>Written contract, access rights and your approval — then we start.</p></div>
 <div class="proc-step"><div class="proc-num">4</div><h3>Strategy</h3><p>KPIs, channels, budget roadmap — tailored to your business.</p></div>
 <div class="proc-step"><div class="proc-num">5</div><h3>Implementation</h3><p>Tracking, accounts, campaigns — live on your approval.</p></div>
@@ -466,12 +473,12 @@ body{padding-bottom:64px}
 <section id="services" class="sec"><div class="ctn">
 <div class="sh"><span class="sl">Services</span><h2>What you get from us</h2><p>Everything your campaigns need — from strategy to monthly reporting.</p></div>
 <div class="svc-grid">
-<div class="svc"><div class="svc-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div><h3>Google Ads</h3><p>Search, Display and Performance Max — configured for your market, continuously optimised for maximum return on ad spend. We pick the campaign types that deliver the biggest return for your goal and budget.</p></div>
-<div class="svc"><div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></div><h3>Meta Ads</h3><p>Facebook & Instagram campaigns with precise targeting, creative testing and pixel tracking for measurable conversions — audiences you can measure and scale.</p></div>
-<div class="svc"><div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div><h3>E-Commerce, Lead-Gen & SaaS</h3><p>Whether online shop, lead generation or SaaS launch — we build the performance strategy that fits your business model and turns your audience into paying customers.</p></div>
-<div class="svc"><div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg></div><h3>SEA — Search Ads</h3><p>High-intent keywords, structured negative lists and bidding strategies that protect your budget and maximise conversions. No wasted budget on clicks that never buy.</p></div>
-<div class="svc"><div class="svc-icon"><svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></div><h3>YouTube Ads</h3><p>Video campaigns for brand awareness and lead generation — from audience to conversion analysis. Visibility exactly when potential customers are ready to learn more.</p></div>
-<div class="svc"><div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg></div><h3>Tracking & Analytics</h3><p>GA4, Tag Manager, Meta Pixel — full setup so every conversion is captured correctly and every decision is data-based. Without clean tracking you optimise blind.</p></div>
+<div class="svc"><div class="svc-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div><h3>Google Ads</h3><p>Search, Display &amp; Performance Max — configured for your market and continuously optimised for maximum return on ad spend.</p></div>
+<div class="svc"><div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></div><h3>Meta Ads</h3><p>Facebook &amp; Instagram campaigns with precise audience targeting, creative testing and pixel tracking for measurable, scalable conversions.</p></div>
+<div class="svc"><div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div><h3>E-Commerce, Lead-Gen & SaaS</h3><p>Whether online shop, lead generation or SaaS launch — the performance strategy that turns your audience into paying customers.</p></div>
+<div class="svc"><div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg></div><h3>SEA — Search Ads</h3><p>High-intent keywords, structured negative lists and bidding strategies — no budget wasted on clicks that never buy.</p></div>
+<div class="svc"><div class="svc-icon"><svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></div><h3>YouTube Ads</h3><p>Video campaigns for brand awareness and lead generation — visibility exactly when your audience is ready to learn more.</p></div>
+<div class="svc"><div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg></div><h3>Tracking & Analytics</h3><p>GA4, Tag Manager &amp; Meta Pixel — cleanly set up so every conversion counts and every decision is data-driven.</p></div>
 </div>
 </div></section>
 
@@ -484,8 +491,8 @@ body{padding-bottom:64px}
 <div class="about-content">
 <span class="sl">Why Digital Marketing Remote</span>
 <h2>Your ad budget deserves someone who knows what's at stake.</h2>
-<p>Digital Marketing Remote combines hands-on entrepreneurship with data-driven performance marketing. Before I launched my first campaign, I ran a hotel, built a fertiliser distribution business and founded a fast-food and pizza restaurant — so I know first-hand: every euro spent on advertising is a real business decision that has to pay off.</p>
-<p>Since 2022, our founder has managed performance-marketing campaigns with a focus on the DACH market — 72 projects across 15 countries in total. Among them, 57 projects in 13 markets that he analysed, built and scaled as an independent performance-marketing consultant for a German investment company. The result: over €1.7 million in verifiably generated revenue.</p>
+<p>Before I launched my first campaign, I ran a hotel, built a fertiliser distribution business and founded a restaurant — I know first-hand that every euro spent on advertising is a business decision that has to pay off.</p>
+<p>Since 2022 I've managed performance marketing with a focus on the DACH market: 72 projects across 15 countries, 57 of them as an independent consultant for a German investment company — over €1.7 million in verifiably generated revenue.</p>
 <div class="highlights">
 <div class="hl-item"><div class="hl-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><div class="hl-text"><strong>Experience that counts</strong><span>10 years in business (2011–2021) + specialised performance marketing since 2022</span></div></div>
 <div class="hl-item"><div class="hl-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><div class="hl-text"><strong>72 projects · 15 countries</strong><span>DACH focus with experience across Europe, North America and Asia</span></div></div>
@@ -517,21 +524,21 @@ body{padding-bottom:64px}
 
 <!-- Single -->
 <div class="pside show" id="pgs">
+<div class="pc-inc">
+<div class="pc-inc-h">Included in every plan</div>
+<div class="pc-inc-chips"><span>Google Ads or Meta Ads</span><span>Conversion tracking &amp; Tag Manager</span><span>All campaign types as needed</span><span>Monthly reporting PDF</span><span>Continuous optimisation</span></div>
+</div>
 <div class="pgrid pg4">
-<div class="pc"><div class="pc-name">Starter</div><div class="pc-price"><span class="cur" data-eur="349">€349</span><span>/mo</span></div><div class="pc-cap">Budget up to <span class="cur" data-eur="1500">€1,500</span></div>
-<ul class="pc-feats"><li>Google Ads or Meta Ads</li><li>Monthly reporting PDF</li><li>Conversion tracking setup</li><li>Tag Manager integration</li><li>All campaign types as needed</li><li>Continuous optimisation</li></ul>
+<div class="pc"><div class="pc-name">Starter</div><div class="pc-price"><span class="cur" data-eur="349">€349</span><span>/mo</span></div><div class="pc-cap">Budget up to <span class="cur" data-eur="1500">€1,500</span></div><div class="pc-tag">To get started</div>
 <a href="#contact" class="btn bo bf bs">Inquire</a></div>
 
-<div class="pc hl"><div class="pc-name">Growth</div><div class="pc-price"><span class="cur" data-eur="549">€549</span><span>/mo</span></div><div class="pc-cap">Budget up to <span class="cur" data-eur="3000">€3,000</span></div>
-<ul class="pc-feats"><li>Google Ads or Meta Ads</li><li>Monthly reporting PDF</li><li>Conversion tracking setup</li><li>Tag Manager integration</li><li>All campaign types as needed</li><li>Continuous optimisation</li></ul>
+<div class="pc hl"><div class="pc-name">Growth</div><div class="pc-price"><span class="cur" data-eur="549">€549</span><span>/mo</span></div><div class="pc-cap">Budget up to <span class="cur" data-eur="3000">€3,000</span></div><div class="pc-tag">Popular</div>
 <a href="#contact" class="btn bp bf bs">Inquire</a></div>
 
-<div class="pc"><div class="pc-name">Pro</div><div class="pc-price"><span class="cur" data-eur="899">€899</span><span>/mo</span></div><div class="pc-cap">Budget up to <span class="cur" data-eur="6000">€6,000</span></div>
-<ul class="pc-feats"><li>Google Ads or Meta Ads</li><li>Monthly reporting PDF</li><li>Conversion tracking setup</li><li>Tag Manager integration</li><li>All campaign types as needed</li><li>Continuous optimisation</li></ul>
+<div class="pc"><div class="pc-name">Pro</div><div class="pc-price"><span class="cur" data-eur="899">€899</span><span>/mo</span></div><div class="pc-cap">Budget up to <span class="cur" data-eur="6000">€6,000</span></div><div class="pc-tag">For growth</div>
 <a href="#contact" class="btn bo bf bs">Inquire</a></div>
 
-<div class="pc hl"><div class="pc-name">Scale</div><div class="pc-price"><span class="cur" data-eur="1499">€1,499</span><span>/mo</span></div><div class="pc-cap">Budget up to <span class="cur" data-eur="12000">€12,000</span></div>
-<ul class="pc-feats"><li>Google Ads or Meta Ads</li><li>Monthly reporting PDF</li><li>Conversion tracking setup</li><li>Tag Manager integration</li><li>All campaign types as needed</li><li>Continuous optimisation</li></ul>
+<div class="pc hl"><div class="pc-name">Scale</div><div class="pc-price"><span class="cur" data-eur="1499">€1,499</span><span>/mo</span></div><div class="pc-cap">Budget up to <span class="cur" data-eur="12000">€12,000</span></div><div class="pc-tag">For scaling</div>
 <a href="#contact" class="btn bp bf bs">Inquire</a></div>
 </div>
 <div class="msw-nav"><button class="msw-btn" type="button" aria-label="Previous">‹</button><button class="msw-btn" type="button" aria-label="Next">›</button></div>
@@ -560,19 +567,20 @@ body{padding-bottom:64px}
 
 <!-- Dual -->
 <div class="pside" id="pgd">
+<div class="pc-inc">
+<div class="pc-inc-h">Included in every Dual plan</div>
+<div class="pc-inc-chips"><span>Google Ads + Meta Ads combined</span><span>Coordinated cross-platform strategy</span><span>Conversion tracking, Pixel &amp; Tag Manager</span><span>Monthly reporting PDF</span><span>Continuous optimisation</span></div>
+</div>
 <div class="pgrid pg3">
 <div class="pc"><div class="pc-name">Dual Starter</div><div class="pc-price"><span class="cur" data-eur="799">€799</span><span>/mo</span></div><div class="pc-cap">Budget up to <span class="cur" data-eur="3000">€3,000</span></div>
-<ul class="pc-feats"><li>Google Ads + Meta Ads</li><li>Monthly reporting PDF</li><li>Conversion tracking setup</li><li>Pixel & Tag Manager</li><li>All campaign types</li><li>Continuous optimisation</li></ul>
 <div class="pc-save"><span class="cur" data-eur="299">€299</span> saved vs. separate</div>
 <a href="#contact" class="btn bo bf bs">Inquire</a></div>
 
 <div class="pc hl"><div class="pc-name">Dual Growth</div><div class="pc-price"><span class="cur" data-eur="1199">€1,199</span><span>/mo</span></div><div class="pc-cap">Budget up to <span class="cur" data-eur="6000">€6,000</span></div>
-<ul class="pc-feats"><li>Google Ads + Meta Ads</li><li>Monthly reporting PDF</li><li>Conversion tracking setup</li><li>Pixel & Tag Manager</li><li>All campaign types</li><li>Continuous optimisation</li></ul>
 <div class="pc-save"><span class="cur" data-eur="599">€599</span> saved vs. separate</div>
 <a href="#contact" class="btn bp bf bs">Inquire</a></div>
 
 <div class="pc"><div class="pc-name">Dual Pro</div><div class="pc-price"><span class="cur" data-eur="1799">€1,799</span><span>/mo</span></div><div class="pc-cap">Budget up to <span class="cur" data-eur="12000">€12,000</span></div>
-<ul class="pc-feats"><li>Google Ads + Meta Ads</li><li>Monthly reporting PDF</li><li>Conversion tracking setup</li><li>Pixel & Tag Manager</li><li>All campaign types</li><li>Continuous optimisation</li></ul>
 <div class="pc-save"><span class="cur" data-eur="1199">€1,199</span> saved vs. separate</div>
 <a href="#contact" class="btn bo bf bs">Inquire</a></div>
 </div>
