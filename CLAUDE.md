@@ -58,9 +58,8 @@ Then deploy with `vercel --prod`.
 ---
 
 ## Website Structure
-Section order: Hero → Logos → Pilot → About → Services → Process → Cases → Reviews → Pricing → FAQ → Contact → CTA
-- Hero section with stats badge, headline, subheading, CTA buttons, hero form
-- Logo strip: 3 own clients (Loganberry, PieseFord, Khayos Art) + anonymized industry pills
+Section order (reordered 2026-07-23, proof-first for mobile — Clarity showed 57% of mobile visitors drop in the top 25%): Hero → Pilot → Cases/Erfolge (Success stories) → Reviews/Kundenstimmen → Process (So arbeiten wir / How-we-work) → Services → About → Pricing → FAQ → Contact → CTA. Same order DE+EN, one order for both viewports. Logo strip was removed earlier. Reviews used to sit dead-last; Cases+Reviews are now right after the Pilot offer.
+- Hero: stats badge, headline, CTA buttons, hero form. Descriptive copy is now a scannable two-path (Projekt-Analyse / Konto-Audit — market/keywords vs. where budget is lost), not the old long paragraph.
 - About section (founder background, 72 projects / 15 countries / €1.7M revenue)
 - Services (Google Ads, Meta Ads, E-Commerce/Lead-Gen/SaaS, SEA, YouTube Ads, Tracking & Analytics)
 - Process (6 steps)
