@@ -74,8 +74,8 @@ p{color:var(--tx)}
 .logo{font-size:1.05rem;font-weight:800;letter-spacing:-.5px}.logo span{color:var(--c2)}
 .nv-l{display:flex;align-items:center;gap:.5rem}
 .lang-pill{display:none;font-size:.7rem;font-weight:700;color:var(--c2);border:1.5px solid var(--c2);border-radius:20px;padding:.15rem .55rem;text-decoration:none;line-height:1.4}
-.nl{display:flex;gap:1.75rem}.nl a{font-size:.85rem;font-weight:500;color:var(--tx);transition:color .2s}.nl a:hover{color:var(--c2)}
-.nc{display:flex;gap:.625rem}
+.nl{display:flex;gap:1.05rem;flex-wrap:nowrap}.nl a{font-size:.82rem;font-weight:500;color:var(--tx);transition:color .2s;white-space:nowrap}.nl a:hover{color:var(--c2)}
+.nc{display:flex;gap:.5rem}.nc .btn{padding:.5rem .85rem;font-size:.8rem}
 .hb{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:0;border:0}.hb span{width:22px;height:2px;background:var(--c1);border-radius:2px;display:block}
 .mm{display:none;position:fixed;top:68px;left:0;right:0;background:#fff;border-bottom:1px solid var(--bd);padding:1.25rem;z-index:999;box-shadow:0 8px 30px rgba(0,0,0,.1)}
 .mm.open{display:block}.mm a{display:block;padding:.75rem 0;font-weight:500;color:var(--tx);border-bottom:1px solid var(--bd)}.mm .btn{margin-top:1rem;width:100%}
@@ -291,7 +291,7 @@ footer .logo span{color:#ff6b81}
 /* sticky mobile CTA — visible after the hero, hidden while cookie banner shows */
 #mcta{position:fixed;left:0;right:0;bottom:0;z-index:9000;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);border-top:1px solid rgba(0,0,0,.08);padding:.6rem .9rem;display:none;gap:.5rem;box-shadow:0 -4px 20px rgba(0,0,0,.1)}
 #mcta.on{display:flex}
-#mcta .btn{flex:1;padding:.7rem .5rem;font-size:.82rem}
+#mcta .btn{flex:1;padding:.5rem .4rem;font-size:.72rem;white-space:normal;line-height:1.2}
 body{padding-bottom:64px}
 }
 @media(max-width:480px){.msw>*{flex:0 0 89%;min-width:89%}.svc-grid{gap:.6rem}}
