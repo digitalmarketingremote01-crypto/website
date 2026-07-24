@@ -771,13 +771,18 @@ document.querySelectorAll('.cur').forEach(function(s){var eur=parseFloat(s.getAt
 setCur('EUR');
 
 /* Forms */
+var DISPOSABLE_EMAIL=['mailinator.com','guerrillamail.com','guerrillamail.info','grr.la','sharklasers.com','10minutemail.com','tempmail.com','temp-mail.org','yopmail.com','trashmail.com','getnada.com','maildrop.cc','throwawaymail.com','fakeinbox.com','mailnesia.com','dispostable.com','emailondeck.com','mohmal.com','moakt.com','tmail.io','mintemail.com'];
+function validEmail(v){v=(v||'').trim().toLowerCase();if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v))return false;return DISPOSABLE_EMAIL.indexOf(v.split('@')[1])===-1;}
+function validPhone(v){v=(v||'').trim();if(/[a-zA-Z]/.test(v))return false;var d=v.replace(/\D/g,'');if(d.length<7||d.length>15)return false;if(/^(\d)\1+$/.test(d))return false;if(/^(1234567890|0123456789|0987654321|9876543210)$/.test(d))return false;return true;}
 ['hform','cform'].forEach(function(id){
 var f=document.getElementById(id);if(!f)return;
 f.addEventListener('submit',function(e){
 var empty=false;f.querySelectorAll('input[required]:not([type="checkbox"])').forEach(function(i){if(!i.value.trim())empty=true;});
 if(empty){e.preventDefault();alert('Please fill in all required fields.');return;}
 var em=f.querySelector('[name="email"]');
-if(em&&!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em.value.trim())){e.preventDefault();alert('Please enter a valid email address.');return;}
+if(em&&!validEmail(em.value)){e.preventDefault();alert('Please enter a valid email address (no disposable/temporary addresses).');if(em.focus)em.focus();return;}
+var ph=f.querySelector('[name="telefon"]');
+if(ph&&!validPhone(ph.value)){e.preventDefault();alert('Please enter a valid phone number with country code (e.g. +44 7700 900000).');if(ph.focus)ph.focus();return;}
 var ds=f.querySelector('[name="dsgvo"]');
 if(ds&&!ds.checked){e.preventDefault();alert('Please agree to the Privacy Policy.');return;}
 var kc=f.querySelectorAll('[name="kontakt"]:checked');
