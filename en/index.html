@@ -8,10 +8,17 @@ function gtag(){dataLayer.push(arguments);}
 gtag('consent','default',{ad_storage:'denied',analytics_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:500});
 gtag('set','url_passthrough',true);
 if(localStorage.getItem('dc')==='y')gtag('consent','update',{ad_storage:'granted',analytics_storage:'granted',ad_user_data:'granted',ad_personalization:'granted'});
-/* GTM + GA4 always on (Consent Mode v2 advanced): only cookieless pings until opt-in, full tracking after */
+/* GTM + GA4 (Consent Mode v2 advanced) — deferred to first interaction or 3s so heavy tag JS never blocks the mobile LCP paint; dataLayer queues events so conversions still fire */
+var _gtmDone=false;
+function loadGTM(){if(_gtmDone)return;_gtmDone=true;
 (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MFXPMZ8W');
 var ga=document.createElement('script');ga.async=true;ga.src='https://www.googletagmanager.com/gtag/js?id=G-N6G3MVTEH5';document.head.appendChild(ga);
 gtag('js',new Date());gtag('config','G-N6G3MVTEH5');
+if(localStorage.getItem('dc')==='y')loadTracking();}
+var _gtmEv=['pointerdown','keydown','touchstart','scroll'];
+function _gtmTrig(){_gtmEv.forEach(function(e){window.removeEventListener(e,_gtmTrig)});loadGTM();}
+_gtmEv.forEach(function(e){window.addEventListener(e,_gtmTrig,{passive:true})});
+setTimeout(loadGTM,3000);
 /* Meta Pixel + Microsoft Clarity load only after opt-in (no consent-mode support) */
 var _trkLoaded=false;
 function loadTracking(){
@@ -20,7 +27,6 @@ gtag('consent','update',{ad_storage:'granted',analytics_storage:'granted',ad_use
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','957297367335870');fbq('track','PageView');
 (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script","x4vko0dld9");
 }
-if(localStorage.getItem('dc')==='y')loadTracking();
 </script>
 <meta charset="UTF-8">
 
