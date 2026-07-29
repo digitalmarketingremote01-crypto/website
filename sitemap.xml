@@ -92,10 +92,10 @@
 
   <!-- Ratgeber Hub (DE) -->
   <url>
-    <loc>https://www.digitalmarketingremote.com/ratgeber/</loc>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/ratgeber/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/en/guides/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.digitalmarketingremote.com/ratgeber/"/>
+    <loc>https://www.digitalmarketingremote.com/ratgeber</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/ratgeber"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/en/guides"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.digitalmarketingremote.com/ratgeber"/>
     <lastmod>2026-07-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -103,10 +103,10 @@
 
   <!-- Guides Hub (EN) -->
   <url>
-    <loc>https://www.digitalmarketingremote.com/en/guides/</loc>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/ratgeber/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/en/guides/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.digitalmarketingremote.com/ratgeber/"/>
+    <loc>https://www.digitalmarketingremote.com/en/guides</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/ratgeber"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/en/guides"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.digitalmarketingremote.com/ratgeber"/>
     <lastmod>2026-07-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -114,7 +114,7 @@
 
   <!-- Ratgeber: Google Ads Agentur Kosten (DE only) -->
   <url>
-    <loc>https://www.digitalmarketingremote.com/ratgeber/google-ads-agentur-kosten/</loc>
+    <loc>https://www.digitalmarketingremote.com/ratgeber/google-ads-agentur-kosten</loc>
     <lastmod>2026-07-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -122,7 +122,7 @@
 
   <!-- Ratgeber: Google Ads Kosten (DE only) -->
   <url>
-    <loc>https://www.digitalmarketingremote.com/ratgeber/google-ads-kosten/</loc>
+    <loc>https://www.digitalmarketingremote.com/ratgeber/google-ads-kosten</loc>
     <lastmod>2026-07-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -130,7 +130,7 @@
 
   <!-- Ratgeber: Google Ads kleines Budget (DE only) -->
   <url>
-    <loc>https://www.digitalmarketingremote.com/ratgeber/google-ads-kleines-budget/</loc>
+    <loc>https://www.digitalmarketingremote.com/ratgeber/google-ads-kleines-budget</loc>
     <lastmod>2026-07-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -138,10 +138,10 @@
 
   <!-- Autor: Danyal (DE) -->
   <url>
-    <loc>https://www.digitalmarketingremote.com/ueber-uns/danyal/</loc>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/ueber-uns/danyal/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/en/about/danyal/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.digitalmarketingremote.com/ueber-uns/danyal/"/>
+    <loc>https://www.digitalmarketingremote.com/ueber-uns/danyal</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/ueber-uns/danyal"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/en/about/danyal"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.digitalmarketingremote.com/ueber-uns/danyal"/>
     <lastmod>2026-07-29</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
@@ -149,10 +149,10 @@
 
   <!-- Author: Danyal (EN) -->
   <url>
-    <loc>https://www.digitalmarketingremote.com/en/about/danyal/</loc>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/ueber-uns/danyal/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/en/about/danyal/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.digitalmarketingremote.com/ueber-uns/danyal/"/>
+    <loc>https://www.digitalmarketingremote.com/en/about/danyal</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/ueber-uns/danyal"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/en/about/danyal"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.digitalmarketingremote.com/ueber-uns/danyal"/>
     <lastmod>2026-07-29</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
