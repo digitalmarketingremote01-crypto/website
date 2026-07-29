@@ -747,6 +747,48 @@ body{padding-bottom:64px}
 /* CTA click tracking — fires before same-tab navigation */
 function calClick(label){window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'calendly_click','btn_label':label});}
 
+/* ===== Lead-source attribution (added 2026-07-29) =====
+   Stamps the channel onto the LEAD ITSELF at submit time instead of inferring it from
+   Ads/GA4 conversions — those are consent-gated and miss ~75% of paid sessions, so a real
+   ad lead often fires no visible conversion. Captures the session's FIRST pageview params
+   (first touch wins) and attaches them as hidden fields to both Apps Script forms, and as
+   UTMs on every Calendly link (the popup reads a.href, so rewriting href covers it too).
+   sessionStorage ONLY — no persistent cookie, cleared when the tab closes. This is not
+   tracking: nothing is sent anywhere until the visitor submits their own form. */
+(function(){
+var K='dmr_src',P=['gclid','gbraid','wbraid','msclkid','fbclid','utm_source','utm_medium','utm_campaign','utm_term','utm_content'];
+function rd(){try{return JSON.parse(sessionStorage.getItem(K))}catch(e){return null}}
+var s=rd();
+if(!s){var q=null;try{q=new URLSearchParams(location.search)}catch(e){}
+s={};if(q){P.forEach(function(k){var v=q.get(k);if(v)s[k]=v;});}
+s.referrer=document.referrer||'';s.landing=location.pathname+location.search;s.first=new Date().toISOString();
+try{sessionStorage.setItem(K,JSON.stringify(s))}catch(e){}}
+function ch(){
+if(s.gclid||s.gbraid||s.wbraid)return 'ads';
+if(/cpc|ppc|paid/i.test(s.utm_medium||''))return 'ads';
+if(s.msclkid)return 'ads_bing';
+if(s.fbclid||/facebook|instagram|meta/i.test(s.utm_source||''))return 'ads_meta';
+if(s.utm_source)return 'campaign';
+var r=(s.referrer||'').toLowerCase();
+if(!r||r.indexOf(location.host)>-1)return 'direct';
+if(/google\.|bing\.|duckduckgo|ecosia|yahoo\.|startpage/.test(r))return 'organic';
+return 'referral';}
+function hid(f,n,v){if(!v)return;var i=f.querySelector('input[type=hidden][name="'+n+'"]');
+if(!i){i=document.createElement('input');i.type='hidden';i.name=n;f.appendChild(i);}i.value=v;}
+function stamp(){var fs=document.querySelectorAll('form[action*="script.google.com"]');
+for(var i=0;i<fs.length;i++){var f=fs[i];hid(f,'channel',ch());
+P.forEach(function(k){hid(f,k,s[k]);});hid(f,'referrer',s.referrer);hid(f,'landing_page',s.landing);}}
+function cal(){var c=ch(),ls=document.querySelectorAll('a[href*="calendly.com/digitalmarketingremote01"]');
+for(var i=0;i<ls.length;i++){var a=ls[i],u;try{u=new URL(a.href,location.origin)}catch(e){continue}
+u.searchParams.set('utm_source',s.utm_source||(c==='ads'?'google':c));
+u.searchParams.set('utm_medium',s.utm_medium||(c==='ads'?'cpc':c));
+if(s.utm_campaign)u.searchParams.set('utm_campaign',s.utm_campaign);
+if(s.gclid)u.searchParams.set('utm_content','gclid.'+s.gclid);
+a.href=u.toString();}}
+function go(){stamp();cal();}
+if(document.readyState!=='loading')go();else document.addEventListener('DOMContentLoaded',go);
+})();
+
 /* Cookie consent */
 function akC(){localStorage.setItem('dc','y');document.getElementById('ck').style.display='none';loadTracking();}
 function dkC(){var was=_trkLoaded;localStorage.setItem('dc','n');document.getElementById('ck').style.display='none';gtag('consent','update',{ad_storage:'denied',analytics_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});if(was)location.reload();}
