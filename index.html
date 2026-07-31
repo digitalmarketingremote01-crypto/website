@@ -389,7 +389,7 @@ body{padding-bottom:64px}
 <h2>Kostenlose Analyse anfragen</h2>
 <p>Kurz beschreiben, worum es geht — Sie bekommen einen schriftlichen Report mit klaren Empfehlungen. Kostenlos, unverbindlich, kein Verkaufsgespräch.</p>
 <form id="hform" action="https://script.google.com/macros/s/AKfycbzh2cM4CE_41OMhJIDtNvhWoyowjRlRpdRrgvboM7mEWyremHsMMlyiHIpEHQpsCorIzQ/exec" method="POST" target="gas_iframe" novalidate>
-<div class="hfr"><div class="hfg"><label for="hv">Vorname *</label><input type="text" id="hv" name="vorname" required placeholder="Max"></div><div class="hfg"><label for="hp">Telefon *</label><input type="tel" id="hp" name="telefon" required placeholder="+49 170 1234567"></div></div>
+<div class="hfr"><div class="hfg"><label for="hv">Vorname *</label><input type="text" id="hv" name="vorname" required placeholder="Max"></div><div class="hfg"><label for="hp">Telefon (optional)</label><input type="tel" id="hp" name="telefon" placeholder="+49 170 1234567"></div></div>
 <div class="hfg"><label for="he">E-Mail *</label><input type="email" id="he" name="email" required placeholder="max@firma.de"></div>
 <div class="hfg"><label>Bevorzugter Kontaktweg *</label><div class="hchips">
 <label class="hchip"><input type="checkbox" name="kontakt" value="E-Mail" onchange="tc(this)">📧 E-Mail</label>
@@ -689,7 +689,7 @@ body{padding-bottom:64px}
 <div class="cform-bd">
 <form id="cform" action="https://script.google.com/macros/s/AKfycbzh2cM4CE_41OMhJIDtNvhWoyowjRlRpdRrgvboM7mEWyremHsMMlyiHIpEHQpsCorIzQ/exec" method="POST" target="gas_iframe" novalidate>
 <div class="fr"><div class="fg"><label for="cv">Vorname *</label><input type="text" id="cv" name="vorname" required placeholder="Max"></div><div class="fg"><label for="cn">Nachname</label><input type="text" id="cn" name="nachname" placeholder="Mustermann"></div></div>
-<div class="fr"><div class="fg"><label for="cph">Telefon *</label><input type="tel" id="cph" name="telefon" required placeholder="+49 170 1234567"></div><div class="fg"><label for="ce">E-Mail *</label><input type="email" id="ce" name="email" required placeholder="max@firma.de"></div></div>
+<div class="fr"><div class="fg"><label for="cph">Telefon (optional)</label><input type="tel" id="cph" name="telefon" placeholder="+49 170 1234567"></div><div class="fg"><label for="ce">E-Mail *</label><input type="email" id="ce" name="email" required placeholder="max@firma.de"></div></div>
 <div class="fg"><label for="cu">Unternehmen / Website</label><input type="text" id="cu" name="unternehmen" placeholder="Muster GmbH · www.muster.de"></div>
 <div class="fg"><label>Bevorzugter Kontaktweg *</label><div class="hchips"><label class="hchip"><input type="checkbox" name="kontakt" value="E-Mail" onchange="tc(this)">📧 E-Mail</label><label class="hchip"><input type="checkbox" name="kontakt" value="WhatsApp" onchange="tc(this)">💬 WhatsApp</label><label class="hchip"><input type="checkbox" name="kontakt" value="Rückruf" onchange="tc(this)">📞 Rückruf</label></div></div>
 <div class="fg"><label for="cmsg">Kurze Beschreibung Ihres Projekts</label><textarea id="cmsg" name="nachricht" placeholder="Was vermarkten Sie? Was ist Ihr Hauptziel? Haben Sie bereits Kampagnen?"></textarea></div>
@@ -840,12 +840,14 @@ var empty=false;f.querySelectorAll('input[required]:not([type="checkbox"])').for
 if(empty){e.preventDefault();alert('Bitte füllen Sie alle Pflichtfelder aus.');return;}
 var em=f.querySelector('[name="email"]');
 if(em&&!validEmail(em.value)){e.preventDefault();alert('Bitte geben Sie eine gültige E-Mail-Adresse ein (keine Wegwerf-Adresse).');if(em.focus)em.focus();return;}
-var ph=f.querySelector('[name="telefon"]');
-if(ph&&!validPhone(ph.value)){e.preventDefault();alert('Bitte geben Sie eine gültige Telefonnummer mit Ländervorwahl ein (z. B. +49 170 1234567).');if(ph.focus)ph.focus();return;}
 var ds=f.querySelector('[name="dsgvo"]');
 if(ds&&!ds.checked){e.preventDefault();alert('Bitte stimmen Sie der Datenschutzerklärung zu.');return;}
 var kc=f.querySelectorAll('[name="kontakt"]:checked');
 if(kc.length===0){e.preventDefault();alert('Bitte wählen Sie einen bevorzugten Kontaktweg aus.');return;}
+var ph=f.querySelector('[name="telefon"]');
+var needPh=[].some.call(kc,function(k){return k.value!=='E-Mail';});
+if(ph&&needPh&&!ph.value.trim()){e.preventDefault();alert('Für WhatsApp oder Rückruf benötigen wir Ihre Telefonnummer.');if(ph.focus)ph.focus();return;}
+if(ph&&ph.value.trim()&&!validPhone(ph.value)){e.preventDefault();alert('Bitte geben Sie eine gültige Telefonnummer mit Ländervorwahl ein (z. B. +49 170 1234567).');if(ph.focus)ph.focus();return;}
 var btn=f.querySelector('[type="submit"]');
 var btnTxt=btn?btn.textContent:'';
 if(btn){btn.disabled=true;btn.textContent='Wird gesendet…';}
