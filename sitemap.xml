@@ -164,6 +164,9 @@
   <!-- Leistung: Google Ads Betreuung (DE) -->
   <url>
     <loc>https://www.digitalmarketingremote.com/leistungen/google-ads</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/leistungen/google-ads"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/en/services/google-ads"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.digitalmarketingremote.com/leistungen/google-ads"/>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -194,6 +197,47 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-kosten"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/en/guides/how-much-does-google-ads-cost"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-kosten"/>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Ratgeber: Abrechnungsmodelle (DE) -->
+  <url>
+    <loc>https://www.digitalmarketingremote.com/ratgeber/abrechnung-prozent-vs-festpreis</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Ratgeber: Gute Agentur erkennen (DE, twin of /en/guides/google-ads-agency-red-flags) -->
+  <url>
+    <loc>https://www.digitalmarketingremote.com/ratgeber/gute-google-ads-agentur-erkennen</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/ratgeber/gute-google-ads-agentur-erkennen"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/en/guides/google-ads-agency-red-flags"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.digitalmarketingremote.com/ratgeber/gute-google-ads-agentur-erkennen"/>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Service: Google Ads management (EN, twin of /leistungen/google-ads) -->
+  <url>
+    <loc>https://www.digitalmarketingremote.com/en/services/google-ads</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/leistungen/google-ads"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/en/services/google-ads"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.digitalmarketingremote.com/leistungen/google-ads"/>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Guide: Google Ads agency red flags (EN, twin of /ratgeber/gute-google-ads-agentur-erkennen) -->
+  <url>
+    <loc>https://www.digitalmarketingremote.com/en/guides/google-ads-agency-red-flags</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/ratgeber/gute-google-ads-agentur-erkennen"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/en/guides/google-ads-agency-red-flags"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.digitalmarketingremote.com/ratgeber/gute-google-ads-agentur-erkennen"/>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
