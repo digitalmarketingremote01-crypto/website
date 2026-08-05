@@ -123,6 +123,9 @@
   <!-- Ratgeber: Google Ads Kosten (DE only) -->
   <url>
     <loc>https://www.digitalmarketingremote.com/ratgeber/google-ads-kosten</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-kosten"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/en/guides/how-much-does-google-ads-cost"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-kosten"/>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -131,7 +134,7 @@
   <!-- Ratgeber: Google Ads kleines Budget (DE only) -->
   <url>
     <loc>https://www.digitalmarketingremote.com/ratgeber/google-ads-kleines-budget</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -156,6 +159,44 @@
     <lastmod>2026-07-29</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
+  </url>
+
+  <!-- Leistung: Google Ads Betreuung (DE) -->
+  <url>
+    <loc>https://www.digitalmarketingremote.com/leistungen/google-ads</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Ratgeber: Agentur oder Freelancer (DE) -->
+  <url>
+    <loc>https://www.digitalmarketingremote.com/ratgeber/agentur-oder-freelancer</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Guide: Google Ads agency pricing (EN, twin of /ratgeber/google-ads-agentur-kosten) -->
+  <url>
+    <loc>https://www.digitalmarketingremote.com/en/guides/google-ads-agency-pricing</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-agentur-kosten"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/en/guides/google-ads-agency-pricing"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-agentur-kosten"/>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Guide: How much does Google Ads cost (EN, twin of /ratgeber/google-ads-kosten) -->
+  <url>
+    <loc>https://www.digitalmarketingremote.com/en/guides/how-much-does-google-ads-cost</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-kosten"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/en/guides/how-much-does-google-ads-cost"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-kosten"/>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
 </urlset>
