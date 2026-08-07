@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Google Ads Not Converting? How to Find the Real Cause</title>
+<meta name="description" content="Google Ads not converting? Google&#39;s own status labels, conversion windows, and consent mode figures show whether tracking is broken or the account needs data.">
+<link rel="canonical" href="https://www.digitalmarketingremote.com/en/guides/google-ads-not-converting">
+<link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-keine-conversions">
+<link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/en/guides/google-ads-not-converting">
+<link rel="alternate" hreflang="x-default" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-keine-conversions">
+<link rel="icon" href="/favicon.ico">
+<link rel="preload" href="/fonts/plus-jakarta-sans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/guides.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Google Ads Not Converting? How to Find the Real Cause",
+      "description": "Google Ads not converting? Google's own status labels, conversion windows, and consent mode figures show whether tracking is broken or the account needs data.",
+      "inLanguage": "en",
+      "datePublished": "2026-08-07",
+      "dateModified": "2026-08-07",
+      "mainEntityOfPage": "https://www.digitalmarketingremote.com/en/guides/google-ads-not-converting",
+      "author": {
+        "@type": "Person",
+        "name": "Mohammad Danyal Shahzad",
+        "url": "https://www.digitalmarketingremote.com/en/about/danyal",
+        "sameAs": ["https://www.linkedin.com/in/mdanyalshahzad/"]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Digital Marketing Remote",
+        "url": "https://www.digitalmarketingremote.com"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Digital Marketing Remote", "item": "https://www.digitalmarketingremote.com/en" },
+        { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://www.digitalmarketingremote.com/en/guides" },
+        { "@type": "ListItem", "position": 3, "name": "Not converting", "item": "https://www.digitalmarketingremote.com/en/guides/google-ads-not-converting" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="gh">
+  <div class="ctn ghi">
+    <a class="logo" href="/en">Digital<span>Marketing</span>Remote</a>
+    <nav class="gn"><a href="/en/guides">Guides</a><a href="/en#services">Services</a><a href="/en#pricing">Pricing</a><a href="/en#contact">Contact</a><a class="lsw" href="/ratgeber/google-ads-keine-conversions">DE</a>
+    </nav>
+  </div>
+</header>
+
+<main class="ctn art">
+  <nav class="bc" aria-label="Breadcrumb">
+    <a href="/en">Home</a> ›
+    <a href="/en/guides">Guides</a> ›
+    <span>Not converting</span>
+  </nav>
+
+  <article>
+    <h1>Google Ads is spending but not converting — how to find the cause</h1>
+    <p class="meta-line">
+      By <a href="/en/about/danyal">Mohammad Danyal Shahzad</a>
+      · Updated on <time datetime="2026-08-07">7 August 2026</time>
+    </p>
+
+    <div class="answer">
+Two different problems look identical: broken tracking and a campaign that genuinely isn't converting yet. The fastest test: open the conversion tracking status of each conversion action. "Active" or "Awaiting conversions" on a new action usually means the tech is fine — the problem is elsewhere. "Misconfigured" means a real technical problem, not a marketing one.
+</div>
+<h2>Is conversion tracking even working? The status labels, in plain terms</h2>
+<p>Google shows the status of each conversion action through an interactive troubleshooter: Active, Needs attention, Misconfigured, Awaiting conversions, or Removed. Only &quot;Misconfigured&quot; signals a genuine technical fault. &quot;Awaiting conversions&quot; on an action under 48 hours old is normal, not a bug. What makes this confusing: Google itself uses five more, non-matching status terms for the same underlying problem on other Help pages.</p>
+<p>The official <a href="https://support.google.com/google-ads/troubleshooter/13455130?hl=en">interactive conversion tracking status troubleshooter</a> lists five overview statuses:</p>
+<div class="tbl-wrap">
+<table>
+<thead><tr><th>Status</th><th>What it means, per Google</th></tr></thead>
+<tbody>
+<tr><td>Active</td><td>"everything is working as intended"</td></tr>
+<tr><td>Needs attention</td><td>action items to address, hasn't stopped recording entirely</td></tr>
+<tr><td>Misconfigured</td><td>"Conversions have stopped recording entirely due to a setup error or a broken tag"</td></tr>
+<tr><td>Awaiting conversions</td><td>"No conversions have been recorded in the last 7 days" — typically an action under 48 hours old or a paused campaign</td></tr>
+<tr><td>Removed</td><td>"manually deleted or archived and is no longer tracking data"</td></tr>
+</tbody>
+</table>
+</div>
+<p>The problem: this troubleshooter isn't the only Google page on the topic — and the others use different words. A separate <a href="https://support.google.com/google-ads/answer/12674892?hl=en">troubleshooting Help page</a> instead refers to &quot;Inactive,&quot; &quot;Unverified,&quot; or &quot;Needs Attention,&quot; and states reporting can take &quot;3-24 hours to update.&quot; A third page explains &quot;Unverified&quot; in detail: with high hourly volume, this <a href="https://support.google.com/google-ads/answer/10029065?hl=en">Help page on the Unverified status</a> says &quot;you can expect the status to update within 10 minutes&quot; — the same page gives a third, different window for &quot;Tag inactive&quot; or &quot;No recent conversions&quot;: no conversions attributed to ad clicks &quot;in the last 7-14 days.&quot; The same page also still carries the sentence &quot;Starting July 30, 2021, conversion actions that haven't recorded data in the past 13 months will be removed&quot; — live on the page as written, but clearly unchanged since 2021, so don't read it as a current announcement.</p>
+<p><a href="https://support.google.com/google-ads/answer/10989978?hl=en">Tag Assistant</a>, in turn, uses the labels &quot;no recent conversions&quot; and &quot;Recording,&quot; and per the page takes about 30 minutes after debugging for the status to update in the account. And <a href="https://support.google.com/google-ads/answer/14681508?hl=en">Tag Diagnostics</a> scores tag quality with a sixth, completely different vocabulary — Excellent, Good, Needs attention, Urgent, No recent data — where &quot;Urgent&quot; is triggered &quot;if the Google tag was previously detected but hasn't been detected in the last 48 hours, causing data to drop to zero.&quot;</p>
+<p>Six vocabularies, at least six different time windows — that's the main reason accounts get misdiagnosed: someone searching for &quot;Inactive&quot; but only aware of the troubleshooter's five statuses won't find the term, and wrongly assumes the account is either fine or broken.</p>
+<div class="tbl-wrap">
+<table>
+<thead><tr><th>Time figure</th><th>What it means</th><th>Source</th></tr></thead>
+<tbody>
+<tr><td>48 hours</td><td>Grace period for new conversion actions</td><td><a href="https://support.google.com/google-ads/troubleshooter/13455130?hl=en">Troubleshooter</a></td></tr>
+<tr><td>7 days</td><td>Window for "Awaiting conversions"</td><td><a href="https://support.google.com/google-ads/troubleshooter/13455130?hl=en">Troubleshooter</a></td></tr>
+<tr><td>3-24 hours</td><td>Reporting delay</td><td><a href="https://support.google.com/google-ads/answer/12674892?hl=en">Status troubleshooting page</a></td></tr>
+<tr><td>10 minutes</td><td>Update time at high conversion volume</td><td><a href="https://support.google.com/google-ads/answer/10029065?hl=en">"Unverified" status page</a></td></tr>
+<tr><td>7-14 days</td><td>Window for "Tag inactive" / "No recent conversions"</td><td><a href="https://support.google.com/google-ads/answer/10029065?hl=en">"Unverified" status page</a></td></tr>
+<tr><td>~30 minutes</td><td>Update after Tag Assistant debugging</td><td><a href="https://support.google.com/google-ads/answer/10989978?hl=en">Tag Assistant</a></td></tr>
+<tr><td>48 hours</td><td>Trigger for "Urgent" in Tag Diagnostics (tag-wide detection, not one conversion action)</td><td><a href="https://support.google.com/google-ads/answer/14681508?hl=en">Tag Diagnostics</a></td></tr>
+</tbody>
+</table>
+</div>
+<p>Worth checking before any of this: <a href="https://support.google.com/google-ads/answer/16560108?hl=en">setting up web conversions</a> itself requires specific permissions — Google states you need &quot;Admin access in Google Ads and Edit access in the linked Google Analytics property,&quot; and that &quot;only events marked as key events in Google Analytics are eligible for import.&quot; Missing either permission, or importing an event never marked as a key event, produces gaps that look like a tracking bug but are really an access or configuration gap.</p>
+<h2>Are you measuring what you think you're measuring? Conversion windows and attribution delay</h2>
+<p>Without customization, the click-through conversion window defaults to 30 days, the engaged-view window to 3 days, and the view-through window to 1 day. For Search and Display campaigns the window can be set anywhere from 1 to 30, 60, or 90 days — Google itself recommends at least 7 days, because shorter windows systematically miss real, but delayed, conversions.</p>
+<p>Google states: &quot;If you don't customize the click-through conversion window when you create a new conversion, the default window is 30 days&quot; (<a href="https://support.google.com/google-ads/answer/3123169?hl=en">Google Ads Help, About conversion windows</a>). If you're advertising something with a long decision cycle — B2B, high-ticket purchases — and the window has accidentally been shortened to a few days, reports will show &quot;no conversions&quot; even though customers genuinely buy days later; the conversion simply falls outside the measured window. Google explicitly recommends: &quot;windows of at least 7 days are recommended, because they provide a richer set of conversion data&quot; (ibid.). Add the 3-24 hour reporting delay from the section above — checking the account right after a conversion happens often won't show it yet.</p>
+<h2>Consent mode and modeled conversions — what the numbers actually mean</h2>
+<p>Without correctly implemented consent mode, part of your conversions are simply missing, because users decline cookie consent. Google models that gap, but only above a minimum threshold: 700 ad clicks per 7 days, country, and domain grouping. Once that threshold is met, modeling recovers on average more than half of the lost click-to-conversion paths — with advanced settings, on average twice as many.</p>
+<p>The threshold is hard and documented: &quot;You have a daily ad click threshold of 700 ad clicks over a 7 day period, per country and domain grouping&quot; (<a href="https://support.google.com/google-ads/answer/10548233?hl=en">Google Ads Help, About consent mode modeling</a>). Accounts with low traffic per country/domain often never reach this threshold — the gap then stays unmodeled, and reports permanently show fewer conversions than are actually happening. Once an account does reach it, a second Google page states: &quot;conversion modeling through consent mode recovers more than half of ad-click-to-conversion journeys lost,&quot; and with advanced settings &quot;you can recover 2 times more on average&quot; (<a href="https://support.google.com/google-ads/answer/12445060?hl=en">Google Ads Help, How to improve your modelling</a>). This recovery isn't a 100% fix: &quot;Google is unable to observe whether an unconsented conversion previously had an ad interaction&quot; — models close the gap only &quot;largely,&quot; not completely (<a href="https://support.google.com/google-ads/answer/10548233?hl=en">consent mode modeling page</a>). In practice, a falling reported CPA or rising conversion count can simply reflect more users consenting, or modeling kicking in — not the campaign performing better. Google's own example: at a 50% consent rate, observed conversions drop 19% (12 of 62), while modeling shows an 18% conversion rate uplift (ibid.). When cookies are declined, Google recommends sending &quot;cookieless pings&quot; for more accurate modeling — pings it states are never used to track users across devices or build remarketing lists.</p>
+<h2>Does the account have enough conversion volume for automated bidding?</h2>
+<p>Google says Target CPA can be activated with no conversion history at all — the often-cited &quot;30 conversions&quot; figure is a measurement window, not an activation requirement. Target ROAS, by contrast, has hard minimums that vary sharply by campaign type: 15 conversions in 30 days for Search/Shopping, up to 50 in 35 days for Demand Gen. Without that volume, a campaign stays stuck in the &quot;Learning&quot; phase.</p>
+<p>Google separates two things that get blurred in practice: the requirement to turn a bid strategy on, and the recommendation for evaluating it. &quot;Advertisers can start using Target CPA with no conversion history, and Target CPA is effective for campaigns of all sizes&quot; — for evaluation, Google recommends only &quot;measur[ing] performance for the last 30 days,&quot; in which &quot;at least 30 conversions&quot; should have been recorded (<a href="https://support.google.com/google-ads/answer/6268632?hl=en">Google Ads Help, About Target CPA bidding</a>). Target ROAS is stricter, and breaks down by campaign type:</p>
+<div class="tbl-wrap">
+<table>
+<thead><tr><th>Campaign type</th><th>Minimum conversions for Target ROAS</th></tr></thead>
+<tbody>
+<tr><td>Search &amp; Shopping</td><td>at least 15 in 30 days (conversion tracking level)</td></tr>
+<tr><td>Display</td><td>at least 15 total, combined</td></tr>
+<tr><td>App</td><td>at least 10 per day or 300 in 30 days</td></tr>
+<tr><td>Demand Gen</td><td>at least 50 in 35 days, 10 of which in the last 7 days</td></tr>
+<tr><td>Video action</td><td>at least 30 in 30 days</td></tr>
+<tr><td>Hotel</td><td>at least 50 per week (campaign level)</td></tr>
+<tr><td>Travel</td><td>at least 50 in 7 days (campaign level)</td></tr>
+</tbody>
+</table>
+</div>
+<p>Source for all figures: <a href="https://support.google.com/google-ads/answer/6268637?hl=en">Google Ads Help, About Target ROAS bidding</a>. Before switching to Target ROAS, Google recommends waiting &quot;4 weeks or 3 conversion cycles&quot; (whichever is longer, until the campaign receives conversion values at a similar rate, ibid.) — a distinct figure from the general learning period. That learning period is triggered when a bid strategy is newly created, reactivated, or has a setting changed, or when campaigns, ad groups, or keywords are added to or removed from it; per Google it takes &quot;up to 3 weeks or 1-2 conversion cycles&quot; to calibrate to the new objective — &quot;although it can be faster depending on the amount of conversion data present&quot; (<a href="https://support.google.com/google-ads/answer/13020501?hl=en">Google Ads Help, About the learning period</a>). An account that constantly changes bid strategies, budgets, or structure never really exits the learning phase.</p>
+<h2>Search terms and negative keywords — the budget-leak check</h2>
+<p>The search terms report shows which actual searches triggered your ads — not just the keywords you bid on. Irrelevant search terms can be added straight from the report as a negative keyword. This isn't a tracking fix; it's a check on whether the budget is even being spent against the right searches in the first place.</p>
+<p>&quot;Use the search terms report to know how your ads performed when triggered by actual searches within the Search Network&quot; (<a href="https://support.google.com/google-ads/answer/2472708?hl=en">Google Ads Help, About the search terms report</a>). &quot;If a search term isn't relevant enough to the products or services you offer, add it as a negative keyword&quot; (ibid.). Negative keywords stop your ad from being served against those terms — though they're &quot;not as precise on the Display Network as they are on the Search Network,&quot; and for Display and Video campaigns Google considers &quot;a maximum of 1,000 negative keywords&quot; (<a href="https://support.google.com/google-ads/answer/7102995?hl=en">Google Ads Help, Add negative keywords to campaigns</a>). No Google Help page officially folds this check into a &quot;why aren't I converting&quot; flow — it lives in separate keyword documentation. That's exactly why it gets skipped in practice, even though it's a fast way to see whether budget is burning on irrelevant queries before a conversion was ever possible.</p>
+<h2>Performance Max: its own failure points</h2>
+<p>New or edited ads need 24 to 48 hours of review. For automated bid strategies, Google recommends waiting 7 to 14 days for the system to train. If there are still no impressions after 3 business days, Google points to its own troubleshooting list — and a fluctuating daily budget isn't, by itself, a fault.</p>
+<p>&quot;It takes 24-48 hours for newly created or edited ads to be reviewed to ensure they meet all policy requirements&quot; — and &quot;it's recommended to wait 7-14 days to allow the system to ramp up and start to perform towards your set goal&quot; (<a href="https://support.google.com/google-ads/answer/12131516?hl=en">Google Ads Help, Fix Performance Max campaign not running or low traffic</a>). &quot;If your ad still doesn't receive impressions after 3 business days, check the reasons listed in this article&quot; (ibid.). For interpreting budget swings: &quot;Google Ads may spend up to 2 times your average daily budget on any given day. However, you'll never be charged more than your monthly charging limit&quot; (ibid.) — an expensive single day is, on its own, not a red flag. Per the benchmark behind this guide, only 2 of 22 competitor articles reviewed cover Performance Max at all, despite it being the default recommendation for many new accounts.</p>
+<h2>What order should you work through this?</h2>
+<p>Technical status first, then measurement window, then volume, then content — in that order, because each later step is only meaningful once the one before it checks out. Optimizing ads or bids against broken numbers wastes time and budget twice over.</p>
+<ol>
+<li><strong>Check the tracking status.</strong> Open the troubleshooter, check each conversion action individually — fix &quot;Misconfigured&quot; first.</li>
+<li><strong>Check the conversion window.</strong> Does it match the real purchase cycle? At least 7 days, as Google itself recommends.</li>
+<li><strong>Check consent mode and consent rate.</strong> Is the account reaching the 700-click threshold per country/domain? If not, the gap stays unmodeled.</li>
+<li><strong>Check conversion volume against your bid strategy's minimums.</strong> Target CPA runs without history; Target ROAS doesn't.</li>
+<li><strong>Review the search terms report and plug the budget leak.</strong> Exclude irrelevant search terms before spending more.</li>
+<li><strong>For Performance Max: respect the timelines</strong> before touching assets or goals — 24-48 hours of ad review, 7-14 days of training time.</li>
+</ol>
+<h2>Our free account audit as the next step</h2>
+<p>In our free <a href="/en#contact">account audit</a>, we walk through this exact order with you: tracking status, conversion windows, consent mode coverage, conversion volume per bid strategy. We're a small, founder-led remote team; our <a href="/en/services/google-ads">Google Ads management</a> starts at €349/month, month-to-month, no setup fee — full details on the <a href="/en#pricing">pricing page</a>. If the honest answer is &quot;the account needs more time or budget first,&quot; we say that as plainly as the opposite. For realistic budget sizing, see our guide to <a href="/en/guides/how-much-does-google-ads-cost">what Google Ads actually costs</a>.</p>
+<h2>FAQ</h2>
+<p><strong>How do I know if my Google Ads tracking is broken?</strong>
+Open the status of each conversion action in the troubleshooter. &quot;Misconfigured&quot; means conversions have stopped recording entirely — a genuine technical problem. &quot;Awaiting conversions&quot; on an action under 48 hours old is, by contrast, normal.</p>
+<p><strong>Why does my account show &quot;no conversions in the last 7 days&quot; despite clicks?</strong>
+That's the standard &quot;Awaiting conversions&quot; status — per Google, typical for new actions under 48 hours old, paused campaigns, or too little traffic, not necessarily a fault.</p>
+<p><strong>What does consent mode have to do with missing conversions?</strong>
+Without consent, part of your real conversions are missing from reports. Google models that gap above 700 ad clicks per 7 days, country, and domain — below that threshold, it stays unmodeled.</p>
+<p><strong>How many conversions does Google Ads need to bid automatically?</strong>
+Depends on the strategy: Target CPA runs with no history at all, Target ROAS needs 15 to 50 conversions in a defined period depending on campaign type.</p>
+<p><strong>What do you check in the free account audit?</strong>
+We check tracking status, conversion windows, consent mode coverage, and conversion volume against your bid strategy's requirements — and say plainly what, if anything, needs fixing first. <a href="/en#contact">Book a call</a>.</p>
+
+  </article>
+
+  <section class="cta-box">
+    <h2>A free analysis, not a sales call</h2>
+    <p>We&#39;ll show you for free whether and where Google Ads or Meta Ads can pay off for your business — with honest numbers. If it&#39;s not worth it for you, we&#39;ll say so.</p>
+    <a class="btn" href="https://calendly.com/digitalmarketingremote01/30min" target="_blank" rel="noopener">Book a free consultation →</a>
+    <p class="cta-sub"><a href="/en#contact">Or send a request via the contact form</a></p>
+  </section>
+
+  <section class="author-box">
+    <div>
+      <p class="ab-name"><a href="/en/about/danyal">Mohammad Danyal Shahzad</a></p>
+      <p class="ab-role">Founder, Digital Marketing Remote</p>
+      <p class="ab-bio">Danyal has managed Google Ads and Meta Ads campaigns since 2022 — 72 projects across 15 countries with over €1.7M in verifiably generated revenue.
+        <a href="https://www.linkedin.com/in/mdanyalshahzad/" target="_blank" rel="noopener">LinkedIn</a></p>
+    </div>
+  </section>
+</main>
+
+<footer class="gf">
+  <div class="ctn">
+    <div class="gf-top">
+      <span class="logo">Digital<span>Marketing</span>Remote</span>
+      <p>Performance marketing, fully remote. Data-driven, transparent, results-focused.</p>
+    </div>
+    <div class="gf-bot">
+      <span>© 2024–2026 Digital Marketing Remote · Mohammad Danyal Shahzad</span>
+      <div class="gf-links"><a href="/en/impressum">Imprint</a><a href="/en/datenschutz">Privacy</a><a href="/en/guides">Guides</a><a href="/en">Home</a></div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
