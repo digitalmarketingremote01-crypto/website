@@ -243,4 +243,26 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Ratgeber: Agentur wechseln (DE, twin of /en/guides/switching-google-ads-agency) -->
+  <url>
+    <loc>https://www.digitalmarketingremote.com/ratgeber/google-ads-agentur-wechseln</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-agentur-wechseln"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/en/guides/switching-google-ads-agency"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-agentur-wechseln"/>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Guide: Switching Google Ads agencies (EN twin) -->
+  <url>
+    <loc>https://www.digitalmarketingremote.com/en/guides/switching-google-ads-agency</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-agentur-wechseln"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/en/guides/switching-google-ads-agency"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-agentur-wechseln"/>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
