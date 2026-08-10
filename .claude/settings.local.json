@@ -382,7 +382,9 @@
       "Bash(grep -o '<section class=\"cta[^>]*>.\\\\{0,700\\\\}' en/index.html)",
       "Bash(awk '/id=\"reviews\"|proof-slider/{f=1} f&&/<section|<\\\\/main>|partner-teaser|<footer/{print NR\": \"substr\\($0,1,120\\)} /<footer/{exit}' en/index.html)",
       "Bash(SP=\"/private/tmp/claude-501/-Users-mdanyalshahzad-Documents-Danyal-Freelancing-Digital-Marketing-Remote-Website/7c061e5a-e826-413d-8c03-9c1c19bf03f4\"; ls \"$SP\"; cp \"/Users/mdanyalshahzad/Documents/Danyal/Freelancing/Digital Marketing Remote/Website/case-solar-webapp.png\" \"$SP/scratchpad/demand-gen-audit.png\" && ls -la \"$SP/scratchpad/\")",
-      "Bash(echo -n \"1786104624\" > \"/Users/mdanyalshahzad/.claude/scheduled-tasks/dmr-gmail-website-lead-tracker/last-scan.txt\" && cat \"/Users/mdanyalshahzad/.claude/scheduled-tasks/dmr-gmail-website-lead-tracker/last-scan.txt\")"
+      "Bash(echo -n \"1786104624\" > \"/Users/mdanyalshahzad/.claude/scheduled-tasks/dmr-gmail-website-lead-tracker/last-scan.txt\" && cat \"/Users/mdanyalshahzad/.claude/scheduled-tasks/dmr-gmail-website-lead-tracker/last-scan.txt\")",
+      "Bash(cp \"/Users/mdanyalshahzad/Downloads/DMR Website Leads - Leads \\(7\\).csv\" \"/Users/mdanyalshahzad/Documents/Danyal/Pipeline/dmr-website-leads-sheet.csv\")",
+      "Bash(echo 1786376068)"
     ]
   }
 }
