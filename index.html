@@ -17,7 +17,7 @@ var ga=document.createElement('script');ga.async=true;ga.src='https://www.google
 gtag('js',new Date());gtag('config','G-N6G3MVTEH5');
 if(localStorage.getItem('dc')==='y')loadTracking();}
 var _gtmEv=['pointerdown','keydown','touchstart','scroll'];
-function _gtmTrig(){_gtmEv.forEach(function(e){window.removeEventListener(e,_gtmTrig)});loadGTM();}
+function _gtmTrig(){_gtmEv.forEach(function(e){window.removeEventListener(e,_gtmTrig)});setTimeout(loadGTM,0);}
 _gtmEv.forEach(function(e){window.addEventListener(e,_gtmTrig,{passive:true})});
 setTimeout(loadGTM,3000);
 /* Meta Pixel + Microsoft Clarity load only after opt-in (no consent-mode support) */
