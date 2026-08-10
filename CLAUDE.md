@@ -98,6 +98,13 @@ Section order (reordered 2026-07-23, proof-first for mobile — Clarity showed 5
 - Never name or show logos/screenshots of Craft AEC's end-clients (no permission)
 - Only advertise numbers that are provable (UWG § 5)
 - Legal pages are standalone: /impressum, /datenschutz (vercel.json cleanUrls)
+- NO PROMISED SIGNED DOCUMENTS anywhere on the site (user directive 2026-08-07). Removed that day:
+  the partner pages' "unterzeichnete Kundenschutz-Vereinbarung" / "signed non-solicitation agreement",
+  the homepage FAQ's written service agreement + DSGVO-AVV/GDPR-DPA promises (DE+EN), and the EN pilot
+  line "set out in writing in the service agreement". Reason he gave: prices are already low, he does not
+  want to surrender contractual guarantees on top for trust. Keep describing what we DO (no contact with
+  partner clients, client keeps the account, monthly cancellable) — never promise a signed instrument.
+  NOTE: the legal AVV/DPA obligation still applies where personal data is processed; it is simply not advertised.
 - Minimize self-binding language site-wide (user directive 2026-06-21): no guarantees/
   promises that bind DMR, the agency, or employees unless absolutely necessary (legally
   mandatory) or morally required. KEPT by user choice: homepage Performance-Garantie (free

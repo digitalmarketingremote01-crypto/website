@@ -1,6 +1,10 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    { "source": "/ueber-uns", "destination": "/ueber-uns/danyal", "permanent": true },
+    { "source": "/en/about", "destination": "/en/about/danyal", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/(danyal-hero.jpeg|facebook-cover-en.png|DMR-testimonial-loganberry.png|DMR-loganberry-proof.png)",
