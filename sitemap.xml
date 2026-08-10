@@ -338,4 +338,49 @@
     <priority>0.8</priority>
   </url>
 
+
+  <!-- Konto löschen (DE) -->
+  <url>
+    <loc>https://www.digitalmarketingremote.com/ratgeber/google-ads-konto-loeschen</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-konto-loeschen"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/en/guides/delete-google-ads-account"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-konto-loeschen"/>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Konto löschen (EN) -->
+  <url>
+    <loc>https://www.digitalmarketingremote.com/en/guides/delete-google-ads-account</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-konto-loeschen"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/en/guides/delete-google-ads-account"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-konto-loeschen"/>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Google Ads kündigen (DE) -->
+  <url>
+    <loc>https://www.digitalmarketingremote.com/ratgeber/google-ads-kuendigen</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-kuendigen"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/en/guides/cancel-google-ads"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-kuendigen"/>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Google Ads kündigen (EN) -->
+  <url>
+    <loc>https://www.digitalmarketingremote.com/en/guides/cancel-google-ads</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-kuendigen"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/en/guides/cancel-google-ads"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-kuendigen"/>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
