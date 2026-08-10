@@ -169,6 +169,8 @@ p{color:var(--tx)}
 /* Pricing */
 .price-toggle{display:flex;align-items:center;justify-content:center;gap:.875rem;margin-bottom:2.25rem}
 .ptl{font-size:.875rem;font-weight:600;color:var(--mt);cursor:pointer;transition:color .2s}.ptl.act{color:var(--c2)}
+.ds-err{display:none;color:var(--c2);font-size:.72rem;margin:-.5rem 0 .75rem}
+.hfp.err,.priv.err{outline:2px solid var(--c2);outline-offset:3px;border-radius:6px}
 .pts{width:48px;height:26px;background:var(--c1);border-radius:13px;position:relative;cursor:pointer;border:0;transition:background .2s}
 .pts::after{content:'';position:absolute;top:3px;left:3px;width:20px;height:20px;background:#fff;border-radius:50%;transition:transform .3s}
 .pts.on{background:var(--c2)}.pts.on::after{transform:translateX(22px)}
@@ -396,7 +398,8 @@ body{padding-bottom:64px}
 <label class="hchip"><input type="checkbox" name="kontakt" value="WhatsApp" onchange="tc(this)">💬 WhatsApp</label>
 <label class="hchip"><input type="checkbox" name="kontakt" value="Rückruf" onchange="tc(this)">📞 Rückruf</label>
 </div></div>
-<div class="hfp"><input type="checkbox" id="hds" name="dsgvo" required><label for="hds">Ich stimme der <a href="/datenschutz" target="_blank" rel="noopener">Datenschutzerklärung</a> zu. *</label></div>
+<div class="hfp"><input type="checkbox" id="hds" name="dsgvo" required onchange="clrDsErr(this)"><label for="hds">Ich stimme der <a href="/datenschutz" target="_blank" rel="noopener">Datenschutzerklärung</a> zu. *</label></div>
+<div class="ds-err" id="hds-err">Bitte akzeptieren Sie die Datenschutzerklärung, um fortzufahren.</div>
 <input type="hidden" name="_subject" value="Erstberatung – Digital Marketing Remote">
 <button type="submit" id="hsbtn" class="btn bp bf">Anfrage senden →</button>
 </form>
@@ -542,9 +545,9 @@ body{padding-bottom:64px}
 <div style="display:flex;flex-wrap:wrap;gap:.35rem 1.25rem;justify-content:center;font-size:.8rem;color:var(--tx)"><span>✓ Kostenlose Erstberatung</span><span>✓ Kostenlose Projekt-Analyse oder Konto-Audit — Sie wählen</span><span>✓ Keine Einrichtungsgebühr</span><span>✓ Monatlich kündbar</span><span>✓ Ziele verfehlt? Monat 2 ohne Managementgebühr</span></div>
 </div>
 <div class="price-toggle">
-<span class="ptl act" id="pl1">Eine Plattform</span>
+<span class="ptl act" id="pl1" onclick="togPr(false)">Eine Plattform</span>
 <button class="pts" id="pts" onclick="togPr()" aria-label="Plattform wechseln"></button>
-<span class="ptl" id="pl2">Google + Meta kombiniert</span>
+<span class="ptl" id="pl2" onclick="togPr(true)">Google + Meta kombiniert</span>
 </div>
 
 <!-- Single -->
@@ -693,7 +696,8 @@ body{padding-bottom:64px}
 <div class="fg"><label for="cu">Unternehmen / Website</label><input type="text" id="cu" name="unternehmen" placeholder="Muster GmbH · www.muster.de"></div>
 <div class="fg"><label>Bevorzugter Kontaktweg *</label><div class="hchips"><label class="hchip"><input type="checkbox" name="kontakt" value="E-Mail" onchange="tc(this)">📧 E-Mail</label><label class="hchip"><input type="checkbox" name="kontakt" value="WhatsApp" onchange="tc(this)">💬 WhatsApp</label><label class="hchip"><input type="checkbox" name="kontakt" value="Rückruf" onchange="tc(this)">📞 Rückruf</label></div></div>
 <div class="fg"><label for="cmsg">Kurze Beschreibung Ihres Projekts</label><textarea id="cmsg" name="nachricht" placeholder="Was vermarkten Sie? Was ist Ihr Hauptziel? Haben Sie bereits Kampagnen?"></textarea></div>
-<div class="priv"><input type="checkbox" id="cds" name="dsgvo" required><label for="cds">Ich habe die <a href="/datenschutz" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und stimme zu. *</label></div>
+<div class="priv"><input type="checkbox" id="cds" name="dsgvo" required onchange="clrDsErr(this)"><label for="cds">Ich habe die <a href="/datenschutz" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und stimme zu. *</label></div>
+<div class="ds-err" id="cds-err">Bitte akzeptieren Sie die Datenschutzerklärung, um fortzufahren.</div>
 <input type="hidden" name="_subject" value="Kontaktformular – Digital Marketing Remote">
 <button type="submit" id="csbtn" class="btn bp bf" style="margin-top:.75rem">Anfrage senden →</button>
 <div class="form-trust">
@@ -825,7 +829,7 @@ function tc(i){i.parentElement.classList.toggle('sel',i.checked);}
 
 /* Pricing toggle */
 var dual=false;
-function togPr(){dual=!dual;document.getElementById('pts').classList.toggle('on',dual);
+function togPr(v){dual=(v===undefined)?!dual:v;document.getElementById('pts').classList.toggle('on',dual);
 document.getElementById('pgs').classList.toggle('show',!dual);document.getElementById('pgd').classList.toggle('show',dual);
 document.getElementById('pl1').classList.toggle('act',!dual);document.getElementById('pl2').classList.toggle('act',dual);}
 
@@ -833,6 +837,7 @@ document.getElementById('pl1').classList.toggle('act',!dual);document.getElement
 var DISPOSABLE_EMAIL=['mailinator.com','guerrillamail.com','guerrillamail.info','grr.la','sharklasers.com','10minutemail.com','tempmail.com','temp-mail.org','yopmail.com','trashmail.com','getnada.com','maildrop.cc','throwawaymail.com','fakeinbox.com','mailnesia.com','dispostable.com','emailondeck.com','mohmal.com','moakt.com','tmail.io','mintemail.com'];
 function validEmail(v){v=(v||'').trim().toLowerCase();if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v))return false;return DISPOSABLE_EMAIL.indexOf(v.split('@')[1])===-1;}
 function validPhone(v){v=(v||'').trim();if(/[a-zA-Z]/.test(v))return false;var d=v.replace(/\D/g,'');if(d.length<7||d.length>15)return false;if(/^(\d)\1+$/.test(d))return false;if(/^(1234567890|0123456789|0987654321|9876543210)$/.test(d))return false;return true;}
+function clrDsErr(cb){if(cb.checked){var w=cb.closest('.hfp,.priv');if(w)w.classList.remove('err');var er=document.getElementById(cb.id+'-err');if(er)er.style.display='none';}}
 ['hform','cform'].forEach(function(id){
 var f=document.getElementById(id);if(!f)return;
 f.addEventListener('submit',function(e){
@@ -841,7 +846,7 @@ if(empty){e.preventDefault();alert('Bitte füllen Sie alle Pflichtfelder aus.');
 var em=f.querySelector('[name="email"]');
 if(em&&!validEmail(em.value)){e.preventDefault();alert('Bitte geben Sie eine gültige E-Mail-Adresse ein (keine Wegwerf-Adresse).');if(em.focus)em.focus();return;}
 var ds=f.querySelector('[name="dsgvo"]');
-if(ds&&!ds.checked){e.preventDefault();alert('Bitte stimmen Sie der Datenschutzerklärung zu.');return;}
+if(ds&&!ds.checked){e.preventDefault();var w=ds.closest('.hfp,.priv');if(w)w.classList.add('err');var er=document.getElementById(ds.id+'-err');if(er)er.style.display='block';ds.focus();return;}
 var kc=f.querySelectorAll('[name="kontakt"]:checked');
 if(kc.length===0){e.preventDefault();alert('Bitte wählen Sie einen bevorzugten Kontaktweg aus.');return;}
 var ph=f.querySelector('[name="telefon"]');
