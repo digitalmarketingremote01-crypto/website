@@ -847,7 +847,7 @@ if(ph&&ph.value.trim()&&!validPhone(ph.value)){e.preventDefault();alert('Bitte g
 var btn=f.querySelector('[type="submit"]');
 var btnTxt=btn?btn.textContent:'';
 if(btn){btn.disabled=true;btn.textContent='Wird gesendet…';}
-window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'form_submission'});
+window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'form_submission'});if(window.fbq)fbq('track','Lead');
 setTimeout(function(){showTY('form');window.location.hash='danke';if(btn){btn.disabled=false;btn.textContent=btnTxt;}},1500);
 });
 });
@@ -861,7 +861,7 @@ function handleHash(initial){
     /* initial===true + fresh calB flag = this pageload follows an in-popup booking that already pushed the event */
     var skip=false;
     if(initial===true){try{var t=+sessionStorage.getItem('calB')||0;skip=(Date.now()-t<120000);sessionStorage.removeItem('calB');}catch(e){}}
-    if(!skip){window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'calendly_booking'});}}
+    if(!skip){window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'calendly_booking'});if(window.fbq)fbq('track','Schedule');}}
   else if(location.hash==='#danke'){showTY('form');}
 }
 handleHash(true);
@@ -950,7 +950,7 @@ window.addEventListener('message',function(e){
 if(e.origin==='https://calendly.com'&&e.data&&e.data.event==='calendly.event_scheduled'){
 try{sessionStorage.setItem('calB',String(Date.now()))}catch(err){}
 if(window.Calendly&&Calendly.closePopupWidget)Calendly.closePopupWidget();
-if(location.hash==='#danke-termin'){window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'calendly_booking'});}
+if(location.hash==='#danke-termin'){window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'calendly_booking'});if(window.fbq)fbq('track','Schedule');}
 else{location.hash='#danke-termin';}
 }});
 
