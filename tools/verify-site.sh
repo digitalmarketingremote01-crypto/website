@@ -25,8 +25,15 @@ done
 
 echo "== 3. conversion chain intact (forms + booking + thank-you) =="
 home=$(curl -s -H 'Cache-Control: no-cache' "$BASE/?cb=$TS")
-for m in "danke-termin" "form_submission" "calendly_booking" "_calLoad" "GTM-MFXPMZ8W" "G-N6G3MVTEH5"; do
+# Tracking lives in the shared assets/tracking.js module, not inline — check both
+# the page and the module so this doesn't false-positive on that split.
+trackjs=$(curl -s -H 'Cache-Control: no-cache' "$BASE/assets/tracking.js?cb=$TS")
+grep -qF -- "assets/tracking.js" <<<"$home" && pass "tracking.js referenced on homepage" || fail "tracking.js NOT referenced on homepage"
+for m in "danke-termin" "form_submission" "calendly_booking" "_calLoad"; do
   grep -qF -- "$m" <<<"$home" && pass "$m present" || fail "$m MISSING"
+done
+for m in "GTM-MFXPMZ8W" "G-N6G3MVTEH5"; do
+  { grep -qF -- "$m" <<<"$home" || grep -qF -- "$m" <<<"$trackjs"; } && pass "$m present" || fail "$m MISSING (checked home + tracking.js)"
 done
 
 echo "== 4. mobile-only UI must NOT leak onto desktop =="
@@ -35,8 +42,14 @@ for sel in '#mcta{display:none}' '.msw-nav{display:none}'; do
 done
 
 echo "== 5. consent gating =="
-grep -qF -- "url_passthrough" <<<"$home" && pass "Consent Mode v2 present" || fail "Consent Mode v2 missing"
-grep -qF -- "clarity.ms/tag" <<<"$home" && { grep -qF -- "function loadTracking" <<<"$home" && pass "Clarity inside loadTracking (consent-gated)" || fail "Clarity may load before consent"; }
+{ grep -qF -- "url_passthrough" <<<"$home" || grep -qF -- "url_passthrough" <<<"$trackjs"; } && pass "Consent Mode v2 present" || fail "Consent Mode v2 missing (checked home + tracking.js)"
+if grep -qF -- "clarity.ms/tag" <<<"$trackjs"; then
+  grep -qF -- "function loadTracking" <<<"$trackjs" && pass "Clarity inside loadTracking (consent-gated)" || fail "Clarity may load before consent"
+elif grep -qF -- "clarity.ms/tag" <<<"$home"; then
+  grep -qF -- "function loadTracking" <<<"$home" && pass "Clarity inside loadTracking (consent-gated)" || fail "Clarity may load before consent"
+else
+  fail "Clarity not found in home or tracking.js"
+fi
 
 if [ "${1:-}" = "--full" ]; then
   echo "== 6. Lighthouse (mobile + desktop) =="
