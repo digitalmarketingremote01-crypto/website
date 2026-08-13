@@ -473,4 +473,115 @@
     <priority>0.8</priority>
   </url>
 
+
+  <!-- Auf Rechnung (DE) -->
+  <url>
+    <loc>https://www.digitalmarketingremote.com/ratgeber/google-ads-auf-rechnung</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-auf-rechnung"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/en/guides/google-ads-monthly-invoicing"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-auf-rechnung"/>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Auf Rechnung (EN) -->
+  <url>
+    <loc>https://www.digitalmarketingremote.com/en/guides/google-ads-monthly-invoicing</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-auf-rechnung"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/en/guides/google-ads-monthly-invoicing"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-auf-rechnung"/>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Keine Impressionen (DE) -->
+  <url>
+    <loc>https://www.digitalmarketingremote.com/ratgeber/google-ads-keine-impressionen</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-keine-impressionen"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/en/guides/google-ads-no-impressions"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-keine-impressionen"/>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Keine Impressionen (EN) -->
+  <url>
+    <loc>https://www.digitalmarketingremote.com/en/guides/google-ads-no-impressions</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-keine-impressionen"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/en/guides/google-ads-no-impressions"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-keine-impressionen"/>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Keine Klicks (DE) -->
+  <url>
+    <loc>https://www.digitalmarketingremote.com/ratgeber/google-ads-keine-klicks</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-keine-klicks"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/en/guides/google-ads-no-clicks"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-keine-klicks"/>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Keine Klicks (EN) -->
+  <url>
+    <loc>https://www.digitalmarketingremote.com/en/guides/google-ads-no-clicks</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-keine-klicks"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/en/guides/google-ads-no-clicks"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-keine-klicks"/>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Anzeige abgelehnt (DE) -->
+  <url>
+    <loc>https://www.digitalmarketingremote.com/ratgeber/google-ads-anzeigen-abgelehnt</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-anzeigen-abgelehnt"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/en/guides/google-ads-disapproved"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-anzeigen-abgelehnt"/>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Anzeige abgelehnt (EN) -->
+  <url>
+    <loc>https://www.digitalmarketingremote.com/en/guides/google-ads-disapproved</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-anzeigen-abgelehnt"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/en/guides/google-ads-disapproved"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-anzeigen-abgelehnt"/>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Klickbetrug (DE) -->
+  <url>
+    <loc>https://www.digitalmarketingremote.com/ratgeber/google-ads-klickbetrug</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-klickbetrug"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/en/guides/google-ads-click-fraud"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-klickbetrug"/>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Klickbetrug (EN) -->
+  <url>
+    <loc>https://www.digitalmarketingremote.com/en/guides/google-ads-click-fraud</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-klickbetrug"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/en/guides/google-ads-click-fraud"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-klickbetrug"/>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
