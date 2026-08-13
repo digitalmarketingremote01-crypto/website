@@ -1,5 +1,5 @@
 /* Guide pages — Digital Marketing Remote. Matches landing-page brand tokens; standalone (landing page untouched). */
-:root{--c1:#241c14;--c2:#c9702f;--c2d:#9c4a1a;--c2l:#fbead9;--c3:#15803d;--bg:#faf8f4;--bd:#e8e3d8;--tx:#374151;--mt:#6b7280;--r:12px;--rs:8px}
+:root{--c1:#1a1a2e;--c2:#c8102e;--c2d:#9e0b22;--c2l:#fbe7ea;--c3:#15803d;--bg:#f8f9fa;--bd:#e5e7eb;--tx:#374151;--mt:#6b7280;--r:12px;--rs:8px}
 @font-face{font-family:'Plus Jakarta Sans';font-style:normal;font-weight:400 800;font-display:optional;src:url('/fonts/plus-jakarta-sans.woff2') format('woff2')}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;color:var(--tx);background:#fff;line-height:1.7;font-size:1.0625rem}
@@ -67,7 +67,7 @@ article tr:nth-child(even) td{background:var(--bg)}
 /* Footer */
 .gf{background:var(--c1);color:#9ca3af;margin-top:3rem;padding:2rem 0 1.5rem;font-size:.9rem}
 .gf .logo{color:#fff}
-.gf .logo span{color:#e8834a}
+.gf .logo span{color:#ff6b81}
 .gf-top p{margin:.5rem 0 1.2rem;max-width:480px}
 .gf-bot{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;border-top:1px solid #374151;padding-top:1rem}
 .gf-links{display:flex;gap:1rem;flex-wrap:wrap}

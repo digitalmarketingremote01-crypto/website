@@ -428,4 +428,49 @@
     <priority>0.8</priority>
   </url>
 
+
+  <!-- Konto gesperrt (DE) -->
+  <url>
+    <loc>https://www.digitalmarketingremote.com/ratgeber/google-ads-konto-gesperrt</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-konto-gesperrt"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/en/guides/google-ads-account-suspended"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-konto-gesperrt"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Konto gesperrt (EN) -->
+  <url>
+    <loc>https://www.digitalmarketingremote.com/en/guides/google-ads-account-suspended</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-konto-gesperrt"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/en/guides/google-ads-account-suspended"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-konto-gesperrt"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Rechnung Umsatzsteuer (DE) -->
+  <url>
+    <loc>https://www.digitalmarketingremote.com/ratgeber/google-ads-rechnung-umsatzsteuer</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-rechnung-umsatzsteuer"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/en/guides/google-ads-invoices-vat"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-rechnung-umsatzsteuer"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Rechnung Umsatzsteuer (EN) -->
+  <url>
+    <loc>https://www.digitalmarketingremote.com/en/guides/google-ads-invoices-vat</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-rechnung-umsatzsteuer"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/en/guides/google-ads-invoices-vat"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-rechnung-umsatzsteuer"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
