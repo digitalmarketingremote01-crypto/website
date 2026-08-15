@@ -261,9 +261,14 @@ Report a finding in one line and stop. Do not build the fix, and do not dress op
 as something that needs doing. Rejected examples: hub pages, rerouting nav to new pages,
 tidy-up redirects. Homepage nav anchors (`/#services`, `/en#services`) are deliberate — leave them.
 
-## 7. How to report
+## 7. How to report — SHORT AND SIMPLE, ALWAYS
 
-- Straight answers, not diplomatic ones. Lead with the number.
+His standing rule: answer short and simple. Every time, not just when asked.
+
+- A few lines. No tables unless he asks for one. No walls of text.
+- Lead with the answer. Stop there. He asks if he wants the detail.
+- Plain words, no jargon, no showing my working.
+- Straight answers, not diplomatic ones.
 - Answer in the unit he asked for: articles are articles, pages are pages.
 - Verify the count from files or git **before** answering, not after he challenges it.
 - Never imply organic progress is faster or bigger than it is. Current honest expectation:
