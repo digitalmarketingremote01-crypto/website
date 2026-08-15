@@ -629,4 +629,115 @@
     <priority>0.8</priority>
   </url>
 
+
+  <!-- Google Ads einrichten (DE) -->
+  <url>
+    <loc>https://www.digitalmarketingremote.com/ratgeber/google-ads-einrichten</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-einrichten"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/en/guides/set-up-google-ads"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-einrichten"/>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Google Ads einrichten (EN) -->
+  <url>
+    <loc>https://www.digitalmarketingremote.com/en/guides/set-up-google-ads</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-einrichten"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/en/guides/set-up-google-ads"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-einrichten"/>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Conversion-Tracking (DE) -->
+  <url>
+    <loc>https://www.digitalmarketingremote.com/ratgeber/google-ads-conversion-tracking-einrichten</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-conversion-tracking-einrichten"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/en/guides/set-up-google-ads-conversion-tracking"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-conversion-tracking-einrichten"/>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Conversion-Tracking (EN) -->
+  <url>
+    <loc>https://www.digitalmarketingremote.com/en/guides/set-up-google-ads-conversion-tracking</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-conversion-tracking-einrichten"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/en/guides/set-up-google-ads-conversion-tracking"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-conversion-tracking-einrichten"/>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Google Shopping (DE) -->
+  <url>
+    <loc>https://www.digitalmarketingremote.com/ratgeber/google-shopping-einrichten</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/ratgeber/google-shopping-einrichten"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/en/guides/set-up-google-shopping"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.digitalmarketingremote.com/ratgeber/google-shopping-einrichten"/>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Google Shopping (EN) -->
+  <url>
+    <loc>https://www.digitalmarketingremote.com/en/guides/set-up-google-shopping</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/ratgeber/google-shopping-einrichten"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/en/guides/set-up-google-shopping"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.digitalmarketingremote.com/ratgeber/google-shopping-einrichten"/>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Negative Keywords (DE) -->
+  <url>
+    <loc>https://www.digitalmarketingremote.com/ratgeber/google-ads-negative-keywords</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-negative-keywords"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/en/guides/google-ads-negative-keywords"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-negative-keywords"/>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Negative Keywords (EN) -->
+  <url>
+    <loc>https://www.digitalmarketingremote.com/en/guides/google-ads-negative-keywords</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-negative-keywords"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/en/guides/google-ads-negative-keywords"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-negative-keywords"/>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Suchbegriffe-Bericht (DE) -->
+  <url>
+    <loc>https://www.digitalmarketingremote.com/ratgeber/google-ads-suchbegriffe-bericht</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-suchbegriffe-bericht"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/en/guides/google-ads-search-terms-report"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-suchbegriffe-bericht"/>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Suchbegriffe-Bericht (EN) -->
+  <url>
+    <loc>https://www.digitalmarketingremote.com/en/guides/google-ads-search-terms-report</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-suchbegriffe-bericht"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/en/guides/google-ads-search-terms-report"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-suchbegriffe-bericht"/>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>

@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Set Up Conversion Tracking: Two Snippets, Two Places</title>
+<meta name="description" content="Set up Google Ads conversion tracking: the Google tag on every page, the event snippet on the conversion page, and the 48 hours before status updates.">
+<link rel="canonical" href="https://www.digitalmarketingremote.com/en/guides/set-up-google-ads-conversion-tracking">
+<link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-conversion-tracking-einrichten">
+<link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/en/guides/set-up-google-ads-conversion-tracking">
+<link rel="alternate" hreflang="x-default" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-conversion-tracking-einrichten">
+<link rel="icon" href="/favicon.ico">
+<link rel="preload" href="/fonts/plus-jakarta-sans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/guides.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Set Up Conversion Tracking: Two Snippets, Two Places",
+      "description": "Set up Google Ads conversion tracking: the Google tag on every page, the event snippet on the conversion page, and the 48 hours before status updates.",
+      "inLanguage": "en",
+      "datePublished": "2026-08-15",
+      "dateModified": "2026-08-15",
+      "mainEntityOfPage": "https://www.digitalmarketingremote.com/en/guides/set-up-google-ads-conversion-tracking",
+      "author": {
+        "@type": "Person",
+        "name": "Mohammad Danyal Shahzad",
+        "url": "https://www.digitalmarketingremote.com/en/about/danyal",
+        "sameAs": ["https://www.linkedin.com/in/mdanyalshahzad/"]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Digital Marketing Remote",
+        "url": "https://www.digitalmarketingremote.com"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Digital Marketing Remote", "item": "https://www.digitalmarketingremote.com/en" },
+        { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://www.digitalmarketingremote.com/en/guides" },
+        { "@type": "ListItem", "position": 3, "name": "Conversion tracking", "item": "https://www.digitalmarketingremote.com/en/guides/set-up-google-ads-conversion-tracking" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="gh">
+  <div class="ctn ghi">
+    <a class="logo" href="/en">Digital<span>Marketing</span>Remote</a>
+    <nav class="gn"><a href="/en/guides">Guides</a><a href="/en#services">Services</a><a href="/en#pricing">Pricing</a><a href="/en#contact">Contact</a><a class="lsw" href="/ratgeber/google-ads-conversion-tracking-einrichten">DE</a>
+    </nav>
+  </div>
+</header>
+
+<main class="ctn art">
+  <nav class="bc" aria-label="Breadcrumb">
+    <a href="/en">Home</a> ›
+    <a href="/en/guides">Guides</a> ›
+    <span>Conversion tracking</span>
+  </nav>
+
+  <article>
+    <h1>Setting up Google Ads conversion tracking — two snippets, two places</h1>
+    <p class="meta-line">
+      By <a href="/en/about/danyal">Mohammad Danyal Shahzad</a>
+      · Updated on <time datetime="2026-08-15">15 August 2026</time>
+    </p>
+
+    <div class="answer">
+Conversion tracking is <strong>two</strong> pieces of code in <strong>two</strong> places: the Google tag on every page, usually in the <code>&lt;head&gt;</code>, and the event snippet on the conversion page itself. Miss either and nothing is measured. After installing, conversion status can take up to 48 hours to update in Google Ads.
+</div>
+<p>Without conversion tracking, Google Ads is a click machine with no feedback: you see what you spend, not what you get. And with no conversions, no automated bidding strategy has anything to learn — which ties directly to the <a href="/en/guides/google-ads-learning-period">learning period</a>.</p>
+<h2>Two snippets, two places</h2>
+<p>This is where most installations fail: it is not one piece of code, it is two.</p>
+<p><strong>First, the Google tag — everywhere:</strong> &quot;The Google tag snippet should be placed on all pages of your website&quot; — typically, Google says, within the <code>&lt;head&gt;</code> (<a href="https://support.google.com/google-ads/answer/7548399?hl=en">Google Ads Help</a>)</p>
+<p><strong>Second, the event snippet — only where the conversion happens:</strong> &quot;For website conversion tracking to work, the event snippet should be installed on the conversion page itself.&quot; (<a href="https://support.google.com/google-ads/answer/7548399?hl=en">Google Ads Help</a>)</p>
+<div class="tbl-wrap">
+<table>
+<thead><tr><th>Code</th><th>Where it goes</th><th>If it is missing…</th></tr></thead>
+<tbody>
+<tr><td>Google tag</td><td>All pages, in the <code>&lt;head&gt;</code></td><td>No basis for measurement at all</td></tr>
+<tr><td>Event snippet</td><td>Only the conversion page (thank-you page)</td><td>Clicks counted, conversions not</td></tr>
+</tbody>
+</table>
+</div>
+<p>The classic failure: the Google tag is deployed cleanly through Tag Manager, the event snippet is missing — and the account shows zero conversions while enquiries keep arriving.</p>
+<h2>What the tag actually does</h2>
+<p>&quot;Using the Google tag sets new cookies on your domain, which will store a unique identifier for a user&quot; (<a href="https://support.google.com/google-ads/answer/7548399?hl=en">Google Ads Help</a>)</p>
+<p>Two consequences follow. Those cookies belong in your consent solution, and without consent they must not be set. Loading tracking without asking is not a measurement problem, it is a legal one — and you still end up without the data.</p>
+<h2>The 48 hours that cause panic</h2>
+<p>&quot;It may take up to 48 hours for the conversion status to update in Google Ads after implementing or correcting your tags.&quot; (<a href="https://support.google.com/google-ads/answer/7548399?hl=en">Google Ads Help</a>)</p>
+<p>Practical consequence: leave two days between installing and judging. Checking the status the same afternoon leads people to &quot;fix&quot; tracking that works — and introduce a real fault while doing it.</p>
+<h2>Check in this order when no conversions arrive</h2>
+<ol>
+<li>Is the Google tag genuinely on <strong>all</strong> pages, not just the homepage?</li>
+<li>Is the event snippet on the actual thank-you page — and does that page ever load?</li>
+<li>Have 48 hours passed since installation?</li>
+<li>Is your consent solution blocking the tag because nobody accepts?</li>
+<li>Are clicks arriving at all? If not, it is not a tracking problem — see <a href="/en/guides/google-ads-no-impressions">no impressions</a> and <a href="/en/guides/google-ads-no-clicks">no clicks</a>.</li>
+</ol>
+<h2>Why this belongs before the first campaign</h2>
+<p>Traffic without measurement is money you cannot account for — you cannot reconstruct afterwards which click produced an enquiry. The full setup order is in the <a href="/en/guides/set-up-google-ads">setup guide</a>.</p>
+
+  </article>
+
+  <section class="cta-box">
+    <h2>A free analysis, not a sales call</h2>
+    <p>We&#39;ll show you for free whether and where Google Ads or Meta Ads can pay off for your business — with honest numbers. If it&#39;s not worth it for you, we&#39;ll say so.</p>
+    <a class="btn" href="https://calendly.com/digitalmarketingremote01/30min" target="_blank" rel="noopener">Book a free consultation →</a>
+    <p class="cta-sub"><a href="/en#contact">Or send a request via the contact form</a></p>
+  </section>
+
+  <section class="author-box">
+    <div>
+      <p class="ab-name"><a href="/en/about/danyal">Mohammad Danyal Shahzad</a></p>
+      <p class="ab-role">Founder, Digital Marketing Remote</p>
+      <p class="ab-bio">Danyal has managed Google Ads and Meta Ads campaigns since 2022 — 72 projects across 15 countries with over €1.7M in verifiably generated revenue.
+        <a href="https://www.linkedin.com/in/mdanyalshahzad/" target="_blank" rel="noopener">LinkedIn</a></p>
+    </div>
+  </section>
+</main>
+
+<footer class="gf">
+  <div class="ctn">
+    <div class="gf-top">
+      <span class="logo">Digital<span>Marketing</span>Remote</span>
+      <p>Performance marketing, fully remote. Data-driven, transparent, results-focused.</p>
+    </div>
+    <div class="gf-bot">
+      <span>© 2024–2026 Digital Marketing Remote · Mohammad Danyal Shahzad</span>
+      <div class="gf-links"><a href="/en/impressum">Imprint</a><a href="/en/datenschutz">Privacy</a><a href="/en/guides">Guides</a><a href="/en">Home</a></div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

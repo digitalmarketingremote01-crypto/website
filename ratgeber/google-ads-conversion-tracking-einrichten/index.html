@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Conversion-Tracking einrichten: Google-Tag &amp; Snippet</title>
+<meta name="description" content="Conversion-Tracking in Google Ads einrichten: Google-Tag auf allen Seiten, Ereignis-Snippet auf der Conversion-Seite, 48 Stunden bis zum Status — mit Google-Quellen.">
+<link rel="canonical" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-conversion-tracking-einrichten">
+<link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-conversion-tracking-einrichten">
+<link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/en/guides/set-up-google-ads-conversion-tracking">
+<link rel="alternate" hreflang="x-default" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-conversion-tracking-einrichten">
+<link rel="icon" href="/favicon.ico">
+<link rel="preload" href="/fonts/plus-jakarta-sans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/guides.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Conversion-Tracking einrichten: Google-Tag & Snippet",
+      "description": "Conversion-Tracking in Google Ads einrichten: Google-Tag auf allen Seiten, Ereignis-Snippet auf der Conversion-Seite, 48 Stunden bis zum Status — mit Google-Quellen.",
+      "inLanguage": "de",
+      "datePublished": "2026-08-15",
+      "dateModified": "2026-08-15",
+      "mainEntityOfPage": "https://www.digitalmarketingremote.com/ratgeber/google-ads-conversion-tracking-einrichten",
+      "author": {
+        "@type": "Person",
+        "name": "Mohammad Danyal Shahzad",
+        "url": "https://www.digitalmarketingremote.com/ueber-uns/danyal",
+        "sameAs": ["https://www.linkedin.com/in/mdanyalshahzad/"]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Digital Marketing Remote",
+        "url": "https://www.digitalmarketingremote.com"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Digital Marketing Remote", "item": "https://www.digitalmarketingremote.com" },
+        { "@type": "ListItem", "position": 2, "name": "Ratgeber", "item": "https://www.digitalmarketingremote.com/ratgeber" },
+        { "@type": "ListItem", "position": 3, "name": "Conversion-Tracking", "item": "https://www.digitalmarketingremote.com/ratgeber/google-ads-conversion-tracking-einrichten" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="gh">
+  <div class="ctn ghi">
+    <a class="logo" href="/">Digital<span>Marketing</span>Remote</a>
+    <nav class="gn"><a href="/ratgeber">Ratgeber</a><a href="/#services">Leistungen</a><a href="/#pricing">Preise</a><a href="/#contact">Kontakt</a><a class="lsw" href="/en/guides/set-up-google-ads-conversion-tracking">EN</a>
+    </nav>
+  </div>
+</header>
+
+<main class="ctn art">
+  <nav class="bc" aria-label="Breadcrumb">
+    <a href="/">Home</a> ›
+    <a href="/ratgeber">Ratgeber</a> ›
+    <span>Conversion-Tracking</span>
+  </nav>
+
+  <article>
+    <h1>Google-Ads-Conversion-Tracking einrichten — zwei Snippets, zwei Orte</h1>
+    <p class="meta-line">
+      Von <a href="/ueber-uns/danyal">Mohammad Danyal Shahzad</a>
+      · Aktualisiert am <time datetime="2026-08-15">15. August 2026</time>
+    </p>
+
+    <div class="answer">
+Conversion-Tracking besteht aus <strong>zwei</strong> Code-Teilen an <strong>zwei</strong> Orten: das Google-Tag auf allen Seiten, in der Regel im <code>&lt;head&gt;</code>, und das Ereignis-Snippet auf der Conversion-Seite selbst. Fehlt eines von beidem, wird nichts gemessen. Nach dem Einbau dauert es bis zu 48 Stunden, bis der Conversion-Status in Google Ads aktualisiert ist.
+</div>
+<p>Ohne Conversion-Tracking ist Google Ads eine Klickmaschine ohne Rückmeldung: Sie sehen, was Sie ausgeben, aber nicht, was Sie bekommen. Und ohne Conversions hat auch keine automatische Gebotsstrategie etwas zu lernen — das hängt direkt mit der <a href="/ratgeber/google-ads-lernphase">Lernphase</a> zusammen.</p>
+<h2>Zwei Snippets, zwei Orte</h2>
+<p>Das ist der Punkt, an dem die meisten Einbauten scheitern: Es ist nicht ein Code, sondern zwei.</p>
+<p><strong>Erstens, das Google-Tag — überall:</strong> &quot;Das Google-Tag-Snippet muss auf allen Seiten Ihrer Website platziert werden&quot; — laut Google in der Regel im <code>&lt;head&gt;</code>-Bereich (<a href="https://support.google.com/google-ads/answer/7548399?hl=de">Google Ads-Hilfe</a>)</p>
+<p><strong>Zweitens, das Ereignis-Snippet — nur dort, wo die Conversion passiert:</strong> &quot;Damit Website-Conversions erfasst werden können, muss das Ereignis-Snippet direkt auf der Conversion-Seite eingefügt werden.&quot; (<a href="https://support.google.com/google-ads/answer/7548399?hl=de">Google Ads-Hilfe</a>)</p>
+<div class="tbl-wrap">
+<table>
+<thead><tr><th>Code-Teil</th><th>Wohin</th><th>Fehlt er, dann…</th></tr></thead>
+<tbody>
+<tr><td>Google-Tag</td><td>Alle Seiten, im <code>&lt;head&gt;</code></td><td>Keine Grundlage für Messung</td></tr>
+<tr><td>Ereignis-Snippet</td><td>Nur die Conversion-Seite (Danke-Seite)</td><td>Klicks werden gezählt, Conversions nicht</td></tr>
+</tbody>
+</table>
+</div>
+<p>Der typische Fehler: Das Google-Tag ist über den Tag Manager sauber ausgerollt, das Ereignis-Snippet fehlt — und im Konto stehen null Conversions, obwohl Anfragen ankommen.</p>
+<h2>Was das Tag technisch tut</h2>
+<p>&quot;Mit dem Google-Tag werden neue Cookies in Ihrer Domain gesetzt. Darin wird eine eindeutige Kennung für den Nutzer oder für den Anzeigenklick gespeichert&quot; (<a href="https://support.google.com/google-ads/answer/7548399?hl=de">Google Ads-Hilfe</a>)</p>
+<p>Für DACH-Websites folgt daraus zweierlei: Diese Cookies gehören in Ihre Consent-Lösung, und ohne Einwilligung dürfen sie nicht gesetzt werden. Wer Tracking ungefragt lädt, hat kein Messproblem, sondern ein Rechtsproblem — und ohne Einwilligung fehlen die Daten trotzdem.</p>
+<h2>Die 48 Stunden, die für Panik sorgen</h2>
+<p>&quot;Nach dem Implementieren oder Korrigieren Ihrer Tags kann es bis zu 48 Stunden dauern, bis der Conversion-Status in Google Ads aktualisiert wird.&quot; (<a href="https://support.google.com/google-ads/answer/7548399?hl=de">Google Ads-Hilfe</a>)</p>
+<p>Praktische Konsequenz: Zwischen Einbau und Bewertung gehören zwei Tage. Wer am selben Nachmittag den Status prüft, „repariert&quot; ein Tracking, das funktioniert — und baut sich dabei den nächsten Fehler ein.</p>
+<h2>Prüfreihenfolge, wenn keine Conversions ankommen</h2>
+<ol>
+<li>Ist das Google-Tag wirklich auf <strong>allen</strong> Seiten, nicht nur auf der Startseite?</li>
+<li>Sitzt das Ereignis-Snippet auf der tatsächlichen Danke-Seite — und wird die überhaupt aufgerufen?</li>
+<li>Sind seit dem Einbau 48 Stunden vergangen?</li>
+<li>Blockiert die Consent-Lösung das Tag, weil niemand zustimmt?</li>
+<li>Kommen überhaupt Klicks an? Wenn nicht, ist es kein Tracking-Problem — siehe <a href="/ratgeber/google-ads-keine-impressionen">keine Impressionen</a> und <a href="/ratgeber/google-ads-keine-klicks">keine Klicks</a>.</li>
+</ol>
+<h2>Warum das vor der ersten Kampagne stehen muss</h2>
+<p>Traffic ohne Messung ist verlorenes Geld — man kann nachträglich nicht rekonstruieren, welcher Klick zu einer Anfrage geführt hat. Die vollständige Einrichtungs-Reihenfolge steht im <a href="/ratgeber/google-ads-einrichten">Ratgeber zur Einrichtung</a>.</p>
+
+  </article>
+
+  <section class="cta-box">
+    <h2>Kostenlose Analyse statt Verkaufsgespräch</h2>
+    <p>Wir zeigen Ihnen kostenlos, ob und wo sich Google Ads oder Meta Ads für Ihr Unternehmen rechnen — mit ehrlichen Zahlen. Wenn es sich für Sie nicht lohnt, sagen wir das auch.</p>
+    <a class="btn" href="https://calendly.com/digitalmarketingremote01/30min" target="_blank" rel="noopener">Kostenlose Erstberatung buchen →</a>
+    <p class="cta-sub"><a href="/#contact">Oder Anfrage über das Kontaktformular senden</a></p>
+  </section>
+
+  <section class="author-box">
+    <div>
+      <p class="ab-name"><a href="/ueber-uns/danyal">Mohammad Danyal Shahzad</a></p>
+      <p class="ab-role">Gründer, Digital Marketing Remote</p>
+      <p class="ab-bio">Danyal betreut seit 2022 Google-Ads- und Meta-Ads-Kampagnen — 72 Projekte in 15 Ländern mit über 1,7 Mio. € nachweisbar generiertem Umsatz.
+        <a href="https://www.linkedin.com/in/mdanyalshahzad/" target="_blank" rel="noopener">LinkedIn</a></p>
+    </div>
+  </section>
+</main>
+
+<footer class="gf">
+  <div class="ctn">
+    <div class="gf-top">
+      <span class="logo">Digital<span>Marketing</span>Remote</span>
+      <p>Performance-Marketing für den DACH-Markt. Datengetrieben, transparent, ergebnisorientiert.</p>
+    </div>
+    <div class="gf-bot">
+      <span>© 2024–2026 Digital Marketing Remote · Mohammad Danyal Shahzad</span>
+      <div class="gf-links"><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/ratgeber">Ratgeber</a><a href="/">Startseite</a></div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
