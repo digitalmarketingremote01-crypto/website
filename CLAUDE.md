@@ -190,3 +190,91 @@ Read new/changed text in the language a visitor reads it. If it needs a second r
 - Inline `style=` beats CSS: grep for inline colours when fixing contrast.
 - `set -o pipefail` + `grep -q` on a big variable = false FAIL (SIGPIPE). Use `grep -q <<<"$var"`.
 - Verify against the LIVE URL with a cache-buster, never local files or a warm tab.
+
+---
+
+# WORKING RULES — set by Danyal, binding (added 2026-08-15)
+
+These are the rules he has actually stated, in his words where it matters. They override
+convenience, speed and any default behaviour. Breaking one is a failure even if the output looks fine.
+
+## 1. Dates — check at the moment you use them
+
+The local clock and any earlier answer in the same session are both unreliable; a session stays
+open across days. Before stamping a date on anything, check an external server:
+
+```
+curl -sI https://www.google.com | grep -i '^date:'
+```
+
+- Never write "today" about work done earlier in a long-running session.
+- Group output by real calendar day; confirm with `git log --date=format:'%Y-%m-%d %H:%M'`.
+- Cost of ignoring this: pages published 15 Aug were stamped 13 Aug, and a "13 articles today"
+  report where the true figure for that day was 2.
+
+## 2. Accuracy is the agent's responsibility, not his
+
+His words: "you can upload, but strict rule is you check your written with proper research if any
+number and any quote or any description is wrong or outdated thats on claude not doing the proper
+check and not doing the proper work not me."
+
+Publishing without asking does NOT mean checking less. It means there is no second pair of eyes.
+
+## 3. The source-verification gate
+
+Run `python3 SEO/verification/verify_quotes.py <file.md>` before anything goes live. 0 FAIL required.
+
+- Quotes are checked against the **LIVE source page**, never against an evidence pack or a
+  research summary. Summaries paraphrase — one handed over the invented German word "Korrektionen"
+  where Google's page says "Korrekturen".
+- The verifier does **NOT** check numbers in tables, headings, answer boxes or our own prose.
+  Every figure — prices, durations, percentages, deadlines, thresholds — must be traced by hand to
+  the live page, with the source URL cited beside it. If it can't be traced, it doesn't ship.
+- Click paths and process descriptions: confirm against the current help page. UIs change.
+- A page the fetcher can't read (e.g. Meta's help centre returns 400) = quotes unverifiable =
+  the topic is reported back unwritten, not softened. Topic 8 of the 30 is parked for this reason.
+- Writing tip that avoids false failures: use `"straight quotes"` only for real source quotes.
+  Use `<em>` or `*italics*` for emphasis — German „…“ and stray quote marks break the parser.
+
+## 4. Publishing
+
+Default: **never publish without his explicit approval.** Drafts queue until he says yes.
+
+Scoped exception, this batch only: the 30 approved topics in `SEO/topic-plan-30.md` may be
+published without a per-article yes ("i approve here … and upload", then "approve all").
+The benchmark stage, the verification gate and the browser preview all still run. Topic 31
+needs fresh approval.
+
+## 5. How content is made
+
+1. Benchmark what the top agencies already published on the topic; find the gaps and what is outdated.
+2. Write ONE article, published as a DE + EN pair — same structure, same claims, same sources.
+   Adapt only for market: DACH specifics on `/ratgeber/…`, global framing on `/en/guides/…`.
+3. Never copy competitor text — their copyright, and a duplicate page cannot rank.
+4. Keep the pair hreflang-linked and never let the two drift apart in substance.
+
+## 6. Scope — do what he asked, nothing else
+
+"we only need what we need, stop trying to be efficient where i dont even need you to be efficient."
+
+Report a finding in one line and stop. Do not build the fix, and do not dress optional tidying up
+as something that needs doing. Rejected examples: hub pages, rerouting nav to new pages,
+tidy-up redirects. Homepage nav anchors (`/#services`, `/en#services`) are deliberate — leave them.
+
+## 7. How to report
+
+- Straight answers, not diplomatic ones. Lead with the number.
+- Answer in the unit he asked for: articles are articles, pages are pages.
+- Verify the count from files or git **before** answering, not after he challenges it.
+- Never imply organic progress is faster or bigger than it is. Current honest expectation:
+  winnable keywords here run 10–320 searches/month; 30 articles reaching position 3–5 is roughly
+  150–250 visits/month **total**, after 3–6 months. External backlinks are 0 and cap everything.
+- When he asks about a change of mine, the honest answer is often "nothing is wrong with yours,
+  that was mine" — say it immediately instead of explaining the technique.
+
+## 8. Legal / claims
+
+- No promised signed documents anywhere (see the Legal Constraints section above).
+- Minimise self-binding language; only provable numbers (UWG § 5).
+- Tax topics: state plainly that we are a marketing agency, not tax advisers, report only what the
+  platform documents, and send the reader to their own accountant.
