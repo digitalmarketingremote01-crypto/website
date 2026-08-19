@@ -1,0 +1,86 @@
+/**
+ * Meta Conversions API — server-side Lead reporting
+ * Paste this at the BOTTOM of Code.gs in "Formspree | Form Script".
+ * Then add ONE line inside your existing doPost(e), before it returns:
+ *
+ *     try { sendMetaLead(e); } catch (err) { console.error('CAPI: ' + err); }
+ *
+ * The try/catch matters: if Meta is down or the token expires, your form
+ * still delivers the lead. Tracking must never break lead capture.
+ */
+
+var META_PIXEL_ID    = '1033196126360558';
+var META_ACCESS_TOKEN = 'PASTE_YOUR_CAPI_TOKEN_HERE';
+
+function sendMetaLead(e) {
+  var p = (e && e.parameter) ? e.parameter : {};
+
+  // ---- identity (hashed, per Meta requirement) -----------------------------
+  var user = {};
+  if (p.email)   user.em = [sha256(String(p.email).trim().toLowerCase())];
+  if (p.telefon || p.phone) {
+    var digits = String(p.telefon || p.phone).replace(/[^0-9]/g, '');
+    if (digits) user.ph = [sha256(digits)];
+  }
+  if (p.name) {
+    var parts = String(p.name).trim().toLowerCase().split(/\s+/);
+    if (parts[0]) user.fn = [sha256(parts[0])];
+    if (parts.length > 1) user.ln = [sha256(parts[parts.length - 1])];
+  }
+  user.country = [sha256('de')];
+
+  // fbc = the click ID Meta needs to match this lead back to the exact ad click
+  if (p.fbclid) user.fbc = 'fb.1.' + Date.now() + '.' + p.fbclid;
+  if (p.fbp)    user.fbp = p.fbp;
+
+  // ---- event ---------------------------------------------------------------
+  var ev = {
+    event_name: 'Lead',
+    event_time: Math.floor(Date.now() / 1000),
+    action_source: 'website',
+    event_source_url: p.landing_page
+      ? 'https://www.digitalmarketingremote.com' + p.landing_page
+      : 'https://www.digitalmarketingremote.com/',
+    user_data: user,
+    custom_data: {
+      channel:      p.channel      || '',
+      utm_source:   p.utm_source   || '',
+      utm_campaign: p.utm_campaign || '',
+      utm_content:  p.utm_content  || ''
+    }
+  };
+  // same id the browser pixel used -> Meta deduplicates instead of double counting
+  if (p.event_id) ev.event_id = p.event_id;
+
+  var res = UrlFetchApp.fetch(
+    'https://graph.facebook.com/v21.0/' + META_PIXEL_ID + '/events'
+      + '?access_token=' + encodeURIComponent(META_ACCESS_TOKEN),
+    {
+      method: 'post',
+      contentType: 'application/json',
+      payload: JSON.stringify({ data: [ev] }),
+      muteHttpExceptions: true
+    }
+  );
+  console.log('Meta CAPI ' + res.getResponseCode() + ': ' + res.getContentText());
+  return res.getResponseCode();
+}
+
+function sha256(str) {
+  var bytes = Utilities.computeDigest(Utilities.DigestAlgorithm.SHA_256, str, Utilities.Charset.UTF_8);
+  return bytes.map(function (b) {
+    return ('0' + (b & 0xFF).toString(16)).slice(-2);
+  }).join('');
+}
+
+/** Run this once from the editor to confirm the token works. */
+function testMetaLead() {
+  var code = sendMetaLead({ parameter: {
+    email: 'test@example.com',
+    name: 'Test Lead',
+    channel: 'ads_meta',
+    landing_page: '/',
+    event_id: 'manual.test.' + Date.now()
+  }});
+  Logger.log('HTTP ' + code + ' (200 = success)');
+}

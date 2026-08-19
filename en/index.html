@@ -803,7 +803,14 @@ if(ph&&ph.value.trim()&&!validPhone(ph.value)){e.preventDefault();alert('Please 
 var btn=f.querySelector('[type="submit"]');
 var btnTxt=btn?btn.textContent:'';
 if(btn){btn.disabled=true;btn.textContent='Sending…';}
-window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'form_submission'});if(window.fbq)fbq('track','Lead');
+/* one shared event_id so the browser pixel and the server-side CAPI event
+   are deduplicated by Meta instead of counted twice */
+var evId='lead.'+Date.now()+'.'+Math.random().toString(36).slice(2,10);
+var eidIn=f.querySelector('input[type=hidden][name="event_id"]');
+if(!eidIn){eidIn=document.createElement('input');eidIn.type='hidden';eidIn.name='event_id';f.appendChild(eidIn);}
+eidIn.value=evId;
+window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'form_submission','event_id':evId});
+if(window.fbq)fbq('track','Lead',{},{eventID:evId});
 setTimeout(function(){showTY('form');window.location.hash='danke';if(btn){btn.disabled=false;btn.textContent=btnTxt;}},1500);
 });
 });
