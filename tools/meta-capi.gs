@@ -30,16 +30,15 @@ function sendMetaLead(e) {
 
   // ---- identity (hashed, per Meta requirement) -----------------------------
   var user = {};
-  if (p.email)   user.em = [sha256(String(p.email).trim().toLowerCase())];
+  var em = p.email || p._replyto || '';
+  if (em) user.em = [sha256(String(em).trim().toLowerCase())];
   if (p.telefon || p.phone) {
     var digits = String(p.telefon || p.phone).replace(/[^0-9]/g, '');
     if (digits) user.ph = [sha256(digits)];
   }
-  if (p.name) {
-    var parts = String(p.name).trim().toLowerCase().split(/\s+/);
-    if (parts[0]) user.fn = [sha256(parts[0])];
-    if (parts.length > 1) user.ln = [sha256(parts[parts.length - 1])];
-  }
+  // matches the real field names used by doPost in Code.gs
+  if (p.vorname)  user.fn = [sha256(String(p.vorname).trim().toLowerCase())];
+  if (p.nachname) user.ln = [sha256(String(p.nachname).trim().toLowerCase())];
   user.country = [sha256('de')];
 
   // fbc = the click ID Meta needs to match this lead back to the exact ad click
@@ -90,7 +89,8 @@ function sha256(str) {
 function testMetaLead() {
   var code = sendMetaLead({ parameter: {
     email: 'test@example.com',
-    name: 'Test Lead',
+    vorname: 'Test',
+    nachname: 'Lead',
     channel: 'ads_meta',
     landing_page: '/',
     event_id: 'manual.test.' + Date.now()
