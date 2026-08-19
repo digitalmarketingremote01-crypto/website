@@ -9,8 +9,21 @@
  * still delivers the lead. Tracking must never break lead capture.
  */
 
-var META_PIXEL_ID    = '1033196126360558';
-var META_ACCESS_TOKEN = 'PASTE_YOUR_CAPI_TOKEN_HERE';
+var META_PIXEL_ID = '1033196126360558';
+
+/**
+ * The token is NOT stored in this file — it lives in Script Properties, so it
+ * never ends up in source control or in a chat log.
+ *
+ * Add it once:  Project Settings (gear icon) -> Script Properties -> Add
+ *   Property: META_CAPI_TOKEN
+ *   Value:    <your Conversions API token>
+ */
+function getMetaToken_() {
+  var t = PropertiesService.getScriptProperties().getProperty('META_CAPI_TOKEN');
+  if (!t) throw new Error('META_CAPI_TOKEN missing — add it in Project Settings > Script Properties');
+  return t;
+}
 
 function sendMetaLead(e) {
   var p = (e && e.parameter) ? e.parameter : {};
@@ -54,7 +67,7 @@ function sendMetaLead(e) {
 
   var res = UrlFetchApp.fetch(
     'https://graph.facebook.com/v21.0/' + META_PIXEL_ID + '/events'
-      + '?access_token=' + encodeURIComponent(META_ACCESS_TOKEN),
+      + '?access_token=' + encodeURIComponent(getMetaToken_()),
     {
       method: 'post',
       contentType: 'application/json',
