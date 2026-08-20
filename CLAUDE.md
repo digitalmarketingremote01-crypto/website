@@ -151,9 +151,11 @@ Section order (reordered 2026-07-23, proof-first for mobile — Clarity showed 5
 - Calendly redirect hash: #danke-termin
 - Form emails: Google Apps Script "Formspree | Form Script" (owner digitalmarketingremote01@gmail.com)
 - Meta CAPI server-side (GAS, mirror in `tools/meta-capi.gs`): form leads fire 'Lead' from doPost;
-  Calendly bookings fire 'Schedule' from syncCalendlyBookings (2026-08-20, deploy v13) for each NEW
-  booking row, event_id `booking.<calendar event id>` so Meta dedupes against the browser pixel.
-  Token = META_CAPI_TOKEN in Script Properties; tracking is try/catch-wrapped, never breaks the sync.
+  Calendly bookings fire custom event 'CalendlyBooking' from syncCalendlyBookings (renamed from
+  'Schedule' 2026-08-20, deploy v14) for each NEW booking row, event_id `booking.<calendar event id>`.
+  SERVER-SIDE ONLY — the browser pixel's booking (Schedule) calls were removed; do not re-add fbq
+  booking events. Token = META_CAPI_TOKEN in Script Properties; tracking is try/catch-wrapped,
+  never breaks the sync.
 
 ## Email — RESOLVED 2026-06-13
 - support@digitalmarketingremote.com now works via **forwardemail.net** (free forwarding).

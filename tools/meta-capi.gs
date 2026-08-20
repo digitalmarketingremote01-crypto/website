@@ -100,6 +100,8 @@ function sha256(str) {
  *     } catch (err) { console.error('CAPI Schedule: ' + err); }
  */
 function sendMetaSchedule(email, firstName, lastName, eventId) {
+  // Editor runs pass no args — use a marked verification payload (syncCalendlyBookings always passes them)
+  if (!email) { email = 'support@digitalmarketingremote.com'; firstName = 'Capi'; lastName = 'Verify'; eventId = 'booking.verify.' + Date.now(); }
   // ---- identity (hashed, per Meta requirement) -----------------------------
   var user = {};
   if (email)     user.em = [sha256(String(email).trim().toLowerCase())];
@@ -109,7 +111,7 @@ function sendMetaSchedule(email, firstName, lastName, eventId) {
 
   // ---- event ---------------------------------------------------------------
   var ev = {
-    event_name: 'Schedule',
+    event_name: 'CalendlyBooking',
     event_time: Math.floor(Date.now() / 1000),
     action_source: 'website',
     event_source_url: 'https://www.digitalmarketingremote.com/',
