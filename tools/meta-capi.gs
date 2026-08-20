@@ -26,6 +26,8 @@ function getMetaToken_() {
 }
 
 function sendMetaLead(e) {
+  // Editor runs pass no event — use a marked verification payload (doPost always passes e)
+  if (!e) e = { parameter: { email: 'support@digitalmarketingremote.com', vorname: 'Capi', nachname: 'Verify', event_id: 'manual.verify.' + Date.now() } };
   var p = (e && e.parameter) ? e.parameter : {};
 
   // ---- identity (hashed, per Meta requirement) -----------------------------
@@ -88,7 +90,7 @@ function sha256(str) {
 /** Run this once from the editor to confirm the token works. */
 function testMetaLead() {
   var code = sendMetaLead({ parameter: {
-    email: 'test@example.com',
+    email: 'support@digitalmarketingremote.com',
     vorname: 'Test',
     nachname: 'Lead',
     channel: 'ads_meta',
