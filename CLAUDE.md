@@ -68,13 +68,15 @@ Section order (reordered 2026-07-23, proof-first for mobile — Clarity showed 5
   Scale €1.799 + Enterprise; 2 dual tiers Dual Growth €1.299 / Dual Pro €1.899 + Dual
   Enterprise. The €349/€499 Starter tiers are DELIBERATELY gone — cheap clients are
   unprofitable and low fees read as risk. B2B-only § 14 BGB note.)
-- OFFER (replaced the 30-Tage-Pilotprojekt 2026-08-20): "Startanalyse" DE / "Launch
-  Analysis" EN — €490 one-time written roadmap (market+competitor analysis, keyword
-  research with real CPCs, account audit if campaigns exist, realistic minimum budget,
-  90-day plan, PDF the client keeps), credited 100% against the first monthly fee when
-  the client starts. Free Erstberatung call stays as the zero-threshold entry. The old
-  pilot guarantee ("Monat 2 ohne Managementgebühr") is REMOVED everywhere incl. FAQ +
-  FAQPage schema — do not reintroduce it or any free written report/free audit promise.
+- OFFER (v2 2026-08-20, same day the €490 Startanalyse was tried and killed — Danyal
+  judged an upfront price a lead-repellent): "Der kostenlose Werbeplan" DE / "free ad plan" EN (v4 ELI5 copy — Danyal directive: he gives direction, Claude writes pro copy; simple, benefit-first, jump-on-it) — his REAL process made public: free 30-min intro call (listen: company, product,
+  goals) → we do the work FREE (market+competitor analysis, keyword research with real
+  CPCs, account audit if any, budget recommendation, 90-day plan) → written PDF report (NO delivery-time promise on the site — the 3-days/24h figure is internal context only) → client decides, second
+  meeting, contract. DE headline: "Ihr fertiger Werbeplan. Kostenlos. Bevor Sie einen Cent ausgeben." Deliverables are phrased as plain-language benefits ("Welche Keywords Ihnen Kunden bringen"). Copy is deliberately SHORT and simple — Danyal rejected longer/technical versions twice.
+  Free report is deliberately meeting-gated (no call, no report = the qualification
+  filter). NO €99/€490 entry fee — rejected. The pilot guarantee ("Monat 2 ohne
+  Managementgebühr") stays REMOVED — never reintroduce result guarantees or free months.
+  Funnel direction: Calendly booking is the PRIMARY conversion path; forms secondary.
 - FAQs (accordion, Schema.org FAQPage markup in `<head>` — keep in sync, all 10)
 - Contact forms (Google Apps Script) / Calendly
 - Footer (Impressum/Datenschutz links to standalone pages + Cookie-Einstellungen)
