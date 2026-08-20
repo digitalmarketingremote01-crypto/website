@@ -57,7 +57,7 @@ p{color:var(--tx)}
 .hb{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:0;border:0}.hb span{width:22px;height:2px;background:var(--c1);border-radius:2px;display:block}
 .mm{display:none;position:fixed;top:68px;left:0;right:0;background:#fff;border-bottom:1px solid var(--bd);padding:1.25rem;z-index:999;box-shadow:0 8px 30px rgba(0,0,0,.1)}
 .mm.open{display:block}.mm a{display:block;padding:.75rem 0;font-weight:500;color:var(--tx);border-bottom:1px solid var(--bd)}.mm .btn{margin-top:1rem;width:100%}
-#hero{padding:7rem 0 3.5rem;background:linear-gradient(145deg,#faf7f2 0%,#fff 50%,#fdf1e6 100%);position:relative;overflow:hidden}
+#hero{padding:7rem 0 3.5rem;background:linear-gradient(145deg,#faf7f2 0%,#fff 50%,#fdf1e6 100%);position:relative}
 #hero::after{content:'';position:absolute;top:0;right:0;width:40%;height:100%;background:radial-gradient(ellipse at 70% 40%,rgba(201,112,47,.04) 0%,transparent 70%);pointer-events:none}
 .hg{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center;position:relative;z-index:1}
 .hey{display:inline-flex;align-items:center;gap:.4rem;background:var(--c2l);color:var(--c2);padding:.3rem .75rem;border-radius:20px;font-size:.72rem;font-weight:700;margin-bottom:1rem;letter-spacing:.04em}
@@ -100,15 +100,6 @@ p{color:var(--tx)}
 .orb1{width:300px;height:300px;background:rgba(201,112,47,.4);top:-80px;right:-60px;animation:orbdrift 18s ease-in-out infinite}
 .orb2{width:240px;height:240px;background:rgba(240,172,120,.25);bottom:-70px;left:-50px;animation:orbdrift 24s ease-in-out infinite reverse}
 @media(prefers-reduced-motion:reduce){.orb{animation:none}}
-#hero::before,#hero::after{content:'';position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none;z-index:0}
-#hero::before{width:560px;height:560px;background:rgba(201,112,47,.2);top:-140px;right:-100px;animation:orbdrift 26s ease-in-out infinite}
-#hero::after{width:420px;height:420px;background:rgba(21,128,61,.1);bottom:-120px;left:-100px;animation:orbdrift 32s ease-in-out infinite reverse}
-#hero .ctn{position:relative;z-index:1}
-@media(prefers-reduced-motion:reduce){#hero::before,#hero::after{animation:none}}
-h1 em{background:linear-gradient(95deg,var(--c2) 0%,#e08b4a 55%,var(--c2d) 100%);-webkit-background-clip:text;background-clip:text;color:transparent;font-style:normal}
-@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
-#hero .hfc{animation:floaty 7s ease-in-out infinite}
-@media(prefers-reduced-motion:reduce){#hero .hfc{animation:none}}
 .btn{transition:transform .25s ease,box-shadow .25s ease,background .25s ease}
 .btn.bp{background-image:linear-gradient(120deg,var(--c2),#d97f3e)}
 .btn.bp:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(201,112,47,.35)}
@@ -129,7 +120,7 @@ h1 em{background:linear-gradient(95deg,var(--c2) 0%,#e08b4a 55%,var(--c2d) 100%)
 .about-caption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(36,28,20,.95) 0%,transparent 100%);padding:2rem 1.25rem 1.25rem}
 .about-caption strong{color:#fff;font-size:.95rem;display:block}.about-caption span{font-size:.75rem;color:rgba(255,255,255,.72)}
 .about-content h2{margin-bottom:1rem}.about-content>p{margin-bottom:1rem}
-.highlights{margin:1.5rem 0;display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+.highlights{margin:1.5rem 0;display:flex;flex-direction:column;gap:.7rem}
 .hl-item{display:flex;gap:.75rem;align-items:flex-start;padding:1rem 1.25rem;background:linear-gradient(135deg,var(--bg),rgba(253,234,217,.2));border-radius:12px;border-left:4px solid var(--c2);box-shadow:0 4px 15px rgba(0,0,0,.04);transition:all .3s ease}
 .hl-item:hover{transform:translateX(4px);box-shadow:0 8px 25px rgba(201,112,47,.1)}
 .hl-icon{width:36px;height:36px;border-radius:8px;background:var(--c2l);display:flex;align-items:center;justify-content:center;flex-shrink:0}
@@ -312,7 +303,7 @@ body{padding-bottom:64px}
 .sh h2{font-size:clamp(1.6rem,2.8vw,2.15rem);letter-spacing:-.015em}
 }
 @media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
-@media(max-width:768px){.highlights{grid-template-columns:1fr}.hero-ctas .btn{white-space:normal}}
+@media(max-width:768px){.hero-ctas .btn{white-space:normal}}
 </style>
 </head>
 <body>
@@ -469,18 +460,20 @@ body{padding-bottom:64px}
 
 <!-- About -->
 <section id="about" class="sec" style="background:var(--bg)"><div class="ctn"><div class="about-grid">
-<div class="about-photo">
+<div><div class="about-photo">
 <img src="/danyal-hero.webp" alt="Mohammad Danyal Shahzad – Founder, Digital Marketing Remote" loading="lazy" width="760" height="1013">
 <div class="about-caption"><strong>Mohammad Danyal Shahzad</strong><span>Founder & Performance Marketing Specialist · Lahore, Pakistan</span></div>
 </div>
+<div class="highlights" style="margin-top:1.25rem">
+<div class="hl-item"><div class="hl-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><div class="hl-text"><strong>Experience that counts</strong><span>10 years in business (2011–2021) + specialised performance marketing since 2022</span></div></div>
+<div class="hl-item"><div class="hl-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><div class="hl-text"><strong>72 projects · 15 countries</strong><span>DACH focus with experience across Europe, North America and Asia</span></div></div>
+</div></div>
 <div class="about-content">
 <span class="sl">Why Digital Marketing Remote</span>
 <h2>Your ad budget deserves someone who knows what's at stake.</h2>
 <p>Before I launched my first campaign, I ran a hotel, built a fertiliser distribution business and founded a restaurant — I know first-hand that every euro spent on advertising is a business decision that has to pay off.</p>
 <p>Since 2022 I've managed performance marketing with a focus on the DACH market: 72 projects across 15 countries, 57 of them as an independent consultant for a German investment company — over €1.7 million in verifiably generated revenue.</p>
 <div class="highlights">
-<div class="hl-item"><div class="hl-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><div class="hl-text"><strong>Experience that counts</strong><span>10 years in business (2011–2021) + specialised performance marketing since 2022</span></div></div>
-<div class="hl-item"><div class="hl-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><div class="hl-text"><strong>72 projects · 15 countries</strong><span>DACH focus with experience across Europe, North America and Asia</span></div></div>
 <div class="hl-item"><div class="hl-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><div class="hl-text"><strong>Clear communication</strong><span>Campaign copy in German, all reports & communication in English. Available Mon–Fri 9:00–17:00 German time.</span></div></div>
 <div class="hl-item"><div class="hl-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg></div><div class="hl-text"><strong>Method: analysis first</strong><span>Analyse first, then act — for a brand-new project just as much as for an existing account. Nothing is launched until you approve it.</span></div></div>
 </div>
@@ -815,7 +808,7 @@ function handleHash(initial){
     /* initial===true + fresh calB flag = this pageload follows an in-popup booking that already pushed the event */
     var skip=false;
     if(initial===true){try{var t=+sessionStorage.getItem('calB')||0;skip=(Date.now()-t<120000);sessionStorage.removeItem('calB');}catch(e){}}
-    if(!skip){window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'calendly_booking'});if(window.fbq)fbq('track','Schedule');}}
+    if(!skip){window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'calendly_booking'});}}
   else if(location.hash==='#danke'){showTY('form');}
 }
 handleHash(true);
@@ -904,7 +897,7 @@ window.addEventListener('message',function(e){
 if(e.origin==='https://calendly.com'&&e.data&&e.data.event==='calendly.event_scheduled'){
 try{sessionStorage.setItem('calB',String(Date.now()))}catch(err){}
 if(window.Calendly&&Calendly.closePopupWidget)Calendly.closePopupWidget();
-if(location.hash==='#danke-termin'){window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'calendly_booking'});if(window.fbq)fbq('track','Schedule');}
+if(location.hash==='#danke-termin'){window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'calendly_booking'});}
 else{location.hash='#danke-termin';}
 }});
 
