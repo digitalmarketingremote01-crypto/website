@@ -64,7 +64,17 @@ Section order (reordered 2026-07-23, proof-first for mobile — Clarity showed 5
 - Services (Google Ads, Meta Ads, E-Commerce/Lead-Gen/SaaS, SEA, YouTube Ads, Tracking & Analytics)
 - Process (6 steps)
 - Case Studies (6, anonymized; only the Loganberry "E-Commerce Brand Launch" case has a screenshot)
-- Pricing (4 single tiers €499–€1,799 + 3 dual tiers + Enterprise; B2B-only § 14 BGB note)
+- Pricing (UPDATED 2026-08-20, approved by Danyal: 3 single tiers Growth €799 / Pro €1.199 /
+  Scale €1.799 + Enterprise; 2 dual tiers Dual Growth €1.299 / Dual Pro €1.899 + Dual
+  Enterprise. The €349/€499 Starter tiers are DELIBERATELY gone — cheap clients are
+  unprofitable and low fees read as risk. B2B-only § 14 BGB note.)
+- OFFER (replaced the 30-Tage-Pilotprojekt 2026-08-20): "Startanalyse" DE / "Launch
+  Analysis" EN — €490 one-time written roadmap (market+competitor analysis, keyword
+  research with real CPCs, account audit if campaigns exist, realistic minimum budget,
+  90-day plan, PDF the client keeps), credited 100% against the first monthly fee when
+  the client starts. Free Erstberatung call stays as the zero-threshold entry. The old
+  pilot guarantee ("Monat 2 ohne Managementgebühr") is REMOVED everywhere incl. FAQ +
+  FAQPage schema — do not reintroduce it or any free written report/free audit promise.
 - FAQs (accordion, Schema.org FAQPage markup in `<head>` — keep in sync, all 10)
 - Contact forms (Google Apps Script) / Calendly
 - Footer (Impressum/Datenschutz links to standalone pages + Cookie-Einstellungen)
@@ -107,7 +117,7 @@ Section order (reordered 2026-07-23, proof-first for mobile — Clarity showed 5
   NOTE: the legal AVV/DPA obligation still applies where personal data is processed; it is simply not advertised.
 - Minimize self-binding language site-wide (user directive 2026-06-21): no guarantees/
   promises that bind DMR, the agency, or employees unless absolutely necessary (legally
-  mandatory) or morally required. KEPT by user choice: homepage Performance-Garantie (free
+  mandatory) or morally required. REMOVED 2026-08-20 with the pilot: the Performance-Garantie (free
   2nd month = own waived fee, no cash out). REMOVED 2026-06-21: "Vertrag nach deutschem
   Recht" public claim, hard "innerhalb von 24 Stunden" → "in der Regel innerhalb von 24
   Stunden". Keep protective/mandatory text (Impressum disclaimers, Datenschutz) — removing
