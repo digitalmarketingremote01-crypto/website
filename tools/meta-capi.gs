@@ -87,6 +87,50 @@ function sha256(str) {
   }).join('');
 }
 
+/**
+ * Server-side 'Schedule' event for Calendly bookings (called from syncCalendlyBookings).
+ * Same dedupe idea as sendMetaLead: a stable event_id ('booking.<calendar event id>')
+ * lets Meta drop the duplicate if the browser pixel also fired Schedule.
+ *
+ * Hooked into Code.gs's syncCalendlyBookings, right after a NEW booking row is appended:
+ *
+ *     try {
+ *       var np = String(inviteeName || '').trim().split(/\s+/);
+ *       sendMetaSchedule(invitee, np[0] || '', np.slice(1).join(' '), 'booking.' + id);
+ *     } catch (err) { console.error('CAPI Schedule: ' + err); }
+ */
+function sendMetaSchedule(email, firstName, lastName, eventId) {
+  // ---- identity (hashed, per Meta requirement) -----------------------------
+  var user = {};
+  if (email)     user.em = [sha256(String(email).trim().toLowerCase())];
+  if (firstName) user.fn = [sha256(String(firstName).trim().toLowerCase())];
+  if (lastName)  user.ln = [sha256(String(lastName).trim().toLowerCase())];
+  user.country = [sha256('de')];
+
+  // ---- event ---------------------------------------------------------------
+  var ev = {
+    event_name: 'Schedule',
+    event_time: Math.floor(Date.now() / 1000),
+    action_source: 'website',
+    event_source_url: 'https://www.digitalmarketingremote.com/',
+    user_data: user
+  };
+  if (eventId) ev.event_id = eventId;
+
+  var res = UrlFetchApp.fetch(
+    'https://graph.facebook.com/v21.0/' + META_PIXEL_ID + '/events'
+      + '?access_token=' + encodeURIComponent(getMetaToken_()),
+    {
+      method: 'post',
+      contentType: 'application/json',
+      payload: JSON.stringify({ data: [ev] }),
+      muteHttpExceptions: true
+    }
+  );
+  console.log('Meta CAPI ' + res.getResponseCode() + ': ' + res.getContentText());
+  return res.getResponseCode();
+}
+
 /** Run this once from the editor to confirm the token works. */
 function testMetaLead() {
   var code = sendMetaLead({ parameter: {
