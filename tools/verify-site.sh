@@ -41,7 +41,19 @@ for sel in '#mcta{display:none}' '.msw-nav{display:none}'; do
   grep -qF -- "$sel" <<<"$home" && pass "base rule $sel" || fail "base rule $sel missing (mobile UI can leak to desktop)"
 done
 
-echo "== 5. consent gating =="
+echo "== 5. EVERY page carries tracking (the 2026-08-13 publish stripped 60 pages) =="
+if node tools/inject-tracking.mjs --check >/dev/null 2>&1; then
+  pass "all local .html pages load /assets/tracking.js"
+else
+  fail "pages WITHOUT tracking.js — run: node tools/inject-tracking.mjs"
+fi
+# spot-check one article LIVE (build-time injection must have run on Vercel)
+art=$(curl -s -H 'Cache-Control: no-cache' "$BASE/ratgeber/google-ads-kosten?cb=$TS")
+grep -qF -- "assets/tracking.js" <<<"$art" && pass "live article page loads tracking.js" || fail "live article page has NO tracking.js"
+# Clarity must send the EEA/UK consent signal after opt-in (enforced since 2025-10-31)
+grep -qF -- "clarity('consent', true)" <<<"$trackjs" && pass "Clarity consent signal present" || fail "Clarity consent signal MISSING — EEA/UK sessions get dropped"
+
+echo "== 6. consent gating =="
 { grep -qF -- "url_passthrough" <<<"$home" || grep -qF -- "url_passthrough" <<<"$trackjs"; } && pass "Consent Mode v2 present" || fail "Consent Mode v2 missing (checked home + tracking.js)"
 if grep -qF -- "clarity.ms/tag" <<<"$trackjs"; then
   grep -qF -- "function loadTracking" <<<"$trackjs" && pass "Clarity inside loadTracking (consent-gated)" || fail "Clarity may load before consent"
@@ -52,7 +64,7 @@ else
 fi
 
 if [ "${1:-}" = "--full" ]; then
-  echo "== 6. Lighthouse (mobile + desktop) =="
+  echo "== 7. Lighthouse (mobile + desktop) =="
   for mode in "mobile" "desktop"; do
     if [ "$mode" = "mobile" ]; then FLAGS="--form-factor=mobile --screenEmulation.mobile"; else FLAGS="--preset=desktop"; fi
     npx -y lighthouse@12 "$BASE/" --only-categories=performance,accessibility,best-practices,seo \

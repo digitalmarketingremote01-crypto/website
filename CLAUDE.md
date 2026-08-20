@@ -114,10 +114,26 @@ Section order (reordered 2026-07-23, proof-first for mobile — Clarity showed 5
   it adds exposure. Audit new copy for: Garantie, versprechen, verpflichten, "nach
   deutschem Recht", advertised NDAs/AVV.
 
+## Tracking architecture — BINDING (added 2026-08-20 after 60 pages shipped untracked)
+- ALL tracking lives in `/assets/tracking.js` (IDs, GTM/GA4, Meta Pixel, Clarity, consent
+  modal). NEVER copy tracking code or a `#ck` banner inline into a page.
+- Every page must load it via `<script src="/assets/tracking.js" defer></script>`.
+  SAFETY NET: `vercel.json` buildCommand runs `tools/inject-tracking.mjs` on every deploy,
+  which injects the line into any .html missing it — so a forgotten page still ships
+  tracked. Do not remove that buildCommand. `--check` mode is wired into verify-site.sh.
+- History: a 2026-08-13 publish commit silently stripped the include from 60 pages;
+  nobody noticed for a week. That is why injection happens at build time, not by hand.
+- Clarity: `clarity('consent', true)` MUST be called after the tag loads (done inside
+  loadTracking). Clarity enforces consent signals for EEA/UK/CH visits since 2025-10-31 —
+  without the call those sessions are dropped/fragmented even after cookie opt-in.
+- Consent UI: one centered modal, injected by tracking.js on every page (DE/EN by
+  <html lang>), scroll-locked until the visitor picks "Alle akzeptieren" or
+  "Nur notwendige". Both are one click (DSGVO). No page ships its own banner markup.
+
 ## Integrations
 - Google Tag Manager: GTM-MFXPMZ8W (Google Ads Conversion ID constant: 18174154684 — bare number, GTM adds AW- prefix)
 - Google Analytics 4: G-N6G3MVTEH5
-- Facebook Pixel: 957297367335870
+- Meta Pixel / dataset: 1033196126360558 (swapped 2026-08-11; the old 957297367335870 is retired — never reuse it)
 - Microsoft Clarity: x4vko0dld9
 - Calendly booking: digitalmarketingremote01@gmail.com
 - Calendly redirect hash: #danke-termin

@@ -51,7 +51,29 @@
       "Bash(vercel whoami *)",
       "Bash(vercel dns ls *)",
       "Bash(vercel domains ls *)",
-      "Bash(whois *)"
+      "Bash(whois *)",
+      "Bash(git status *)",
+      "Bash(git log *)",
+      "Bash(git diff *)",
+      "Bash(git show *)",
+      "Bash(git branch *)",
+      "Bash(git blame *)",
+      "Bash(gh pr view *)",
+      "Bash(gh pr list *)",
+      "Bash(gh pr diff *)",
+      "Bash(gh issue view *)",
+      "Bash(gh issue list *)",
+      "Bash(grep *)",
+      "Bash(rg *)",
+      "Bash(find *)",
+      "Bash(ls *)",
+      "Bash(head *)",
+      "Bash(tail *)",
+      "Bash(wc *)",
+      "Bash(date *)",
+      "Bash(pwd)",
+      "Bash(cat *)",
+      "Bash(file *)"
     ]
   }
 }

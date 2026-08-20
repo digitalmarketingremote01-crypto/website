@@ -46,9 +46,6 @@ p{color:var(--tx)}
 .bwa{background:#25D366;color:#fff;border-color:#25D366}.bwa:hover{background:#1da851;transform:translateY(-2px)}
 .bl{padding:.95rem 1.875rem;font-size:1rem}.bs{padding:.5rem 1rem;font-size:.85rem}.bf{width:100%}
 /* Cookie */
-#ck{position:fixed;bottom:1rem;left:50%;transform:translateX(-50%);width:min(720px,calc(100% - 2rem));z-index:9999;background:var(--c1);color:#fff;padding:1.15rem 1.35rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap;border-radius:14px;box-shadow:0 12px 44px rgba(0,0,0,.45)}
-#ck p{flex:1;font-size:.8rem;min-width:180px;line-height:1.5;color:#fff}#ck a{color:#4ade80;text-decoration:underline}
-.ckb{padding:.6rem 1.3rem;border-radius:8px;font-size:.85rem;cursor:pointer;font-weight:600;border:none}.cka{background:var(--c3);color:#fff}.ckd{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.55)}
 /* Nav */
 #nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,.97);border-bottom:1px solid var(--bd);backdrop-filter:blur(10px);transition:box-shadow .3s}
 #nav.sc{box-shadow:0 2px 20px rgba(0,0,0,.08)}
@@ -162,7 +159,6 @@ footer{background:var(--c1);color:rgba(255,255,255,.78);padding:3rem 0 2rem}
 <body>
 
 <!-- Cookie banner -->
-<div id="ck"><p><strong>🍪 Dürfen wir messen, was funktioniert?</strong> Mit Ihrem Okay nutzen wir Cookies für Google Analytics & Ads, Meta Pixel und Microsoft Clarity. Ohne Okay sendet Google nur cookielose, anonyme Signale (Consent Mode v2) — Meta Pixel & Clarity bleiben aus. Änderbar jederzeit über „Cookie-Einstellungen" im Footer. <a href="/datenschutz" target="_blank" rel="noopener">Datenschutzerklärung</a></p><button class="ckb ckd" onclick="dkC()">Nur notwendige</button><button class="ckb cka" onclick="akC()">Alle akzeptieren</button></div>
 
 <!-- Nav -->
 <nav id="nav"><div class="ctn"><div class="nv">
@@ -295,8 +291,6 @@ footer{background:var(--c1);color:rgba(255,255,255,.78);padding:3rem 0 2rem}
 <script>
 /* CTA click tracking — fires before same-tab navigation */
 function calClick(label){window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'calendly_click','btn_label':label});}
-/* Cookie consent */
-function ckSettings(){document.getElementById('ck').style.display='flex';}
 /* Nav */
 window.addEventListener('scroll',function(){document.getElementById('nav').classList.toggle('sc',window.scrollY>20);});
 function togMenu(){document.getElementById('mmenu').classList.toggle('open');}

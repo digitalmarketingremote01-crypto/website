@@ -77,6 +77,10 @@
 
     /* Microsoft Clarity */
     (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script",CLARITY_ID);
+    /* Clarity enforces an explicit consent signal for EEA/UK/CH visits since
+       2025-10-31 (default state: denied). Without this call, sessions from
+       those regions are fragmented or dropped even after the tag loads. */
+    window.clarity('consent', true);
   }
   window.loadTracking = loadTracking;
 
@@ -107,10 +111,12 @@
   _gtmEv.forEach(function (e) { window.addEventListener(e, _gtmTrig, { passive: true }); });
   setTimeout(loadGTM, 3000);
 
-  /* --- Consent banner ------------------------------------------------------
-     Injected by JS so no page needs the markup. Pages that already ship their
-     own #ck banner inline are left alone (the guard below), so this can be
-     rolled out without producing two banners.
+  /* --- Consent modal -------------------------------------------------------
+     Injected by JS so no page needs the markup — this is the ONLY banner
+     definition on the site; pages must NOT ship their own #ck markup.
+     Centered modal over a dimmed, scroll-locked page: the visitor has to
+     choose (accept all / only necessary) before reading. Both options are
+     one click — "only necessary" is a stored decision, not a dismissal.
      --------------------------------------------------------------------- */
   var COPY = {
     de: {
@@ -138,39 +144,62 @@
     return 'de';
   }
 
+  var _ckPrevOverflow = null;
+  function lockScroll() {
+    if (_ckPrevOverflow !== null) return;
+    _ckPrevOverflow = document.documentElement.style.overflow || '';
+    document.documentElement.style.overflow = 'hidden';
+  }
+  function unlockScroll() {
+    if (_ckPrevOverflow === null) return;
+    document.documentElement.style.overflow = _ckPrevOverflow;
+    _ckPrevOverflow = null;
+  }
+
   function injectBanner() {
-    if (document.getElementById('ck')) return;   /* page ships its own banner */
+    if (document.getElementById('ck')) return;    /* already open */
     if (granted()) return;                        /* already accepted */
     try { if (localStorage.getItem(CONSENT_KEY) === 'n') return; } catch (e) {}
 
     var t = COPY[lang()];
 
-    var css = document.createElement('style');
-    css.textContent =
-      '#ck{position:fixed;bottom:1rem;left:50%;transform:translateX(-50%);' +
-      'width:min(720px,calc(100% - 2rem));z-index:9999;background:#241c14;color:#fff;' +
-      'padding:1.15rem 1.35rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap;' +
-      'border-radius:14px;box-shadow:0 12px 44px rgba(0,0,0,.45);' +
-      "font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;" +
-      'font-size:.8rem;line-height:1.5;box-sizing:border-box}' +
-      '#ck p{margin:0;flex:1 1 300px}' +
-      '#ck a{color:#f0ac78;text-decoration:underline}' +
-      '#ck .ckb{padding:.6rem 1.3rem;border-radius:8px;font-size:.85rem;cursor:pointer;' +
-      'font-weight:600;border:none;font-family:inherit}' +
-      '#ck .cka{background:#15803d;color:#fff}' +
-      '#ck .ckd{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.55)}' +
-      '@media(prefers-reduced-motion:no-preference){#ck{animation:ckin .3s ease-out}' +
-      '@keyframes ckin{from{opacity:0;transform:translate(-50%,12px)}to{opacity:1;transform:translate(-50%,0)}}}';
-    document.head.appendChild(css);
+    if (!document.getElementById('ck-css')) {
+      var css = document.createElement('style');
+      css.id = 'ck-css';
+      css.textContent =
+        '#ck{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;' +
+        'justify-content:center;padding:1rem;background:rgba(15,10,6,.6);' +
+        'backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);box-sizing:border-box}' +
+        '#ck .ckc{background:#241c14;color:#fff;width:min(540px,100%);' +
+        'padding:1.5rem 1.6rem;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.5);' +
+        "font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;" +
+        'font-size:.85rem;line-height:1.55;box-sizing:border-box;max-height:90vh;overflow-y:auto}' +
+        '#ck p{margin:0 0 1.1rem}' +
+        '#ck a{color:#f0ac78;text-decoration:underline}' +
+        '#ck .ckr{display:flex;gap:.7rem;flex-wrap:wrap}' +
+        '#ck .ckb{flex:1 1 140px;padding:.75rem 1.2rem;border-radius:8px;font-size:.9rem;' +
+        'cursor:pointer;font-weight:600;border:none;font-family:inherit}' +
+        '#ck .cka{background:#15803d;color:#fff}' +
+        '#ck .ckd{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.45)}' +
+        '@media(prefers-reduced-motion:no-preference){#ck .ckc{animation:ckin .25s ease-out}' +
+        '@keyframes ckin{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}}';
+      document.head.appendChild(css);
+    }
 
     var d = document.createElement('div');
     d.id = 'ck';
+    d.setAttribute('role', 'dialog');
+    d.setAttribute('aria-modal', 'true');
+    d.setAttribute('aria-label', t.title);
     d.innerHTML =
-      '<p><strong>' + t.title + '</strong> ' + t.body +
+      '<div class="ckc"><p><strong>' + t.title + '</strong> ' + t.body +
       ' <a href="' + t.href + '" target="_blank" rel="noopener">' + t.link + '</a></p>' +
+      '<div class="ckr">' +
       '<button class="ckb ckd" type="button" data-ck="deny">' + t.deny + '</button>' +
-      '<button class="ckb cka" type="button" data-ck="accept">' + t.accept + '</button>';
+      '<button class="ckb cka" type="button" data-ck="accept">' + t.accept + '</button>' +
+      '</div></div>';
     document.body.appendChild(d);
+    lockScroll();
 
     d.addEventListener('click', function (e) {
       var b = e.target.closest('[data-ck]');
@@ -179,19 +208,23 @@
     });
   }
 
-  /* --- consent handlers (global: inline onclick= in existing pages uses them) */
+  function closeBanner() {
+    var el = document.getElementById('ck');
+    if (el && el.parentNode) el.parentNode.removeChild(el);
+    unlockScroll();
+  }
+
+  /* --- consent handlers (global: footer links use them) -------------------- */
   function akC() {
     try { localStorage.setItem(CONSENT_KEY, 'y'); } catch (e) {}
-    var el = document.getElementById('ck');
-    if (el) el.style.display = 'none';
+    closeBanner();
     loadGTM();
     loadTracking();
   }
   function dkC() {
     var was = _trkLoaded;
     try { localStorage.setItem(CONSENT_KEY, 'n'); } catch (e) {}
-    var el = document.getElementById('ck');
-    if (el) el.style.display = 'none';
+    closeBanner();
     gtag('consent', 'update', {
       ad_storage: 'denied',
       analytics_storage: 'denied',
@@ -203,32 +236,19 @@
   window.akC = akC;
   window.dkC = dkC;
 
-  /* footer "Cookie-Einstellungen" link re-opens the choice.
-     Pages that define their own ckSettings() inline keep theirs — this only
-     fills the gap on pages (articles etc.) that have no inline version. */
+  /* footer "Cookie-Einstellungen" link re-opens the choice
+     (Art. 7 Abs. 3 DSGVO withdrawal) */
   function openCookieSettings() {
     try { localStorage.removeItem(CONSENT_KEY); } catch (e) {}
-    var el = document.getElementById('ck');
-    if (el) { el.style.display = 'flex'; return; }
+    closeBanner();
     injectBanner();
   }
   window.openCookieSettings = openCookieSettings;
-  window.ckSettings = window.ckSettings || openCookieSettings;
-
-  /* hide a page's own inline banner if consent was already given/denied */
-  function hideOwnBannerIfDecided() {
-    var el = document.getElementById('ck');
-    if (!el) return;
-    try { if (localStorage.getItem(CONSENT_KEY)) el.style.display = 'none'; } catch (e) {}
-  }
+  window.ckSettings = openCookieSettings;
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function () {
-      hideOwnBannerIfDecided();
-      injectBanner();
-    });
+    document.addEventListener('DOMContentLoaded', injectBanner);
   } else {
-    hideOwnBannerIfDecided();
     injectBanner();
   }
 })();
