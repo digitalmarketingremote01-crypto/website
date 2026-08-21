@@ -774,6 +774,7 @@ for(var i=0;i<fs.length;i++){var f=fs[i];hid(f,'channel',ch());
 P.forEach(function(k){hid(f,k,s[k]);});hid(f,'referrer',s.referrer);hid(f,'landing_page',s.landing);}}
 function cal(){var c=ch(),ls=document.querySelectorAll('a[href*="calendly.com/digitalmarketingremote01"]');
 for(var i=0;i<ls.length;i++){var a=ls[i],u;try{u=new URL(a.href,location.origin)}catch(e){continue}
+u.searchParams.set('primary_color','c9702f');
 u.searchParams.set('utm_source',s.utm_source||(c==='ads'?'google':c));
 u.searchParams.set('utm_medium',s.utm_medium||(c==='ads'?'cpc':c));
 if(s.utm_campaign)u.searchParams.set('utm_campaign',s.utm_campaign);
