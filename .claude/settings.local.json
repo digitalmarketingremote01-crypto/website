@@ -121,8 +121,8 @@
       "WebFetch(domain:hexaclicks.pk)",
       "Bash(grep -oiE '<h[1-3][^>]*>[^<]{3,90}</h[1-3]>' en/partner.html)",
       "Bash(grep -oiE '\\(white.?label|audit|sales|pitch|proposal|report|dashboard|NDA|contract|onboard|dedicated|account manager|margin|markup|reseller|SEO|web|social|turnaround|guarantee\\)[a-z ]{0,30}' en/partner.html)",
-      "Bash(grep -oE '€[0-9.,]+|[0-9]{3,4}\\\\s?€|/Monat|/month|Setup|einmalig' index.html)",
-      "Bash(grep -oiE '\\(Garantie|garantie[a-z]*|Performance-Garantie|Mindestlaufzeit|kündig[a-z]*|Werbebudget|Mediabudget|ad spend|Zahlung|Vorkasse|monatlich kündbar\\)[^<.]{0,45}' index.html)",
+      "Bash(grep -oE '\u20ac[0-9.,]+|[0-9]{3,4}\\\\s?\u20ac|/Monat|/month|Setup|einmalig' index.html)",
+      "Bash(grep -oiE '\\(Garantie|garantie[a-z]*|Performance-Garantie|Mindestlaufzeit|k\u00fcndig[a-z]*|Werbebudget|Mediabudget|ad spend|Zahlung|Vorkasse|monatlich k\u00fcndbar\\)[^<.]{0,45}' index.html)",
       "Bash(python3 -m pip install --user markdown)",
       "Bash(python3 -m pip install --user --break-system-packages markdown)",
       "Bash(python3 -c \"import markdown; print\\('OK', markdown.__version__\\)\")",
@@ -386,7 +386,9 @@
       "Bash(cp \"/Users/mdanyalshahzad/Downloads/DMR Website Leads - Leads \\(7\\).csv\" \"/Users/mdanyalshahzad/Documents/Danyal/Pipeline/dmr-website-leads-sheet.csv\")",
       "Bash(echo 1786376068)",
       "mcp__claude-in-chrome__read_page",
-      "mcp__claude-in-chrome__tabs_create_mcp"
+      "mcp__claude-in-chrome__tabs_create_mcp",
+      "mcp__claude-in-chrome__select_browser",
+      "mcp__claude-in-chrome__list_connected_browsers"
     ]
   }
 }

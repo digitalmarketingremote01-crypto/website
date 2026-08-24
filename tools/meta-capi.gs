@@ -99,6 +99,13 @@ function sha256(str) {
  *       sendMetaSchedule(invitee, np[0] || '', np.slice(1).join(' '), 'booking.' + id);
  *     } catch (err) { console.error('CAPI Schedule: ' + err); }
  */
+/* 2026-08-24: no longer called from Code.gs (syncCalendlyBookings). The blind
+   calendar-scan sender could not distinguish a real ad-driven booking from a
+   test, an organic booking, or a manually-added calendar entry. The
+   CalendlyBooking event now fires ONLY from the browser, on the real
+   thank-you page (index.html / en/index.html, at the two calendly_booking
+   dataLayer push sites), which only fires for a real completed booking. This
+   function is kept for reference / possible future CAPI-redundancy use. */
 function sendMetaSchedule(email, firstName, lastName, eventId) {
   // Editor runs pass no args — use a marked verification payload (syncCalendlyBookings always passes them)
   if (!email) { email = 'support@digitalmarketingremote.com'; firstName = 'Capi'; lastName = 'Verify'; eventId = 'booking.verify.' + Date.now(); }
