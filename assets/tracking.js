@@ -34,6 +34,22 @@
     try { return localStorage.getItem(CONSENT_KEY) === 'y'; } catch (e) { return false; }
   };
 
+  /* --- Vercel Web Analytics: the ONLY consent-free counter ------------------
+     Deliberately loads for every visitor, before and regardless of the consent
+     choice. It sets no cookies and stores/reads nothing on the device — Vercel
+     identifies a visit by a hash of the incoming request, discarded after 24h,
+     and keeps aggregates only. No device storage means TDDDG § 25 and PECR
+     reg. 6 are not engaged, so no consent is required.
+     This is what shows total real traffic while GA4/Pixel/Clarity only ever see
+     the visitors who accepted. Requires Web Analytics to be ENABLED on the
+     Vercel project — without that the script 404s harmlessly. */
+  (function () {
+    var va = document.createElement('script');
+    va.defer = true;
+    va.src = '/_vercel/insights/script.js';
+    document.head.appendChild(va);
+  })();
+
   /* --- Consent Mode v2 defaults (must run before GTM) --------------------- */
   window.dataLayer = window.dataLayer || [];
   function gtag() { dataLayer.push(arguments); }
