@@ -114,8 +114,11 @@
   /* --- Consent modal -------------------------------------------------------
      Injected by JS so no page needs the markup — this is the ONLY banner
      definition on the site; pages must NOT ship their own #ck markup.
-     Centered modal over a dimmed, scroll-locked page: the visitor has to
-     choose (accept all / only necessary) before reading. Both options are
+     NON-BLOCKING bottom banner: the page stays readable and scrollable, and
+     Impressum/Datenschutz stay reachable, because DSK OH Telemedien (119)+(122)
+     require exactly that — a banner must not obstruct those pages or make
+     content inaccessible, including on small displays. Do not turn this back
+     into a full-screen overlay and do not lock scrolling. Both options are
      one click — "only necessary" is a stored decision, not a dismissal.
      --------------------------------------------------------------------- */
   var COPY = {
@@ -144,18 +147,6 @@
     return 'de';
   }
 
-  var _ckPrevOverflow = null;
-  function lockScroll() {
-    if (_ckPrevOverflow !== null) return;
-    _ckPrevOverflow = document.documentElement.style.overflow || '';
-    document.documentElement.style.overflow = 'hidden';
-  }
-  function unlockScroll() {
-    if (_ckPrevOverflow === null) return;
-    document.documentElement.style.overflow = _ckPrevOverflow;
-    _ckPrevOverflow = null;
-  }
-
   function injectBanner() {
     if (document.getElementById('ck')) return;    /* already open */
     if (granted()) return;                        /* already accepted */
@@ -167,29 +158,32 @@
       var css = document.createElement('style');
       css.id = 'ck-css';
       css.textContent =
-        '#ck{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;' +
-        'justify-content:center;padding:1rem;background:rgba(15,10,6,.6);' +
-        'backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);box-sizing:border-box}' +
-        '#ck .ckc{background:#241c14;color:#fff;width:min(540px,100%);' +
-        'padding:1.5rem 1.6rem;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.5);' +
+        '#ck{position:fixed;bottom:1rem;left:50%;transform:translateX(-50%);' +
+        'width:min(680px,calc(100% - 1.6rem));z-index:9999;box-sizing:border-box}' +
+        '#ck .ckc{background:#241c14;color:#fff;padding:1.15rem 1.3rem;border-radius:14px;' +
+        'box-shadow:0 12px 44px rgba(0,0,0,.45);' +
         "font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;" +
-        'font-size:.85rem;line-height:1.55;box-sizing:border-box;max-height:90vh;overflow-y:auto}' +
-        '#ck p{margin:0 0 1.1rem}' +
+        'font-size:.8rem;line-height:1.5;box-sizing:border-box;max-height:60vh;overflow-y:auto}' +
+        '#ck p{margin:0 0 .95rem}' +
         '#ck a{color:#f0ac78;text-decoration:underline}' +
         '#ck .ckr{display:flex;gap:.7rem;flex-wrap:wrap}' +
-        '#ck .ckb{flex:1 1 140px;padding:.75rem 1.2rem;border-radius:8px;font-size:.9rem;' +
-        'cursor:pointer;font-weight:600;border:none;font-family:inherit}' +
+        /* Both buttons are deliberately identical in size, weight and solidity —
+           DSK OH Telemedien (133) requires the refusal option to be an equivalent
+           alternative in size, colour, contrast and typeface. Do not restyle one
+           of them into a ghost/outline button. */
+        '#ck .ckb{flex:1 1 150px;padding:.7rem 1.2rem;border-radius:8px;font-size:.85rem;' +
+        'cursor:pointer;font-weight:600;border:none;font-family:inherit;line-height:1.2}' +
         '#ck .cka{background:#15803d;color:#fff}' +
-        '#ck .ckd{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.45)}' +
-        '@media(prefers-reduced-motion:no-preference){#ck .ckc{animation:ckin .25s ease-out}' +
-        '@keyframes ckin{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}}';
+        '#ck .ckd{background:#5b5048;color:#fff}' +
+        '@media(prefers-reduced-motion:no-preference){#ck{animation:ckin .3s ease-out}' +
+        '@keyframes ckin{from{opacity:0;transform:translate(-50%,12px)}' +
+        'to{opacity:1;transform:translate(-50%,0)}}}';
       document.head.appendChild(css);
     }
 
     var d = document.createElement('div');
     d.id = 'ck';
-    d.setAttribute('role', 'dialog');
-    d.setAttribute('aria-modal', 'true');
+    d.setAttribute('role', 'region');
     d.setAttribute('aria-label', t.title);
     d.innerHTML =
       '<div class="ckc"><p><strong>' + t.title + '</strong> ' + t.body +
@@ -199,7 +193,6 @@
       '<button class="ckb cka" type="button" data-ck="accept">' + t.accept + '</button>' +
       '</div></div>';
     document.body.appendChild(d);
-    lockScroll();
 
     d.addEventListener('click', function (e) {
       var b = e.target.closest('[data-ck]');
@@ -211,7 +204,6 @@
   function closeBanner() {
     var el = document.getElementById('ck');
     if (el && el.parentNode) el.parentNode.removeChild(el);
-    unlockScroll();
   }
 
   /* --- consent handlers (global: footer links use them) -------------------- */
