@@ -742,6 +742,11 @@ h1{font-size:clamp(1.65rem,2.5vw,1.9rem);letter-spacing:-.025em;line-height:1.18
 <script>
 /* CTA click tracking — fires before same-tab navigation */
 function calClick(label){window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'calendly_click','btn_label':label});}
+/* DMRConversion — the single event the Meta campaign optimizes on. 'Lead' and
+   'CalendlyBooking' stay untouched as the reporting events; this one fires
+   alongside them, valued so Meta learns a booking is worth double a form. */
+function dmrConv(v){window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'dmr_conversion','conv_value':v});
+if(window.fbq)fbq('trackCustom','DMRConversion',{value:v,currency:'USD'});}
 
 /* ===== Lead-source attribution (added 2026-07-29) =====
    Stamps the channel onto the LEAD ITSELF at submit time instead of inferring it from
@@ -828,6 +833,7 @@ if(!eidIn){eidIn=document.createElement('input');eidIn.type='hidden';eidIn.name=
 eidIn.value=evId;
 window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'form_submission','event_id':evId});
 if(window.fbq)fbq('track','Lead',{},{eventID:evId});
+dmrConv(50);
 setTimeout(function(){showTY('form');window.location.hash='danke';if(btn){btn.disabled=false;btn.textContent=btnTxt;}},1500);
 });
 });
@@ -841,7 +847,7 @@ function handleHash(initial){
     /* initial===true + fresh calB flag = this pageload follows an in-popup booking that already pushed the event */
     var skip=false;
     if(initial===true){try{var t=+sessionStorage.getItem('calB')||0;skip=(Date.now()-t<120000);sessionStorage.removeItem('calB');}catch(e){}}
-    if(!skip){window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'calendly_booking'});if(window.fbq)fbq('trackCustom','CalendlyBooking');}}
+    if(!skip){window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'calendly_booking'});if(window.fbq)fbq('trackCustom','CalendlyBooking');dmrConv(100);}}
   else if(location.hash==='#danke'){showTY('form');}
 }
 handleHash(true);
@@ -930,7 +936,7 @@ window.addEventListener('message',function(e){
 if(e.origin==='https://calendly.com'&&e.data&&e.data.event==='calendly.event_scheduled'){
 try{sessionStorage.setItem('calB',String(Date.now()))}catch(err){}
 if(window.Calendly&&Calendly.closePopupWidget)Calendly.closePopupWidget();
-if(location.hash==='#danke-termin'){window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'calendly_booking'});if(window.fbq)fbq('trackCustom','CalendlyBooking');}
+if(location.hash==='#danke-termin'){window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'calendly_booking'});if(window.fbq)fbq('trackCustom','CalendlyBooking');dmrConv(100);}
 else{location.hash='#danke-termin';}
 }});
 
