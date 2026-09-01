@@ -58,7 +58,13 @@ function handleMetaLead_(p) {
     return matchAnswer_(ans, keywords);
   };
 
-  var full     = pick(p.full_name || p.name, ['full name', 'name', 'vollständiger name']);
+  // The keys are Meta's own field names, and they are in the FORM's language:
+  // the German form sends telefonnummer / vollständiger_name / e-mail-adresse /
+  // name_des_unternehmens / ihre_website? / welche_plattform_interessiert_sie? /
+  // wie_hoch_ist_ihr_monatliches_werbebudget?  (confirmed from the 01-09 run).
+  // NEVER put a bare 'name' in the full-name list — 'name_des_unternehmens' also
+  // contains it, and the company would be written into the name column.
+  var full     = pick(p.full_name || p.name, ['full_name', 'full name', 'vollständiger', 'vollstandiger']);
   var email    = pick(p.email, ['email', 'e-mail', 'mail']);
   var phone    = pick(p.phone || p.phone_number, ['phone', 'telefon', 'mobile']);
   var company  = pick(p.company || p.company_name, ['company', 'unternehmen', 'firma']);
@@ -93,6 +99,25 @@ function handleMetaLead_(p) {
     stamp, full, email, phone, company, platform, budget, website,
     campaign, country, 'new', '', '', note
   ]);
+
+  // ---- 1b. never fail silently --------------------------------------------
+  // On 01-09 a real lead (Harold Alexandre, who then booked a call) landed with
+  // every field blank: Make was mapping English field keys against a German form
+  // and fields_json pointed at a variable that did not exist. The row and the
+  // notification were both empty and nothing told us. If that ever happens
+  // again, send the raw payload so the lead can be recovered from the email
+  // alone, without digging through Leads Center.
+  if (!full && !email && !phone) {
+    try {
+      GmailApp.sendEmail(MIF_NOTIFY,
+        'META LEAD ARRIVED EMPTY — raw payload attached · ' + country,
+        'A Meta Instant Form lead reached the script with no name, email or phone.\n' +
+        'That means the Make mapping is broken again. Raw payload below — recover the\n' +
+        'lead from it, then fix the mapping.\n\n' +
+        JSON.stringify(p, null, 2),
+        { from: MIF_FROM, name: 'Digital Marketing Remote' });
+    } catch (e) { /* never let the alert cost us the row */ }
+  }
 
   // ---- 2. tell Danyal ------------------------------------------------------
   var rows = [
@@ -300,6 +325,28 @@ function testMetaLeadRealShape() {
     ])
   });
   Logger.log(JSON.stringify(r));   // expect {"sheet":"UK","emailed":true}
+}
+
+/**
+ * Replays the real 01-09 GERMAN lead exactly as Meta sends it: Field data as a
+ * plain object whose keys are the German field names. Before the keyword fix
+ * this filled nothing, and `name_des_unternehmens` would have been picked up as
+ * the full name. It must now land in the German sheet with every column filled.
+ */
+function testMetaLeadGermanKeys() {
+  var r = handleMetaLead_({
+    created_time: '2026-09-01T14:31:09.000Z',
+    fields_json: JSON.stringify({
+      'telefonnummer': '+491622943574',
+      'wie_hoch_ist_ihr_monatliches_werbebudget?': '€2.000 – €3.000',
+      'ihre_website?': 'ZZTEST not a real site',
+      'welche_plattform_interessiert_sie?': 'Beide',
+      'vollständiger_name': 'ZZTEST Deutsche Keys Bitte Ignorieren',
+      'name_des_unternehmens': 'ZZTEST GmbH',
+      'e-mail-adresse': 'digitalmarketingremote01+dekeys@gmail.com'
+    })
+  });
+  Logger.log(JSON.stringify(r));   // expect {"sheet":"DE","emailed":true}
 }
 
 function testMetaLeadDE() {
