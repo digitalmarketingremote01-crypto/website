@@ -165,7 +165,11 @@ p{color:var(--tx)}
 .pc:hover{box-shadow:0 20px 50px rgba(201,112,47,.1);transform:translateY(-8px)}
 .pc.hl{border-color:var(--c2);border-width:2px;background:linear-gradient(135deg,#fff 0%,rgba(253,234,217,.3) 100%);box-shadow:0 12px 40px rgba(201,112,47,.2)}
 .pc-name{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--mt);margin-bottom:.35rem}
-.pc-price{font-size:1.6rem;font-weight:800;color:var(--c1);line-height:1;margin-bottom:.1rem}.pc-price span{font-size:.8rem;font-weight:400;color:var(--mt)}
+.pc-price{font-size:1.6rem;font-weight:800;color:var(--c1);line-height:1;margin-bottom:.1rem}.pc-price span{font-size:.8rem;font-weight:400;color:var(--mt)}.pc-price .cur{font-size:1.6rem;font-weight:800;color:var(--c1)}
+.cur-toggle{display:flex;justify-content:center;gap:.5rem;margin-bottom:.5rem}
+.cur-btn{padding:.4rem .9rem;border:1.5px solid var(--bd);background:#fff;border-radius:8px;font-size:.8rem;font-weight:700;color:var(--mt);cursor:pointer;transition:all .2s}
+.cur-btn.act{border-color:var(--c2);background:var(--c2l);color:var(--c2)}
+.cur-note{text-align:center;font-size:.7rem;color:var(--mt);margin-bottom:2rem}
 .pc-cap{font-size:.8rem;font-weight:700;color:var(--c2);background:rgba(201,112,47,.08);padding:.4rem .75rem;border-radius:20px;display:inline-block;margin:.65rem 0 1rem;border:1.5px solid var(--c2)}
 .pc-feats{text-align:left;margin-bottom:.875rem;flex:1}
 .pc-feats li{display:flex;align-items:flex-start;gap:.2rem;font-size:.75rem;color:var(--tx);padding:.25rem 0;white-space:normal;word-break:break-word;max-width:100%;line-height:1.3}
@@ -536,6 +540,12 @@ h1{font-size:clamp(1.65rem,2.5vw,1.9rem);letter-spacing:-.025em;line-height:1.18
 <button class="pts" id="pts" onclick="togPr()" aria-label="Plattform wechseln"></button>
 <span class="ptl" id="pl2" onclick="togPr(true)">Google + Meta kombiniert</span>
 </div>
+<div class="cur-toggle" role="group" aria-label="Währung">
+<button class="cur-btn act" data-cur="EUR" onclick="setCur('EUR')">€ EUR</button>
+<button class="cur-btn" data-cur="GBP" onclick="setCur('GBP')">£ GBP</button>
+<button class="cur-btn" data-cur="USD" onclick="setCur('USD')">$ USD</button>
+</div>
+<div class="cur-note">£/$-Beträge sind ungefähre Umrechnungen zur Orientierung; die Abrechnung erfolgt in EUR.</div>
 
 <!-- Single -->
 <div class="pside show" id="pgs">
@@ -544,16 +554,16 @@ h1{font-size:clamp(1.65rem,2.5vw,1.9rem);letter-spacing:-.025em;line-height:1.18
 <div class="pc-inc-chips"><span>Google Ads oder Meta Ads</span><span>Conversion-Tracking &amp; Tag Manager</span><span>Alle Kampagnen-Typen nach Bedarf</span><span>Monatliches Reporting-PDF</span><span>Laufende Optimierung</span></div>
 </div>
 <div class="pgrid pg4">
-<div class="pc"><div class="pc-name">Starter</div><div class="pc-price">€349<span>/Mo.</span></div><div class="pc-cap">Budget bis €2.000</div><div class="pc-tag">Für kleine Budgets</div>
+<div class="pc"><div class="pc-name">Starter</div><div class="pc-price"><span class="cur" data-eur="349">€349</span><span>/Mo.</span></div><div class="pc-cap">Budget bis <span class="cur" data-eur="2000">€2.000</span></div><div class="pc-tag">Für kleine Budgets</div>
 <a href="#contact" class="btn bo bf bs">Anfrage senden</a></div>
 
-<div class="pc"><div class="pc-name">Growth</div><div class="pc-price">€599<span>/Mo.</span></div><div class="pc-cap">Budget bis €4.000</div><div class="pc-tag">Für den Einstieg</div>
+<div class="pc"><div class="pc-name">Growth</div><div class="pc-price"><span class="cur" data-eur="599">€599</span><span>/Mo.</span></div><div class="pc-cap">Budget bis <span class="cur" data-eur="4000">€4.000</span></div><div class="pc-tag">Für den Einstieg</div>
 <a href="#contact" class="btn bo bf bs">Anfrage senden</a></div>
 
-<div class="pc hl"><div class="pc-name">Pro</div><div class="pc-price">€899<span>/Mo.</span></div><div class="pc-cap">Budget bis €8.000</div><div class="pc-tag">Beliebt</div>
+<div class="pc hl"><div class="pc-name">Pro</div><div class="pc-price"><span class="cur" data-eur="899">€899</span><span>/Mo.</span></div><div class="pc-cap">Budget bis <span class="cur" data-eur="8000">€8.000</span></div><div class="pc-tag">Beliebt</div>
 <a href="#contact" class="btn bp bf bs">Anfrage senden</a></div>
 
-<div class="pc"><div class="pc-name">Scale</div><div class="pc-price">€1.499<span>/Mo.</span></div><div class="pc-cap">Budget bis €15.000</div><div class="pc-tag">Für Skalierung</div>
+<div class="pc"><div class="pc-name">Scale</div><div class="pc-price"><span class="cur" data-eur="1499">€1.499</span><span>/Mo.</span></div><div class="pc-cap">Budget bis <span class="cur" data-eur="15000">€15.000</span></div><div class="pc-tag">Für Skalierung</div>
 <a href="#contact" class="btn bo bf bs">Anfrage senden</a></div>
 </div>
 <div class="msw-nav"><button class="msw-btn" type="button" aria-label="Zurück">‹</button><button class="msw-btn" type="button" aria-label="Weiter">›</button></div>
@@ -561,7 +571,7 @@ h1{font-size:clamp(1.65rem,2.5vw,1.9rem);letter-spacing:-.025em;line-height:1.18
 <div class="pilot pent"><div class="pilot-grid">
 <div>
 <div class="pilot-badge">⭐ Enterprise</div>
-<h2>Maßgeschneidertes Paket für Budgets ab €15.000/Monat</h2>
+<h2>Maßgeschneidertes Paket für Budgets ab <span class="cur" data-eur="15000">€15.000</span>/Monat</h2>
 <p>Für größere Werbebudgets entwickeln wir ein individuelles Setup — volle Leistungstiefe, eigene Strategie und persönliche Betreuung von Tag eins.</p>
 <div class="pilot-checks">
 <div class="pilot-check">Maßgeschneidertes Paket nach Ihren Zielen</div>
@@ -573,7 +583,7 @@ h1{font-size:clamp(1.65rem,2.5vw,1.9rem);letter-spacing:-.025em;line-height:1.18
 <div class="pilot-side">
 <div style="font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.68);margin-bottom:.5rem">Enterprise</div>
 <div style="font-size:1.5rem;font-weight:800;color:#fff;line-height:1.3;margin-bottom:.5rem">Auf Anfrage</div>
-<div style="font-size:.75rem;color:rgba(255,255,255,.68);margin-bottom:1rem;line-height:1.5">Budget ab €15.000 / Monat</div>
+<div style="font-size:.75rem;color:rgba(255,255,255,.68);margin-bottom:1rem;line-height:1.5">Budget ab <span class="cur" data-eur="15000">€15.000</span> / Monat</div>
 <a href="#contact" class="btn bp bf">Anfrage senden →</a>
 <p style="font-size:.68rem;color:rgba(255,255,255,.58);margin-top:.75rem">Individuelles Angebot · Persönliche Beratung</p>
 </div>
@@ -587,20 +597,20 @@ h1{font-size:clamp(1.65rem,2.5vw,1.9rem);letter-spacing:-.025em;line-height:1.18
 <div class="pc-inc-chips"><span>Google Ads + Meta Ads kombiniert</span><span>Koordinierte Cross-Platform-Strategie</span><span>Conversion-Tracking, Pixel &amp; Tag Manager</span><span>Monatliches Reporting-PDF</span><span>Laufende Optimierung</span></div>
 </div>
 <div class="pgrid pg4">
-<div class="pc"><div class="pc-name">Dual Starter</div><div class="pc-price">€599<span>/Mo.</span></div><div class="pc-cap">Budget bis €2.000</div>
-<div class="pc-save">€99 gespart vs. zwei Einzel-Pakete</div>
+<div class="pc"><div class="pc-name">Dual Starter</div><div class="pc-price"><span class="cur" data-eur="599">€599</span><span>/Mo.</span></div><div class="pc-cap">Budget bis <span class="cur" data-eur="2000">€2.000</span></div>
+<div class="pc-save"><span class="cur" data-eur="99">€99</span> gespart vs. zwei Einzel-Pakete</div>
 <a href="#contact" class="btn bo bf bs">Anfrage senden</a></div>
 
-<div class="pc hl"><div class="pc-name">Dual Growth</div><div class="pc-price">€1.099<span>/Mo.</span></div><div class="pc-cap">Budget bis €4.000</div>
-<div class="pc-save">€99 gespart vs. zwei Einzel-Pakete</div>
+<div class="pc hl"><div class="pc-name">Dual Growth</div><div class="pc-price"><span class="cur" data-eur="1099">€1.099</span><span>/Mo.</span></div><div class="pc-cap">Budget bis <span class="cur" data-eur="4000">€4.000</span></div>
+<div class="pc-save"><span class="cur" data-eur="99">€99</span> gespart vs. zwei Einzel-Pakete</div>
 <a href="#contact" class="btn bp bf bs">Anfrage senden</a></div>
 
-<div class="pc"><div class="pc-name">Dual Pro</div><div class="pc-price">€1.699<span>/Mo.</span></div><div class="pc-cap">Budget bis €8.000</div>
-<div class="pc-save">€99 gespart vs. zwei Einzel-Pakete</div>
+<div class="pc"><div class="pc-name">Dual Pro</div><div class="pc-price"><span class="cur" data-eur="1699">€1.699</span><span>/Mo.</span></div><div class="pc-cap">Budget bis <span class="cur" data-eur="8000">€8.000</span></div>
+<div class="pc-save"><span class="cur" data-eur="99">€99</span> gespart vs. zwei Einzel-Pakete</div>
 <a href="#contact" class="btn bo bf bs">Anfrage senden</a></div>
 
-<div class="pc"><div class="pc-name">Dual Scale</div><div class="pc-price">€2.899<span>/Mo.</span></div><div class="pc-cap">Budget bis €15.000</div>
-<div class="pc-save">€99 gespart vs. zwei Einzel-Pakete</div>
+<div class="pc"><div class="pc-name">Dual Scale</div><div class="pc-price"><span class="cur" data-eur="2899">€2.899</span><span>/Mo.</span></div><div class="pc-cap">Budget bis <span class="cur" data-eur="15000">€15.000</span></div>
+<div class="pc-save"><span class="cur" data-eur="99">€99</span> gespart vs. zwei Einzel-Pakete</div>
 <a href="#contact" class="btn bo bf bs">Anfrage senden</a></div>
 </div>
 <div class="msw-nav"><button class="msw-btn" type="button" aria-label="Zurück">‹</button><button class="msw-btn" type="button" aria-label="Weiter">›</button></div>
@@ -608,7 +618,7 @@ h1{font-size:clamp(1.65rem,2.5vw,1.9rem);letter-spacing:-.025em;line-height:1.18
 <div class="pilot pent"><div class="pilot-grid">
 <div>
 <div class="pilot-badge">⭐ Dual Enterprise</div>
-<h2>Google + Meta — individuelles Komplettpaket ab €15.000/Monat</h2>
+<h2>Google + Meta — individuelles Komplettpaket ab <span class="cur" data-eur="15000">€15.000</span>/Monat</h2>
 <p>Beide Plattformen aus einer Hand, maßgeschneidert auf Ihre Ziele — mit maximaler Budget-Effizienz und persönlicher Betreuung.</p>
 <div class="pilot-checks">
 <div class="pilot-check">Google Ads + Meta Ads kombiniert</div>
@@ -620,7 +630,7 @@ h1{font-size:clamp(1.65rem,2.5vw,1.9rem);letter-spacing:-.025em;line-height:1.18
 <div class="pilot-side">
 <div style="font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.68);margin-bottom:.5rem">Dual Enterprise</div>
 <div style="font-size:1.5rem;font-weight:800;color:#fff;line-height:1.3;margin-bottom:.5rem">Auf Anfrage</div>
-<div style="font-size:.75rem;color:rgba(255,255,255,.68);margin-bottom:1rem;line-height:1.5">Budget ab €15.000 / Monat</div>
+<div style="font-size:.75rem;color:rgba(255,255,255,.68);margin-bottom:1rem;line-height:1.5">Budget ab <span class="cur" data-eur="15000">€15.000</span> / Monat</div>
 <a href="#contact" class="btn bp bf">Anfrage senden →</a>
 <p style="font-size:.68rem;color:rgba(255,255,255,.58);margin-top:.75rem">Maximale Ersparnis · Persönliche Beratung</p>
 </div>
@@ -818,6 +828,24 @@ var dual=false;
 function togPr(v){dual=(v===undefined)?!dual:v;document.getElementById('pts').classList.toggle('on',dual);
 document.getElementById('pgs').classList.toggle('show',!dual);document.getElementById('pgd').classList.toggle('show',dual);
 document.getElementById('pl1').classList.toggle('act',!dual);document.getElementById('pl2').classList.toggle('act',dual);}
+
+/* Currency toggle (EUR is the real price; GBP/USD are converted for display, invoicing stays in EUR) */
+var RATES={EUR:1,GBP:0.86,USD:1.16},SYM={EUR:'€',GBP:'£',USD:'$'},curNow='EUR';
+function setCur(cur){curNow=cur;
+document.querySelectorAll('.cur-btn').forEach(function(b){b.classList.toggle('act',b.getAttribute('data-cur')===cur);});
+document.querySelectorAll('.cur').forEach(function(s){var eur=parseFloat(s.getAttribute('data-eur'));var v=Math.round(eur*RATES[cur]);s.textContent=SYM[cur]+v.toLocaleString(cur==='EUR'?'de-DE':'en-US');});}
+setCur('EUR');
+(function(){
+var k='dmrFxRates',today=new Date().toISOString().slice(0,10),cached;
+try{cached=JSON.parse(localStorage.getItem(k)||'null');}catch(e){cached=null;}
+if(cached&&cached.date===today&&cached.GBP&&cached.USD){RATES.GBP=cached.GBP;RATES.USD=cached.USD;setCur(curNow);return;}
+fetch('https://api.frankfurter.dev/v1/latest?from=EUR&to=USD,GBP').then(function(r){return r.json();}).then(function(j){
+if(j&&j.rates&&j.rates.USD&&j.rates.GBP){
+RATES.GBP=j.rates.GBP;RATES.USD=j.rates.USD;setCur(curNow);
+try{localStorage.setItem(k,JSON.stringify({date:today,GBP:j.rates.GBP,USD:j.rates.USD}));}catch(e){}
+}
+}).catch(function(){});
+})();
 
 /* Forms */
 var DISPOSABLE_EMAIL=['mailinator.com','guerrillamail.com','guerrillamail.info','grr.la','sharklasers.com','10minutemail.com','tempmail.com','temp-mail.org','yopmail.com','trashmail.com','getnada.com','maildrop.cc','throwawaymail.com','fakeinbox.com','mailnesia.com','dispostable.com','emailondeck.com','mohmal.com','moakt.com','tmail.io','mintemail.com'];
