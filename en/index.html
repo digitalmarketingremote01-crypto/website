@@ -798,7 +798,7 @@ document.getElementById('pgs').classList.toggle('show',!dual);document.getElemen
 document.getElementById('pl1').classList.toggle('act',!dual);document.getElementById('pl2').classList.toggle('act',dual);}
 
 /* Currency toggle (approx. conversions; invoicing in EUR) */
-var RATES={EUR:1,GBP:0.86,USD:1.08},SYM={EUR:'€',GBP:'£',USD:'$'};
+var RATES={EUR:1,GBP:0.86,USD:1.16},SYM={EUR:'€',GBP:'£',USD:'$'};
 function setCur(cur){
 document.querySelectorAll('.cur-btn').forEach(function(b){b.classList.toggle('act',b.getAttribute('data-cur')===cur);});
 document.querySelectorAll('.cur').forEach(function(s){var eur=parseFloat(s.getAttribute('data-eur'));var v=Math.round(eur*RATES[cur]);s.textContent=SYM[cur]+v.toLocaleString('en-US');});}
