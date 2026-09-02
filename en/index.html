@@ -807,7 +807,7 @@ setCur('EUR');
 var k='dmrFxRates',today=new Date().toISOString().slice(0,10),cached;
 try{cached=JSON.parse(localStorage.getItem(k)||'null');}catch(e){cached=null;}
 if(cached&&cached.date===today&&cached.GBP&&cached.USD){RATES.GBP=cached.GBP;RATES.USD=cached.USD;setCur(curNow);return;}
-fetch('https://api.frankfurter.app/latest?from=EUR&to=USD,GBP').then(function(r){return r.json();}).then(function(j){
+fetch('https://api.frankfurter.dev/v1/latest?from=EUR&to=USD,GBP').then(function(r){return r.json();}).then(function(j){
 if(j&&j.rates&&j.rates.USD&&j.rates.GBP){
 RATES.GBP=j.rates.GBP;RATES.USD=j.rates.USD;setCur(curNow);
 try{localStorage.setItem(k,JSON.stringify({date:today,GBP:j.rates.GBP,USD:j.rates.USD}));}catch(e){}
