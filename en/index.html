@@ -797,12 +797,23 @@ function togPr(){dual=!dual;document.getElementById('pts').classList.toggle('on'
 document.getElementById('pgs').classList.toggle('show',!dual);document.getElementById('pgd').classList.toggle('show',dual);
 document.getElementById('pl1').classList.toggle('act',!dual);document.getElementById('pl2').classList.toggle('act',dual);}
 
-/* Currency toggle (approx. conversions; invoicing in EUR) */
-var RATES={EUR:1,GBP:0.86,USD:1.16},SYM={EUR:'€',GBP:'£',USD:'$'};
-function setCur(cur){
+/* Currency toggle (EUR is the real price; GBP/USD are converted for display, invoicing stays in EUR) */
+var RATES={EUR:1,GBP:0.86,USD:1.16},SYM={EUR:'€',GBP:'£',USD:'$'},curNow='EUR';
+function setCur(cur){curNow=cur;
 document.querySelectorAll('.cur-btn').forEach(function(b){b.classList.toggle('act',b.getAttribute('data-cur')===cur);});
 document.querySelectorAll('.cur').forEach(function(s){var eur=parseFloat(s.getAttribute('data-eur'));var v=Math.round(eur*RATES[cur]);s.textContent=SYM[cur]+v.toLocaleString('en-US');});}
 setCur('EUR');
+(function(){
+var k='dmrFxRates',today=new Date().toISOString().slice(0,10),cached;
+try{cached=JSON.parse(localStorage.getItem(k)||'null');}catch(e){cached=null;}
+if(cached&&cached.date===today&&cached.GBP&&cached.USD){RATES.GBP=cached.GBP;RATES.USD=cached.USD;setCur(curNow);return;}
+fetch('https://api.frankfurter.app/latest?from=EUR&to=USD,GBP').then(function(r){return r.json();}).then(function(j){
+if(j&&j.rates&&j.rates.USD&&j.rates.GBP){
+RATES.GBP=j.rates.GBP;RATES.USD=j.rates.USD;setCur(curNow);
+try{localStorage.setItem(k,JSON.stringify({date:today,GBP:j.rates.GBP,USD:j.rates.USD}));}catch(e){}
+}
+}).catch(function(){});
+})();
 
 /* Forms */
 var DISPOSABLE_EMAIL=['mailinator.com','guerrillamail.com','guerrillamail.info','grr.la','sharklasers.com','10minutemail.com','tempmail.com','temp-mail.org','yopmail.com','trashmail.com','getnada.com','maildrop.cc','throwawaymail.com','fakeinbox.com','mailnesia.com','dispostable.com','emailondeck.com','mohmal.com','moakt.com','tmail.io','mintemail.com'];
