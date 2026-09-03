@@ -740,4 +740,49 @@
     <priority>0.8</priority>
   </url>
 
+
+  <!-- Budget festlegen (DE) -->
+  <url>
+    <loc>https://www.digitalmarketingremote.com/ratgeber/google-ads-budget-festlegen</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-budget-festlegen"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/en/guides/set-google-ads-budget"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-budget-festlegen"/>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Budget festlegen (EN) -->
+  <url>
+    <loc>https://www.digitalmarketingremote.com/en/guides/set-google-ads-budget</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-budget-festlegen"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/en/guides/set-google-ads-budget"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-budget-festlegen"/>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Reporting (DE) -->
+  <url>
+    <loc>https://www.digitalmarketingremote.com/ratgeber/google-ads-reporting</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-reporting"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/en/guides/google-ads-reporting"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-reporting"/>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Reporting (EN) -->
+  <url>
+    <loc>https://www.digitalmarketingremote.com/en/guides/google-ads-reporting</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-reporting"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/en/guides/google-ads-reporting"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.digitalmarketingremote.com/ratgeber/google-ads-reporting"/>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
