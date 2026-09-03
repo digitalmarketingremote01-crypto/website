@@ -79,6 +79,13 @@ Section order (reordered 2026-07-23, proof-first for mobile — Clarity showed 5
   ≤40% at any band bottom. Caps were lowered 8k→7k / 15k→12k on purpose. "Keine
   Einrichtungsgebühr" claim REMOVED sitewide (guides too) — a setup fee now exists.
   Only ONE row is highlighted (Pro). B2B-only § 14 BGB note stays.
+  SAME LIST also lives on `/partner` + `/en/partner` (section `#preise`/`#pricing`, own
+  copy of the CSS + a self-contained `ptogPr`/`setCur`/frankfurter script) and in the two
+  price guides (`ratgeber/google-ads-agentur-kosten`, `en/guides/google-ads-agency-pricing`
+  — HTML tables). Homepage FAQ has 12 items incl. "Was kostet die Zusammenarbeit?" / "What
+  does it cost?" — keep accordion + FAQPage schema in sync. When prices change, update ALL
+  of: homepage DE/EN, partner DE/EN, both guide tables, FAQ text+schema DE/EN, and the
+  "ab 199 €/Monat" one-liners in ratgeber/en-guides (grep `ab 199 €` / `from €199`).
 - OFFER (v2 2026-08-20, same day the €490 Startanalyse was tried and killed — Danyal
   judged an upfront price a lead-repellent): "Ihr kompletter Marketing-Plan" DE / "Your Complete Marketing Plan" EN (v5 — Danyal directive: he gives direction, Claude writes pro copy; simple, benefit-first). Scope is NOT keyword-centric: product/pricing/business model understood, competitor selling analysis, right channels & campaign types, keywords only IF search fits, audit of campaigns & creatives, recommendations & strategy (budget, website, next steps) — his REAL process made public: free 30-min intro call (listen: company, product,
   goals) → we do the work FREE (market+competitor analysis, keyword research with real
