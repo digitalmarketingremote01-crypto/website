@@ -64,19 +64,21 @@ Section order (reordered 2026-07-23, proof-first for mobile — Clarity showed 5
 - Services (Google Ads, Meta Ads, E-Commerce/Lead-Gen/SaaS, SEA, YouTube Ads, Tracking & Analytics)
 - Process (6 steps)
 - Case Studies (6, anonymized; only the Loganberry "E-Commerce Brand Launch" case has a screenshot)
-- Pricing (LIVE, updated 2026-08-28): 3 single tiers Growth €599 (Budget bis €4.000) /
-  Pro €899 (bis €8.000) / Scale €1.499 (bis €15.000) + Enterprise (ab €15.000); 2 dual tiers
-  Dual Growth €1.099 / Dual Pro €1.699 (Budget-Cap gilt PRO PLATTFORM) + Dual Enterprise.
-  Dual saves €99 vs. two single packages — that €99 is deliberate and stays: Danyal's answer
-  2026-08-28 was that a bigger dual discount pushes the price below what he already offers at
-  minimum. Only ONE card is highlighted (`.pc hl` + "Beliebt"/"Popular"): the MIDDLE tier, Pro.
-  Growth and Scale are plain cards with outline buttons (`btn bo`) — never highlight two cards
-  at once, the anchor stops working. Growth's tag is "Für den Einstieg"/"For getting started".
-  The earlier €799/€1.199/€1.799 plan was never what shipped. The €349/€499 Starter tiers are
-  DELIBERATELY gone — cheap clients are unprofitable and low fees read as risk.
-  B2B-only § 14 BGB note.
-  KNOWN GAP (reported 2026-08-28, NOT fixed — do not fix unasked): singles reach €15.000
-  budget, duals stop at €8.000 per platform, so €8–15k-per-platform dual buyers have no tier.
+- Pricing (LIVE, rebuilt 2026-09-03 after market research DE/UK/US — one price-list block
+  `.plist` instead of tier cards, Single/Dual toggle + €/£/$ toggle kept, ONE Calendly CTA
+  `calClick('pricing')` under the list, no per-tier buttons):
+  Single: Launch €199 (Budget bis €1.000) / Starter €349 (€2.000) / Growth €599 (€4.000) /
+  Pro €899 (€7.000, highlighted "Beliebt") / Scale €1.499 (€12.000) / Enterprise ab €12.000.
+  Dual (caps = TOTAL spend): Dual Launch €349 / Dual Starter €649 (−€50 each) / Dual Growth
+  €1.099 / Dual Pro €1.699 (−€99) / Dual Scale €2.799 (−€200) / Dual Enterprise.
+  One-off & add-ons (`.plx`): Analyse + Marketing-Plan free · Setup & Conversion-Tracking
+  €179 single / €299 dual one-off (`.pl-sx`/`.pl-dx` swap with togPr), WAIVED when the
+  client's tracking already works (Gandke model) · KI-Anzeigenmotive €129/Mo. (6 ads × 2
+  formats). Reporting is ALWAYS included — never a paid extra (every benchmarked agency
+  includes it). Fee logic Danyal accepted: fee/spend falls smoothly 20%→12.5% up the ladder,
+  ≤40% at any band bottom. Caps were lowered 8k→7k / 15k→12k on purpose. "Keine
+  Einrichtungsgebühr" claim REMOVED sitewide (guides too) — a setup fee now exists.
+  Only ONE row is highlighted (Pro). B2B-only § 14 BGB note stays.
 - OFFER (v2 2026-08-20, same day the €490 Startanalyse was tried and killed — Danyal
   judged an upfront price a lead-repellent): "Ihr kompletter Marketing-Plan" DE / "Your Complete Marketing Plan" EN (v5 — Danyal directive: he gives direction, Claude writes pro copy; simple, benefit-first). Scope is NOT keyword-centric: product/pricing/business model understood, competitor selling analysis, right channels & campaign types, keywords only IF search fits, audit of campaigns & creatives, recommendations & strategy (budget, website, next steps) — his REAL process made public: free 30-min intro call (listen: company, product,
   goals) → we do the work FREE (market+competitor analysis, keyword research with real

@@ -183,6 +183,37 @@ p{color:var(--tx)}
 .pc-tag{font-size:.72rem;color:var(--mt);font-weight:600;margin:.1rem 0 .5rem}
 .pc>.btn{margin-top:auto}
 .vat-note{text-align:center;font-size:.75rem;color:var(--mt);margin-top:2rem;padding:1rem;background:var(--bg);border-radius:var(--rs);line-height:1.6}
+/* Price list (2026-09-03): one block instead of tier cards */
+.plist{max-width:900px;margin:0 auto;background:#fff;border:1.5px solid rgba(201,112,47,.28);border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,.06);overflow:hidden}
+.plist .pc-inc{max-width:none;margin:0;border:0;border-bottom:1px solid var(--bd);border-radius:0;background:linear-gradient(135deg,#fff 0%,rgba(253,234,217,.35) 100%);padding:1.1rem 1.5rem}
+.plist .pc-inc-h{text-align:left;color:var(--mt)}
+.plr{display:grid;grid-template-columns:1.1fr 1fr 1.1fr 1.6fr;align-items:center;gap:1rem;padding:1rem 1.5rem;border-bottom:1px solid var(--bd)}
+.plr.h{padding:.55rem 1.5rem;font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mt);background:var(--bg)}
+.plr.hl{background:linear-gradient(90deg,rgba(253,234,217,.55),#fff);box-shadow:inset 3px 0 0 var(--c2)}
+.pl-nm{font-weight:800;font-size:1rem;color:var(--c1);display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+.pl-bad{font-size:.6rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:var(--c2);color:#fff;border-radius:999px;padding:.15rem .5rem}
+.pl-pr{font-weight:800;font-size:1.25rem;line-height:1;color:var(--c1)}.pl-pr .cur{font-weight:800}.pl-pr small{font-size:.72rem;font-weight:600;color:var(--mt);margin-left:.15rem}
+.pl-cap{font-size:.88rem;color:var(--tx)}.pl-cap b{color:var(--c1)}
+.pl-who{font-size:.82rem;color:var(--mt);line-height:1.45}
+.pl-sv{font-size:.7rem;color:var(--c3);font-weight:700;display:block;margin-top:.15rem}
+.pl-ent{padding:1.1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;background:linear-gradient(135deg,#2b1f14 0%,var(--c1) 100%);color:#fff}
+.pl-ent b{font-size:1rem;display:block}.pl-ent span{font-size:.82rem;color:rgba(255,255,255,.7)}
+.pl-ent a{color:#fff;font-weight:700;font-size:.85rem;text-decoration:none;border:1.5px solid rgba(255,255,255,.35);border-radius:10px;padding:.5rem .9rem;white-space:nowrap;transition:all .2s}.pl-ent a:hover{background:rgba(255,255,255,.12)}
+.plx{max-width:900px;margin:1rem auto 0;background:#fff;border:1.5px solid var(--bd);border-radius:16px;overflow:hidden}
+.plx .plr{grid-template-columns:1.4fr 1fr 2fr}.plx .plr:last-child{border-bottom:0}.plx .pl-pr{font-size:1.05rem}
+.pl-free{color:var(--c3)}
+.pl-cta{text-align:center;margin-top:1.75rem}.pl-cta p{font-size:.8rem;color:var(--mt);margin:.6rem 0 0}
+.pl-dx{display:none}
+@media(max-width:768px){
+.plr{grid-template-columns:1fr auto;gap:.2rem .75rem;padding:.85rem 1rem}
+.plr.h{display:none}
+.plr .pl-nm{grid-column:1}.plr .pl-pr{grid-column:2;grid-row:1;text-align:right;font-size:1.15rem}
+.plr .pl-cap{grid-column:1/-1;font-size:.82rem}.plr .pl-who{grid-column:1/-1;font-size:.78rem}
+.plx .plr{grid-template-columns:1fr auto}.plx .plr .pl-who{grid-column:1/-1}
+.pl-ent{flex-direction:column;align-items:flex-start;padding:1rem}
+.plist .pc-inc{padding:.9rem 1rem}
+.pl-cta .btn{width:100%}
+}
 /* Cases */
 .cases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;row-gap:2rem}
 .case{background:#fff;border:1.5px solid rgba(201,112,47,.08);border-radius:16px;overflow:hidden;transition:all .3s cubic-bezier(.4,0,.2,1);cursor:pointer;box-shadow:0 4px 25px rgba(0,0,0,.08);display:flex;flex-direction:column}
@@ -531,9 +562,9 @@ h1{font-size:clamp(1.65rem,2.5vw,1.9rem);letter-spacing:-.025em;line-height:1.18
 <!-- Pricing -->
 <section id="pricing" class="sec"><div class="ctn">
 <div class="sh"><span class="sl">Transparente Preise</span><h2>Feste Gebühr. Kein Aufschlag aufs Werbebudget.</h2><p>100 % Ihres Budgets fließen in Ihre Kampagnen.</p></div>
-<div style="max-width:860px;margin:0 auto 1.25rem;background:#f0fdf4;border:1.5px solid #86efac;border-radius:12px;padding:.8rem 1.5rem;text-align:center">
+<div style="max-width:900px;margin:0 auto 1.25rem;background:#f0fdf4;border:1.5px solid #86efac;border-radius:12px;padding:.8rem 1.5rem;text-align:center">
 <strong style="display:block;color:var(--c3);font-size:.9rem;margin-bottom:.4rem">Sie riskieren nichts</strong>
-<div style="display:flex;flex-wrap:wrap;gap:.3rem 1rem;justify-content:flex-start;font-size:.8rem;color:var(--tx)"><span>✓ Kostenlose Erstberatung</span><span>✓ Kostenloser Marketing-Plan vor jedem Vertrag</span><span>✓ Keine Einrichtungsgebühr</span><span>✓ Monatlich kündbar</span><span>✓ Ihr Konto, Ihre Daten — Sie behalten die Eigentümerschaft</span></div>
+<div style="display:flex;flex-wrap:wrap;gap:.3rem 1rem;justify-content:flex-start;font-size:.8rem;color:var(--tx)"><span>✓ Kostenlose Erstberatung</span><span>✓ Kostenloser Marketing-Plan vor jedem Vertrag</span><span>✓ Kein Aufschlag aufs Werbebudget</span><span>✓ Monatlich kündbar</span><span>✓ Ihr Konto, Ihre Daten — Sie behalten die Eigentümerschaft</span></div>
 </div>
 <div class="price-toggle">
 <span class="ptl act" id="pl1" onclick="togPr(false)">Eine Plattform</span>
@@ -547,95 +578,44 @@ h1{font-size:clamp(1.65rem,2.5vw,1.9rem);letter-spacing:-.025em;line-height:1.18
 </div>
 <div class="cur-note">£/$-Beträge sind ungefähre Umrechnungen zur Orientierung; die Abrechnung erfolgt in EUR.</div>
 
+<div class="plist">
+<div class="pc-inc">
+<div class="pc-inc-h"><span class="pl-sx">In jedem Paket enthalten</span><span class="pl-dx">In jedem Dual-Paket enthalten</span></div>
+<div class="pc-inc-chips pl-sx"><span>Google Ads oder Meta Ads</span><span>Alle Kampagnen-Typen nach Bedarf</span><span>Laufende Optimierung</span><span>Monatliches Reporting-PDF</span><span>Persönlicher Ansprechpartner</span><span>Monatlich kündbar</span></div>
+<div class="pc-inc-chips pl-dx"><span>Google Ads + Meta Ads kombiniert</span><span>Koordinierte Cross-Platform-Strategie</span><span>Alle Kampagnen-Typen nach Bedarf</span><span>Laufende Optimierung</span><span>Ein gemeinsames Reporting-PDF</span><span>Persönlicher Ansprechpartner</span><span>Monatlich kündbar</span></div>
+</div>
+
 <!-- Single -->
 <div class="pside show" id="pgs">
-<div class="pc-inc">
-<div class="pc-inc-h">In jedem Paket enthalten</div>
-<div class="pc-inc-chips"><span>Google Ads oder Meta Ads</span><span>Conversion-Tracking &amp; Tag Manager</span><span>Alle Kampagnen-Typen nach Bedarf</span><span>Monatliches Reporting-PDF</span><span>Laufende Optimierung</span></div>
-</div>
-<div class="pgrid pg4">
-<div class="pc"><div class="pc-name">Starter</div><div class="pc-price"><span class="cur" data-eur="349">€349</span><span>/Mo.</span></div><div class="pc-cap">Budget bis <span class="cur" data-eur="2000">€2.000</span></div><div class="pc-tag">Für kleine Budgets</div>
-<a href="#contact" class="btn bo bf bs">Anfrage senden</a></div>
-
-<div class="pc"><div class="pc-name">Growth</div><div class="pc-price"><span class="cur" data-eur="599">€599</span><span>/Mo.</span></div><div class="pc-cap">Budget bis <span class="cur" data-eur="4000">€4.000</span></div><div class="pc-tag">Für den Einstieg</div>
-<a href="#contact" class="btn bo bf bs">Anfrage senden</a></div>
-
-<div class="pc hl"><div class="pc-name">Pro</div><div class="pc-price"><span class="cur" data-eur="899">€899</span><span>/Mo.</span></div><div class="pc-cap">Budget bis <span class="cur" data-eur="8000">€8.000</span></div><div class="pc-tag">Beliebt</div>
-<a href="#contact" class="btn bp bf bs">Anfrage senden</a></div>
-
-<div class="pc"><div class="pc-name">Scale</div><div class="pc-price"><span class="cur" data-eur="1499">€1.499</span><span>/Mo.</span></div><div class="pc-cap">Budget bis <span class="cur" data-eur="15000">€15.000</span></div><div class="pc-tag">Für Skalierung</div>
-<a href="#contact" class="btn bo bf bs">Anfrage senden</a></div>
-</div>
-<div class="msw-nav"><button class="msw-btn" type="button" aria-label="Zurück">‹</button><button class="msw-btn" type="button" aria-label="Weiter">›</button></div>
-
-<div class="pilot pent"><div class="pilot-grid">
-<div>
-<div class="pilot-badge">⭐ Enterprise</div>
-<h2>Maßgeschneidertes Paket für Budgets ab <span class="cur" data-eur="15000">€15.000</span>/Monat</h2>
-<p>Für größere Werbebudgets entwickeln wir ein individuelles Setup — volle Leistungstiefe, eigene Strategie und persönliche Betreuung von Tag eins.</p>
-<div class="pilot-checks">
-<div class="pilot-check">Maßgeschneidertes Paket nach Ihren Zielen</div>
-<div class="pilot-check">Leistungsumfang — gemeinsam definiert</div>
-<div class="pilot-check">Budget und Scope individuell definiert</div>
-<div class="pilot-check">Persönlicher Ansprechpartner</div>
-</div>
-</div>
-<div class="pilot-side">
-<div style="font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.68);margin-bottom:.5rem">Enterprise</div>
-<div style="font-size:1.5rem;font-weight:800;color:#fff;line-height:1.3;margin-bottom:.5rem">Auf Anfrage</div>
-<div style="font-size:.75rem;color:rgba(255,255,255,.68);margin-bottom:1rem;line-height:1.5">Budget ab <span class="cur" data-eur="15000">€15.000</span> / Monat</div>
-<a href="#contact" class="btn bp bf">Anfrage senden →</a>
-<p style="font-size:.68rem;color:rgba(255,255,255,.58);margin-top:.75rem">Individuelles Angebot · Persönliche Beratung</p>
-</div>
-</div></div>
+<div class="plr h"><div>Paket</div><div>Pro Monat</div><div>Werbebudget</div><div>Für wen</div></div>
+<div class="plr"><div class="pl-nm">Launch</div><div class="pl-pr"><span class="cur" data-eur="199">€199</span><small>/Mo.</small></div><div class="pl-cap">bis <b><span class="cur" data-eur="1000">€1.000</span></b></div><div class="pl-who">Erster Test mit kleinem Budget</div></div>
+<div class="plr"><div class="pl-nm">Starter</div><div class="pl-pr"><span class="cur" data-eur="349">€349</span><small>/Mo.</small></div><div class="pl-cap">bis <b><span class="cur" data-eur="2000">€2.000</span></b></div><div class="pl-who">Für den Einstieg</div></div>
+<div class="plr"><div class="pl-nm">Growth</div><div class="pl-pr"><span class="cur" data-eur="599">€599</span><small>/Mo.</small></div><div class="pl-cap">bis <b><span class="cur" data-eur="4000">€4.000</span></b></div><div class="pl-who">Wachsende Kampagnen</div></div>
+<div class="plr hl"><div class="pl-nm">Pro <span class="pl-bad">Beliebt</span></div><div class="pl-pr"><span class="cur" data-eur="899">€899</span><small>/Mo.</small></div><div class="pl-cap">bis <b><span class="cur" data-eur="7000">€7.000</span></b></div><div class="pl-who">Mehrere Kampagnen, volle Betreuung</div></div>
+<div class="plr"><div class="pl-nm">Scale</div><div class="pl-pr"><span class="cur" data-eur="1499">€1.499</span><small>/Mo.</small></div><div class="pl-cap">bis <b><span class="cur" data-eur="12000">€12.000</span></b></div><div class="pl-who">Für Skalierung</div></div>
+<div class="pl-ent"><div><b>Enterprise</b><span>Werbebudget ab <span class="cur" data-eur="12000">€12.000</span> / Monat — individuelles Setup</span></div><a href="#contact">Auf Anfrage →</a></div>
 </div>
 
 <!-- Dual -->
 <div class="pside" id="pgd">
-<div class="pc-inc">
-<div class="pc-inc-h">In jedem Dual-Paket enthalten</div>
-<div class="pc-inc-chips"><span>Google Ads + Meta Ads kombiniert</span><span>Koordinierte Cross-Platform-Strategie</span><span>Conversion-Tracking, Pixel &amp; Tag Manager</span><span>Monatliches Reporting-PDF</span><span>Laufende Optimierung</span></div>
+<div class="plr h"><div>Paket</div><div>Pro Monat</div><div>Werbebudget gesamt</div><div>Für wen</div></div>
+<div class="plr"><div class="pl-nm">Dual Launch</div><div class="pl-pr"><span class="cur" data-eur="349">€349</span><small>/Mo.</small></div><div class="pl-cap">bis <b><span class="cur" data-eur="1000">€1.000</span></b><span class="pl-sv"><span class="cur" data-eur="50">€50</span> gespart</span></div><div class="pl-who">Beide Plattformen testen</div></div>
+<div class="plr"><div class="pl-nm">Dual Starter</div><div class="pl-pr"><span class="cur" data-eur="649">€649</span><small>/Mo.</small></div><div class="pl-cap">bis <b><span class="cur" data-eur="2000">€2.000</span></b><span class="pl-sv"><span class="cur" data-eur="50">€50</span> gespart</span></div><div class="pl-who">Für den Einstieg</div></div>
+<div class="plr"><div class="pl-nm">Dual Growth</div><div class="pl-pr"><span class="cur" data-eur="1099">€1.099</span><small>/Mo.</small></div><div class="pl-cap">bis <b><span class="cur" data-eur="4000">€4.000</span></b><span class="pl-sv"><span class="cur" data-eur="99">€99</span> gespart</span></div><div class="pl-who">Wachsende Kampagnen</div></div>
+<div class="plr hl"><div class="pl-nm">Dual Pro <span class="pl-bad">Beliebt</span></div><div class="pl-pr"><span class="cur" data-eur="1699">€1.699</span><small>/Mo.</small></div><div class="pl-cap">bis <b><span class="cur" data-eur="7000">€7.000</span></b><span class="pl-sv"><span class="cur" data-eur="99">€99</span> gespart</span></div><div class="pl-who">Cross-Platform, volle Betreuung</div></div>
+<div class="plr"><div class="pl-nm">Dual Scale</div><div class="pl-pr"><span class="cur" data-eur="2799">€2.799</span><small>/Mo.</small></div><div class="pl-cap">bis <b><span class="cur" data-eur="12000">€12.000</span></b><span class="pl-sv"><span class="cur" data-eur="200">€200</span> gespart</span></div><div class="pl-who">Für Skalierung</div></div>
+<div class="pl-ent"><div><b>Dual Enterprise</b><span>Werbebudget ab <span class="cur" data-eur="12000">€12.000</span> / Monat — Google + Meta aus einer Hand</span></div><a href="#contact">Auf Anfrage →</a></div>
 </div>
-<div class="pgrid pg4">
-<div class="pc"><div class="pc-name">Dual Starter</div><div class="pc-price"><span class="cur" data-eur="599">€599</span><span>/Mo.</span></div><div class="pc-cap">Budget bis <span class="cur" data-eur="2000">€2.000</span></div>
-<div class="pc-save"><span class="cur" data-eur="99">€99</span> gespart vs. zwei Einzel-Pakete</div>
-<a href="#contact" class="btn bo bf bs">Anfrage senden</a></div>
+</div>
 
-<div class="pc hl"><div class="pc-name">Dual Growth</div><div class="pc-price"><span class="cur" data-eur="1099">€1.099</span><span>/Mo.</span></div><div class="pc-cap">Budget bis <span class="cur" data-eur="4000">€4.000</span></div>
-<div class="pc-save"><span class="cur" data-eur="99">€99</span> gespart vs. zwei Einzel-Pakete</div>
-<a href="#contact" class="btn bp bf bs">Anfrage senden</a></div>
+<div class="plx">
+<div class="plr h"><div>Einmalig &amp; Zusatz</div><div>Preis</div><div></div></div>
+<div class="plr"><div class="pl-nm">Analyse &amp; Marketing-Plan</div><div class="pl-pr pl-free">Kostenlos</div><div class="pl-who">Vor dem ersten Cent: Markt, Wettbewerb, Konto-Audit, Plan als PDF.</div></div>
+<div class="plr"><div class="pl-nm">Setup &amp; Conversion-Tracking</div><div class="pl-pr"><span class="pl-sx"><span class="cur" data-eur="179">€179</span></span><span class="pl-dx"><span class="cur" data-eur="299">€299</span></span> <small>einmalig</small></div><div class="pl-who">Tag Manager, Conversions, Pixel, Consent<span class="pl-dx"> — für beide Plattformen</span>. Entfällt, wenn Ihr Tracking bereits sauber läuft.</div></div>
+<div class="plr"><div class="pl-nm">KI-Anzeigenmotive</div><div class="pl-pr"><span class="cur" data-eur="129">€129</span><small>/Mo.</small></div><div class="pl-who">6 Anzeigen mit Text, je 2 Formate — 12 fertige Motive pro Monat. Optional, monatlich kündbar.</div></div>
+</div>
 
-<div class="pc"><div class="pc-name">Dual Pro</div><div class="pc-price"><span class="cur" data-eur="1699">€1.699</span><span>/Mo.</span></div><div class="pc-cap">Budget bis <span class="cur" data-eur="8000">€8.000</span></div>
-<div class="pc-save"><span class="cur" data-eur="99">€99</span> gespart vs. zwei Einzel-Pakete</div>
-<a href="#contact" class="btn bo bf bs">Anfrage senden</a></div>
-
-<div class="pc"><div class="pc-name">Dual Scale</div><div class="pc-price"><span class="cur" data-eur="2899">€2.899</span><span>/Mo.</span></div><div class="pc-cap">Budget bis <span class="cur" data-eur="15000">€15.000</span></div>
-<div class="pc-save"><span class="cur" data-eur="99">€99</span> gespart vs. zwei Einzel-Pakete</div>
-<a href="#contact" class="btn bo bf bs">Anfrage senden</a></div>
-</div>
-<div class="msw-nav"><button class="msw-btn" type="button" aria-label="Zurück">‹</button><button class="msw-btn" type="button" aria-label="Weiter">›</button></div>
-
-<div class="pilot pent"><div class="pilot-grid">
-<div>
-<div class="pilot-badge">⭐ Dual Enterprise</div>
-<h2>Google + Meta — individuelles Komplettpaket ab <span class="cur" data-eur="15000">€15.000</span>/Monat</h2>
-<p>Beide Plattformen aus einer Hand, maßgeschneidert auf Ihre Ziele — mit maximaler Budget-Effizienz und persönlicher Betreuung.</p>
-<div class="pilot-checks">
-<div class="pilot-check">Google Ads + Meta Ads kombiniert</div>
-<div class="pilot-check">Maßgeschneidertes Paket nach Ihren Zielen</div>
-<div class="pilot-check">Budget und Scope individuell definiert</div>
-<div class="pilot-check">Maximale Ersparnis vs. separate Buchung</div>
-</div>
-</div>
-<div class="pilot-side">
-<div style="font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.68);margin-bottom:.5rem">Dual Enterprise</div>
-<div style="font-size:1.5rem;font-weight:800;color:#fff;line-height:1.3;margin-bottom:.5rem">Auf Anfrage</div>
-<div style="font-size:.75rem;color:rgba(255,255,255,.68);margin-bottom:1rem;line-height:1.5">Budget ab <span class="cur" data-eur="15000">€15.000</span> / Monat</div>
-<a href="#contact" class="btn bp bf">Anfrage senden →</a>
-<p style="font-size:.68rem;color:rgba(255,255,255,.58);margin-top:.75rem">Maximale Ersparnis · Persönliche Beratung</p>
-</div>
-</div></div>
-</div>
+<div class="pl-cta"><a href="https://calendly.com/digitalmarketingremote01/30min" onclick="calClick('pricing')" class="btn bp">Kostenlose Analyse buchen →</a><p>30 Minuten, unverbindlich — Sie erhalten Ihren Plan, bevor Sie sich entscheiden.</p></div>
 
 <p class="vat-note"><strong>Hinweis:</strong> Unser Angebot richtet sich ausschließlich an Unternehmer im Sinne des § 14 BGB (B2B). Alle Preise sind Nettopreise. Wir erheben keine Umsatzsteuer. Als im Ausland ansässiger Dienstleister gilt das Reverse-Charge-Verfahren (§ 13b UStG). Sie führen die USt. ggf. selbst ab. Details bei Ihrem Steuerberater.</p>
 </div></section>
@@ -827,7 +807,8 @@ function tc(i){i.parentElement.classList.toggle('sel',i.checked);}
 var dual=false;
 function togPr(v){dual=(v===undefined)?!dual:v;document.getElementById('pts').classList.toggle('on',dual);
 document.getElementById('pgs').classList.toggle('show',!dual);document.getElementById('pgd').classList.toggle('show',dual);
-document.getElementById('pl1').classList.toggle('act',!dual);document.getElementById('pl2').classList.toggle('act',dual);}
+document.getElementById('pl1').classList.toggle('act',!dual);document.getElementById('pl2').classList.toggle('act',dual);
+document.querySelectorAll('.pl-sx').forEach(function(e){e.style.display=dual?'none':'';});document.querySelectorAll('.pl-dx').forEach(function(e){e.style.display=dual?(e.classList.contains('pc-inc-chips')?'flex':'inline'):'none';});}
 
 /* Currency toggle (EUR is the real price; GBP/USD are converted for display, invoicing stays in EUR) */
 var RATES={EUR:1,GBP:0.86,USD:1.16},SYM={EUR:'€',GBP:'£',USD:'$'},curNow='EUR';
