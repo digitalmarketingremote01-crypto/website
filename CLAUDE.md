@@ -2,8 +2,8 @@
 
 ## Project Overview
 Single-page HTML website for Digital Marketing Remote, a DACH-focused performance marketing agency.
-- **File**: `index.html` (all HTML, CSS, JS in one file)
-- **Language**: German (DACH market)
+- **Files**: `index.html` = ENGLISH homepage (the root since 2026-09-08), `de/index.html` = German homepage. Each is all HTML, CSS and JS in one file.
+- **Language**: English is the main site (`/`), German is the mirror (`/de`)
 - **Live URL**: https://www.digitalmarketingremote.com
 
 ---
@@ -64,29 +64,35 @@ Section order (reordered 2026-07-23, proof-first for mobile — Clarity showed 5
 - Services (Google Ads, Meta Ads, E-Commerce/Lead-Gen/SaaS, SEA, YouTube Ads, Tracking & Analytics)
 - Process (6 steps)
 - Case Studies (6, anonymized; only the Loganberry "E-Commerce Brand Launch" case has a screenshot)
-- Pricing — **GBP IS THE ANCHOR since 2026-09-08** (Danyal directive, same day the site
-  flipped to English-first). Every `.cur` span carries `data-gbp` (the base price). €
-  is a FIXED price = £ × 1.20 (rounded), with `data-eur` overriding it where the fixed
-  figure is not exactly ×1.20 (setup £179 → €219, creatives £129 → €159). $ is NOT fixed:
-  it converts from £ at the live daily rate (frankfurter `from=GBP&to=USD`, cached per day
-  in `localStorage.dmrFxGbp`). Ad-spend caps convert the same way (£1,000 → €1,200 …).
-  Never re-anchor prices to EUR; never make € float.
-  Single: Launch £199 / €239 (spend up to £1,000 / €1,200) · Starter £349 / €419 (£2,000)
-  · Growth £599 / €719 (£4,000) · Pro £899 / €1.079 (£7,000, highlighted) · Scale £1,499 /
-  €1.799 (£12,000) · Enterprise from £12,000.
-  Dual (caps = TOTAL spend): Dual Launch £349 / €419 · Dual Starter £649 / €779 (−£50) ·
-  Dual Growth £1,099 / €1.319 · Dual Pro £1,699 / €2.039 (−£99) · Dual Scale £2,799 /
-  €3.359 (−£200) · Dual Enterprise.
+- Pricing — **THREE FIXED PRICE LISTS since 2026-09-08** (Danyal directive, same day the
+  site flipped to English-first). £ is the anchor Danyal prices in; € and $ are their own
+  FIXED lists, NOT conversions. Every `.cur` span carries all three: `data-gbp`,
+  `data-eur`, `data-usd`, and `setCur()` just reads the matching attribute — there is NO
+  FX lookup anywhere on the site any more. Do not re-add frankfurter or any live rate:
+  a live rate makes the quote differ from the invoice and stops the guides/FAQ/schema from
+  stating a number. The public line is "three separate fixed price lists — not daily
+  currency conversions"; never describe € or $ as a conversion of £.
+  € ≈ £ × 1.20, $ ≈ £ × 1.35 rounded down to a 9-ending — those multipliers are how the
+  lists were BUILT, not a promise; they are reviewed, not recalculated live.
+  Ad-spend caps are fixed per currency too (£1,000 / €1.200 / $1,350 …).
+  Single (£ / € / $): Launch 199 / 239 / 269 · Starter 349 / 419 / 469 · Growth 599 / 719 /
+  799 · Pro 899 / 1.079 / 1,199 (highlighted) · Scale 1,499 / 1.799 / 1,999 · Enterprise on
+  request. Spend caps: 1,000 / 1.200 / 1,350 · 2,000 / 2.400 / 2,700 · 4,000 / 4.800 / 5,400
+  · 7,000 / 8.400 / 9,450 · 12,000 / 14.400 / 16,200.
+  Dual (caps = TOTAL spend): Dual Launch 349 / 419 / 469 · Dual Starter 649 / 779 / 869 ·
+  Dual Growth 1,099 / 1.319 / 1,479 · Dual Pro 1,699 / 2.039 / 2,279 · Dual Scale 2,799 /
+  3.359 / 3,779 · Dual Enterprise. Dual USD figures were set so the "you save" badge stays
+  true in all three currencies — check that when editing any Dual price.
   One-off & add-ons (`.plx`): Analyse + Marketing-Plan free · Setup & Conversion-Tracking
-  £179 / €219 single, £299 / €359 dual, one-off (`.pl-sx`/`.pl-dx` swap with togPr), WAIVED
-  when the client's tracking already works (Gandke model) · AI creatives £129 / €159 per
-  month (6 ads × 2 formats). Reporting is ALWAYS included — never a paid extra (every benchmarked agency
+  179 / 219 / 239 single, 299 / 359 / 399 dual, one-off (`.pl-sx`/`.pl-dx` swap with togPr),
+  WAIVED when the client's tracking already works (Gandke model) · AI creatives 129 / 159 /
+  169 per month (6 ads × 2 formats). Reporting is ALWAYS included — never a paid extra (every benchmarked agency
   includes it). Fee logic Danyal accepted: fee/spend falls smoothly 20%→12.5% up the ladder,
   ≤40% at any band bottom. Caps were lowered 8k→7k / 15k→12k on purpose. "Keine
   Einrichtungsgebühr" claim REMOVED sitewide (guides too) — a setup fee now exists.
   Only ONE row is highlighted (Pro). B2B-only § 14 BGB note stays.
   SAME LIST also lives on `/partner` + `/en/partner` (section `#preise`/`#pricing`, own
-  copy of the CSS + a self-contained `ptogPr`/`setCur`/frankfurter script) and in the two
+  copy of the CSS + a self-contained `ptogPr`/`setCur` script, no FX call) and in the two
   price guides (`ratgeber/google-ads-agentur-kosten`, `en/guides/google-ads-agency-pricing`
   — HTML tables). Homepage FAQ has 12 items incl. "Was kostet die Zusammenarbeit?" / "What
   does it cost?" — keep accordion + FAQPage schema in sync. When prices change, update ALL

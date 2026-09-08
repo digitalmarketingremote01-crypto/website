@@ -306,7 +306,7 @@ footer{background:var(--c1);color:rgba(255,255,255,.78);padding:3rem 0 2rem}
 <button class="cur-btn" data-cur="GBP" onclick="setCur('GBP')">£ GBP</button>
 <button class="cur-btn" data-cur="USD" onclick="setCur('USD')">$ USD</button>
 </div>
-<div class="cur-note">€ und £ sind Festpreise. $ wird zum aktuellen Tageskurs aus dem £-Preis umgerechnet und dient nur zur Orientierung.</div>
+<div class="cur-note">€, £ und $ sind drei eigenständige Festpreislisten — keine tagesaktuelle Währungsumrechnung. Sie wählen, in welcher Währung wir abrechnen.</div>
 <div class="plist">
 <div class="pc-inc">
 <div class="pc-inc-h"><span class="pl-sx">In jedem Paket enthalten</span><span class="pl-dx">In jedem Dual-Paket enthalten</span></div>
@@ -315,28 +315,28 @@ footer{background:var(--c1);color:rgba(255,255,255,.78);padding:3rem 0 2rem}
 </div>
 <div class="pside show" id="ppgs">
 <div class="plr h"><div>Paket</div><div>Pro Monat</div><div>Werbebudget</div><div>Für wen</div></div>
-<div class="plr"><div class="pl-nm">Launch</div><div class="pl-pr"><span class="cur" data-gbp="199">€239</span><small>/Mo.</small></div><div class="pl-cap">bis <b><span class="cur" data-gbp="1000">€1.200</span></b></div><div class="pl-who">Erster Test mit kleinem Budget</div></div>
-<div class="plr"><div class="pl-nm">Starter</div><div class="pl-pr"><span class="cur" data-gbp="349">€419</span><small>/Mo.</small></div><div class="pl-cap">bis <b><span class="cur" data-gbp="2000">€2.400</span></b></div><div class="pl-who">Für den Einstieg</div></div>
-<div class="plr"><div class="pl-nm">Growth</div><div class="pl-pr"><span class="cur" data-gbp="599">€719</span><small>/Mo.</small></div><div class="pl-cap">bis <b><span class="cur" data-gbp="4000">€4.800</span></b></div><div class="pl-who">Wachsende Kampagnen</div></div>
-<div class="plr hl"><div class="pl-nm">Pro <span class="pl-bad">Beliebt</span></div><div class="pl-pr"><span class="cur" data-gbp="899">€1.079</span><small>/Mo.</small></div><div class="pl-cap">bis <b><span class="cur" data-gbp="7000">€8.400</span></b></div><div class="pl-who">Mehrere Kampagnen, volle Betreuung</div></div>
-<div class="plr"><div class="pl-nm">Scale</div><div class="pl-pr"><span class="cur" data-gbp="1499">€1.799</span><small>/Mo.</small></div><div class="pl-cap">bis <b><span class="cur" data-gbp="12000">€14.400</span></b></div><div class="pl-who">Für Skalierung</div></div>
-<div class="pl-ent"><div><b>Enterprise</b><span>Werbebudget ab <span class="cur" data-gbp="12000">€14.400</span> / Monat — individuelles Setup</span></div><a href="#kontakt">Auf Anfrage →</a></div>
+<div class="plr"><div class="pl-nm">Launch</div><div class="pl-pr"><span class="cur" data-gbp="199" data-eur="239" data-usd="269">€239</span><small>/Mo.</small></div><div class="pl-cap">bis <b><span class="cur" data-gbp="1000" data-eur="1200" data-usd="1350">€1.200</span></b></div><div class="pl-who">Erster Test mit kleinem Budget</div></div>
+<div class="plr"><div class="pl-nm">Starter</div><div class="pl-pr"><span class="cur" data-gbp="349" data-eur="419" data-usd="469">€419</span><small>/Mo.</small></div><div class="pl-cap">bis <b><span class="cur" data-gbp="2000" data-eur="2400" data-usd="2700">€2.400</span></b></div><div class="pl-who">Für den Einstieg</div></div>
+<div class="plr"><div class="pl-nm">Growth</div><div class="pl-pr"><span class="cur" data-gbp="599" data-eur="719" data-usd="799">€719</span><small>/Mo.</small></div><div class="pl-cap">bis <b><span class="cur" data-gbp="4000" data-eur="4800" data-usd="5400">€4.800</span></b></div><div class="pl-who">Wachsende Kampagnen</div></div>
+<div class="plr hl"><div class="pl-nm">Pro <span class="pl-bad">Beliebt</span></div><div class="pl-pr"><span class="cur" data-gbp="899" data-eur="1079" data-usd="1199">€1.079</span><small>/Mo.</small></div><div class="pl-cap">bis <b><span class="cur" data-gbp="7000" data-eur="8400" data-usd="9450">€8.400</span></b></div><div class="pl-who">Mehrere Kampagnen, volle Betreuung</div></div>
+<div class="plr"><div class="pl-nm">Scale</div><div class="pl-pr"><span class="cur" data-gbp="1499" data-eur="1799" data-usd="1999">€1.799</span><small>/Mo.</small></div><div class="pl-cap">bis <b><span class="cur" data-gbp="12000" data-eur="14400" data-usd="16200">€14.400</span></b></div><div class="pl-who">Für Skalierung</div></div>
+<div class="pl-ent"><div><b>Enterprise</b><span>Werbebudget ab <span class="cur" data-gbp="12000" data-eur="14400" data-usd="16200">€14.400</span> / Monat — individuelles Setup</span></div><a href="#kontakt">Auf Anfrage →</a></div>
 </div>
 <div class="pside" id="ppgd">
 <div class="plr h"><div>Paket</div><div>Pro Monat</div><div>Werbebudget gesamt</div><div>Für wen</div></div>
-<div class="plr"><div class="pl-nm">Dual Launch</div><div class="pl-pr"><span class="cur" data-gbp="349">€419</span><small>/Mo.</small></div><div class="pl-cap">bis <b><span class="cur" data-gbp="1000">€1.200</span></b><span class="pl-sv"><span class="cur" data-gbp="50">€60</span> gespart</span></div><div class="pl-who">Beide Plattformen testen</div></div>
-<div class="plr"><div class="pl-nm">Dual Starter</div><div class="pl-pr"><span class="cur" data-gbp="649">€779</span><small>/Mo.</small></div><div class="pl-cap">bis <b><span class="cur" data-gbp="2000">€2.400</span></b><span class="pl-sv"><span class="cur" data-gbp="50">€60</span> gespart</span></div><div class="pl-who">Für den Einstieg</div></div>
-<div class="plr"><div class="pl-nm">Dual Growth</div><div class="pl-pr"><span class="cur" data-gbp="1099">€1.319</span><small>/Mo.</small></div><div class="pl-cap">bis <b><span class="cur" data-gbp="4000">€4.800</span></b><span class="pl-sv"><span class="cur" data-gbp="99">€119</span> gespart</span></div><div class="pl-who">Wachsende Kampagnen</div></div>
-<div class="plr hl"><div class="pl-nm">Dual Pro <span class="pl-bad">Beliebt</span></div><div class="pl-pr"><span class="cur" data-gbp="1699">€2.039</span><small>/Mo.</small></div><div class="pl-cap">bis <b><span class="cur" data-gbp="7000">€8.400</span></b><span class="pl-sv"><span class="cur" data-gbp="99">€119</span> gespart</span></div><div class="pl-who">Cross-Platform, volle Betreuung</div></div>
-<div class="plr"><div class="pl-nm">Dual Scale</div><div class="pl-pr"><span class="cur" data-gbp="2799">€3.359</span><small>/Mo.</small></div><div class="pl-cap">bis <b><span class="cur" data-gbp="12000">€14.400</span></b><span class="pl-sv"><span class="cur" data-gbp="200">€240</span> gespart</span></div><div class="pl-who">Für Skalierung</div></div>
-<div class="pl-ent"><div><b>Dual Enterprise</b><span>Werbebudget ab <span class="cur" data-gbp="12000">€14.400</span> / Monat — Google + Meta aus einer Hand</span></div><a href="#kontakt">Auf Anfrage →</a></div>
+<div class="plr"><div class="pl-nm">Dual Launch</div><div class="pl-pr"><span class="cur" data-gbp="349" data-eur="419" data-usd="469">€419</span><small>/Mo.</small></div><div class="pl-cap">bis <b><span class="cur" data-gbp="1000" data-eur="1200" data-usd="1350">€1.200</span></b><span class="pl-sv"><span class="cur" data-gbp="50" data-eur="60" data-usd="69">€60</span> gespart</span></div><div class="pl-who">Beide Plattformen testen</div></div>
+<div class="plr"><div class="pl-nm">Dual Starter</div><div class="pl-pr"><span class="cur" data-gbp="649" data-eur="779" data-usd="869">€779</span><small>/Mo.</small></div><div class="pl-cap">bis <b><span class="cur" data-gbp="2000" data-eur="2400" data-usd="2700">€2.400</span></b><span class="pl-sv"><span class="cur" data-gbp="50" data-eur="60" data-usd="69">€60</span> gespart</span></div><div class="pl-who">Für den Einstieg</div></div>
+<div class="plr"><div class="pl-nm">Dual Growth</div><div class="pl-pr"><span class="cur" data-gbp="1099" data-eur="1319" data-usd="1479">€1.319</span><small>/Mo.</small></div><div class="pl-cap">bis <b><span class="cur" data-gbp="4000" data-eur="4800" data-usd="5400">€4.800</span></b><span class="pl-sv"><span class="cur" data-gbp="99" data-eur="119" data-usd="119">€119</span> gespart</span></div><div class="pl-who">Wachsende Kampagnen</div></div>
+<div class="plr hl"><div class="pl-nm">Dual Pro <span class="pl-bad">Beliebt</span></div><div class="pl-pr"><span class="cur" data-gbp="1699" data-eur="2039" data-usd="2279">€2.039</span><small>/Mo.</small></div><div class="pl-cap">bis <b><span class="cur" data-gbp="7000" data-eur="8400" data-usd="9450">€8.400</span></b><span class="pl-sv"><span class="cur" data-gbp="99" data-eur="119" data-usd="119">€119</span> gespart</span></div><div class="pl-who">Cross-Platform, volle Betreuung</div></div>
+<div class="plr"><div class="pl-nm">Dual Scale</div><div class="pl-pr"><span class="cur" data-gbp="2799" data-eur="3359" data-usd="3779">€3.359</span><small>/Mo.</small></div><div class="pl-cap">bis <b><span class="cur" data-gbp="12000" data-eur="14400" data-usd="16200">€14.400</span></b><span class="pl-sv"><span class="cur" data-gbp="200" data-eur="240" data-usd="219">€240</span> gespart</span></div><div class="pl-who">Für Skalierung</div></div>
+<div class="pl-ent"><div><b>Dual Enterprise</b><span>Werbebudget ab <span class="cur" data-gbp="12000" data-eur="14400" data-usd="16200">€14.400</span> / Monat — Google + Meta aus einer Hand</span></div><a href="#kontakt">Auf Anfrage →</a></div>
 </div>
 </div>
 <div class="plx">
 <div class="plr h"><div>Einmalig &amp; Zusatz</div><div>Preis</div><div></div></div>
 <div class="plr"><div class="pl-nm">Analyse &amp; Marketing-Plan</div><div class="pl-pr pl-free">Kostenlos</div><div class="pl-who">Für Ihren Pitch: Markt, Wettbewerb, Konto-Audit, Plan als PDF — unbranded.</div></div>
-<div class="plr"><div class="pl-nm">Setup &amp; Conversion-Tracking</div><div class="pl-pr"><span class="pl-sx"><span class="cur" data-gbp="179" data-eur="219">€219</span></span><span class="pl-dx"><span class="cur" data-gbp="299">€359</span></span> <small>einmalig</small></div><div class="pl-who">Tag Manager, Conversions, Pixel, Consent<span class="pl-dx"> — für beide Plattformen</span>. Entfällt, wenn das Tracking bereits sauber läuft.</div></div>
-<div class="plr"><div class="pl-nm">KI-Anzeigenmotive</div><div class="pl-pr"><span class="cur" data-gbp="129" data-eur="159">€159</span><small>/Mo.</small></div><div class="pl-who">6 Anzeigen mit Text, je 2 Formate — 12 fertige Motive pro Monat. Optional, monatlich kündbar.</div></div>
+<div class="plr"><div class="pl-nm">Setup &amp; Conversion-Tracking</div><div class="pl-pr"><span class="pl-sx"><span class="cur" data-gbp="179" data-eur="219" data-usd="239">€219</span></span><span class="pl-dx"><span class="cur" data-gbp="299" data-eur="359" data-usd="399">€359</span></span> <small>einmalig</small></div><div class="pl-who">Tag Manager, Conversions, Pixel, Consent<span class="pl-dx"> — für beide Plattformen</span>. Entfällt, wenn das Tracking bereits sauber läuft.</div></div>
+<div class="plr"><div class="pl-nm">KI-Anzeigenmotive</div><div class="pl-pr"><span class="cur" data-gbp="129" data-eur="159" data-usd="169">€159</span><small>/Mo.</small></div><div class="pl-who">6 Anzeigen mit Text, je 2 Formate — 12 fertige Motive pro Monat. Optional, monatlich kündbar.</div></div>
 </div>
 <div class="pl-cta"><a href="#kontakt" class="btn bp">Partner-Anfrage senden →</a><p>Unverbindlich — wir melden uns in der Regel innerhalb von 24 Stunden.</p></div>
 <p class="vat-note"><strong>Hinweis:</strong> Angebot ausschließlich für Unternehmer im Sinne des § 14 BGB (B2B). Alle Preise netto; Reverse-Charge (§ 13b UStG).</p>
@@ -345,19 +345,14 @@ footer{background:var(--c1);color:rgba(255,255,255,.78);padding:3rem 0 2rem}
 var pdual=false;function ptogPr(v){pdual=(v===undefined)?!pdual:v;document.getElementById('ppgs').classList.toggle('show',!pdual);document.getElementById('ppgd').classList.toggle('show',pdual);
 document.querySelectorAll('.ptog button').forEach(function(b,i){b.classList.toggle('on',(i===1)===pdual);});
 document.querySelectorAll('.pl-sx').forEach(function(e){e.style.display=pdual?'none':'';});document.querySelectorAll('.pl-dx').forEach(function(e){e.style.display=pdual?(e.classList.contains('pc-inc-chips')?'flex':'inline'):'none';});}
-/* Währung/Currency: GBP is the anchor. £ and € are fixed prices; $ converts live from £ (daily rate, cached). */
-var EURX=1.20,RATES={GBP:1,EUR:EURX,USD:1.35},SYM={GBP:'£',EUR:'€',USD:'$'},LOC={GBP:'en-GB',EUR:'de-DE',USD:'en-US'},curNow='EUR';
-function setCur(cur){curNow=cur;document.querySelectorAll('.cur-btn').forEach(function(b){b.classList.toggle('act',b.getAttribute('data-cur')===cur);});
-document.querySelectorAll('.cur').forEach(function(s){var g=parseFloat(s.getAttribute('data-gbp'));var v;
-if(cur==='GBP'){v=g;}else if(cur==='EUR'){var f=s.getAttribute('data-eur');v=f?parseFloat(f):Math.round(g*EURX);}else{v=Math.round(g*RATES.USD);}
+/* Prices: £, € and $ are three SEPARATE fixed price lists (data-gbp / data-eur / data-usd).
+   They are NOT currency conversions — never re-add a live FX lookup here. */
+var SYM={GBP:'£',EUR:'€',USD:'$'},ATTR={GBP:'data-gbp',EUR:'data-eur',USD:'data-usd'},LOC={GBP:'en-GB',EUR:'de-DE',USD:'en-US'},curNow='EUR';
+function setCur(cur){curNow=cur;
+document.querySelectorAll('.cur-btn').forEach(function(b){b.classList.toggle('act',b.getAttribute('data-cur')===cur);});
+document.querySelectorAll('.cur').forEach(function(s){var v=parseFloat(s.getAttribute(ATTR[cur]));
 s.textContent=SYM[cur]+v.toLocaleString(LOC[cur]);});}
 setCur('EUR');
-(function(){var k='dmrFxGbp',today=new Date().toISOString().slice(0,10),cached;
-try{cached=JSON.parse(localStorage.getItem(k)||'null');}catch(e){cached=null;}
-if(cached&&cached.date===today&&cached.USD){RATES.USD=cached.USD;setCur(curNow);return;}
-fetch('https://api.frankfurter.dev/v1/latest?from=GBP&to=USD').then(function(r){return r.json();}).then(function(j){
-if(j&&j.rates&&j.rates.USD){RATES.USD=j.rates.USD;setCur(curNow);try{localStorage.setItem(k,JSON.stringify({date:today,USD:j.rates.USD}));}catch(e){}}
-}).catch(function(){});})();
 </script>
 
 <!-- FAQ -->
