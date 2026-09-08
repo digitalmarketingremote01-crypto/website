@@ -79,11 +79,21 @@ Section order (reordered 2026-07-23, proof-first for mobile — Clarity showed 5
   One-off & add-ons (`.plx`): Analyse + Marketing-Plan free · Setup & Conversion-Tracking
   £179 single / £299 dual one-off (`.pl-sx`/`.pl-dx` swap with togPr), WAIVED when the
   client's tracking already works (Gandke model) · AI creatives £129/mo (6 ads × 2 formats).
-  **German prose and the guide tables state € figures, which the live toggle does not
-  update** — they are a snapshot at the rate of the day they were written (2026-09-08:
-  229 / 409 / 699 / 1.049 / 1.749, setup 209 / 349, creatives 149, caps 1.159–13.969).
-  Re-check them when the rate has moved; never edit a € figure that sits inside a SOURCED
-  competitor quote (a blanket number replace once corrupted "90–160 €" from marktforschung.de).
+  **German € figures in running text auto-update too** (2026-09-08): `/assets/price.js`
+  rewrites every `[data-gbp]` element in the BODY using the same live rate + nearest-9 rule.
+  Markup: `<span data-gbp="199">229 €</span>`, or `data-t="€{v}"` for the €-prefix form used
+  in FAQ answers, `data-c="USD"` for dollars. Wired into the 13 German pages (de/index.html,
+  partner.html, /leistungen/google-ads, the price guides and every "ab … €/Monat" one-liner).
+  The text in the file is the no-JS fallback and must stay a correct figure. `.cur` spans are
+  skipped — the pricing toggle owns those. A NEW German page that quotes a price needs the
+  `<script src="/assets/price.js" defer></script>` include added by hand; inject-tracking.mjs
+  does not do it.
+  STILL MANUAL, and cannot be scripted: `<title>`, meta descriptions and the JSON-LD FAQ
+  schema — Google reads those from the static file. Only the head is out of scope; price.js
+  never touches it.
+  Never edit a € figure that sits inside a SOURCED competitor quote (a blanket number replace
+  once corrupted "90–160 €" from marktforschung.de, and Adkontakt's "349 €/Monat pro Kunde"
+  in white-label-google-ads is NOT our price).
   Reporting is ALWAYS included — never a paid extra (every benchmarked agency
   includes it). Fee logic Danyal accepted: fee/spend falls smoothly 20%→12.5% up the ladder,
   ≤40% at any band bottom. Caps were lowered 8k→7k / 15k→12k on purpose. "Keine
