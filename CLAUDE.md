@@ -68,11 +68,10 @@ Section order (reordered 2026-07-23, proof-first for mobile — Clarity showed 5
   (Danyal's rule, set the same day the site flipped to English-first). Each `.cur` span
   carries ONLY `data-gbp`. `setCur()` converts at the CURRENT rate (frankfurter
   `from=GBP&to=EUR,USD`, cached per day in `localStorage.dmrFxGbp2`, fallback rates
-  hardcoded) and then rounds **UP to the next number ending in 9** — 403 → 409, 307 → 309.
-  Rounding up means a converted price is never below the £ price, and the 9-ending means it
-  reads as a price, not as a raw conversion. The rule applies to EVERY figure in the list,
-  **ad-spend caps included** (€1.169, €8.159 — Danyal was asked about rounding caps to 100
-  and said no, nearest 9 everywhere). Public wording: "Prices are set in £. € and $ are
+  hardcoded) and then rounds to the NEAREST number ending in 9 — `Math.round(v/10)*10-1`. £199 = €229
+  = $269 at the 2026-09-08 rate; those two figures are Danyal's own check, use them to test
+  any change. NOT round-up (that gave €239/$279 and he corrected it), and NOT nearest 100
+  for caps — nearest 9 applies to EVERY figure, ad-spend caps included (€1.159, €8.149). Public wording: "Prices are set in £. € and $ are
   converted at the current rate, so they can move slightly."
   £ list (the only fixed one): Launch 199 (cap 1,000) · Starter 349 (2,000) · Growth 599
   (4,000) · Pro 899 (7,000, highlighted) · Scale 1,499 (12,000) · Enterprise on request.
@@ -82,7 +81,7 @@ Section order (reordered 2026-07-23, proof-first for mobile — Clarity showed 5
   client's tracking already works (Gandke model) · AI creatives £129/mo (6 ads × 2 formats).
   **German prose and the guide tables state € figures, which the live toggle does not
   update** — they are a snapshot at the rate of the day they were written (2026-09-08:
-  239 / 409 / 699 / 1.049 / 1.749, setup 209 / 349, creatives 159, caps 1.169–13.979).
+  229 / 409 / 699 / 1.049 / 1.749, setup 209 / 349, creatives 149, caps 1.159–13.969).
   Re-check them when the rate has moved; never edit a € figure that sits inside a SOURCED
   competitor quote (a blanket number replace once corrupted "90–160 €" from marktforschung.de).
   Reporting is ALWAYS included — never a paid extra (every benchmarked agency

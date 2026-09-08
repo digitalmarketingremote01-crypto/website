@@ -328,11 +328,11 @@ document.querySelectorAll('.pl-sx').forEach(function(e){e.style.display=pdual?'n
    never below the £ price and never looks like a raw conversion. This applies to every
    figure in the list, ad-spend caps included (Danyal's rule, 2026-09-08). */
 var RATE={GBP:1,EUR:1.1642,USD:1.3531},SYM={GBP:'£',EUR:'€',USD:'$'},LOC={GBP:'en-GB',EUR:'en-US',USD:'en-US'},curNow='GBP';
-function up9(v){var n=Math.ceil(v);return n+((9-n%10)+10)%10;}
+function n9(v){return Math.round(v/10)*10-1;}
 function setCur(cur){curNow=cur;
 document.querySelectorAll('.cur-btn').forEach(function(b){b.classList.toggle('act',b.getAttribute('data-cur')===cur);});
 document.querySelectorAll('.cur').forEach(function(s){var g=parseFloat(s.getAttribute('data-gbp'));
-var v=cur==='GBP'?g:up9(g*RATE[cur]);
+var v=cur==='GBP'?g:n9(g*RATE[cur]);
 s.textContent=SYM[cur]+v.toLocaleString(LOC[cur]);});}
 setCur('GBP');
 (function(){
