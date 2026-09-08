@@ -64,17 +64,23 @@ Section order (reordered 2026-07-23, proof-first for mobile — Clarity showed 5
 - Services (Google Ads, Meta Ads, E-Commerce/Lead-Gen/SaaS, SEA, YouTube Ads, Tracking & Analytics)
 - Process (6 steps)
 - Case Studies (6, anonymized; only the Loganberry "E-Commerce Brand Launch" case has a screenshot)
-- Pricing (LIVE, rebuilt 2026-09-03 after market research DE/UK/US — one price-list block
-  `.plist` instead of tier cards, Single/Dual toggle + €/£/$ toggle kept, ONE Calendly CTA
-  `calClick('pricing')` under the list, no per-tier buttons):
-  Single: Launch €199 (Budget bis €1.000) / Starter €349 (€2.000) / Growth €599 (€4.000) /
-  Pro €899 (€7.000, highlighted "Beliebt") / Scale €1.499 (€12.000) / Enterprise ab €12.000.
-  Dual (caps = TOTAL spend): Dual Launch €349 / Dual Starter €649 (−€50 each) / Dual Growth
-  €1.099 / Dual Pro €1.699 (−€99) / Dual Scale €2.799 (−€200) / Dual Enterprise.
+- Pricing — **GBP IS THE ANCHOR since 2026-09-08** (Danyal directive, same day the site
+  flipped to English-first). Every `.cur` span carries `data-gbp` (the base price). €
+  is a FIXED price = £ × 1.20 (rounded), with `data-eur` overriding it where the fixed
+  figure is not exactly ×1.20 (setup £179 → €219, creatives £129 → €159). $ is NOT fixed:
+  it converts from £ at the live daily rate (frankfurter `from=GBP&to=USD`, cached per day
+  in `localStorage.dmrFxGbp`). Ad-spend caps convert the same way (£1,000 → €1,200 …).
+  Never re-anchor prices to EUR; never make € float.
+  Single: Launch £199 / €239 (spend up to £1,000 / €1,200) · Starter £349 / €419 (£2,000)
+  · Growth £599 / €719 (£4,000) · Pro £899 / €1.079 (£7,000, highlighted) · Scale £1,499 /
+  €1.799 (£12,000) · Enterprise from £12,000.
+  Dual (caps = TOTAL spend): Dual Launch £349 / €419 · Dual Starter £649 / €779 (−£50) ·
+  Dual Growth £1,099 / €1.319 · Dual Pro £1,699 / €2.039 (−£99) · Dual Scale £2,799 /
+  €3.359 (−£200) · Dual Enterprise.
   One-off & add-ons (`.plx`): Analyse + Marketing-Plan free · Setup & Conversion-Tracking
-  €179 single / €299 dual one-off (`.pl-sx`/`.pl-dx` swap with togPr), WAIVED when the
-  client's tracking already works (Gandke model) · KI-Anzeigenmotive €129/Mo. (6 ads × 2
-  formats). Reporting is ALWAYS included — never a paid extra (every benchmarked agency
+  £179 / €219 single, £299 / €359 dual, one-off (`.pl-sx`/`.pl-dx` swap with togPr), WAIVED
+  when the client's tracking already works (Gandke model) · AI creatives £129 / €159 per
+  month (6 ads × 2 formats). Reporting is ALWAYS included — never a paid extra (every benchmarked agency
   includes it). Fee logic Danyal accepted: fee/spend falls smoothly 20%→12.5% up the ladder,
   ≤40% at any band bottom. Caps were lowered 8k→7k / 15k→12k on purpose. "Keine
   Einrichtungsgebühr" claim REMOVED sitewide (guides too) — a setup fee now exists.
@@ -84,8 +90,9 @@ Section order (reordered 2026-07-23, proof-first for mobile — Clarity showed 5
   price guides (`ratgeber/google-ads-agentur-kosten`, `en/guides/google-ads-agency-pricing`
   — HTML tables). Homepage FAQ has 12 items incl. "Was kostet die Zusammenarbeit?" / "What
   does it cost?" — keep accordion + FAQPage schema in sync. When prices change, update ALL
-  of: homepage DE/EN, partner DE/EN, both guide tables, FAQ text+schema DE/EN, and the
-  "ab 199 €/Monat" one-liners in ratgeber/en-guides (grep `ab 199 €` / `from €199`).
+  of: homepage EN (`index.html`) + DE (`de/index.html`), partner DE/EN, both guide tables,
+  the `/leistungen/google-ads` + `/en/services/google-ads` tables, FAQ text+schema DE/EN,
+  and the one-liners in ratgeber/en-guides (grep `ab 239 €` / `from £199`).
 - OFFER (v2 2026-08-20, same day the €490 Startanalyse was tried and killed — Danyal
   judged an upfront price a lead-repellent): "Ihr kompletter Marketing-Plan" DE / "Your Complete Marketing Plan" EN (v5 — Danyal directive: he gives direction, Claude writes pro copy; simple, benefit-first). Scope is NOT keyword-centric: product/pricing/business model understood, competitor selling analysis, right channels & campaign types, keywords only IF search fits, audit of campaigns & creatives, recommendations & strategy (budget, website, next steps) — his REAL process made public: free 30-min intro call (listen: company, product,
   goals) → we do the work FREE (market+competitor analysis, keyword research with real
@@ -104,11 +111,16 @@ Section order (reordered 2026-07-23, proof-first for mobile — Clarity showed 5
   drives these. hreflang DE/EN/x-default. EN page uses absolute asset paths (`/fonts/…`).
   NO legal bindings advertised here (no NDA/AVV/Kundenschutz); the "your client stays
   yours" promise is kept on purpose. Each page has its own Service + FAQPage schema.
-- BILINGUAL (added 2026-06-21): site is fully DE/EN. German = `/`, `/partner`, `/impressum`,
-  `/datenschutz`. English mirror = `/en`, `/en/partner`, `/en/impressum`, `/en/datenschutz`
-  (files under `en/`, absolute asset paths `/fonts/…` `/case-*.webp`). DE⇄EN switcher in
-  nav+footer on every page + hreflang de/en/x-default. EN homepage has a **€/£/$ currency
-  toggle** (`setCur()`, `.cur[data-eur]` spans; £/$ approx, invoiced in EUR). EN pages reuse
+- BILINGUAL — **ENGLISH IS THE ROOT SINCE 2026-09-08** (Danyal directive). `/` serves the
+  ENGLISH homepage (`index.html`, was `en/index.html`); the GERMAN homepage moved to `/de`
+  (`de/index.html`, was the old root `index.html`; its relative asset paths were made
+  absolute). `/en` 301-redirects to `/` (vercel.json `redirects`). Everything else stayed
+  put on purpose (no SEO risk to the 30 ranked articles): German `/partner`, `/impressum`,
+  `/datenschutz`, `/ratgeber/*`, `/leistungen/*`, `/ueber-uns/*`; English `/en/partner`,
+  `/en/impressum`, `/en/datenschutz`, `/en/guides/*`, `/en/services/*`, `/en/about/*`.
+  So DE-page home links point to `/de` (`/de#pricing`, `/de#contact`) and EN-page home
+  links to `/` (`/#pricing`). x-default = `/` (English). Both homepages carry a £/€/$
+  toggle (`setCur()`, `.cur[data-gbp]` spans) — root defaults to GBP, `/de` to EUR. EN pages reuse
   the same consent-gated tracking + conversion dataLayer events (form_submission /
   calendly_booking) so PRIMARY conversions fire on EN too — DO NOT alter German conversion
   buttons/text/tracking (user rule). When editing site content, update BOTH languages.
@@ -190,9 +202,11 @@ Section order (reordered 2026-07-23, proof-first for mobile — Clarity showed 5
   now sees bookings in his real local time; clients still auto-see their own zone. Set at
   Profile → Time Zone. DO NOT set this back to CET. (History: was US-Eastern → CET on
   2026-06-13 → PKT on 2026-06-14.)
-- Calendly **Availability schedule** timezone stays **Central European Time** ON PURPOSE
-  (Availability → Schedules, bottom) so slots are offered during German business hours
-  (9–17 CET). This is separate from the account/display TZ above — do not "align" them.
+- Calendly **Availability schedule** timezone is **Pakistan Standard Time (PKT, GMT+5)**,
+  same as the account/display TZ above — CONFIRMED correct by Danyal 2026-09-04 (an earlier
+  note here said it should be CET; that was wrong, disregard it). Weekly hours (updated
+  2026-09-04, effective from 2026-09-05): Mon–Thu 1:00pm–9:00pm PKT, Fri 3:30pm–9:00pm PKT
+  (Sat/Sun unavailable).
 - To SEND as support@ from Gmail (optional polish): Gmail Settings → Accounts → "Send mail
   as" → add support@, SMTP smtp.forwardemail.net:465, password = a forwardemail.net app pw.
 

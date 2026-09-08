@@ -3,6 +3,9 @@
   "trailingSlash": false,
   "buildCommand": "node tools/inject-tracking.mjs && node tools/inject-tracking.mjs --check",
   "outputDirectory": ".",
+  "redirects": [
+    { "source": "/en", "destination": "/", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/(danyal-hero.jpeg|facebook-cover-en.png|DMR-testimonial-loganberry.png|DMR-loganberry-proof.png)",

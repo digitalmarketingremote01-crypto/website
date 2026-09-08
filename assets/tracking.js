@@ -157,10 +157,12 @@
   };
 
   function lang() {
-    var l = (document.documentElement.getAttribute('lang') || 'de').toLowerCase();
+    var l = (document.documentElement.getAttribute('lang') || '').toLowerCase();
+    if (l.indexOf('de') === 0) return 'de';
     if (l.indexOf('en') === 0) return 'en';
-    if (location.pathname.indexOf('/en/') === 0 || location.pathname === '/en') return 'en';
-    return 'de';
+    if (location.pathname.indexOf('/de') === 0) return 'de';
+    if (location.pathname.indexOf('/en/') === 0) return 'en';
+    return 'en';
   }
 
   function injectBanner() {

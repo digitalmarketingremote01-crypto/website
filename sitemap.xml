@@ -4,9 +4,9 @@
 
   <!-- Homepage (DE) -->
   <url>
-    <loc>https://www.digitalmarketingremote.com/</loc>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/en"/>
+    <loc>https://www.digitalmarketingremote.com/de</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/de"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.digitalmarketingremote.com/"/>
     <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
@@ -15,9 +15,9 @@
 
   <!-- Homepage (EN) -->
   <url>
-    <loc>https://www.digitalmarketingremote.com/en</loc>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/en"/>
+    <loc>https://www.digitalmarketingremote.com/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.digitalmarketingremote.com/de"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.digitalmarketingremote.com/"/>
     <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>

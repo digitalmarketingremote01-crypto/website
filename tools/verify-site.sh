@@ -10,14 +10,14 @@ pass(){ printf "  \033[32mPASS\033[0m  %s\n" "$1"; }
 fail(){ printf "  \033[31mFAIL\033[0m  %s\n" "$1"; FAIL=1; }
 
 echo "== 1. pages reachable (cache-busted) =="
-for p in "" "en" "partner" "en/partner" "impressum" "datenschutz" "en/impressum" "en/datenschutz"; do
+for p in "" "de" "partner" "en/partner" "impressum" "datenschutz" "en/impressum" "en/datenschutz"; do
   code=$(curl -s -o /dev/null -w '%{http_code}' -H 'Cache-Control: no-cache' "$BASE/$p?cb=$TS")
   [ "$code" = "200" ] && pass "/$p ($code)" || fail "/$p returned $code"
 done
 
 echo "== 2. local files match what is LIVE (catches 'deployed?' mistakes) =="
-for f in index.html en/index.html; do
-  url="$BASE/${f%index.html}?cb=$TS"; [ "$f" = "index.html" ] && url="$BASE/?cb=$TS"
+for f in index.html de/index.html; do
+  url="$BASE/${f%/index.html}?cb=$TS"; [ "$f" = "index.html" ] && url="$BASE/?cb=$TS"
   lh=$(curl -sL -H 'Cache-Control: no-cache' "$url" | tr -d '[:space:]' | shasum | cut -c1-12)
   lo=$(tr -d '[:space:]' < "$f" | shasum | cut -c1-12)
   [ "$lh" = "$lo" ] && pass "$f identical to live" || fail "$f DIFFERS from live (local $lo vs live $lh) — not deployed?"
