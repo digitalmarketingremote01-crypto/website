@@ -75,7 +75,13 @@ Section order (reordered 2026-07-23, proof-first for mobile — Clarity showed 5
   converted at the current rate, so they can move slightly."
   £ list (the only fixed one): Launch 199 (cap 1,000) · Starter 349 (2,000) · Growth 599
   (4,000) · Pro 899 (7,000, highlighted) · Scale 1,499 (12,000) · Enterprise on request.
-  Dual (caps = TOTAL spend): 349 · 649 · 1,099 · 1,699 · 2,799.
+  Dual (caps = TOTAL spend, REPRICED 2026-09-10): 299 · 519 · 899 · 1,349 · 2,249 —
+  the rule is **second platform at half price** (single × 1.5, rounded with the site's own
+  nearest-9 rule). Saving vs two singles is a flat ~25% on every tier: £99 / £179 / £299 /
+  £449 / £749, and those are the `.pl-sv` "saved" spans. Danyal called the old ladder
+  (1.75–1.9× a single) too high: the cap is the same TOTAL spend either way, so a client
+  spending £1,000 was paying £199 on one platform but £349 across two. If a dual price
+  changes, the saving span must change with it — it is not derived at runtime.
   One-off & add-ons (`.plx`): Analyse + Marketing-Plan free · Setup & Conversion-Tracking
   £179 single / £299 dual one-off (`.pl-sx`/`.pl-dx` swap with togPr), WAIVED when the
   client's tracking already works (Gandke model) · AI creatives £129/mo (6 ads × 2 formats).
