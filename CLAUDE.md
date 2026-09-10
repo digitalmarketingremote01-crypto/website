@@ -89,9 +89,13 @@ Section order (reordered 2026-07-23, proof-first for mobile — Clarity showed 5
   are both £129 — Danyal was told and kept it. Dual setup is NOT the half-price rule: at
   £199 the second platform is 54% of the first (saving £59 of £258, 23%). He was shown £189
   (the strict 1.5× figure) and chose £199 because it reuses the Launch trio £199/€229/$269.
-  The "second platform is half price" claim therefore applies to the MONTHLY PLANS ONLY —
-  it lives in the homepage FAQ (DE+EN, accordion + schema), the two price guides and
-  ratgeber/meta-ads-kosten, never in the pricing table. Do not extend it to setup.
+  The "second platform is half price" claim therefore applies to the MONTHLY PLANS ONLY.
+  It lives in the homepage FAQ (DE+EN, accordion + schema), the two price guides,
+  ratgeber/meta-ads-kosten, and since 2026-09-10 in the dual list header itself:
+  `<span class="pl-dx pl-half">` inside `.pc-inc-h` on all four price pages (Danyal asked
+  for it there because nobody reads the FAQ). `.pl-half` resets the header's uppercase and
+  colours it green; togPr/ptogPr set `.pl-dx` to display:inline, so it MUST stay a span.
+  Do not extend the claim to setup.
   **German € figures in running text auto-update too** (2026-09-08): `/assets/price.js`
   rewrites every `[data-gbp]` element in the BODY using the same live rate + nearest-9 rule.
   Markup: `<span data-gbp="199">229 €</span>`, or `data-t="€{v}"` for the €-prefix form used

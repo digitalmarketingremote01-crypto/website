@@ -198,6 +198,7 @@ p{color:var(--tx)}
 .pl-cap{font-size:.88rem;color:var(--tx)}.pl-cap b{display:inline-block;background:rgba(201,112,47,.08);border:1.5px solid rgba(201,112,47,.45);color:var(--c2d);border-radius:20px;padding:.1rem .6rem;font-size:.8rem;font-weight:700}
 .pl-who{font-size:.82rem;color:var(--mt);line-height:1.45}
 .pl-sv{font-size:.7rem;color:var(--c3);font-weight:700;display:block;margin-top:.25rem}
+.pl-half{text-transform:none;letter-spacing:0;color:var(--c3);font-weight:700;margin-left:.35rem}
 .pl-ent{padding:1.1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;background:linear-gradient(135deg,#2b1f14 0%,var(--c1) 100%);color:#fff;border-top:3px solid var(--c2)}
 .pl-ent b{font-size:1rem;display:block}.pl-ent span{font-size:.82rem;color:rgba(255,255,255,.7)}
 .pl-ent a{color:#fff;font-weight:700;font-size:.85rem;text-decoration:none;background-image:linear-gradient(120deg,var(--c2),#d97f3e);border-radius:10px;padding:.6rem 1rem;white-space:nowrap;box-shadow:0 6px 18px rgba(201,112,47,.35);transition:transform .2s}.pl-ent a:hover{transform:translateY(-2px)}
@@ -581,7 +582,7 @@ h1{font-size:clamp(1.65rem,2.5vw,1.9rem);letter-spacing:-.025em;line-height:1.18
 
 <div class="plist">
 <div class="pc-inc">
-<div class="pc-inc-h"><span class="pl-sx">In jedem Paket enthalten</span><span class="pl-dx">In jedem Dual-Paket enthalten</span></div>
+<div class="pc-inc-h"><span class="pl-sx">In jedem Paket enthalten</span><span class="pl-dx">In jedem Dual-Paket enthalten</span><span class="pl-dx pl-half">— die zweite Plattform kostet die Hälfte</span></div>
 <div class="pc-inc-chips pl-sx"><span>Google Ads oder Meta Ads</span><span>Alle Kampagnen-Typen nach Bedarf</span><span>Laufende Optimierung</span><span>Monatliches Reporting-PDF</span><span>Persönlicher Ansprechpartner</span><span>Monatlich kündbar</span></div>
 <div class="pc-inc-chips pl-dx"><span>Google Ads + Meta Ads kombiniert</span><span>Koordinierte Cross-Platform-Strategie</span><span>Alle Kampagnen-Typen nach Bedarf</span><span>Laufende Optimierung</span><span>Ein gemeinsames Reporting-PDF</span><span>Persönlicher Ansprechpartner</span><span>Monatlich kündbar</span></div>
 </div>
@@ -813,9 +814,9 @@ document.getElementById('pl1').classList.toggle('act',!dual);document.getElement
 document.querySelectorAll('.pl-sx').forEach(function(e){e.style.display=dual?'none':'';});document.querySelectorAll('.pl-dx').forEach(function(e){e.style.display=dual?(e.classList.contains('pc-inc-chips')?'flex':'inline'):'none';});}
 
 /* Prices: £ is the real price list. € and $ are converted from £ at the CURRENT rate
-   (frankfurter, cached per day) and then rounded UP to the next 9 — so a converted price is
-   never below the £ price and never looks like a raw conversion. This applies to every
-   figure in the list, ad-spend caps included (Danyal's rule, 2026-09-08). */
+   (frankfurter, cached per day) and then rounded to the NEAREST number ending in 9 —
+   Math.round(v/10)*10-1, so £199 = €229 = $269. Applies to every figure in the list,
+   ad-spend caps included (Danyal's rule, 2026-09-08). Not round-up: he corrected that. */
 var RATE={GBP:1,EUR:1.1642,USD:1.3531},SYM={GBP:'£',EUR:'€',USD:'$'},LOC={GBP:'en-GB',EUR:'de-DE',USD:'en-US'},curNow='EUR';
 function n9(v){return Math.round(v/10)*10-1;}
 function setCur(cur){curNow=cur;
