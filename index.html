@@ -85,6 +85,7 @@ p{color:var(--tx)}
 .hfc .cal a{color:var(--c2);font-weight:600}
 .fok{display:none;text-align:center;padding:1.5rem}.fok h3{color:var(--c3);margin-bottom:.3rem;font-size:1.1rem}.fok p{font-size:.85rem;color:rgba(255,255,255,.78)}
 .cform .fok p{color:var(--mt)}
+.hp{position:absolute;left:-9999px;top:-9999px;width:1px;height:1px;overflow:hidden}
 .pilot{background:linear-gradient(135deg,#2b1f14 0%,var(--c1) 100%);border-radius:24px;padding:3.5rem;position:relative;overflow:hidden;box-shadow:0 20px 60px rgba(201,112,47,.15),0 0 1px rgba(255,255,255,.1) inset}@media(max-width:768px){.pilot{padding:2.5rem}}
 .pilot::before{content:'';position:absolute;top:-60px;right:-60px;width:250px;height:250px;background:radial-gradient(circle,rgba(201,112,47,.12) 0%,transparent 70%)}
 .pilot-grid{display:grid;grid-template-columns:1fr 280px;gap:2.5rem;align-items:center;position:relative;z-index:1}
@@ -644,6 +645,7 @@ h1{font-size:clamp(1.9rem,3.4vw,2.55rem);letter-spacing:-.03em;line-height:1.12}
 <div class="fg"><label for="cu">Company / Website</label><input type="text" id="cu" name="unternehmen" placeholder="Acme Ltd · www.acme.com"></div>
 <div class="fg"><label for="cmsg">Brief description of your project</label><textarea id="cmsg" name="nachricht" placeholder="What do you sell? What's your main goal? Do you already run campaigns?"></textarea></div>
 <div class="priv"><input type="checkbox" id="cds" name="dsgvo" required><label for="cds">I have read and agree to the <a href="/en/datenschutz" target="_blank" rel="noopener">Privacy Policy</a>. *</label></div>
+<div class="hp" aria-hidden="true"><label for="cw">Leave this field blank</label><input type="text" id="cw" name="website" tabindex="-1" autocomplete="off"></div>
 <input type="hidden" name="_subject" value="Contact form (EN) – Digital Marketing Remote">
 <button type="submit" id="csbtn" class="btn bp bf" style="margin-top:.75rem">Send request →</button>
 <div class="form-trust">

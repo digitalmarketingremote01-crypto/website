@@ -92,6 +92,7 @@ p{color:var(--tx)}
 .hfc .cal a{color:var(--c2);font-weight:600}
 .fok{display:none;text-align:center;padding:1.5rem}.fok h3{color:var(--c3);margin-bottom:.3rem;font-size:1.1rem}.fok p{font-size:.85rem;color:rgba(255,255,255,.78)}
 .cform .fok p{color:var(--mt)}
+.hp{position:absolute;left:-9999px;top:-9999px;width:1px;height:1px;overflow:hidden}
 /* Logos */
 /* Pilot */
 .pilot{background:linear-gradient(135deg,#2b1f14 0%,var(--c1) 100%);border-radius:24px;padding:3.5rem;position:relative;overflow:hidden;box-shadow:0 20px 60px rgba(201,112,47,.15),0 0 1px rgba(255,255,255,.1) inset}@media(max-width:768px){.pilot{padding:2.5rem}}
@@ -677,6 +678,7 @@ h1{font-size:clamp(1.65rem,2.5vw,1.9rem);letter-spacing:-.025em;line-height:1.18
 <div class="fg"><label for="cmsg">Kurze Beschreibung Ihres Projekts</label><textarea id="cmsg" name="nachricht" placeholder="Was vermarkten Sie? Was ist Ihr Hauptziel? Haben Sie bereits Kampagnen?"></textarea></div>
 <div class="priv"><input type="checkbox" id="cds" name="dsgvo" required onchange="clrDsErr(this)"><label for="cds">Ich habe die <a href="/datenschutz" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und stimme zu. *</label></div>
 <div class="ds-err" id="cds-err">Bitte akzeptieren Sie die Datenschutzerklärung, um fortzufahren.</div>
+<div class="hp" aria-hidden="true"><label for="cw">Dieses Feld bitte leer lassen</label><input type="text" id="cw" name="website" tabindex="-1" autocomplete="off"></div>
 <input type="hidden" name="_subject" value="Kontaktformular – Digital Marketing Remote">
 <button type="submit" id="csbtn" class="btn bp bf" style="margin-top:.75rem">Anfrage senden →</button>
 <div class="form-trust">
