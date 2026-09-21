@@ -150,7 +150,7 @@
       title: '🍪 May we measure what works?',
       body: 'With your consent we use cookies for Google Analytics &amp; Ads, Meta Pixel and Microsoft Clarity. Without it, Google sends only cookieless, anonymous signals (Consent Mode v2) — Meta Pixel &amp; Clarity stay off. Changeable any time via "Cookie settings" in the footer.',
       link: 'Privacy Policy',
-      href: '/en/datenschutz',
+      href: '/en/privacy',
       deny: 'Only necessary',
       accept: 'Accept all'
     }

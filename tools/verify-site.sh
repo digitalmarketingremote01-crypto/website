@@ -10,7 +10,7 @@ pass(){ printf "  \033[32mPASS\033[0m  %s\n" "$1"; }
 fail(){ printf "  \033[31mFAIL\033[0m  %s\n" "$1"; FAIL=1; }
 
 echo "== 1. pages reachable (cache-busted) =="
-for p in "" "de" "partner" "en/partner" "impressum" "datenschutz" "en/impressum" "en/datenschutz"; do
+for p in "" "de" "partner" "en/partner" "impressum" "datenschutz" "en/imprint" "en/privacy"; do
   code=$(curl -s -o /dev/null -w '%{http_code}' -H 'Cache-Control: no-cache' "$BASE/$p?cb=$TS")
   [ "$code" = "200" ] && pass "/$p ($code)" || fail "/$p returned $code"
 done

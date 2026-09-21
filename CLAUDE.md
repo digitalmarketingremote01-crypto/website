@@ -68,39 +68,43 @@ Section order (reordered 2026-07-23, proof-first for mobile — Clarity showed 5
   (Danyal's rule, set the same day the site flipped to English-first). Each `.cur` span
   carries ONLY `data-gbp`. `setCur()` converts at the CURRENT rate (frankfurter
   `from=GBP&to=EUR,USD`, cached per day in `localStorage.dmrFxGbp2`, fallback rates
-  hardcoded) and then rounds to the NEAREST number ending in 9 — `Math.round(v/10)*10-1`. £199 = €229
-  = $269 at the 2026-09-08 rate; those two figures are Danyal's own check, use them to test
+  hardcoded) and then rounds to the NEAREST number ending in 9 — `Math.round(v/10)*10-1`. £149 = €169
+  = $199 at the 2026-09-21 rate; those two figures are Danyal's own check, use them to test
   any change. NOT round-up (that gave €239/$279 and he corrected it), and NOT nearest 100
-  for caps — nearest 9 applies to EVERY figure, ad-spend caps included (€1.159, €8.149). Public wording: "Prices are set in £. € and $ are
+  for caps — nearest 9 applies to EVERY figure, ad-spend caps included (€2.329, €8.149). Public wording: "Prices are set in £. € and $ are
   converted at the current rate, so they can move slightly."
-  £ list (the only fixed one): Launch 199 (cap 1,000) · Starter 349 (2,000) · Growth 599
+  **Launch / Dual Launch REMOVED 2026-09-21** (Danyal directive — the entry tier didn't earn
+  its keep). Starter is now the floor.
+  £ list (the only fixed one): Starter 349 (cap 2,000) · Growth 599
   (4,000) · Pro 899 (7,000, highlighted) · Scale 1,499 (12,000) · Enterprise on request.
-  Dual (caps = TOTAL spend, REPRICED 2026-09-10): 299 · 519 · 899 · 1,349 · 2,249 —
+  Dual (caps = TOTAL spend): 519 · 899 · 1,349 · 2,249 —
   the rule is **second platform at half price** (single × 1.5, rounded with the site's own
-  nearest-9 rule). Saving vs two singles is a flat ~25% on every tier: £99 / £179 / £299 /
-  £449 / £749, and those are the `.pl-sv` "saved" spans. Danyal called the old ladder
-  (1.75–1.9× a single) too high: the cap is the same TOTAL spend either way, so a client
-  spending £1,000 was paying £199 on one platform but £349 across two. If a dual price
+  nearest-9 rule). Saving vs two singles is a flat ~25% on every tier: £179 / £299 /
+  £449 / £749, and those are the `.pl-sv` "saved" spans. If a dual price
   changes, the saving span must change with it — it is not derived at runtime.
   One-off & add-ons (`.plx`): Analyse + Marketing-Plan free · Setup & Conversion-Tracking
-  **£129 single / £199 dual** one-off, REPRICED 2026-09-10 from £179/£299 (`.pl-sx`/`.pl-dx`
+  **£149 single / £219 dual** one-off, REPRICED 2026-09-21 from £129/£199 (`.pl-sx`/`.pl-dx`
   swap with togPr), WAIVED when the client's tracking already works (Gandke model) ·
-  AI creatives £129/mo (6 ads × 2 formats). Note the setup single and the creatives add-on
-  are both £129 — Danyal was told and kept it. Dual setup is NOT the half-price rule: at
-  £199 the second platform is 54% of the first (saving £59 of £258, 23%). He was shown £189
-  (the strict 1.5× figure) and chose £199 because it reuses the Launch trio £199/€229/$269.
-  The "second platform is half price" claim therefore applies to the MONTHLY PLANS ONLY.
+  AI creatives £149/mo (6 ads × 2 formats). The setup single and the creatives add-on
+  are both £149 — same pattern as before, Danyal kept it. **Dual setup NOW follows the
+  half-price rule too** (2026-09-21 directive — this reverses the old "not half-price"
+  note below): £219 = £149 × 1.5, rounded with the site's nearest-9 rule (223.5 → 219).
+  Before 2026-09-21 the dual setup was a flat £199 that deliberately ignored the half-price
+  rule (it reused the now-removed Launch trio £199/€229/$269) — that reasoning no longer
+  applies now Launch is gone, so dual setup was folded into the same rule as the monthly
+  plans. The "second platform is half price" claim now applies to setup too, not just the
+  monthly plans — update copy that says "MONTHLY PLANS ONLY" if you find it.
   It lives in the homepage FAQ (DE+EN, accordion + schema), the two price guides,
-  ratgeber/meta-ads-kosten, and since 2026-09-10 on the price block itself as
+  ratgeber/meta-ads-kosten, and on the price block itself as
   `<div class="pt-half">` directly under the platform toggle, on all four price pages —
   "Second platform at half price" / "Zweite Plattform zum halben Preis", green, ALWAYS
   visible in both toggle states. It was first put inside the dual list header
   (`.pl-dx.pl-half`) and Danyal reported it missing: `.pl-dx` is hidden until the toggle is
   switched to dual, so nobody on the default single view ever saw it. Keep it outside any
-  `.pl-dx`/`.pl-sx` wrapper. Do not extend the claim to setup.
+  `.pl-dx`/`.pl-sx` wrapper.
   **German € figures in running text auto-update too** (2026-09-08): `/assets/price.js`
   rewrites every `[data-gbp]` element in the BODY using the same live rate + nearest-9 rule.
-  Markup: `<span data-gbp="199">229 €</span>`, or `data-t="€{v}"` for the €-prefix form used
+  Markup: `<span data-gbp="349">409 €</span>`, or `data-t="€{v}"` for the €-prefix form used
   in FAQ answers, `data-c="USD"` for dollars. Wired into the 13 German pages (de/index.html,
   partner.html, /leistungen/google-ads, the price guides and every "ab … €/Monat" one-liner).
   The text in the file is the no-JS fallback and must stay a correct figure. `.cur` spans are
@@ -125,7 +129,9 @@ Section order (reordered 2026-07-23, proof-first for mobile — Clarity showed 5
   does it cost?" — keep accordion + FAQPage schema in sync. When prices change, update ALL
   of: homepage EN (`index.html`) + DE (`de/index.html`), partner DE/EN, both guide tables,
   the `/leistungen/google-ads` + `/en/services/google-ads` tables, FAQ text+schema DE/EN,
-  and the one-liners in ratgeber/en-guides (grep `ab 239 €` / `from £199`).
+  and the one-liners in ratgeber/en-guides (grep `ab 229 €` / `from £349` — the current
+  floor price after Launch was removed 2026-09-21; re-check this figure each time the
+  Starter price changes, it is not derived at runtime).
 - OFFER (v2 2026-08-20, same day the €490 Startanalyse was tried and killed — Danyal
   judged an upfront price a lead-repellent): "Ihr kompletter Marketing-Plan" DE / "Your Complete Marketing Plan" EN (v5 — Danyal directive: he gives direction, Claude writes pro copy; simple, benefit-first). Scope is NOT keyword-centric: product/pricing/business model understood, competitor selling analysis, right channels & campaign types, keywords only IF search fits, audit of campaigns & creatives, recommendations & strategy (budget, website, next steps) — his REAL process made public: free 30-min intro call (listen: company, product,
   goals) → we do the work FREE (market+competitor analysis, keyword research with real
@@ -150,7 +156,10 @@ Section order (reordered 2026-07-23, proof-first for mobile — Clarity showed 5
   absolute). `/en` 301-redirects to `/` (vercel.json `redirects`). Everything else stayed
   put on purpose (no SEO risk to the 30 ranked articles): German `/partner`, `/impressum`,
   `/datenschutz`, `/ratgeber/*`, `/leistungen/*`, `/ueber-uns/*`; English `/en/partner`,
-  `/en/impressum`, `/en/datenschutz`, `/en/guides/*`, `/en/services/*`, `/en/about/*`.
+  `/en/imprint`, `/en/privacy`, `/en/guides/*`, `/en/services/*`, `/en/about/*`.
+  `/en/impressum` and `/en/datenschutz` were renamed to `/en/imprint` and `/en/privacy` on
+  2026-09-21 (Danyal directive — UK-facing site, English URLs only); 301 redirects from the
+  old German slugs live in `vercel.json`. The German legal pages keep their German slugs.
   So DE-page home links point to `/de` (`/de#pricing`, `/de#contact`) and EN-page home
   links to `/` (`/#pricing`). x-default = `/` (English). Both homepages carry a £/€/$
   toggle (`setCur()`, `.cur[data-gbp]` spans) — root defaults to GBP, `/de` to EUR. EN pages reuse
