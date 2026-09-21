@@ -74,17 +74,18 @@ Section order (reordered 2026-07-23, proof-first for mobile — Clarity showed 5
   for caps — nearest 9 applies to EVERY figure, ad-spend caps included (€2.329, €8.149). Public wording: "Prices are set in £. € and $ are
   converted at the current rate, so they can move slightly."
   **Launch / Dual Launch REMOVED 2026-09-21** (Danyal directive — the entry tier didn't earn
-  its keep). Starter is now the floor.
+  its keep). Starter is now the floor for SINGLE plans.
   £ list (the only fixed one): Starter 349 (cap 2,000) · Growth 599
   (4,000) · Pro 899 (7,000, highlighted) · Scale 1,499 (12,000) · Enterprise on request.
-  Dual (caps = TOTAL spend): **529** · 899 · 1,349 · 2,249 — the rule is **second platform
-  at half price** (single × 1.5, rounded with the site's own nearest-9 rule) EXCEPT Dual
-  Starter, which Danyal manually bumped to £529 (2026-09-21): the strict formula gives
-  349 × 1.5 = 523.5 → nearest-9 £519, but he corrected it to £529 — a deliberate +£10
-  override on the entry dual tier, same pattern as the old Launch-era dual setup override
-  below. Growth/Pro/Scale dual prices ARE the exact formula output, do not touch those.
-  Saving vs two singles: £169 / £299 / £449 / £749 (Dual Starter's saving is £169, i.e.
-  2×349−529, NOT the formula's £179 — it moved when the price did), and those are the
+  **Dual Starter REMOVED too, same day** (Danyal directive — its £2,000 total-spend cap was
+  too low to run two platforms meaningfully). Dual Growth is now the DUAL floor.
+  Dual (caps = TOTAL spend): 899 · 1,349 · 2,249 — the rule is **second platform
+  at half price** (single × 1.5, rounded with the site's own nearest-9 rule) and Growth/Pro/
+  Scale dual prices ARE the exact formula output — do not touch those. (Dual Starter, while
+  it existed, was a manual +£10 override over the strict formula, same pattern as the dual
+  setup fee below; that override is now moot since the tier is gone — don't resurrect it if
+  Dual Starter ever comes back without re-confirming the figure with Danyal.)
+  Saving vs two singles: £299 / £449 / £749, and those are the
   `.pl-sv` "saved" spans. If a dual price changes, the saving span must change with it —
   it is not derived at runtime.
   One-off & add-ons (`.plx`): Analyse + Marketing-Plan free · Setup & Conversion-Tracking
