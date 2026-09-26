@@ -76,16 +76,18 @@ Section order (reordered 2026-07-23, proof-first for mobile — Clarity showed 5
   **Launch / Dual Launch REMOVED 2026-09-21** (Danyal directive — the entry tier didn't earn
   its keep). Starter is now the floor for SINGLE plans.
   £ list (the only fixed one): Starter 349 (cap 2,000) · Growth 599
-  (4,000) · Pro 899 (7,200, highlighted) · Scale 1,499 (15,000) · Enterprise on request from 15,000.
+  (4,000) · Pro 879 (7,000, highlighted) · Scale 1,199 (12,000) · Enterprise on request from 12,000.
   **Fee-to-budget targets (Danyal, 2026-09-26): Starter 17.5% · Growth 15% · Pro 12.5% · Scale 10%**
-  at the cap. Prices stay put; caps are set to hit the targets (349/2,000 · 599/4,000 · 899/7,200 ·
-  1,499/15,000). To change a price, keep its % — move the cap with it.
+  at the cap: 349/2,000 · 599/4,000 · 879/7,000 (12.6%) · 1,199/12,000 (10.0%). Danyal chose LOWER
+  PRICES over raising budget lines ("price is what throws people away at first glance, and a
+  budget increase is not beneficial for everyone") — an earlier version raised the caps instead;
+  don't go back to that. To change a price, keep its %.
   **DUAL SYSTEM REBUILT 2026-09-26 (Danyal's rule, approved table):** dual = single price
   × 1.5 (second platform at half price, nearest-9 rounding) AND single budget cap × 1.5,
   the total budget being split equally between Google and Meta. Dual caps are TOTAL spend:
   Dual Starter £519 (£3,000 total, £1,500 each) · Dual Growth £899 (£6,000, £3,000 each) ·
-  Dual Pro £1,349 (£10,800, £5,400 each) · Dual Scale £2,249 (£22,500, £11,250 each) · Dual
-  Enterprise from £22,500. Saved vs two singles: £179 / £299 / £449 / £749 (`.pl-sv`; not
+  Dual Pro £1,319 (£10,500, £5,250 each) · Dual Scale £1,799 (£18,000, £9,000 each) · Dual
+  Enterprise from £18,000. Saved vs two singles: £179 / £299 / £439 / £599 (`.pl-sv`; not
   derived at runtime). Each dual row states "up to £X total" plus "£Y on each platform" in
   `.pl-who`; the `.pt-half` line says "Second platform at half price · 50% more ad budget,
   split equally between both platforms". WHY: the earlier ladder (Dual Launch/Starter with
