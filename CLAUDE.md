@@ -77,29 +77,30 @@ Section order (reordered 2026-07-23, proof-first for mobile — Clarity showed 5
   its keep). Starter is now the floor for SINGLE plans.
   £ list (the only fixed one): Starter 349 (cap 2,000) · Growth 599
   (4,000) · Pro 899 (7,000, highlighted) · Scale 1,499 (12,000) · Enterprise on request.
-  **Dual Starter REMOVED too, same day** (Danyal directive — its £2,000 total-spend cap was
-  too low to run two platforms meaningfully). Dual Growth is now the DUAL floor.
-  Dual (caps = TOTAL spend): 899 · 1,349 · 2,249 — the rule is **second platform
-  at half price** (single × 1.5, rounded with the site's own nearest-9 rule) and Growth/Pro/
-  Scale dual prices ARE the exact formula output — do not touch those. (Dual Starter, while
-  it existed, was a manual +£10 override over the strict formula, same pattern as the dual
-  setup fee below; that override is now moot since the tier is gone — don't resurrect it if
-  Dual Starter ever comes back without re-confirming the figure with Danyal.)
-  Saving vs two singles: £299 / £449 / £749, and those are the
-  `.pl-sv` "saved" spans. If a dual price changes, the saving span must change with it —
-  it is not derived at runtime.
+  **DUAL SYSTEM REBUILT 2026-09-26 (Danyal's rule, approved table):** dual = single price
+  × 1.5 (second platform at half price, nearest-9 rounding) AND single budget cap × 1.5,
+  the total budget being split equally between Google and Meta. Dual caps are TOTAL spend:
+  Dual Starter £519 (£3,000 total, £1,500 each) · Dual Growth £899 (£6,000, £3,000 each) ·
+  Dual Pro £1,349 (£10,500, £5,250 each) · Dual Scale £2,249 (£18,000, £9,000 each) · Dual
+  Enterprise from £18,000. Saved vs two singles: £179 / £299 / £449 / £749 (`.pl-sv`; not
+  derived at runtime). Each dual row states "up to £X total" plus "£Y on each platform" in
+  `.pl-who`; the `.pt-half` line says "Second platform at half price · 50% more ad budget,
+  split equally between both platforms". WHY: the earlier ladder (Dual Launch/Starter with
+  caps equal to single caps, TOTAL) made dual dearer than two singles (single £349 for £2,000
+  → two platforms £698, yet dual said £899). Dual Starter is BACK at the formula £519 (the
+  old manual £529 override is gone). Never make dual dearer than two singles covering the
+  same per-platform budget — check this before changing any price or cap.
   One-off & add-ons (`.plx`): Analyse + Marketing-Plan free · Setup & Conversion-Tracking
   **£149 single / £229 dual** one-off, REPRICED 2026-09-21 from £129/£199 (`.pl-sx`/`.pl-dx`
   swap with togPr), WAIVED when the client's tracking already works (Gandke model) ·
   AI creatives £149/mo (6 ads × 2 formats). The setup single and the creatives add-on
   are both £149 — same pattern as before, Danyal kept it. Dual setup is a MANUAL override
-  too, same as Dual Starter above: the strict half-price formula gives 149 × 1.5 = 223.5 →
+  too: the strict half-price formula gives 149 × 1.5 = 223.5 →
   nearest-9 £219, but Danyal corrected it to £229 (2026-09-21). This is consistent with the
   pre-2026-09-21 dual setup, which was also a manual override (£199, chosen over the strict
   £189 because it reused the now-removed Launch trio £199/€229/$269 — that reasoning is
   gone now Launch is gone, but the "manual, not strict formula" pattern continues). Do not
-  assume dual = single × 1.5 rounded is exact for either Dual Starter or dual setup —
-  verify both against this file, not by recomputing.
+  assume dual setup = single × 1.5 rounded — verify against this file, not by recomputing.
   It lives in the homepage FAQ (DE+EN, accordion + schema), the two price guides,
   ratgeber/meta-ads-kosten, and on the price block itself as
   `<div class="pt-half">` directly under the platform toggle, on all four price pages —
