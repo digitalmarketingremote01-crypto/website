@@ -49,8 +49,9 @@ p{color:var(--tx)}
 .hero-stats{display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap;padding-top:1.75rem;border-top:1px solid var(--bd);max-width:640px;margin:0 auto}
 .hs-n{font-size:1.7rem;font-weight:800;color:var(--c2);line-height:1}.hs-l{font-size:.75rem;color:var(--mt);margin-top:.3rem}
 .case{background:#fff;border:1.5px solid rgba(201,112,47,.1);border-radius:20px;overflow:hidden;box-shadow:0 4px 25px rgba(0,0,0,.06);margin-bottom:2.5rem}
-.case-shots{display:grid;grid-template-columns:1fr;background:var(--bd)}
-.case-img{background:#fff;padding:0;overflow:hidden;position:relative}
+.case-shots{display:grid;grid-template-columns:1fr;background:var(--bd);align-items:start}
+.case-shots.single{grid-template-columns:1fr}
+.case-img{background:#fff;padding:0;overflow:hidden;position:relative;align-self:start}
 .case-img img{width:100%;display:block;cursor:zoom-in;transition:transform .3s ease}
 .case-img:hover img{transform:scale(1.02)}
 .case-img .zoom-hint{position:absolute;bottom:.6rem;right:.6rem;background:rgba(30,24,18,.72);color:#fff;font-size:.68rem;font-weight:600;padding:.3rem .65rem;border-radius:20px;pointer-events:none;display:flex;align-items:center;gap:.3rem}
@@ -63,10 +64,17 @@ p{color:var(--tx)}
 .case-story h4{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--mt);margin:.9rem 0 .3rem}
 .case-story h4:first-child{margin-top:0}
 .case-story p{font-size:.9rem;color:var(--tx);line-height:1.7;margin:0}
-.lightbox{display:none;position:fixed;inset:0;z-index:3000;background:rgba(20,16,12,.92);align-items:center;justify-content:center;padding:2rem;cursor:zoom-out}
+.lightbox{display:none;position:fixed;inset:0;z-index:3000;background:rgba(20,16,12,.92);align-items:center;justify-content:center;padding:2rem}
 .lightbox.open{display:flex}
-.lightbox img{max-width:100%;max-height:100%;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
-.lightbox-close{position:absolute;top:1.25rem;right:1.5rem;background:rgba(255,255,255,.12);color:#fff;border:0;width:40px;height:40px;border-radius:50%;font-size:1.1rem;cursor:pointer}
+.lightbox img{max-width:100%;max-height:100%;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,.5);cursor:default}
+.lightbox-close{position:absolute;top:1.25rem;right:1.5rem;background:rgba(255,255,255,.12);color:#fff;border:0;width:40px;height:40px;border-radius:50%;font-size:1.1rem;cursor:pointer;z-index:1}
+.lightbox-nav{position:absolute;top:0;bottom:0;width:15%;min-width:60px;display:none;align-items:center;justify-content:center;background:0;border:0;color:#fff;font-size:2rem;cursor:pointer;transition:background .2s}
+.lightbox-nav:hover{background:rgba(255,255,255,.06)}
+.lightbox-nav.prev{left:0}
+.lightbox-nav.next{right:0}
+.lightbox.has-nav .lightbox-nav{display:flex}
+.lightbox-count{position:absolute;bottom:1.25rem;left:50%;transform:translateX(-50%);background:rgba(255,255,255,.12);color:#fff;font-size:.75rem;font-weight:600;padding:.3rem .8rem;border-radius:20px;display:none}
+.lightbox.has-nav .lightbox-count{display:block}
 .offer{background:linear-gradient(135deg,#2b1f14 0%,var(--c1) 100%);border-radius:24px;padding:3rem;color:#fff}
 .offer h2{color:#fff;margin-bottom:.6rem}
 .offer>p{color:rgba(255,255,255,.65);margin-bottom:1.5rem;font-size:.95rem}
@@ -122,7 +130,7 @@ footer a{color:rgba(255,255,255,.72)}footer a:hover{color:#fff}
 
 <div class="case rv">
 <div class="case-shots">
-<div class="case-img"><img src="/case-proptech.webp" alt="B2B PropTech lead generation results" loading="lazy" onclick="openImg(this.src)"><span class="zoom-hint">🔍 Google Ads</span></div>
+<div class="case-img"><img src="/case-proptech.webp" alt="B2B PropTech lead generation results" loading="lazy" onclick="openImg(this)"><span class="zoom-hint">🔍 Google Ads</span></div>
 </div>
 <div class="case-body">
 <div class="case-niche">B2B SaaS · Construction · International</div>
@@ -145,7 +153,7 @@ footer a{color:rgba(255,255,255,.72)}footer a:hover{color:#fff}
 
 <div class="case rv">
 <div class="case-shots">
-<div class="case-img"><img src="/case-autofolierung.webp" alt="High-ticket local trade lead generation results" loading="lazy" onclick="openImg(this.src)"><span class="zoom-hint">🔍 Google Ads</span></div>
+<div class="case-img"><img src="/case-autofolierung.webp" alt="High-ticket local trade lead generation results" loading="lazy" onclick="openImg(this)"><span class="zoom-hint">🔍 Google Ads</span></div>
 </div>
 <div class="case-body">
 <div class="case-niche">Trade · Premium local service · Germany</div>
@@ -168,7 +176,7 @@ footer a{color:rgba(255,255,255,.72)}footer a:hover{color:#fff}
 
 <div class="case rv">
 <div class="case-shots">
-<div class="case-img"><img src="/case-solar-webapp.webp" alt="Solar analysis web app sign-up results" loading="lazy" onclick="openImg(this.src)"><span class="zoom-hint">🔍 Google Ads</span></div>
+<div class="case-img"><img src="/case-solar-webapp.webp" alt="Solar analysis web app sign-up results" loading="lazy" onclick="openImg(this)"><span class="zoom-hint">🔍 Google Ads</span></div>
 </div>
 <div class="case-body">
 <div class="case-niche">SaaS web app · Solar energy · Germany</div>
@@ -191,7 +199,7 @@ footer a{color:rgba(255,255,255,.72)}footer a:hover{color:#fff}
 
 <div class="case rv">
 <div class="case-shots">
-<div class="case-img"><img src="/case-design-saas.webp" alt="Design plugin download campaign results" loading="lazy" onclick="openImg(this.src)"><span class="zoom-hint">🔍 Google Ads</span></div>
+<div class="case-img"><img src="/case-design-saas.webp" alt="Design plugin download campaign results" loading="lazy" onclick="openImg(this)"><span class="zoom-hint">🔍 Google Ads</span></div>
 </div>
 <div class="case-body">
 <div class="case-niche">SaaS plugin · Design software · Germany</div>
@@ -256,7 +264,13 @@ footer a{color:rgba(255,255,255,.72)}footer a:hover{color:#fff}
 <a href="/lead-generation" class="btn bo bl">Back to this page</a>
 </div></div>
 
-<div class="lightbox" id="lightbox" onclick="closeImg()"><button class="lightbox-close" onclick="closeImg();event.stopPropagation()">✕</button><img id="lightboxImg" src="" alt="Full-size screenshot"></div>
+<div class="lightbox" id="lightbox" onclick="closeImg()">
+<button class="lightbox-close" onclick="closeImg();event.stopPropagation()">✕</button>
+<button class="lightbox-nav prev" onclick="navImg(-1);event.stopPropagation()" aria-label="Previous screenshot">‹</button>
+<img id="lightboxImg" src="" alt="Full-size screenshot" onclick="event.stopPropagation()">
+<button class="lightbox-nav next" onclick="navImg(1);event.stopPropagation()" aria-label="Next screenshot">›</button>
+<span class="lightbox-count" id="lightboxCount"></span>
+</div>
 
 <footer><div class="ctn">
 <span>© 2024–2026 Digital Marketing Remote · Mohammad Danyal Shahzad</span>
@@ -265,9 +279,16 @@ footer a{color:rgba(255,255,255,.72)}footer a:hover{color:#fff}
 
 <script>
 function calClick(label){window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'calendly_click','btn_label':label});}
-function openImg(src){document.getElementById('lightboxImg').src=src;document.getElementById('lightbox').classList.add('open');document.body.style.overflow='hidden';}
+var lbImgs=[],lbIdx=0;
+function openImg(el){lbImgs=Array.from(el.closest('.case-shots').querySelectorAll('img'));lbIdx=lbImgs.indexOf(el);
+var box=document.getElementById('lightbox');box.classList.toggle('has-nav',lbImgs.length>1);
+showLbImg();box.classList.add('open');document.body.style.overflow='hidden';}
+function showLbImg(){document.getElementById('lightboxImg').src=lbImgs[lbIdx].src;
+if(lbImgs.length>1)document.getElementById('lightboxCount').textContent=(lbIdx+1)+' / '+lbImgs.length;}
+function navImg(dir){if(lbImgs.length<2)return;lbIdx=(lbIdx+dir+lbImgs.length)%lbImgs.length;showLbImg();}
 function closeImg(){document.getElementById('lightbox').classList.remove('open');document.body.style.overflow='';}
-document.addEventListener('keydown',function(e){if(e.key==='Escape')closeImg();});
+document.addEventListener('keydown',function(e){if(!document.getElementById('lightbox').classList.contains('open'))return;
+if(e.key==='Escape')closeImg();else if(e.key==='ArrowLeft')navImg(-1);else if(e.key==='ArrowRight')navImg(1);});
 function dmrConv(v){window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'dmr_conversion','conv_value':v});
 if(window.fbq)fbq('trackCustom','DMRConversion',{value:v,currency:'USD'});}
 
