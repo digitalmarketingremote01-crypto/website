@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
 <title>Google & Meta Ads for Lead Generation | Digital Marketing Remote</title>
-<meta name="description" content="63 qualified B2B leads at £11.45 CPA. Real lead-gen campaign data. Google & Meta Ads for UK businesses that need booked calls and quote requests. Free audit & marketing plan.">
+<meta name="description" content="63 qualified B2B leads at €11.45 CPA. Real lead-gen campaign data. Google & Meta Ads for UK businesses that need booked calls and quote requests. Free audit & marketing plan.">
 <meta name="robots" content="noindex,follow">
 <link rel="canonical" href="https://www.digitalmarketingremote.com/lead-generation">
 <link rel="icon" href="/favicon.ico" sizes="any">
@@ -15,7 +15,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.digitalmarketingremote.com/lead-generation">
 <meta property="og:title" content="Google & Meta Ads for Lead Generation — Digital Marketing Remote">
-<meta property="og:description" content="63 qualified leads at £11.45 CPA. Real lead-gen results. Free audit & marketing plan.">
+<meta property="og:description" content="63 qualified leads at €11.45 CPA. Real lead-gen results. Free audit & marketing plan.">
 <meta property="og:image" content="https://www.digitalmarketingremote.com/danyal-hero.jpeg">
 <meta name="twitter:card" content="summary_large_image">
 <style>
@@ -48,15 +48,25 @@ p{color:var(--tx)}
 .hero-ctas{display:flex;justify-content:center;gap:.85rem;flex-wrap:wrap;margin-bottom:2rem}
 .hero-stats{display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap;padding-top:1.75rem;border-top:1px solid var(--bd);max-width:640px;margin:0 auto}
 .hs-n{font-size:1.7rem;font-weight:800;color:var(--c2);line-height:1}.hs-l{font-size:.75rem;color:var(--mt);margin-top:.3rem}
-.case{background:#fff;border:1.5px solid rgba(201,112,47,.1);border-radius:20px;overflow:hidden;box-shadow:0 4px 25px rgba(0,0,0,.06);margin-bottom:2rem;display:grid;grid-template-columns:280px 1fr}
-.case-img{background:#fff;padding:1.5rem;display:flex;align-items:center;justify-content:center;border-right:1px solid var(--bd)}
-.case-img img{border-radius:10px}
+.case{background:#fff;border:1.5px solid rgba(201,112,47,.1);border-radius:20px;overflow:hidden;box-shadow:0 4px 25px rgba(0,0,0,.06);margin-bottom:2.5rem}
+.case-shots{display:grid;grid-template-columns:1fr;background:var(--bd)}
+.case-img{background:#fff;padding:0;overflow:hidden;position:relative}
+.case-img img{width:100%;display:block;cursor:zoom-in;transition:transform .3s ease}
+.case-img:hover img{transform:scale(1.02)}
+.case-img .zoom-hint{position:absolute;bottom:.6rem;right:.6rem;background:rgba(30,24,18,.72);color:#fff;font-size:.68rem;font-weight:600;padding:.3rem .65rem;border-radius:20px;pointer-events:none;display:flex;align-items:center;gap:.3rem}
 .case-body{padding:2rem 2.25rem}
 .case-niche{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--c2);margin-bottom:.6rem}
 .case-title{font-size:1.15rem;margin-bottom:1rem}
 .case-nums{display:flex;gap:1.75rem;margin-bottom:1.1rem;flex-wrap:wrap}
 .cn-v{font-size:1.5rem;font-weight:800;color:var(--c2);line-height:1}.cn-l{font-size:.72rem;color:var(--mt);margin-top:.25rem;font-weight:600}
-.case-r{font-size:.9rem;color:var(--tx);line-height:1.7}
+.case-story{margin-top:.5rem}
+.case-story h4{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--mt);margin:.9rem 0 .3rem}
+.case-story h4:first-child{margin-top:0}
+.case-story p{font-size:.9rem;color:var(--tx);line-height:1.7;margin:0}
+.lightbox{display:none;position:fixed;inset:0;z-index:3000;background:rgba(20,16,12,.92);align-items:center;justify-content:center;padding:2rem;cursor:zoom-out}
+.lightbox.open{display:flex}
+.lightbox img{max-width:100%;max-height:100%;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.lightbox-close{position:absolute;top:1.25rem;right:1.5rem;background:rgba(255,255,255,.12);color:#fff;border:0;width:40px;height:40px;border-radius:50%;font-size:1.1rem;cursor:pointer}
 .offer{background:linear-gradient(135deg,#2b1f14 0%,var(--c1) 100%);border-radius:24px;padding:3rem;color:#fff}
 .offer h2{color:#fff;margin-bottom:.6rem}
 .offer>p{color:rgba(255,255,255,.65);margin-bottom:1.5rem;font-size:.95rem}
@@ -81,7 +91,7 @@ footer a{color:rgba(255,255,255,.72)}footer a:hover{color:#fff}
 .ty-inner{max-width:460px}.ty-icon{font-size:3.5rem;margin-bottom:1rem}.ty-inner h2{margin-bottom:.75rem;font-size:1.75rem}.ty-inner p{color:var(--tx);margin-bottom:1.5rem}
 .rv{opacity:0;transform:translateY(20px);transition:opacity .7s var(--ease),transform .7s var(--ease)}.rv.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
-@media(max-width:768px){#hero{padding:7.5rem 0 3rem}.sec{padding:3.25rem 0}.case{grid-template-columns:1fr}.case-img{border-right:0;border-bottom:1px solid var(--bd)}.case-body{padding:1.5rem}.case-nums{gap:1.25rem}.offer{padding:1.75rem}.fit{flex-direction:column}.hero-stats{gap:1.5rem}}
+@media(max-width:768px){#hero{padding:7.5rem 0 3rem}.sec{padding:3.25rem 0}.case-body{padding:1.5rem}.case-nums{gap:1.25rem}.offer{padding:1.75rem}.fit{flex-direction:column}.hero-stats{gap:1.5rem}}
 </style>
 </head>
 <body>
@@ -94,7 +104,7 @@ footer a{color:rgba(255,255,255,.72)}footer a:hover{color:#fff}
 <main id="main">
 <section id="hero"><div class="ctn">
 <div class="hey rv">📞 Lead Generation · Google &amp; Meta Ads · UK</div>
-<h1 class="rv">63 qualified B2B leads at <em>£11.45 per lead</em> — real Google Ads data.</h1>
+<h1 class="rv">63 qualified B2B leads at <em>€11.45 per lead</em> — real Google Ads data.</h1>
 <p class="hero-sub rv">Google &amp; Meta Ads for UK businesses that need booked calls, quote requests or signed-up customers — not just clicks. Real campaign data below.</p>
 <div class="hero-ctas rv">
 <a href="https://calendly.com/digitalmarketingremote01/30min" onclick="calClick('lp_leadgen_hero')" class="btn bp bl">Book a free call →</a>
@@ -102,39 +112,103 @@ footer a{color:rgba(255,255,255,.72)}footer a:hover{color:#fff}
 </div>
 <div class="hero-stats rv">
 <div><div class="hs-n">63</div><div class="hs-l">Qualified B2B leads</div></div>
-<div><div class="hs-n">£11.45</div><div class="hs-l">Cost per lead</div></div>
+<div><div class="hs-n">€11.45</div><div class="hs-l">Cost per lead</div></div>
 <div><div class="hs-n">9</div><div class="hs-l">High-ticket inquiries, one campaign</div></div>
 </div>
 </div></section>
 
 <section class="sec" style="background:var(--bg)"><div class="ctn">
-<div class="sh rv"><span class="sl">Real results</span><h2>No empty promises — just the numbers</h2><p>Two real lead-gen accounts our founder has run. Figures are unedited from the ad platforms.</p></div>
+<div class="sh rv"><span class="sl">Real results</span><h2>No empty promises — just the numbers</h2><p>Four real lead-gen accounts our founder has run. Figures are unedited from the ad platforms, in the currency they actually ran in.</p></div>
 
 <div class="case rv">
-<div class="case-img"><img src="/case-proptech.webp" alt="B2B lead generation campaign results" width="220" loading="lazy"></div>
+<div class="case-shots">
+<div class="case-img"><img src="/case-proptech.webp" alt="B2B PropTech lead generation results" loading="lazy" onclick="openImg(this.src)"><span class="zoom-hint">🔍 Google Ads</span></div>
+</div>
 <div class="case-body">
 <div class="case-niche">B2B SaaS · Construction · International</div>
-<h3 class="case-title">63 qualified B2B leads at £11.45 CPA</h3>
+<h3 class="case-title">63 qualified B2B leads at €11.45 CPA</h3>
 <div class="case-nums">
 <div><div class="cn-v">63</div><div class="cn-l">B2B leads</div></div>
-<div><div class="cn-v">£11.45</div><div class="cn-l">Cost per lead</div></div>
-<div><div class="cn-v">£721</div><div class="cn-l">Total budget</div></div>
+<div><div class="cn-v">€11.45</div><div class="cn-l">Cost per lead</div></div>
+<div><div class="cn-v">€721</div><div class="cn-l">Total budget</div></div>
 </div>
-<p class="case-r">German B2B construction software launched into an international market. A tight audience of architects and project developers, strict budget control: 542 clicks turned into 63 verified sign-ups on £721 of spend.</p>
+<div class="case-story">
+<h4>The challenge</h4>
+<p>German B2B construction software launched into an international market — the goal was getting qualified professionals to register for the app, in a category with no existing brand recognition.</p>
+<h4>What we did</h4>
+<p>Google Ads lead generation with a tight audience built around architects and project developers, and strict budget control from day one — no wide-net targeting hoping something sticks.</p>
+<h4>The result</h4>
+<p>542 clicks turned into 63 verified registrations on just €721 of spend — a €11.45 cost per lead, well below what's typical for B2B SaaS.</p>
+</div>
 </div>
 </div>
 
 <div class="case rv">
-<div class="case-img"><img src="/case-autofolierung.webp" alt="High-ticket local lead generation results" width="220" loading="lazy"></div>
+<div class="case-shots">
+<div class="case-img"><img src="/case-autofolierung.webp" alt="High-ticket local trade lead generation results" loading="lazy" onclick="openImg(this.src)"><span class="zoom-hint">🔍 Google Ads</span></div>
+</div>
 <div class="case-body">
 <div class="case-niche">Trade · Premium local service · Germany</div>
-<h3 class="case-title">9 high-ticket inquiries at £95 CPA</h3>
+<h3 class="case-title">9 high-ticket inquiries at €95 CPA</h3>
 <div class="case-nums">
 <div><div class="cn-v">957</div><div class="cn-l">Clicks</div></div>
 <div><div class="cn-v">9</div><div class="cn-l">Booking inquiries</div></div>
-<div><div class="cn-v">£95</div><div class="cn-l">Cost per inquiry</div></div>
+<div><div class="cn-v">€95</div><div class="cn-l">Cost per inquiry</div></div>
 </div>
-<p class="case-r">A premium local trade business winning clients with order values from £1,300 to £4,500+. High-intent keywords and consistent filtering of low-value traffic kept the cost per inquiry low in a competitive local market.</p>
+<div class="case-story">
+<h4>The challenge</h4>
+<p>Winning premium clients in a competitive local market, for a trade business with order values from €1,500 to €5,000+ — a market where one wasted click can cost real money.</p>
+<h4>What we did</h4>
+<p>Locally targeted Google Ads Search campaigns for the exact service area, built on high-intent keywords with consistent filtering of low-value traffic — not just more clicks, the right clicks.</p>
+<h4>The result</h4>
+<p>957 clicks and 9 verified booking inquiries on an €858 total budget — a €95 cost per inquiry, outstanding for a premium local service.</p>
+</div>
+</div>
+</div>
+
+<div class="case rv">
+<div class="case-shots">
+<div class="case-img"><img src="/case-solar-webapp.webp" alt="Solar analysis web app sign-up results" loading="lazy" onclick="openImg(this.src)"><span class="zoom-hint">🔍 Google Ads</span></div>
+</div>
+<div class="case-body">
+<div class="case-niche">SaaS web app · Solar energy · Germany</div>
+<h3 class="case-title">392 sign-ups in 5 weeks — €2.65 CPA</h3>
+<div class="case-nums">
+<div><div class="cn-v">392</div><div class="cn-l">Sign-ups</div></div>
+<div><div class="cn-v">€2.65</div><div class="cn-l">Cost per sign-up</div></div>
+<div><div class="cn-v">584%</div><div class="cn-l">ROAS</div></div>
+</div>
+<div class="case-story">
+<h4>The challenge</h4>
+<p>A specialised web app for photovoltaic analysis needed to launch on the German market — the goal was getting qualified energy professionals to actually register, not just visit.</p>
+<h4>What we did</h4>
+<p>A Google Ads campaign with precise keyword control on technical, industry-specific terms, plus continuous A/B testing of ad copy and landing-page changes as real data came in.</p>
+<h4>The result</h4>
+<p>6,650 clicks and 392 sign-ups in 5 weeks flat. €2.65 cost per sign-up — well below the benchmark for B2B SaaS in the German market.</p>
+</div>
+</div>
+</div>
+
+<div class="case rv">
+<div class="case-shots">
+<div class="case-img"><img src="/case-design-saas.webp" alt="Design plugin download campaign results" loading="lazy" onclick="openImg(this.src)"><span class="zoom-hint">🔍 Google Ads</span></div>
+</div>
+<div class="case-body">
+<div class="case-niche">SaaS plugin · Design software · Germany</div>
+<h3 class="case-title">504 downloads in 26 days — €1.09 CPA</h3>
+<div class="case-nums">
+<div><div class="cn-v">504</div><div class="cn-l">Downloads</div></div>
+<div><div class="cn-v">€1.09</div><div class="cn-l">Cost per download</div></div>
+<div><div class="cn-v">918%</div><div class="cn-l">ROAS</div></div>
+</div>
+<div class="case-story">
+<h4>The challenge</h4>
+<p>A new plugin for a leading design platform, starting from zero — the goal was getting qualified designers and developers to actually download it, not just click an ad.</p>
+<h4>What we did</h4>
+<p>Google Ads targeting designers and developers specifically, with a seamless journey from the ad straight through to the download — no friction to lose people on the way.</p>
+<h4>The result</h4>
+<p>2,560 clicks and 504 downloads in under a month. €1.09 cost per download — exceptional for the German SaaS market.</p>
+</div>
 </div>
 </div>
 
@@ -182,6 +256,8 @@ footer a{color:rgba(255,255,255,.72)}footer a:hover{color:#fff}
 <a href="/lead-generation" class="btn bo bl">Back to this page</a>
 </div></div>
 
+<div class="lightbox" id="lightbox" onclick="closeImg()"><button class="lightbox-close" onclick="closeImg();event.stopPropagation()">✕</button><img id="lightboxImg" src="" alt="Full-size screenshot"></div>
+
 <footer><div class="ctn">
 <span>© 2024–2026 Digital Marketing Remote · Mohammad Danyal Shahzad</span>
 <div class="ft-links"><a href="/en/imprint">Imprint</a><a href="/en/privacy">Privacy Policy</a><a href="#" onclick="ckSettings();return false;">Cookie settings</a></div>
@@ -189,6 +265,9 @@ footer a{color:rgba(255,255,255,.72)}footer a:hover{color:#fff}
 
 <script>
 function calClick(label){window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'calendly_click','btn_label':label});}
+function openImg(src){document.getElementById('lightboxImg').src=src;document.getElementById('lightbox').classList.add('open');document.body.style.overflow='hidden';}
+function closeImg(){document.getElementById('lightbox').classList.remove('open');document.body.style.overflow='';}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeImg();});
 function dmrConv(v){window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'dmr_conversion','conv_value':v});
 if(window.fbq)fbq('trackCustom','DMRConversion',{value:v,currency:'USD'});}
 

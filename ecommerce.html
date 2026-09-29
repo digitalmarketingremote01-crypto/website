@@ -48,16 +48,27 @@ p{color:var(--tx)}
 .hero-ctas{display:flex;justify-content:center;gap:.85rem;flex-wrap:wrap;margin-bottom:2rem}
 .hero-stats{display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap;padding-top:1.75rem;border-top:1px solid var(--bd);max-width:640px;margin:0 auto}
 .hs-n{font-size:1.7rem;font-weight:800;color:var(--c2);line-height:1}.hs-l{font-size:.75rem;color:var(--mt);margin-top:.3rem}
-.case{background:#fff;border:1.5px solid rgba(201,112,47,.1);border-radius:20px;overflow:hidden;box-shadow:0 4px 25px rgba(0,0,0,.06);margin-bottom:2rem;display:grid;grid-template-columns:280px 1fr}
-.case-img{background:#fff;padding:1.5rem;display:flex;align-items:center;justify-content:center;border-right:1px solid var(--bd)}
-.case-img img{border-radius:10px}
+.case{background:#fff;border:1.5px solid rgba(201,112,47,.1);border-radius:20px;overflow:hidden;box-shadow:0 4px 25px rgba(0,0,0,.06);margin-bottom:2.5rem}
+.case-shots{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--bd)}
+.case-shots.single{grid-template-columns:1fr}
+.case-img{background:#fff;padding:0;overflow:hidden;position:relative}
+.case-img img{width:100%;display:block;cursor:zoom-in;transition:transform .3s ease}
+.case-img:hover img{transform:scale(1.02)}
+.case-img .zoom-hint{position:absolute;bottom:.6rem;right:.6rem;background:rgba(30,24,18,.72);color:#fff;font-size:.68rem;font-weight:600;padding:.3rem .65rem;border-radius:20px;pointer-events:none;display:flex;align-items:center;gap:.3rem}
 .case-body{padding:2rem 2.25rem}
 .case-niche{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--c2);margin-bottom:.6rem}
 .case-title{font-size:1.15rem;margin-bottom:1rem}
 .case-nums{display:flex;gap:1.75rem;margin-bottom:1.1rem;flex-wrap:wrap}
 .cn-v{font-size:1.5rem;font-weight:800;color:var(--c2);line-height:1}.cn-l{font-size:.72rem;color:var(--mt);margin-top:.25rem;font-weight:600}
-.case-r{font-size:.9rem;color:var(--tx);line-height:1.7}
-.proof{background:var(--bg);border:1.5px solid var(--bd);border-radius:16px;padding:1.75rem;margin-top:1.25rem}
+.case-story{margin-top:.5rem}
+.case-story h4{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--mt);margin:.9rem 0 .3rem}
+.case-story h4:first-child{margin-top:0}
+.case-story p{font-size:.9rem;color:var(--tx);line-height:1.7;margin:0}
+.proof{background:var(--bg);border:1.5px solid var(--bd);border-radius:16px;padding:1.75rem;margin-top:1.5rem}
+.lightbox{display:none;position:fixed;inset:0;z-index:3000;background:rgba(20,16,12,.92);align-items:center;justify-content:center;padding:2rem;cursor:zoom-out}
+.lightbox.open{display:flex}
+.lightbox img{max-width:100%;max-height:100%;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.lightbox-close{position:absolute;top:1.25rem;right:1.5rem;background:rgba(255,255,255,.12);color:#fff;border:0;width:40px;height:40px;border-radius:50%;font-size:1.1rem;cursor:pointer}
 .proof-stars{color:#fbbf24;font-size:.85rem;margin-bottom:.6rem;letter-spacing:2px}
 .proof-text{font-size:.92rem;color:var(--tx);margin-bottom:1rem;line-height:1.75;font-style:italic}
 .proof-author{display:flex;align-items:center;gap:.6rem}
@@ -87,7 +98,7 @@ footer a{color:rgba(255,255,255,.72)}footer a:hover{color:#fff}
 .ty-inner{max-width:460px}.ty-icon{font-size:3.5rem;margin-bottom:1rem}.ty-inner h2{margin-bottom:.75rem;font-size:1.75rem}.ty-inner p{color:var(--tx);margin-bottom:1.5rem}
 .rv{opacity:0;transform:translateY(20px);transition:opacity .7s var(--ease),transform .7s var(--ease)}.rv.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
-@media(max-width:768px){#hero{padding:7.5rem 0 3rem}.sec{padding:3.25rem 0}.case{grid-template-columns:1fr}.case-img{border-right:0;border-bottom:1px solid var(--bd)}.case-body{padding:1.5rem}.case-nums{gap:1.25rem}.offer{padding:1.75rem}.fit{flex-direction:column}.hero-stats{gap:1.5rem}}
+@media(max-width:768px){#hero{padding:7.5rem 0 3rem}.sec{padding:3.25rem 0}.case-shots{grid-template-columns:1fr}.case-body{padding:1.5rem}.case-nums{gap:1.25rem}.offer{padding:1.75rem}.fit{flex-direction:column}.hero-stats{gap:1.5rem}}
 </style>
 </head>
 <body>
@@ -117,7 +128,10 @@ footer a{color:rgba(255,255,255,.72)}footer a:hover{color:#fff}
 <div class="sh rv"><span class="sl">Real results</span><h2>No empty promises — just the numbers</h2><p>Two real e-commerce accounts our founder has run. Figures are unedited from the ad platforms.</p></div>
 
 <div class="case rv">
-<div class="case-img"><img src="/case-ki-startup-ads.webp" alt="E-commerce campaign results" width="220" loading="lazy"></div>
+<div class="case-shots">
+<div class="case-img"><img src="/case-ki-startup-ads-v2.webp" alt="Google Ads results, AI e-commerce store" loading="lazy" onclick="openImg(this.src)"><span class="zoom-hint">🔍 Google Ads</span></div>
+<div class="case-img"><img src="/case-ki-startup-shopify-v2.webp" alt="Shopify revenue dashboard, AI e-commerce store" loading="lazy" onclick="openImg(this.src)"><span class="zoom-hint">🔍 Shopify</span></div>
+</div>
 <div class="case-body">
 <div class="case-niche">E-Commerce · AI product · Pet supplies · International</div>
 <h3 class="case-title">From Germany into 11 markets — €1.7M revenue in 18 months</h3>
@@ -126,12 +140,27 @@ footer a{color:rgba(255,255,255,.72)}footer a:hover{color:#fff}
 <div><div class="cn-v">511%</div><div class="cn-l">ROAS (Google)</div></div>
 <div><div class="cn-v">11</div><div class="cn-l">Countries</div></div>
 </div>
-<p class="case-r">Launched with zero brand awareness. €1.1M of the €1.7M is attributed directly to Google Ads at 511% ROAS, verified in the store's own Shopify dashboard. Scaled into 10 more markets on the back of the German learning curve.</p>
+<div class="case-story">
+<h4>The challenge</h4>
+<p>Launching an AI product in the e-commerce segment — a product that needs explaining, with zero existing brand awareness anywhere, starting from scratch in Germany before scaling further.</p>
+<h4>What we did</h4>
+<p>A multi-channel approach with localised Google and Meta Ads for each new market, GA4 and Google Tag Manager tracking for complete data capture, and a gradual, deliberate expansion into 10 more European and international markets — each one built on the learning curve from the German launch, not copy-pasted blind.</p>
+<h4>The result</h4>
+<p>€1.7M total revenue, verified in the store's own Shopify dashboard. €1.1M of that is attributed directly to Google Ads at 511% ROAS. A real, paying presence in 11 countries within 18 months of starting from nothing.</p>
+</div>
+<div class="proof">
+<div class="proof-stars">★★★★★</div>
+<p class="proof-text">"I'm really glad about this much transparency. It gives me a good feeling."</p>
+<div class="proof-author"><div class="proof-av">FM</div><div><div class="proof-name">Florian Marthaler</div><div class="proof-role">Managing Director · GetXdone &amp; Craft AEC · Germany</div></div></div>
+</div>
 </div>
 </div>
 
 <div class="case rv">
-<div class="case-img"><img src="/case-ecommerce-brand.webp" alt="Loganberry Official campaign results" width="220" loading="lazy"></div>
+<div class="case-shots">
+<div class="case-img"><img src="/case-loganberry-ads.webp" alt="Loganberry Official Google Ads results" loading="lazy" onclick="openImg(this.src)"><span class="zoom-hint">🔍 Google Ads</span></div>
+<div class="case-img"><img src="/loganberry-proof.webp" alt="Loganberry Official verified results" loading="lazy" onclick="openImg(this.src)"><span class="zoom-hint">🔍 Verified</span></div>
+</div>
 <div class="case-body">
 <div class="case-niche">E-Commerce · Consumer goods · International</div>
 <h3 class="case-title">From zero to 2,350 conversions in 11 months</h3>
@@ -140,7 +169,14 @@ footer a{color:rgba(255,255,255,.72)}footer a:hover{color:#fff}
 <div><div class="cn-v">294%</div><div class="cn-l">ROAS</div></div>
 <div><div class="cn-v">11 mo</div><div class="cn-l">Duration</div></div>
 </div>
-<p class="case-r">A new consumer-goods brand launched from zero and scaled profitably through its own online shop — full market analysis, keyword research and 11 months of continuous optimisation.</p>
+<div class="case-story">
+<h4>The challenge</h4>
+<p>A new consumer-goods brand with no brand awareness at all, starting from scratch, needing to prove its own online shop could sell profitably before scaling any further.</p>
+<h4>What we did</h4>
+<p>Full Google Ads strategy: market analysis, real keyword research, combined search campaigns, and 11 straight months of continuous optimisation — no set-and-forget, every week's data feeding the next week's decisions.</p>
+<h4>The result</h4>
+<p>2,350 conversions and a stable 294% ROAS held across the entire 11-month period, not just a lucky spike — verified directly in the account, screenshots above.</p>
+</div>
 <div class="proof">
 <div class="proof-stars">★★★★★</div>
 <p class="proof-text">"Our Google Ads went from nothing to 2.35k conversions at 294% ROAS this year, all handled by Danyal. Profitable, transparent, and always there when we needed him. Would work with him again in a heartbeat."</p>
@@ -193,6 +229,8 @@ footer a{color:rgba(255,255,255,.72)}footer a:hover{color:#fff}
 <a href="/ecommerce" class="btn bo bl">Back to this page</a>
 </div></div>
 
+<div class="lightbox" id="lightbox" onclick="closeImg()"><button class="lightbox-close" onclick="closeImg();event.stopPropagation()">✕</button><img id="lightboxImg" src="" alt="Full-size screenshot"></div>
+
 <footer><div class="ctn">
 <span>© 2024–2026 Digital Marketing Remote · Mohammad Danyal Shahzad</span>
 <div class="ft-links"><a href="/en/imprint">Imprint</a><a href="/en/privacy">Privacy Policy</a><a href="#" onclick="ckSettings();return false;">Cookie settings</a></div>
@@ -200,6 +238,9 @@ footer a{color:rgba(255,255,255,.72)}footer a:hover{color:#fff}
 
 <script>
 function calClick(label){window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'calendly_click','btn_label':label});}
+function openImg(src){document.getElementById('lightboxImg').src=src;document.getElementById('lightbox').classList.add('open');document.body.style.overflow='hidden';}
+function closeImg(){document.getElementById('lightbox').classList.remove('open');document.body.style.overflow='';}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeImg();});
 function dmrConv(v){window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'dmr_conversion','conv_value':v});
 if(window.fbq)fbq('trackCustom','DMRConversion',{value:v,currency:'USD'});}
 
