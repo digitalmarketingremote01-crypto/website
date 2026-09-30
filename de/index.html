@@ -880,7 +880,7 @@ function handleHash(initial){
     /* initial===true + fresh calB flag = this pageload follows an in-popup booking that already pushed the event */
     var skip=false;
     if(initial===true){try{var t=+sessionStorage.getItem('calB')||0;skip=(Date.now()-t<120000);sessionStorage.removeItem('calB');}catch(e){}}
-    if(!skip){window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'calendly_booking'});if(window.fbq)fbq('trackCustom','CalendlyBooking');dmrConv(100);}}
+    if(!skip){window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'calendly_booking'});if(window.fbq)fbq('trackCustom','CalendlyBooking',{},{eventID:dmrBookId_()});dmrConv(100);}}
   else if(location.hash==='#danke'){showTY('form');}
 }
 handleHash(true);
@@ -965,11 +965,28 @@ document.addEventListener('click',function(e){var a=e.target&&e.target.closest?e
 e.preventDefault();
 _calLoad().then(function(){Calendly.initPopupWidget({url:a.href});})
 .catch(function(){_calLd=null;window.location.href=a.href;});});
+/* Booking -> server, so Meta can credit the ad that caused it. Consent-gated like every
+   other tag here; fires only on a real completed booking, and only when an ad click id
+   or the Meta browser id is present (nothing to attribute otherwise). */
+var _dmrBid='';
+function dmrBookId_(){if(!_dmrBid)_dmrBid='booking.'+Date.now()+'.'+Math.floor(Math.random()*1e6);return _dmrBid}
+function dmrBook_(){
+try{if(localStorage.getItem('dc')!=='y')return}catch(e){return}
+var s={};try{s=JSON.parse(sessionStorage.getItem('dmr_src'))||{}}catch(e){}
+var fbp='';try{fbp=(document.cookie.match(/(?:^|;\s*)_fbp=([^;]+)/)||[])[1]||''}catch(e){}
+if(!s.fbclid&&!fbp)return;
+var d=new URLSearchParams();d.set('booking','1');d.set('event_id',dmrBookId_());
+['fbclid','utm_source','utm_medium','utm_campaign','utm_term','utm_content'].forEach(function(k){if(s[k])d.set(k,s[k])});
+if(fbp)d.set('fbp',fbp);d.set('landing_page',s.landing||location.pathname);
+var u='https://script.google.com/macros/s/AKfycbzh2cM4CE_41OMhJIDtNvhWoyowjRlRpdRrgvboM7mEWyremHsMMlyiHIpEHQpsCorIzQ/exec';
+try{if(navigator.sendBeacon)navigator.sendBeacon(u,d);else fetch(u,{method:'POST',body:d,mode:'no-cors',keepalive:true})}catch(e){}
+}
 window.addEventListener('message',function(e){
 if(e.origin==='https://calendly.com'&&e.data&&e.data.event==='calendly.event_scheduled'){
 try{sessionStorage.setItem('calB',String(Date.now()))}catch(err){}
+try{dmrBook_()}catch(err){}
 if(window.Calendly&&Calendly.closePopupWidget)Calendly.closePopupWidget();
-if(location.hash==='#danke-termin'){window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'calendly_booking'});if(window.fbq)fbq('trackCustom','CalendlyBooking');dmrConv(100);}
+if(location.hash==='#danke-termin'){window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'calendly_booking'});if(window.fbq)fbq('trackCustom','CalendlyBooking',{},{eventID:dmrBookId_()});dmrConv(100);}
 else{location.hash='#danke-termin';}
 }});
 

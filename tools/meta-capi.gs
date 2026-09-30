@@ -152,3 +152,50 @@ function testMetaLead() {
   }});
   Logger.log('HTTP ' + code + ' (200 = success)');
 }
+
+/**
+ * Website booking -> Meta. Added 2026-09-30.
+ *
+ * WHY THIS EXISTS: markLeadBooked_ (MetaStages.gs) only reports a booking to Meta when the
+ * booker's email already sits in an Instant Form sheet. Every booking that came from the
+ * website instead of a form — Engagement-campaign traffic, the Instagram bio link, direct —
+ * returned 'no lead row' and was never sent, so Meta never saw it and no campaign could be
+ * credited. floyd barrett (Engagement campaign, AD-14) booked 30.09.2026 and produced nothing.
+ *
+ * The homepage posts here on Calendly's event_scheduled with the stored ad click id. That is
+ * better than reading Calendly's API: Calendly keeps the utm tags but has no fbclid, and the
+ * click id is what lets Meta credit the exact ad rather than guess from a hashed email.
+ *
+ * Consent: the browser only posts when the visitor accepted cookies (localStorage dc === 'y').
+ * event_id matches the browser pixel's eventID, so Meta deduplicates instead of double counting.
+ */
+function sendMetaBooking_(p) {
+  var user = {};
+  if (p.fbclid) user.fbc = 'fb.1.' + Date.now() + '.' + p.fbclid;
+  if (p.fbp)    user.fbp = p.fbp;
+  if (!user.fbc && !user.fbp) return 0;   // nothing Meta could attribute — don't send noise
+
+  var ev = {
+    event_name:       'CalendlyBooking',
+    event_time:       Math.floor(Date.now() / 1000),
+    action_source:    'website',
+    event_source_url: 'https://www.digitalmarketingremote.com' + (p.landing_page || '/'),
+    user_data:        user,
+    custom_data: {
+      utm_source:   p.utm_source   || '',
+      utm_medium:   p.utm_medium   || '',
+      utm_campaign: p.utm_campaign || '',
+      utm_content:  p.utm_content  || '',
+      utm_term:     p.utm_term     || ''
+    }
+  };
+  if (p.event_id) ev.event_id = p.event_id;
+
+  var res = UrlFetchApp.fetch(
+    'https://graph.facebook.com/v21.0/' + META_PIXEL_ID + '/events'
+      + '?access_token=' + encodeURIComponent(getMetaToken_()),
+    { method: 'post', contentType: 'application/json',
+      payload: JSON.stringify({ data: [ev] }), muteHttpExceptions: true });
+  console.log('Meta booking ' + res.getResponseCode() + ': ' + res.getContentText());
+  return res.getResponseCode();
+}
