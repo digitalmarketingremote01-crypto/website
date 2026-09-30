@@ -144,7 +144,9 @@ p{color:var(--tx)}
 .svc-icon{width:44px;height:44px;border-radius:10px;background:var(--c2l);display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
 .svc-icon svg{width:22px;height:22px;stroke:var(--c2);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .svc h3{margin-bottom:.5rem}.svc p{font-size:.85rem;color:var(--mt);line-height:1.65}
-a.svc{display:block;cursor:pointer}
+a.svc{display:flex;flex-direction:column;cursor:pointer}
+.svc-link{font-size:.85rem;font-weight:700;color:var(--c2);margin-top:auto;padding-top:.75rem;display:flex;align-items:center;gap:.3rem}
+a.svc:hover .svc-link{gap:.5rem;transition:gap .2s}
 /* Process */
 .proc-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:.75rem;position:relative}
 .proc-grid::before{content:'';position:absolute;top:26px;left:10%;right:10%;height:2px;background:linear-gradient(to right,var(--c2),var(--c2d));z-index:0}
@@ -534,8 +536,8 @@ h1{font-size:clamp(1.65rem,2.5vw,1.9rem);letter-spacing:-.025em;line-height:1.18
 <div class="svc-grid">
 <div class="svc"><div class="svc-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div><h3>Google Ads</h3><p>Search, Display &amp; Performance Max — High-Intent Keywords, strukturierte Negativ-Listen und Gebotsstrategien, konfiguriert für Ihren Markt und laufend auf maximalen Return on Ad Spend optimiert.</p></div>
 <div class="svc"><div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></div><h3>Meta Ads</h3><p>Facebook- &amp; Instagram-Kampagnen mit präzisem Zielgruppen-Targeting, Creative-Testing und Pixel-Tracking für messbare, skalierbare Conversions.</p></div>
-<a href="/de/ecommerce" class="svc"><div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div><h3>E-Commerce</h3><p>Google Shopping, Search &amp; Meta Katalog-Ads, die Shop-Traffic in bezahlte Bestellungen verwandeln. Echte E-Commerce-Ergebnisse ansehen →</p></a>
-<a href="/de/lead-generation" class="svc"><div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><h3>Lead-Generierung</h3><p>Kampagnen für gebuchte Termine und Anfragen, nicht nur Klicks. Echte Lead-Gen-Ergebnisse ansehen →</p></a>
+<a href="/de/ecommerce" class="svc"><div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div><h3>E-Commerce</h3><p>Google Shopping, Search &amp; Meta Katalog-Ads, die Shop-Traffic in bezahlte Bestellungen verwandeln.</p><span class="svc-link">Echte E-Commerce-Ergebnisse ansehen →</span></a>
+<a href="/de/lead-generation" class="svc"><div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><h3>Lead-Generierung</h3><p>Kampagnen für gebuchte Termine und Anfragen, nicht nur Klicks.</p><span class="svc-link">Echte Lead-Gen-Ergebnisse ansehen →</span></a>
 <div class="svc"><div class="svc-icon"><svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></div><h3>YouTube Ads</h3><p>Video-Kampagnen für Markenbekanntheit und Lead-Generierung — Sichtbarkeit genau dann, wenn Ihre Zielgruppe bereit ist, mehr zu erfahren.</p></div>
 <div class="svc"><div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg></div><h3>Tracking & Analytics</h3><p>GA4, Tag Manager &amp; Meta Pixel — sauber eingerichtet, damit jede Conversion zählt und jede Entscheidung datenbasiert ist.</p></div>
 </div>
