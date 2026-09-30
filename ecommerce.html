@@ -52,12 +52,20 @@ p{color:var(--tx)}
 .hero-stats{display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap;padding-top:1.75rem;border-top:1px solid var(--bd);max-width:640px;margin:0 auto}
 .hs-n{font-size:1.7rem;font-weight:800;color:var(--c2);line-height:1}.hs-l{font-size:.75rem;color:var(--mt);margin-top:.3rem}
 .case{background:#fff;border:1.5px solid rgba(201,112,47,.1);border-radius:20px;overflow:hidden;box-shadow:0 4px 25px rgba(0,0,0,.06);margin-bottom:2.5rem}
-.case-shots{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--bd);align-items:start}
-.case-shots.single{grid-template-columns:1fr}
-.case-img{background:#fff;padding:0;overflow:hidden;position:relative;align-self:start}
-.case-img img{width:100%;display:block;cursor:zoom-in;transition:transform .3s ease}
-.case-img:hover img{transform:scale(1.02)}
-.case-img .zoom-hint{position:absolute;bottom:.6rem;right:.6rem;background:rgba(30,24,18,.72);color:#fff;font-size:.68rem;font-weight:600;padding:.3rem .65rem;border-radius:20px;pointer-events:none;display:flex;align-items:center;gap:.3rem}
+.case-shots{position:relative;height:380px;background:#fff;overflow:hidden}
+.case-img{position:absolute;inset:0;display:none;align-items:center;justify-content:center}
+.case-img.active{display:flex}
+.case-img img{width:100%;height:100%;object-fit:contain;cursor:zoom-in}
+.case-nav{position:absolute;top:0;bottom:0;width:15%;min-width:50px;display:none;align-items:center;justify-content:center;background:0;border:0;color:var(--c1);font-size:1.8rem;cursor:pointer;z-index:2;opacity:.5;transition:opacity .2s,background .2s}
+.case-nav:hover{opacity:1;background:rgba(30,24,18,.05)}
+.case-nav.prev{left:0}
+.case-nav.next{right:0}
+.case-shots.multi .case-nav{display:flex}
+.case-dots{position:absolute;bottom:.7rem;left:0;right:0;display:none;justify-content:center;gap:.4rem;z-index:2}
+.case-shots.multi .case-dots{display:flex}
+.case-dot{width:7px;height:7px;border-radius:50%;background:rgba(30,24,18,.22);cursor:pointer;border:0;padding:0}
+.case-dot.active{background:var(--c2);width:18px;border-radius:4px;transition:width .2s}
+.case-shot-label{position:absolute;top:.7rem;left:.7rem;background:rgba(30,24,18,.72);color:#fff;font-size:.68rem;font-weight:600;padding:.3rem .65rem;border-radius:20px;pointer-events:none;z-index:2}
 .case-body{padding:2rem 2.25rem}
 .case-niche{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--c2);margin-bottom:.6rem}
 .case-title{font-size:1.15rem;margin-bottom:1rem}
@@ -108,7 +116,7 @@ footer a{color:rgba(255,255,255,.72)}footer a:hover{color:#fff}
 .ty-inner{max-width:460px}.ty-icon{font-size:3.5rem;margin-bottom:1rem}.ty-inner h2{margin-bottom:.75rem;font-size:1.75rem}.ty-inner p{color:var(--tx);margin-bottom:1.5rem}
 .rv{opacity:0;transform:translateY(20px);transition:opacity .7s var(--ease),transform .7s var(--ease)}.rv.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
-@media(max-width:768px){#hero{padding:7.5rem 0 3rem}.sec{padding:3.25rem 0}.case-shots{grid-template-columns:1fr}.case-body{padding:1.5rem}.case-nums{gap:1.25rem}.offer{padding:1.75rem}.fit{flex-direction:column}.hero-stats{gap:1.5rem}}
+@media(max-width:768px){#hero{padding:7.5rem 0 3rem}.sec{padding:3.25rem 0}.case-shots{height:230px}.case-body{padding:1.5rem}.case-nums{gap:1.25rem}.offer{padding:1.75rem}.fit{flex-direction:column}.hero-stats{gap:1.5rem}}
 </style>
 </head>
 <body>
@@ -138,9 +146,13 @@ footer a{color:rgba(255,255,255,.72)}footer a:hover{color:#fff}
 <div class="sh rv"><span class="sl">Real results</span><h2>No empty promises — just the numbers</h2><p>Two real e-commerce accounts our founder has run. Figures are unedited from the ad platforms.</p></div>
 
 <div class="case rv">
-<div class="case-shots">
-<div class="case-img"><img src="/case-ki-startup-ads-v2.webp" alt="Google Ads results, AI e-commerce store" loading="lazy" onclick="openImg(this)"><span class="zoom-hint">🔍 Google Ads</span></div>
-<div class="case-img"><img src="/case-ki-startup-shopify-v2.webp" alt="Shopify revenue dashboard, AI e-commerce store" loading="lazy" onclick="openImg(this)"><span class="zoom-hint">🔍 Shopify</span></div>
+<div class="case-shots multi">
+<div class="case-img active"><img src="/case-ki-startup-ads-v2.webp" data-label="Google Ads" alt="Google Ads results, AI e-commerce store" loading="lazy" onclick="openImg(this)"></div>
+<div class="case-img"><img src="/case-ki-startup-shopify-v2.webp" data-label="Shopify" alt="Shopify revenue dashboard, AI e-commerce store" loading="lazy" onclick="openImg(this)"></div>
+<button class="case-nav prev" aria-label="Previous screenshot">‹</button>
+<button class="case-nav next" aria-label="Next screenshot">›</button>
+<div class="case-dots"></div>
+<span class="case-shot-label"></span>
 </div>
 <div class="case-body">
 <div class="case-niche">E-Commerce · AI product · Pet supplies · International</div>
@@ -167,8 +179,9 @@ footer a{color:rgba(255,255,255,.72)}footer a:hover{color:#fff}
 </div>
 
 <div class="case rv">
-<div class="case-shots single">
-<div class="case-img"><img src="/case-consumergoods-ads2.webp" alt="Google Ads results, consumer goods e-commerce store" loading="lazy" onclick="openImg(this)"><span class="zoom-hint">🔍 Google Ads</span></div>
+<div class="case-shots">
+<div class="case-img active"><img src="/case-consumergoods-ads2.webp" data-label="Google Ads" alt="Google Ads results, consumer goods e-commerce store" loading="lazy" onclick="openImg(this)"></div>
+<span class="case-shot-label"></span>
 </div>
 <div class="case-body">
 <div class="case-niche">E-Commerce · Consumer goods · International</div>
@@ -253,6 +266,22 @@ footer a{color:rgba(255,255,255,.72)}footer a:hover{color:#fff}
 
 <script>
 function calClick(label){window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'calendly_click','btn_label':label});}
+
+/* Inline case-screenshot slideshow — one fixed-height frame per case, works the
+   same whether a case has one screenshot or several. */
+function caseLabel(box){var img=box.querySelector('.case-img.active img')||box.querySelector('.case-img img');var lab=box.querySelector('.case-shot-label');if(lab&&img)lab.textContent=img.getAttribute('data-label')||'';}
+document.querySelectorAll('.case-shots').forEach(function(box){
+  var slides=box.querySelectorAll('.case-img'),idx=0;
+  caseLabel(box);
+  if(slides.length<2)return;
+  var dots=box.querySelector('.case-dots');
+  slides.forEach(function(_,i){var d=document.createElement('button');d.className='case-dot'+(i===0?' active':'');d.setAttribute('aria-label','Slide '+(i+1));d.onclick=function(){go(i);};dots.appendChild(d);});
+  function go(i){slides[idx].classList.remove('active');idx=(i+slides.length)%slides.length;slides[idx].classList.add('active');
+    dots.querySelectorAll('.case-dot').forEach(function(d,j){d.classList.toggle('active',j===idx);});caseLabel(box);}
+  box.querySelector('.case-nav.prev').onclick=function(){go(idx-1);};
+  box.querySelector('.case-nav.next').onclick=function(){go(idx+1);};
+});
+
 var lbImgs=[],lbIdx=0;
 function openImg(el){lbImgs=Array.from(el.closest('.case-shots').querySelectorAll('img'));lbIdx=lbImgs.indexOf(el);
 var box=document.getElementById('lightbox');box.classList.toggle('has-nav',lbImgs.length>1);
