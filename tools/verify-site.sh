@@ -29,17 +29,24 @@ home=$(curl -s -H 'Cache-Control: no-cache' "$BASE/?cb=$TS")
 # the page and the module so this doesn't false-positive on that split.
 trackjs=$(curl -s -H 'Cache-Control: no-cache' "$BASE/assets/tracking.js?cb=$TS")
 grep -qF -- "assets/tracking.js" <<<"$home" && pass "tracking.js referenced on homepage" || fail "tracking.js NOT referenced on homepage"
-for m in "danke-termin" "form_submission" "calendly_booking" "_calLoad"; do
+for m in "danke-termin" "calendly_booking" "_calLoad"; do
   grep -qF -- "$m" <<<"$home" && pass "$m present" || fail "$m MISSING"
 done
+# the homepage is Calendly-only since the 2026-10 redesign; only check the form event if a form exists
+if grep -qF -- "<form" <<<"$home"; then
+  grep -qF -- "form_submission" <<<"$home" && pass "form_submission present" || fail "form_submission MISSING"
+fi
 for m in "GTM-MFXPMZ8W" "G-N6G3MVTEH5"; do
   { grep -qF -- "$m" <<<"$home" || grep -qF -- "$m" <<<"$trackjs"; } && pass "$m present" || fail "$m MISSING (checked home + tracking.js)"
 done
 
 echo "== 4. mobile-only UI must NOT leak onto desktop =="
-for sel in '#mcta{display:none}' '.msw-nav{display:none}'; do
+for sel in '#mcta{display:none}' '.pcards{display:none}'; do
   grep -qF -- "$sel" <<<"$home" && pass "base rule $sel" || fail "base rule $sel missing (mobile UI can leak to desktop)"
 done
+if grep -qF -- 'class="msw-nav' <<<"$home"; then
+  grep -qF -- '.msw-nav{display:none}' <<<"$home" && pass "base rule .msw-nav{display:none}" || fail "base rule .msw-nav{display:none} missing"
+fi
 
 echo "== 5. EVERY page carries tracking (the 2026-08-13 publish stripped 60 pages) =="
 if node tools/inject-tracking.mjs --check >/dev/null 2>&1; then
