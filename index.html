@@ -361,6 +361,62 @@ h1{font-size:clamp(1.9rem,3.4vw,2.55rem);letter-spacing:-.03em;line-height:1.12}
    card, but the page's global p{color:var(--tx)} rule directly targets its <p> too and
    wins over inheritance — pin it back to white so the banner stays legible */
 #ck p,#ck p strong{color:#fff}
+
+/* ===== Editorial layout pass: featured case + filmstrip, index rows, service list, quote takeover ===== */
+.case-feat{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:1.75rem;cursor:pointer}
+.case-feat .case-top{height:auto;min-height:300px}
+.case-feat .case-bg{background-size:cover;background-position:center;padding:0}
+.case-feat .case-body{padding:2.5rem}
+.case-feat .case-title{font-size:1.5rem;margin-bottom:1.5rem;line-height:1.35}
+.case-feat .case-nums{gap:2.25rem}
+.case-feat .cn-v{font-size:2.5rem}
+.case-feat .cn-l{font-size:.75rem;margin-top:.3rem}
+.film-wrap{display:flex;justify-content:space-between;align-items:center;margin:0 0 .85rem}
+.film-wrap span{font-size:.8rem;color:var(--mt);font-weight:600}
+.film-nav{display:flex;gap:.5rem}
+.film-arrow{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--bd);background:#fff;color:var(--c1);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.1rem;transition:border-color .2s}
+.film-arrow:hover{border-color:var(--c2);color:var(--c2)}
+.film{display:flex;gap:1.1rem;overflow-x:auto;scroll-snap-type:x mandatory;padding:.25rem .25rem 1rem;scrollbar-width:none;margin:0 -.25rem}
+.film::-webkit-scrollbar{display:none}
+.film .case{scroll-snap-align:start;flex:0 0 300px;min-width:0;margin:0}
+.film .case-top{height:150px}
+
+.idx-rows{max-width:800px;margin:0 auto}
+.idx-row{display:grid;grid-template-columns:72px 1fr;gap:1.5rem;padding:1.5rem 0;border-bottom:1px solid var(--bd);align-items:baseline;transition:background .2s}
+.idx-row:first-child{border-top:1px solid var(--bd)}
+.idx-num{font-size:1.85rem;font-weight:800;color:var(--bd);transition:color .2s}
+.idx-row:hover .idx-num{color:var(--c2)}
+.idx-row h3{margin-bottom:.3rem;font-size:1.05rem}
+.idx-row p{font-size:.88rem;color:var(--mt);max-width:620px}
+
+.svc-list{max-width:820px;margin:0 auto}
+.svc-row{display:flex;gap:1.25rem;align-items:flex-start;padding:1.5rem 0;border-bottom:1px solid var(--bd);color:inherit}
+.svc-row:first-child{border-top:1px solid var(--bd)}
+.svc-row .svc-icon{margin-bottom:0;flex-shrink:0;transition:background .2s}
+.svc-row .svc-icon svg{transition:stroke .2s}
+a.svc-row:hover .svc-icon{background:var(--c2)}
+a.svc-row:hover .svc-icon svg{stroke:#fff}
+.svc-row-body h3{margin-bottom:.35rem}
+.svc-row-body p{font-size:.88rem;color:var(--mt);max-width:560px;margin-bottom:0}
+.svc-row-body .svc-link{margin-top:.5rem;padding-top:0}
+
+.qt-stage{max-width:780px;margin:0 auto}
+.qt-pane{display:none}
+.qt-pane.active{display:block}
+.qt-pane .proof-stars{color:#fbbf24;font-size:1rem;margin-bottom:1.1rem}
+.qt-pane .proof-text{color:#fff;font-size:clamp(1.15rem,2.4vw,1.45rem);font-weight:600;line-height:1.5;font-style:normal;margin-bottom:1.75rem}
+.qt-tabs{display:flex;gap:.6rem;justify-content:center;margin-top:2rem}
+.qt-tab{width:38px;height:38px;border-radius:50%;border:1.5px solid rgba(255,255,255,.25);background:transparent;color:rgba(255,255,255,.6);font-weight:700;font-size:.8rem;cursor:pointer;font-family:inherit}
+.qt-tab.active{background:#fff;color:var(--c1);border-color:#fff}
+
+@media(max-width:768px){
+.case-feat{grid-template-columns:1fr}
+.case-feat .case-top{min-height:200px}
+.case-feat .case-body{padding:1.75rem}
+.idx-row{grid-template-columns:40px 1fr;gap:1rem}
+.idx-num{font-size:1.4rem}
+.svc-row{gap:1rem}
+}
 </style>
 </head>
 <body>
@@ -439,10 +495,11 @@ h1{font-size:clamp(1.9rem,3.4vw,2.55rem);letter-spacing:-.03em;line-height:1.12}
 <!-- Cases -->
 <section id="cases" class="sec" style="background:var(--bg)"><div class="ctn">
 <div class="sh"><span class="sl">Success stories</span><h2>Real results. No empty promises.</h2><p>Real campaign data from our founder's work.</p></div>
-<div class="cases-grid">
-<div class="case" onclick="openMd('ai')" tabindex="0"><div class="case-top"><div class="case-bg" style="background-image:url('/case-ki-startup-ads.webp')"></div></div>
+<div class="case case-feat" onclick="openMd('ai')" tabindex="0"><div class="case-top"><div class="case-bg" style="background-image:url('/case-ki-startup-ads.webp')"></div></div>
 <div class="case-body"><div class="case-niche">E-Commerce · AI · Pet Supplies · International</div><div class="case-title">From Germany into 11 markets — €1.7M revenue in 18 months</div><div class="case-nums"><div><div class="cn-v">€1.7M</div><div class="cn-l">Revenue</div></div><div><div class="cn-v">11</div><div class="cn-l">Countries</div></div><div><div class="cn-v">511%</div><div class="cn-l">ROAS</div></div></div><div class="case-link">View details →</div></div></div>
 
+<div class="film-wrap"><span>More case studies</span><div class="film-nav"><button class="film-arrow" type="button" id="filmPrev" aria-label="Previous">‹</button><button class="film-arrow" type="button" id="filmNext" aria-label="Next">›</button></div></div>
+<div class="film" id="caseFilm">
 <div class="case" onclick="openMd('pv')" tabindex="0"><div class="case-top"><div class="case-bg" style="background-image:url('/case-solar-webapp.webp')"></div></div>
 <div class="case-body"><div class="case-niche">SaaS · Solar energy · Germany</div><div class="case-title">392 sign-ups in 5 weeks — €2.65 CPA</div><div class="case-nums"><div><div class="cn-v">392</div><div class="cn-l">Sign-ups</div></div><div><div class="cn-v">€2.65</div><div class="cn-l">CPA</div></div><div><div class="cn-v">584%</div><div class="cn-l">ROAS</div></div></div><div class="case-link">View details →</div></div></div>
 
@@ -458,59 +515,59 @@ h1{font-size:clamp(1.9rem,3.4vw,2.55rem);letter-spacing:-.03em;line-height:1.12}
 <div class="case" onclick="openMd('ecom')" tabindex="0"><div class="case-top"><div class="case-bg" style="background-image:url('https://www.digitalmarketingremote.com/case-ecommerce-brand.webp')"></div></div>
 <div class="case-body"><div class="case-niche">E-Commerce · Consumer goods · International</div><div class="case-title">From zero to 2,350 conversions in 11 months</div><div class="case-nums"><div><div class="cn-v">2,350</div><div class="cn-l">Conversions</div></div><div><div class="cn-v">294%</div><div class="cn-l">ROAS</div></div><div><div class="cn-v">11 mo</div><div class="cn-l">Duration</div></div></div><div class="case-link">View details →</div></div></div>
 </div>
-<div class="msw-nav"><button class="msw-btn" type="button" aria-label="Previous">‹</button><button class="msw-btn" type="button" aria-label="Next">›</button></div>
 </div></section>
 
 <!-- Reviews -->
 <section class="sec" style="background:var(--c1)"><div class="ctn">
 <div class="sh"><span class="sl" style="color:#fbbf24">Testimonials</span><h2 style="color:#fff">What our clients say</h2></div>
-<div class="proof-slider"><div class="proof-track" id="proofTrack">
-
-<div class="proof">
+<div class="qt-stage">
+<div class="qt-pane active" data-pane="1">
 <div class="proof-stars">★★★★★</div>
 <p class="proof-text">"Our Google Ads went from nothing to 2.35k conversions at 294% ROAS this year, all handled by Danyal. Profitable, transparent, and always there when we needed him. Would work with him again in a heartbeat."</p>
 <div class="proof-author"><div class="proof-av">AS</div><div><div class="proof-name">Abdullah Sohail</div><div class="proof-role">Founder · E-Commerce Brand</div></div></div>
 </div>
-
-<div class="proof">
+<div class="qt-pane" data-pane="2">
 <div class="proof-stars">★★★★★</div>
 <p class="proof-text">"I'm really glad about this much transparency. It gives me a good feeling."</p>
 <div class="proof-author"><div class="proof-av">FM</div><div><div class="proof-name">Florian Marthaler</div><div class="proof-role">Managing Director · GetXdone & Craft AEC · Germany</div></div></div>
 </div>
-
-<div class="proof">
+<div class="qt-pane" data-pane="3">
 <div class="proof-stars">★★★★★</div>
 <p class="proof-text">"Absolutely great collaboration on Google Ads — many urgent tasks were handled efficiently, even presentations. Believe me: you won't waste your time here."</p>
 <div class="proof-author"><div class="proof-av">TM</div><div><div class="proof-name">Troymendous</div><div class="proof-role">Google Ads project · Australia · Upwork-verified ✓</div></div></div>
 </div>
-
-</div></div>
-<p style="text-align:center;font-size:.72rem;color:rgba(255,255,255,.75);margin-top:1.25rem">All reviews come from real client projects — verified via Upwork or direct collaboration. Original reviews (some translated from German) are available on request.</p>
+<div class="qt-tabs">
+<button class="qt-tab active" type="button" data-pane="1" aria-label="Review 1">01</button>
+<button class="qt-tab" type="button" data-pane="2" aria-label="Review 2">02</button>
+<button class="qt-tab" type="button" data-pane="3" aria-label="Review 3">03</button>
+</div>
+</div>
+<p style="text-align:center;font-size:.72rem;color:rgba(255,255,255,.75);margin-top:1.75rem">All reviews come from real client projects — verified via Upwork or direct collaboration. Original reviews (some translated from German) are available on request.</p>
 </div></section>
 
 <!-- Process -->
 <section id="process" class="sec" style="background:var(--bg)"><div class="ctn">
 <div class="sh"><span class="sl">How we work</span><h2>From first call to measurable growth</h2></div>
-<div class="proc-grid">
-<div class="proc-step"><div class="proc-num">1</div><h3>Free initial consultation</h3><p>30 minutes: your goals, your situation, our assessment. <strong style="color:var(--c3)">Free &amp; no obligation.</strong></p></div>
-<div class="proc-step"><div class="proc-num">2</div><h3>Your marketing plan</h3><p>We understand your product, analyse competitors, channels and — if you have them — your campaigns. Everything as a written plan. <strong style="color:var(--c3)">Free.</strong></p></div>
-<div class="proc-step"><div class="proc-num">3</div><h3>Onboarding & approval</h3><p>Terms agreed clearly, access rights set up, your approval — then we start.</p></div>
-<div class="proc-step"><div class="proc-num">4</div><h3>Strategy</h3><p>KPIs, channels, budget roadmap — tailored to your business.</p></div>
-<div class="proc-step"><div class="proc-num">5</div><h3>Implementation</h3><p>Tracking, accounts, campaigns — live on your approval.</p></div>
-<div class="proc-step"><div class="proc-num">6</div><h3>Reporting</h3><p>Continuous optimisation and monthly PDF reporting.</p></div>
+<div class="idx-rows">
+<div class="idx-row"><div class="idx-num">01</div><div><h3>Free initial consultation</h3><p>30 minutes: your goals, your situation, our assessment. <strong style="color:var(--c3)">Free &amp; no obligation.</strong></p></div></div>
+<div class="idx-row"><div class="idx-num">02</div><div><h3>Your marketing plan</h3><p>We understand your product, analyse competitors, channels and — if you have them — your campaigns. Everything as a written plan. <strong style="color:var(--c3)">Free.</strong></p></div></div>
+<div class="idx-row"><div class="idx-num">03</div><div><h3>Onboarding & approval</h3><p>Terms agreed clearly, access rights set up, your approval — then we start.</p></div></div>
+<div class="idx-row"><div class="idx-num">04</div><div><h3>Strategy</h3><p>KPIs, channels, budget roadmap — tailored to your business.</p></div></div>
+<div class="idx-row"><div class="idx-num">05</div><div><h3>Implementation</h3><p>Tracking, accounts, campaigns — live on your approval.</p></div></div>
+<div class="idx-row"><div class="idx-num">06</div><div><h3>Reporting</h3><p>Continuous optimisation and monthly PDF reporting.</p></div></div>
 </div>
 </div></section>
 
 <!-- Services -->
 <section id="services" class="sec"><div class="ctn">
 <div class="sh"><span class="sl">Services</span><h2>What you get from us</h2><p>Everything your campaigns need — from strategy to monthly reporting.</p></div>
-<div class="svc-grid">
-<div class="svc"><div class="svc-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div><h3>Google Ads</h3><p>Search, Display &amp; Performance Max — high-intent keywords, structured negative lists and bidding strategies, configured for your market and continuously optimised for maximum return on ad spend.</p></div>
-<div class="svc"><div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></div><h3>Meta Ads</h3><p>Facebook &amp; Instagram campaigns with precise audience targeting, creative testing and pixel tracking for measurable, scalable conversions.</p></div>
-<a href="/ecommerce" class="svc"><div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div><h3>E-Commerce</h3><p>Google Shopping, Search &amp; Meta catalogue ads that turn store traffic into paid orders.</p><span class="svc-link">See real e-commerce results →</span></a>
-<a href="/lead-generation" class="svc"><div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><h3>Lead Generation</h3><p>Campaigns built for booked calls and quote requests, not just clicks.</p><span class="svc-link">See real lead-gen results →</span></a>
-<div class="svc"><div class="svc-icon"><svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></div><h3>YouTube Ads</h3><p>Video campaigns for brand awareness and lead generation — visibility exactly when your audience is ready to learn more.</p></div>
-<div class="svc"><div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg></div><h3>Tracking & Analytics</h3><p>GA4, Tag Manager &amp; Meta Pixel — cleanly set up so every conversion counts and every decision is data-driven.</p></div>
+<div class="svc-list">
+<div class="svc-row"><div class="svc-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div><div class="svc-row-body"><h3>Google Ads</h3><p>Search, Display &amp; Performance Max — high-intent keywords, structured negative lists and bidding strategies, configured for your market and continuously optimised for maximum return on ad spend.</p></div></div>
+<div class="svc-row"><div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></div><div class="svc-row-body"><h3>Meta Ads</h3><p>Facebook &amp; Instagram campaigns with precise audience targeting, creative testing and pixel tracking for measurable, scalable conversions.</p></div></div>
+<a href="/ecommerce" class="svc-row"><div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div><div class="svc-row-body"><h3>E-Commerce</h3><p>Google Shopping, Search &amp; Meta catalogue ads that turn store traffic into paid orders.</p><span class="svc-link">See real e-commerce results →</span></div></a>
+<a href="/lead-generation" class="svc-row"><div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div class="svc-row-body"><h3>Lead Generation</h3><p>Campaigns built for booked calls and quote requests, not just clicks.</p><span class="svc-link">See real lead-gen results →</span></div></a>
+<div class="svc-row"><div class="svc-icon"><svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></div><div class="svc-row-body"><h3>YouTube Ads</h3><p>Video campaigns for brand awareness and lead generation — visibility exactly when your audience is ready to learn more.</p></div></div>
+<div class="svc-row"><div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg></div><div class="svc-row-body"><h3>Tracking & Analytics</h3><p>GA4, Tag Manager &amp; Meta Pixel — cleanly set up so every conversion counts and every decision is data-driven.</p></div></div>
 </div>
 </div></section>
 
@@ -876,29 +933,23 @@ function closeMd(){document.getElementById('mov').classList.remove('open');docum
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMd();});
 document.querySelectorAll('.case').forEach(function(c){c.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();c.click();}});});
 
-/* Reviews slider */
+/* Testimonial quote takeover — tab switches the active pane */
 (function(){
-var track=document.getElementById('proofTrack');if(!track)return;
-var slider=track.parentElement,proofs=track.querySelectorAll('.proof'),total=proofs.length,page=0;
-if(total===0)return;
-var PMQ=window.matchMedia('(max-width:768px)');
-function perView(){return PMQ.matches?1:2;}
-function cardStep(){return proofs[0]?proofs[0].getBoundingClientRect().width+20:0;}
-function pageCount(){return Math.ceil(total/perView());}
-var nav=document.createElement('div');nav.className='proof-nav';
-var prev=document.createElement('button');prev.className='proof-arrow';prev.setAttribute('aria-label','Previous reviews');prev.innerHTML='&#8249;';
-var dots=document.createElement('div');dots.className='proof-dots';
-var next=document.createElement('button');next.className='proof-arrow';next.setAttribute('aria-label','Next reviews');next.innerHTML='&#8250;';
-nav.appendChild(prev);nav.appendChild(dots);nav.appendChild(next);slider.parentElement.appendChild(nav);
-prev.onclick=function(){if(PMQ.matches){track.scrollBy({left:-cardStep(),behavior:'smooth'});return;}if(page>0){page--;render();}};
-next.onclick=function(){if(PMQ.matches){track.scrollBy({left:cardStep(),behavior:'smooth'});return;}if(page<pageCount()-1){page++;render();}};
-function buildDots(){dots.innerHTML='';var pc=pageCount();for(var i=0;i<pc;i++){var d=document.createElement('button');d.className='proof-dot'+(i===page?' active':'');d.setAttribute('aria-label','Page '+(i+1));(function(i){d.onclick=function(){if(PMQ.matches){track.scrollTo({left:i*cardStep(),behavior:'smooth'});return;}page=i;render();};})(i);dots.appendChild(d);}}
-function render(){var pv=perView(),pc=pageCount();if(page>pc-1)page=pc-1;if(page<0)page=0;
-if(PMQ.matches){track.style.transform='';buildDots();prev.disabled=false;next.disabled=false;return;}
-var first=Math.min(page*pv,Math.max(0,total-pv));track.style.transform='translateX('+(-proofs[first].offsetLeft)+'px)';buildDots();prev.disabled=page<=0;next.disabled=page>=pc-1;}
-/* mobile: native swipe drives the active dot */
-var st;track.addEventListener('scroll',function(){if(!PMQ.matches)return;clearTimeout(st);st=setTimeout(function(){var s=cardStep();if(!s)return;var i=Math.round(track.scrollLeft/s);if(i!==page){page=Math.max(0,Math.min(total-1,i));buildDots();}},90);});
-var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(render,150);});render();
+var tabs=document.querySelectorAll('.qt-tab');if(!tabs.length)return;
+tabs.forEach(function(t){t.addEventListener('click',function(){
+var id=t.getAttribute('data-pane');
+tabs.forEach(function(x){x.classList.toggle('active',x===t);});
+document.querySelectorAll('.qt-pane').forEach(function(p){p.classList.toggle('active',p.getAttribute('data-pane')===id);});
+});});
+})();
+
+/* Case filmstrip — same prev/next pattern at every viewport width */
+(function(){
+var strip=document.getElementById('caseFilm');if(!strip)return;
+var prev=document.getElementById('filmPrev'),next=document.getElementById('filmNext');
+function step(){var c=strip.firstElementChild;return c?c.getBoundingClientRect().width+18:300;}
+if(prev)prev.onclick=function(){strip.scrollBy({left:-step(),behavior:'smooth'});};
+if(next)next.onclick=function(){strip.scrollBy({left:step(),behavior:'smooth'});};
 })();
 
 /* Calendly popup — booking stays on-site; widget JS loads only after a booking click; a scheduled event routes through the existing #danke-termin flow */
@@ -1003,7 +1054,7 @@ function countUp(el){
   requestAnimationFrame(step);
 }
 if(!('IntersectionObserver' in window)||reduce)return;
-var els=document.querySelectorAll('.sh,.pc,.case,.proc-step,.svc,.pilot,.review,.hl-item,.ct-card');
+var els=document.querySelectorAll('.sh,.pc,.case,.idx-row,.svc-row,.pilot,.review,.hl-item,.ct-card,.qt-stage');
 els.forEach(function(e,i){e.classList.add('rv');e.style.transitionDelay=(i%5)*70+'ms';});
 var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});},{threshold:.1});
 els.forEach(function(e){io.observe(e);});
