@@ -178,12 +178,12 @@
       css.textContent =
         '#ck{position:fixed;bottom:1rem;left:50%;transform:translateX(-50%);' +
         'width:min(680px,calc(100% - 1.6rem));z-index:9999;box-sizing:border-box}' +
-        '#ck .ckc{background:#241c14;color:#fff;padding:1.15rem 1.3rem;border-radius:14px;' +
-        'box-shadow:0 12px 44px rgba(0,0,0,.45);' +
+        '#ck .ckc{background:#1d2e45;color:#fff;padding:1.15rem 1.3rem;border-radius:14px;' +
+        'box-shadow:0 12px 44px rgba(17,27,42,.45);' +
         "font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;" +
         'font-size:.8rem;line-height:1.5;box-sizing:border-box;max-height:60vh;overflow-y:auto}' +
         '#ck p{margin:0 0 .95rem}' +
-        '#ck a{color:#f0ac78;text-decoration:underline}' +
+        '#ck a{color:#a9c5e4;text-decoration:underline}' +
         '#ck .ckr{display:flex;gap:.7rem;flex-wrap:wrap}' +
         /* Both buttons are deliberately identical in size, weight and solidity —
            DSK OH Telemedien (133) requires the refusal option to be an equivalent
@@ -191,8 +191,8 @@
            of them into a ghost/outline button. */
         '#ck .ckb{flex:1 1 150px;padding:.7rem 1.2rem;border-radius:8px;font-size:.85rem;' +
         'cursor:pointer;font-weight:600;border:none;font-family:inherit;line-height:1.2}' +
-        '#ck .cka{background:#15803d;color:#fff}' +
-        '#ck .ckd{background:#5b5048;color:#fff}' +
+        '#ck .cka{background:#355f8c;color:#fff}' +
+        '#ck .ckd{background:#3d4f68;color:#fff}' +
         '@media(prefers-reduced-motion:no-preference){#ck{animation:ckin .3s ease-out}' +
         '@keyframes ckin{from{opacity:0;transform:translate(-50%,12px)}' +
         'to{opacity:1;transform:translate(-50%,0)}}}';

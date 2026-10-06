@@ -225,6 +225,9 @@ Section order (reordered 2026-07-23, proof-first for mobile — Clarity showed 5
 - Consent UI: one centered modal, injected by tracking.js on every page (DE/EN by
   <html lang>), scroll-locked until the visitor picks "Alle akzeptieren" or
   "Nur notwendige". Both are one click (DSGVO). No page ships its own banner markup.
+- Banner colours follow the site palette — RULE (Danyal, 2026-10-06): whenever the site's
+  colours or fonts change, restyle the banner in `/assets/tracking.js` in the same change.
+  Never leave it on an old palette. Both buttons stay equal in size, weight and solidity (DSK).
 
 ## Integrations
 - Google Tag Manager: GTM-MFXPMZ8W (Google Ads Conversion ID constant: 18174154684 — bare number, GTM adds AW- prefix)
