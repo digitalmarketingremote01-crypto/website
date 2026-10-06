@@ -84,6 +84,13 @@ Section order (reordered 2026-07-23, proof-first for mobile — Clarity showed 5
   PRICES over raising budget lines ("price is what throws people away at first glance, and a
   budget increase is not beneficial for everyone") — an earlier version raised the caps instead;
   don't go back to that. To change a price, keep its %.
+  **DUAL BUDGET IS NOT SPLIT EQUALLY (Danyal, 2026-10-06):** "client and us decide where to give
+  more." Never write "split equally", "on each platform", "per platform" or "gleichmäßig verteilt";
+  the per-platform row/figures were removed. Say "shared across both platforms" / "aufgeteilt auf
+  beide Plattformen". The single/dual chips share one grid cell so the price table never moves
+  when the toggle is switched — keep anything above the table the same height in both states.
+  **ENGLISH SITE (2026-10-06):** no "DACH focus" and no "campaign copy in German" — English
+  countries first (US, Canada, UK, Europe). German site keeps its DACH wording.
   **DUAL SYSTEM REBUILT 2026-09-26 (Danyal's rule, approved table):** dual = single price
   × 1.5 (second platform at half price, nearest-9 rounding) AND single budget cap × 1.5,
   the total budget being split equally between Google and Meta. Dual caps are TOTAL spend:
