@@ -22,7 +22,7 @@ T = {
             cta='Book a free call', other='DE', other_lang='de', other_home='/de', menu='Menu', navlabel='Main navigation',
             about='Performance marketing for growing businesses worldwide. Data-driven, transparent, results-focused.',
             cols=[('Services', [('/#services', 'Google Ads'), ('/#services', 'Meta Ads'), ('/ecommerce', 'E-Commerce'), ('/lead-generation', 'Lead Generation'), ('/#services', 'Tracking &amp; Analytics')]),
-                  ('Company', [('/#about', 'About'), ('/#cases', 'Success stories'), ('/#pricing', 'Pricing'), ('/#pilot', 'Free marketing plan'), ('/en/partner', 'For agencies'), ('/en/guides', 'Guides')])],
+                  ('Company', [('/#about', 'About'), ('/#cases', 'Success stories'), ('/#pricing', 'Pricing'), ('/#pilot', 'Audit &amp; marketing plan'), ('/en/partner', 'For agencies'), ('/en/guides', 'Guides')])],
             contact='Contact', lang_name='Deutsch', imprint=('/en/imprint', 'Imprint'), privacy=('/en/privacy', 'Privacy', 'Privacy Policy'), cookies='Cookie settings',
             partner_cta='Book a partner call'),
  'de': dict(home='/de', nav=[('/de#about', 'Über uns'), ('/de#services', 'Leistungen'), ('/de#pricing', 'Preise'), ('/de#cases', 'Erfolge'), ('/de#contact', 'Kontakt'), ('/partner', 'Für Agenturen')],

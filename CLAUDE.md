@@ -14,6 +14,24 @@
   any language (say so; never imply English- or German-only ads). Reports/calls/emails are in English.
   Paid ads currently run in England only. £ stays the main currency.
 
+## ⚠ AUDIT IS PAID SINCE 2026-10-06 — supersedes every "free marketing plan / free audit" note below
+Danyal: free audits drew low-intent leads who took the plan and left (4 audits → 1 client).
+- The 30-min intro CALL stays free ("Book a free call" is correct everywhere).
+- The written Audit & Marketing Plan costs **£99 up front, credited in full to the first month**
+  when the client starts a plan; if they don't, the plan is still theirs. Display: `<s>£99</s> Free
+  with a plan` in the add-ons list, "£99 — credited in full to your first month" in the offer blocks.
+  Never call the audit/plan "free" on its own again.
+- Add-ons repriced the same day: Setup & conversion tracking **£99 single / £179 dual** (dual is a
+  set price, NOT single × 1.5) · AI ad creatives **£99/mo**.
+- Sample audit (Danyal: "one audit that can inspire", used on the site AND in outreach emails):
+  `/sample-audit.pdf` (4 pages, image-only so no text can be copied) + `/audit-sample-1..4.webp`
+  thumbnails on the homepage #pilot, /lead-generation and /ecommerce offer blocks. Built from a COPY
+  of the facilities-management audit: new navy branding, client name/site/IDs/phones swapped for
+  dummy text and blurred, and all detail blurred — only headings, table headers and each block's
+  opening bold line stay readable ("we don't give details so they can do it themselves").
+  The audits already sent to clients are never edited. Copies live in that client's folder under
+  "Website sample (blurred)".
+
 ## Project Overview
 Single-page HTML website for Digital Marketing Remote, a DACH-focused performance marketing agency.
 - **Files**: `index.html` = ENGLISH homepage (the root since 2026-09-08), `de/index.html` = German homepage. Each is all HTML, CSS and JS in one file.
@@ -126,7 +144,7 @@ Section order (reordered 2026-07-23, proof-first for mobile — Clarity showed 5
   → two platforms £698, yet dual said £899). Dual Starter is BACK at the formula £519 (the
   old manual £529 override is gone). Never make dual dearer than two singles covering the
   same per-platform budget — check this before changing any price or cap.
-  One-off & add-ons (`.plx`): Analyse + Marketing-Plan free · Setup & Conversion-Tracking
+  One-off & add-ons (`.plx`) — PRICES BELOW ARE HISTORY, see "AUDIT IS PAID" at the top (now £99 audit credited / £99 / £179 / £99): Analyse + Marketing-Plan free · Setup & Conversion-Tracking
   **£149 single / £229 dual** one-off, REPRICED 2026-09-21 from £129/£199 (`.pl-sx`/`.pl-dx`
   swap with togPr), WAIVED when the client's tracking already works (Gandke model) ·
   AI creatives £149/mo (6 ads × 2 formats). The setup single and the creatives add-on
