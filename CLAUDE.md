@@ -1,5 +1,19 @@
 # Digital Marketing Remote — Website Project
 
+## ⚠ GERMAN SITE RETIRED — 2026-10-06 (Danyal: "put down the german site now and redirect its pages,
+## lets focus entirely on english site and put a translator on the website")
+- The site is ENGLISH ONLY. All 39 German pages (/de, /de/ecommerce, /de/lead-generation, /partner,
+  /leistungen/*, /ueber-uns/*, /ratgeber/*, /impressum, /datenschutz) were deleted and 301-redirect
+  to their English twin in vercel.json. Never recreate German pages; never write DE+EN pairs —
+  new content is English only. Everything below that talks about German pages, /de, price.js,
+  DE FAQ/schema or "update BOTH languages" is HISTORY.
+- Translator: a "Translate" menu in every header opens the current page through Google Translate
+  (www-digitalmarketingremote-com.translate.goog, markup in tools/translator.py). No script on our
+  site, so consent/tracking are untouched. Logo, brand name and the brand strip carry translate="no".
+- Market: we welcome clients globally — do not name target countries in copy. Ads can be written in
+  any language (say so; never imply English- or German-only ads). Reports/calls/emails are in English.
+  Paid ads currently run in England only. £ stays the main currency.
+
 ## Project Overview
 Single-page HTML website for Digital Marketing Remote, a DACH-focused performance marketing agency.
 - **Files**: `index.html` = ENGLISH homepage (the root since 2026-09-08), `de/index.html` = German homepage. Each is all HTML, CSS and JS in one file.
@@ -90,8 +104,7 @@ Section order (reordered 2026-07-23, proof-first for mobile — Clarity showed 5
   beide Plattformen". The single/dual chips share one grid cell so the price table never moves
   when the toggle is switched — keep anything above the table the same height in both states.
   **ENGLISH SITE (2026-10-06):** no "DACH focus" and no "campaign copy in German". FIRST FOCUS
-  (Danyal, 2026-10-06): UK, USA, Canada, Australia — copy names these four. ADS run in ENGLAND ONLY
-  for now (same day); site copy still names all four markets. German site stays
+  (superseded the same day: global, no countries named — see the top of this file). German site stays
   (he decided to keep it) with its DACH wording.
   **DUAL SYSTEM REBUILT 2026-09-26 (Danyal's rule, approved table):** dual = single price
   × 1.5 (second platform at half price, nearest-9 rounding) AND single budget cap × 1.5,

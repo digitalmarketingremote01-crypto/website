@@ -10,13 +10,13 @@ pass(){ printf "  \033[32mPASS\033[0m  %s\n" "$1"; }
 fail(){ printf "  \033[31mFAIL\033[0m  %s\n" "$1"; FAIL=1; }
 
 echo "== 1. pages reachable (cache-busted) =="
-for p in "" "de" "partner" "en/partner" "impressum" "datenschutz" "en/imprint" "en/privacy"; do
+for p in "" "en/partner" "en/imprint" "en/privacy" "en/guides" "ecommerce" "lead-generation"; do
   code=$(curl -s -o /dev/null -w '%{http_code}' -H 'Cache-Control: no-cache' "$BASE/$p?cb=$TS")
   [ "$code" = "200" ] && pass "/$p ($code)" || fail "/$p returned $code"
 done
 
 echo "== 2. local files match what is LIVE (catches 'deployed?' mistakes) =="
-for f in index.html de/index.html; do
+for f in index.html; do
   url="$BASE/${f%/index.html}?cb=$TS"; [ "$f" = "index.html" ] && url="$BASE/?cb=$TS"
   lh=$(curl -sL -H 'Cache-Control: no-cache' "$url" | tr -d '[:space:]' | shasum | cut -c1-12)
   lo=$(tr -d '[:space:]' < "$f" | shasum | cut -c1-12)
@@ -48,6 +48,12 @@ if grep -qF -- 'class="msw-nav' <<<"$home"; then
   grep -qF -- '.msw-nav{display:none}' <<<"$home" && pass "base rule .msw-nav{display:none}" || fail "base rule .msw-nav{display:none} missing"
 fi
 
+echo "== 1b. German site retired 2026-10-06: old URLs must 301 to the English twin =="
+for p in "de" "partner" "ratgeber/google-ads-kosten" "impressum" "datenschutz"; do
+  code=$(curl -s -o /dev/null -w '%{http_code}' "$BASE/$p?cb=$TS")
+  { [ "$code" = "301" ] || [ "$code" = "308" ]; } && pass "/$p redirects ($code)" || fail "/$p returned $code (should redirect)"
+done
+
 echo "== 5. EVERY page carries tracking (the 2026-08-13 publish stripped 60 pages) =="
 if node tools/inject-tracking.mjs --check >/dev/null 2>&1; then
   pass "all local .html pages load /assets/tracking.js"
@@ -60,7 +66,7 @@ else
   fail "pages WITHOUT the shared look — run: python3 tools/apply-site-chrome.py"
 fi
 # spot-check one article LIVE (build-time injection must have run on Vercel)
-art=$(curl -s -H 'Cache-Control: no-cache' "$BASE/ratgeber/google-ads-kosten?cb=$TS")
+art=$(curl -s -H 'Cache-Control: no-cache' "$BASE/en/guides/how-much-does-google-ads-cost?cb=$TS")
 grep -qF -- "assets/tracking.js" <<<"$art" && pass "live article page loads tracking.js" || fail "live article page has NO tracking.js"
 # Clarity must send the EEA/UK consent signal after opt-in (enforced since 2025-10-31)
 grep -qF -- "clarity('consent', true)" <<<"$trackjs" && pass "Clarity consent signal present" || fail "Clarity consent signal MISSING — EEA/UK sessions get dropped"

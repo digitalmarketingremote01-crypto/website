@@ -4,27 +4,253 @@
   "buildCommand": "node tools/inject-tracking.mjs && node tools/inject-tracking.mjs --check",
   "outputDirectory": ".",
   "redirects": [
-    { "source": "/en", "destination": "/", "permanent": true },
-    { "source": "/en/datenschutz", "destination": "/en/privacy", "permanent": true },
-    { "source": "/en/impressum", "destination": "/en/imprint", "permanent": true }
+    {
+      "source": "/en",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/en/datenschutz",
+      "destination": "/en/privacy",
+      "permanent": true
+    },
+    {
+      "source": "/en/impressum",
+      "destination": "/en/imprint",
+      "permanent": true
+    },
+    {
+      "source": "/datenschutz",
+      "destination": "/en/privacy",
+      "permanent": true
+    },
+    {
+      "source": "/de",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/de/ecommerce",
+      "destination": "/ecommerce",
+      "permanent": true
+    },
+    {
+      "source": "/de/lead-generation",
+      "destination": "/lead-generation",
+      "permanent": true
+    },
+    {
+      "source": "/impressum",
+      "destination": "/en/imprint",
+      "permanent": true
+    },
+    {
+      "source": "/leistungen",
+      "destination": "/en/services/google-ads",
+      "permanent": true
+    },
+    {
+      "source": "/leistungen/google-ads",
+      "destination": "/en/services/google-ads",
+      "permanent": true
+    },
+    {
+      "source": "/partner",
+      "destination": "/en/partner",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber",
+      "destination": "/en/guides",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber/abrechnung-prozent-vs-festpreis",
+      "destination": "/en/guides/google-ads-agency-pricing",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber/agentur-oder-freelancer",
+      "destination": "/en/guides",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber/google-ads-agentur-kosten",
+      "destination": "/en/guides/google-ads-agency-pricing",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber/google-ads-agentur-wechseln",
+      "destination": "/en/guides/switching-google-ads-agency",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber/google-ads-anzeigen-abgelehnt",
+      "destination": "/en/guides/google-ads-disapproved",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber/google-ads-auf-rechnung",
+      "destination": "/en/guides/google-ads-monthly-invoicing",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber/google-ads-budget-festlegen",
+      "destination": "/en/guides/set-google-ads-budget",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber/google-ads-conversion-tracking-einrichten",
+      "destination": "/en/guides/set-up-google-ads-conversion-tracking",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber/google-ads-einrichten",
+      "destination": "/en/guides/set-up-google-ads",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber/google-ads-kampagne-erstellen",
+      "destination": "/en/guides/create-google-ads-campaign",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber/google-ads-keine-conversions",
+      "destination": "/en/guides/google-ads-not-converting",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber/google-ads-keine-impressionen",
+      "destination": "/en/guides/google-ads-no-impressions",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber/google-ads-keine-klicks",
+      "destination": "/en/guides/google-ads-no-clicks",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber/google-ads-kleines-budget",
+      "destination": "/en/guides/google-ads-small-budget",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber/google-ads-klickbetrug",
+      "destination": "/en/guides/google-ads-click-fraud",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber/google-ads-konto-erstellen-ohne-kampagne",
+      "destination": "/en/guides/create-google-ads-account-without-campaign",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber/google-ads-konto-gesperrt",
+      "destination": "/en/guides/google-ads-account-suspended",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber/google-ads-konto-loeschen",
+      "destination": "/en/guides/delete-google-ads-account",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber/google-ads-konto-uebertragen",
+      "destination": "/en/guides/transfer-google-ads-account-ownership",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber/google-ads-kosten",
+      "destination": "/en/guides/how-much-does-google-ads-cost",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber/google-ads-kuendigen",
+      "destination": "/en/guides/cancel-google-ads",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber/google-ads-lernphase",
+      "destination": "/en/guides/google-ads-learning-period",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber/google-ads-negative-keywords",
+      "destination": "/en/guides/google-ads-negative-keywords",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber/google-ads-rechnung-umsatzsteuer",
+      "destination": "/en/guides/google-ads-invoices-vat",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber/google-ads-reporting",
+      "destination": "/en/guides/google-ads-reporting",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber/google-ads-suchbegriffe-bericht",
+      "destination": "/en/guides/google-ads-search-terms-report",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber/google-shopping-einrichten",
+      "destination": "/en/guides/set-up-google-shopping",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber/gute-google-ads-agentur-erkennen",
+      "destination": "/en/guides/google-ads-agency-red-flags",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber/meta-ads-kosten",
+      "destination": "/en/guides/meta-ads-cost",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber/white-label-google-ads",
+      "destination": "/en/guides/white-label-ppc",
+      "permanent": true
+    },
+    {
+      "source": "/ueber-uns",
+      "destination": "/en/about/danyal",
+      "permanent": true
+    },
+    {
+      "source": "/ueber-uns/danyal",
+      "destination": "/en/about/danyal",
+      "permanent": true
+    }
   ],
   "headers": [
     {
       "source": "/(danyal-hero.jpeg|facebook-cover-en.png|DMR-testimonial-loganberry.png|DMR-loganberry-proof.png)",
       "headers": [
-        { "key": "Access-Control-Allow-Origin", "value": "*" }
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
       ]
     },
     {
       "source": "/fonts/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/(.*)\\.(woff2|woff|webp)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     }
   ]

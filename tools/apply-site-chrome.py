@@ -9,6 +9,8 @@ The header/footer markup lives HERE, once; the styles live in /assets/site.css. 
 both by running this script. Each page keeps its own tracking labels (calClick) where it had them.
 """
 import glob, os, re, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import translator
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CAL = 'https://calendly.com/digitalmarketingremote01/30min'
@@ -18,7 +20,7 @@ SKIP = {'index.html', 'de/index.html'}
 T = {
  'en': dict(home='/', nav=[('/#about', 'About'), ('/#services', 'Services'), ('/#pricing', 'Pricing'), ('/#cases', 'Results'), ('/#contact', 'Contact'), ('/en/partner', 'For Agencies')],
             cta='Book a free call', other='DE', other_lang='de', other_home='/de', menu='Menu', navlabel='Main navigation',
-            about='Performance marketing for growing businesses in the UK, the US, Canada and Australia. Data-driven, transparent, results-focused.',
+            about='Performance marketing for growing businesses worldwide. Data-driven, transparent, results-focused.',
             cols=[('Services', [('/#services', 'Google Ads'), ('/#services', 'Meta Ads'), ('/ecommerce', 'E-Commerce'), ('/lead-generation', 'Lead Generation'), ('/#services', 'Tracking &amp; Analytics')]),
                   ('Company', [('/#about', 'About'), ('/#cases', 'Success stories'), ('/#pricing', 'Pricing'), ('/#pilot', 'Free marketing plan'), ('/en/partner', 'For agencies'), ('/en/guides', 'Guides')])],
             contact='Contact', lang_name='Deutsch', imprint=('/en/imprint', 'Imprint'), privacy=('/en/privacy', 'Privacy', 'Privacy Policy'), cookies='Cookie settings',
@@ -41,27 +43,27 @@ def cal(label):
     return f"window.calClick&amp;&amp;calClick('{label}')"
 
 
-def header(t, other_href, cta_text, nav_label):
+def header(t, other_href, cta_text, nav_label, path='/'):
     links = ''.join(f'<a href="{h}">{n}</a>' for h, n in t['nav'])
     return (f'<header class="sn"><div class="sn-in">'
-            f'<a href="{t["home"]}" class="sn-logo">Digital<span>Marketing</span>Remote</a>'
+            f'<a href="{t["home"]}" class="sn-logo" translate="no">Digital<span>Marketing</span>Remote</a>'
             f'<nav aria-label="{t["navlabel"]}">{links}</nav>'
-            f'<div class="sn-cta"><a href="{other_href}" class="sn-lang" hreflang="{t["other_lang"]}" lang="{t["other_lang"]}">{t["other"]}</a>'
+            f'<div class="sn-cta">{translator.menu(path)}'
             f'<a href="{CAL}" onclick="{cal(nav_label)}" class="sn-btn">{cta_text}</a>'
             f'<button class="sn-hb" type="button" aria-label="{t["menu"]}" aria-expanded="false" '
             f'onclick="var h=this.closest(\'.sn\');this.setAttribute(\'aria-expanded\',h.classList.toggle(\'open\'))"><span></span><span></span><span></span></button></div></div>'
-            f'<div class="sn-mm">{links}<a href="{other_href}" hreflang="{t["other_lang"]}" lang="{t["other_lang"]}">{t["other"]}</a>'
-            f'<a href="{CAL}" onclick="{cal("mobile_menu")}" class="sn-btn">{cta_text} →</a></div></header>')
+            f'<div class="sn-mm">{links}'
+            f'<a href="{CAL}" onclick="{cal("mobile_menu")}" class="sn-btn">{cta_text} →</a></div></header>{translator.CLOSE}')
 
 
 def footer(t, other_href):
     cols = ''.join(f'<div class="sf-col"><h3>{h}</h3><ul>' + ''.join(f'<li><a href="{u}">{n}</a></li>' for u, n in items) + '</ul></div>' for h, items in t['cols'])
     ck = f'<a href="#" onclick="window.ckSettings&amp;&amp;ckSettings();return false;">{t["cookies"]}</a>'
     contact = (f'<div class="sf-col"><h3>{t["contact"]}</h3><ul><li><a href="{CAL}" onclick="{cal("footer_termin")}">{t["cta"]}</a></li>'
-               f'<li><a href="{other_href}">{t["lang_name"]}</a></li><li><a href="{t["imprint"][0]}">{t["imprint"][1]}</a></li>'
+               f'<li><a href="{t["imprint"][0]}">{t["imprint"][1]}</a></li>'
                f'<li><a href="{t["privacy"][0]}">{t["privacy"][1]}</a></li><li>{ck}</li></ul></div>')
     return (f'<footer class="sf"><div class="sf-in"><div class="sf-grid">'
-            f'<div><div class="sf-logo">Digital<span>Marketing</span>Remote</div><p>{t["about"]}</p>{SOC}</div>{cols}{contact}</div>'
+            f'<div><div class="sf-logo" translate="no">Digital<span>Marketing</span>Remote</div><p>{t["about"]}</p>{SOC}</div>{cols}{contact}</div>'
             f'<div class="sf-bot"><span>© 2024–2026 Digital Marketing Remote · Mohammad Danyal Shahzad</span>'
             f'<nav><a href="{t["imprint"][0]}">{t["imprint"][1]}</a><a href="{t["privacy"][0]}">{t["privacy"][2]}</a>{ck}</nav></div></div></footer>')
 
@@ -83,12 +85,15 @@ def apply(path, rel):
     body_i = s.index('<body')
     head, body = s[:body_i], s[body_i:]
     # remove whatever header this page had (old shared chrome included, so the script is idempotent)
+    body = body.replace(translator.CLOSE, '')
     m = re.search(r'<header class="sn">.*?</header>|<header class="gh">.*?</header>|<nav\b[^>]*>.*?</nav>', body, re.S)
     old_nav = m.group(0) if m else ''
     lbl = re.search(r"calClick\('([^']+)'\)", old_nav)
     nav_label = lbl.group(1) if lbl and 'mobile' not in lbl.group(1) else 'nav_termin'
     cta = t['partner_cta'] if 'partner' in rel else t['cta']
-    new_h = header(t, other, cta, nav_label)
+    canon = re.search(r'<link rel="canonical" href="([^"]+)"', s)
+    upath = (canon.group(1).replace(SITE, '') or '/') if canon else '/' + rel.replace('index.html', '').replace('.html', '')
+    new_h = header(t, other, cta, nav_label, upath)
     if m:
         body = body[:m.start()] + new_h + body[m.end():]
     else:

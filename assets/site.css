@@ -63,3 +63,12 @@ footer.sf{display:block;margin:0;padding:4.2rem 0 2.1rem;background:var(--deep);
 /* phones: long source URLs and long German button labels wrap instead of widening the page */
 article a,.src a{overflow-wrap:anywhere}
 @media(max-width:600px){main .btn{white-space:normal;max-width:100%;text-align:center;line-height:1.25}}
+
+/* translate menu (Google Translate proxy), same as the homepages */
+.tr{position:relative}.tr summary{display:flex;align-items:center;gap:.35rem;list-style:none;cursor:pointer;font-size:.76rem;font-weight:700;color:var(--ink);border:1.5px solid var(--line);border-radius:999px;padding:.34rem .7rem;transition:border-color .2s}.tr summary::-webkit-details-marker{display:none}.tr summary:hover,.tr[open] summary{border-color:var(--ink)}.tr svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2}.tr-m{position:absolute;right:0;top:calc(100% + 8px);z-index:1100;display:grid;min-width:170px;padding:.4rem;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 18px 40px -18px rgb(29 46 69 / .45)}.tr-m a{padding:.5rem .7rem;border-radius:8px;font-size:.86rem;font-weight:500;color:var(--ink);text-decoration:none}.tr-m a:hover{background:var(--acc-l);text-decoration:none}@media(max-width:600px){.tr summary span{display:none}}
+
+/* fewer, fuller lines (Danyal 2026-10-06: "we dont just keep using lines") — landing headlines get
+   the width to sit on two lines; paragraphs avoid a lonely last word */
+#hero h1{max-width:1000px}
+p,li{text-wrap:pretty}
+h1,h2,h3{text-wrap:balance}
