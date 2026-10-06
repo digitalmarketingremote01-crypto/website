@@ -82,6 +82,9 @@ Section order (reordered 2026-07-23, proof-first for mobile — Clarity showed 5
   (899/0.125 = 7,192, rounded). Dual Pro £1,349 (×1.5, nearest 9) for £10,800, saves £449.
   The "Fee at full budget" row shows each % rounded to the nearest half point with "≈":
   17.5 / 15 / 12.5 / 10 for single AND dual. Axis marker for Pro sits at 60% (7,200/12,000).
+- DAILY BUDGET ROW (Danyal 2026-10-06): price tables show "Daily budget ≈ £X / day" = monthly cap /
+  30.4 (Google's average month), computed live from the converted monthly figure (`data-day`).
+  £66 / £132 / £237 / £395 single, £99 / £197 / £355 / £592 dual.
 - Pricing — **£ IS THE PRICE LIST, € AND $ ARE LIVE-CONVERTED since 2026-09-08** (re-confirmed by
   Danyal 2026-10-06: "keep pounds as the main currency for now" — a switch to $ was built and
   reverted the same day; he may set $ prices later)

@@ -238,6 +238,7 @@ footer{background:var(--c1);color:rgba(255,255,255,.78);padding:3rem 0 2rem}
 .pc-inc-chips span::before{content:'✓';color:var(--c3);font-weight:700}
 /* single + dual chips share one cell: switching never moves the price rows */
 .pc-inc{display:grid}.pc-inc-h{grid-area:1/1}.pc-inc-chips{grid-area:2/1}.pc-inc-chips.pl-dx{display:flex;visibility:hidden}
+.pl-day{display:block;margin-top:.15rem;font-size:.72rem;color:var(--mt)}
 .vat-note{text-align:center;font-size:.75rem;color:var(--mt);margin-top:1.5rem;line-height:1.6}
 /* Price list (2026-09-03): one block instead of tier cards */
 .plist{max-width:900px;margin:0 auto;background:#fff;border:1.5px solid rgba(53,95,140,.45);border-radius:16px;box-shadow:0 12px 40px rgba(53,95,140,.14);overflow:hidden}
@@ -290,18 +291,18 @@ footer{background:var(--c1);color:rgba(255,255,255,.78);padding:3rem 0 2rem}
 </div>
 <div class="pside show" id="ppgs">
 <div class="plr h"><div>Plan</div><div>Per month</div><div>Ad budget</div><div>Who it's for</div></div>
-<div class="plr"><div class="pl-nm">Starter</div><div class="pl-pr"><span class="cur" data-gbp="349">£349</span><small>/mo</small></div><div class="pl-cap">up to <b><span class="cur" data-gbp="2000">£2,000</span></b></div><div class="pl-who">For getting started</div></div>
-<div class="plr"><div class="pl-nm">Growth</div><div class="pl-pr"><span class="cur" data-gbp="599">£599</span><small>/mo</small></div><div class="pl-cap">up to <b><span class="cur" data-gbp="4000">£4,000</span></b></div><div class="pl-who">Growing campaigns</div></div>
-<div class="plr hl"><div class="pl-nm">Pro <span class="pl-bad">Popular</span></div><div class="pl-pr"><span class="cur" data-gbp="899">£899</span><small>/mo</small></div><div class="pl-cap">up to <b><span class="cur" data-gbp="7200">£7,200</span></b></div><div class="pl-who">Several campaigns, full management</div></div>
-<div class="plr"><div class="pl-nm">Scale</div><div class="pl-pr"><span class="cur" data-gbp="1199">£1,199</span><small>/mo</small></div><div class="pl-cap">up to <b><span class="cur" data-gbp="12000">£12,000</span></b></div><div class="pl-who">For scaling</div></div>
+<div class="plr"><div class="pl-nm">Starter</div><div class="pl-pr"><span class="cur" data-gbp="349">£349</span><small>/mo</small></div><div class="pl-cap">up to <b><span class="cur" data-gbp="2000">£2,000</span></b><small class="pl-day">≈ <span class="cur" data-gbp="2000" data-day="1">£66</span> / day</small></div><div class="pl-who">For getting started</div></div>
+<div class="plr"><div class="pl-nm">Growth</div><div class="pl-pr"><span class="cur" data-gbp="599">£599</span><small>/mo</small></div><div class="pl-cap">up to <b><span class="cur" data-gbp="4000">£4,000</span></b><small class="pl-day">≈ <span class="cur" data-gbp="4000" data-day="1">£132</span> / day</small></div><div class="pl-who">Growing campaigns</div></div>
+<div class="plr hl"><div class="pl-nm">Pro <span class="pl-bad">Popular</span></div><div class="pl-pr"><span class="cur" data-gbp="899">£899</span><small>/mo</small></div><div class="pl-cap">up to <b><span class="cur" data-gbp="7200">£7,200</span></b><small class="pl-day">≈ <span class="cur" data-gbp="7200" data-day="1">£237</span> / day</small></div><div class="pl-who">Several campaigns, full management</div></div>
+<div class="plr"><div class="pl-nm">Scale</div><div class="pl-pr"><span class="cur" data-gbp="1199">£1,199</span><small>/mo</small></div><div class="pl-cap">up to <b><span class="cur" data-gbp="12000">£12,000</span></b><small class="pl-day">≈ <span class="cur" data-gbp="12000" data-day="1">£395</span> / day</small></div><div class="pl-who">For scaling</div></div>
 <div class="pl-ent"><div><b>Enterprise</b><span>Ad budget from <span class="cur" data-gbp="12000">£12,000</span> / month — tailored setup</span></div><a href="#contact">On request →</a></div>
 </div>
 <div class="pside" id="ppgd">
 <div class="plr h"><div>Plan</div><div>Per month</div><div>Total ad budget</div><div>Who it's for</div></div>
-<div class="plr"><div class="pl-nm">Dual Starter</div><div class="pl-pr"><span class="cur" data-gbp="519">£519</span><small>/mo</small></div><div class="pl-cap">up to <b><span class="cur" data-gbp="3000">£3,000</span></b> total<span class="pl-sv"><span class="cur" data-gbp="179">£179</span> saved</span></div><div class="pl-who">For getting started</div></div>
-<div class="plr"><div class="pl-nm">Dual Growth</div><div class="pl-pr"><span class="cur" data-gbp="899">£899</span><small>/mo</small></div><div class="pl-cap">up to <b><span class="cur" data-gbp="6000">£6,000</span></b> total<span class="pl-sv"><span class="cur" data-gbp="299">£299</span> saved</span></div><div class="pl-who">Growing campaigns</div></div>
-<div class="plr hl"><div class="pl-nm">Dual Pro <span class="pl-bad">Popular</span></div><div class="pl-pr"><span class="cur" data-gbp="1349">£1,349</span><small>/mo</small></div><div class="pl-cap">up to <b><span class="cur" data-gbp="10800">£10,800</span></b> total<span class="pl-sv"><span class="cur" data-gbp="449">£449</span> saved</span></div><div class="pl-who">Cross-platform, full management</div></div>
-<div class="plr"><div class="pl-nm">Dual Scale</div><div class="pl-pr"><span class="cur" data-gbp="1799">£1,799</span><small>/mo</small></div><div class="pl-cap">up to <b><span class="cur" data-gbp="18000">£18,000</span></b> total<span class="pl-sv"><span class="cur" data-gbp="599">£599</span> saved</span></div><div class="pl-who">For scaling</div></div>
+<div class="plr"><div class="pl-nm">Dual Starter</div><div class="pl-pr"><span class="cur" data-gbp="519">£519</span><small>/mo</small></div><div class="pl-cap">up to <b><span class="cur" data-gbp="3000">£3,000</span></b> total<small class="pl-day">≈ <span class="cur" data-gbp="3000" data-day="1">£99</span> / day</small><span class="pl-sv"><span class="cur" data-gbp="179">£179</span> saved</span></div><div class="pl-who">For getting started</div></div>
+<div class="plr"><div class="pl-nm">Dual Growth</div><div class="pl-pr"><span class="cur" data-gbp="899">£899</span><small>/mo</small></div><div class="pl-cap">up to <b><span class="cur" data-gbp="6000">£6,000</span></b> total<small class="pl-day">≈ <span class="cur" data-gbp="6000" data-day="1">£197</span> / day</small><span class="pl-sv"><span class="cur" data-gbp="299">£299</span> saved</span></div><div class="pl-who">Growing campaigns</div></div>
+<div class="plr hl"><div class="pl-nm">Dual Pro <span class="pl-bad">Popular</span></div><div class="pl-pr"><span class="cur" data-gbp="1349">£1,349</span><small>/mo</small></div><div class="pl-cap">up to <b><span class="cur" data-gbp="10800">£10,800</span></b> total<small class="pl-day">≈ <span class="cur" data-gbp="10800" data-day="1">£355</span> / day</small><span class="pl-sv"><span class="cur" data-gbp="449">£449</span> saved</span></div><div class="pl-who">Cross-platform, full management</div></div>
+<div class="plr"><div class="pl-nm">Dual Scale</div><div class="pl-pr"><span class="cur" data-gbp="1799">£1,799</span><small>/mo</small></div><div class="pl-cap">up to <b><span class="cur" data-gbp="18000">£18,000</span></b> total<small class="pl-day">≈ <span class="cur" data-gbp="18000" data-day="1">£592</span> / day</small><span class="pl-sv"><span class="cur" data-gbp="599">£599</span> saved</span></div><div class="pl-who">For scaling</div></div>
 <div class="pl-ent"><div><b>Dual Enterprise</b><span>Ad budget from <span class="cur" data-gbp="18000">£18,000</span> total / month — Google + Meta from one team</span></div><a href="#contact">On request →</a></div>
 </div>
 </div>
@@ -327,7 +328,7 @@ function n9(v){return Math.round(v/10)*10-1;}
 function setCur(cur){curNow=cur;
 document.querySelectorAll('.cur-btn').forEach(function(b){b.classList.toggle('act',b.getAttribute('data-cur')===cur);});
 document.querySelectorAll('.cur').forEach(function(s){var g=parseFloat(s.getAttribute('data-gbp'));
-var v=cur==='GBP'?g:n9(g*RATE[cur]);
+var v=cur==='GBP'?g:n9(g*RATE[cur]);if(s.hasAttribute('data-day'))v=Math.round(v/30.4);/* daily = monthly / 30.4, Google's own average month */
 s.textContent=SYM[cur]+v.toLocaleString(LOC[cur]);});}
 setCur('GBP');
 (function(){
