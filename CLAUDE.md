@@ -82,6 +82,10 @@ Section order (reordered 2026-07-23, proof-first for mobile — Clarity showed 5
   (899/0.125 = 7,192, rounded). Dual Pro £1,349 (×1.5, nearest 9) for £10,800, saves £449.
   The "Fee at full budget" row shows each % rounded to the nearest half point with "≈":
   17.5 / 15 / 12.5 / 10 for single AND dual. Axis marker for Pro sits at 60% (7,200/12,000).
+  DUAL PRO REPRICED same day (Danyal): **£1,299** (not the ×1.5 formula's £1,349), budget at
+  12.5% → **£10,400** (1,299/0.125 = 10,392), saves **£499** vs two Pro plans. Because £10,400 is
+  44% (not 50%) more than single Pro, every "50% more ad budget" line now says "UP TO 50% more".
+  Dual Pro is a manual override, like dual setup — do not recompute it from the formula.
 - Pricing — **£ IS THE PRICE LIST, € AND $ ARE LIVE-CONVERTED since 2026-09-08** (re-confirmed by
   Danyal 2026-10-06: "keep pounds as the main currency for now" — a switch to $ was built and
   reverted the same day; he may set $ prices later)
@@ -114,8 +118,8 @@ Section order (reordered 2026-07-23, proof-first for mobile — Clarity showed 5
   × 1.5 (second platform at half price, nearest-9 rounding) AND single budget cap × 1.5,
   the total budget being split equally between Google and Meta. Dual caps are TOTAL spend:
   Dual Starter £519 (£3,000 total, £1,500 each) · Dual Growth £899 (£6,000, £3,000 each) ·
-  Dual Pro £1,349 (£10,800 total) · Dual Scale £1,799 (£18,000, £9,000 each) · Dual
-  Enterprise from £18,000. Saved vs two singles: £179 / £299 / £449 / £599 (`.pl-sv`; not
+  Dual Pro £1,299 (£10,400 total) · Dual Scale £1,799 (£18,000, £9,000 each) · Dual
+  Enterprise from £18,000. Saved vs two singles: £179 / £299 / £499 / £599 (`.pl-sv`; not
   derived at runtime). Each dual row states "up to £X total" plus "£Y on each platform" in
   `.pl-who`; the `.pt-half` line says "Second platform at half price · 50% more ad budget,
   split equally between both platforms". WHY: the earlier ladder (Dual Launch/Starter with
