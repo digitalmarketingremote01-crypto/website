@@ -15,6 +15,13 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <!-- Sample audits -->
+  <url>
+    <loc>https://www.digitalmarketingremote.com/sample-audits</loc>
+    <lastmod>2026-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
   <!-- Impressum (EN) -->
   <url>
     <loc>https://www.digitalmarketingremote.com/en/imprint</loc>

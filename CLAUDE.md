@@ -23,14 +23,17 @@ Danyal: free audits drew low-intent leads who took the plan and left (4 audits �
   Never call the audit/plan "free" on its own again.
 - Add-ons repriced the same day: Setup & conversion tracking **£99 single / £179 dual** (dual is a
   set price, NOT single × 1.5) · AI ad creatives **£99/mo**.
-- Sample audit (Danyal: "one audit that can inspire", used on the site AND in outreach emails):
-  `/sample-audit.pdf` (4 pages, image-only so no text can be copied) + `/audit-sample-1..4.webp`
-  thumbnails on the homepage #pilot, /lead-generation and /ecommerce offer blocks. Built from a COPY
-  of the facilities-management audit: new navy branding, client name/site/IDs/phones swapped for
-  dummy text and blurred, and all detail blurred — only headings, table headers and each block's
-  opening bold line stay readable ("we don't give details so they can do it themselves").
-  The audits already sent to clients are never edited. Copies live in that client's folder under
-  "Website sample (blurred)".
+- Sample audits (Danyal: "take them to another page and show more audits … I don't want them to think
+  they are paying £99 for 4 pages"): page `/sample-audits` shows ALL pages of every audit (6, 9, 9, 11),
+  each with its page count, the accounts we had access to and the stage the business was at. Homepage
+  #pilot, /lead-generation and /ecommerce show the 4 covers and link there; guides link there too.
+  This page is the link for outreach emails. Built by `python3 tools/make-sample-audits.py` from
+  READ-ONLY copies of the sent PDFs: navy recolour, client name/site/IDs blurred hard, all body text,
+  figures, tables and pictures blurred — only headings, table headers and each finding's bold opening
+  line (3+ words, digits blurred) stay readable ("we don't give details so they can do it themselves").
+  Output: /audits/<slug>.pdf (image-only, nothing copyable) + /audits/<slug>-<n>.webp. New audit: add it
+  to AUDITS in the script, run with --kept, read what stays readable, then add a card to the page.
+  The audits already sent to clients are never edited.
 
 ## Project Overview
 Single-page HTML website for Digital Marketing Remote, a DACH-focused performance marketing agency.
