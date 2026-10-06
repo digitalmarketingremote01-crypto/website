@@ -1,0 +1,65 @@
+/* Shared look for every page that is not a homepage (guides, landing, partner, legal, about,
+   services). Same Harbour palette, font, header and footer as the two homepages.
+   Loaded LAST in <head>, so these tokens override each page's older ones. Rule (Danyal,
+   2026-10-06): all pages always use the same colour scheme, branding and layout. */
+@font-face{font-family:'Plus Jakarta Sans';font-style:normal;font-weight:400 800;font-display:optional;src:url('/fonts/plus-jakarta-sans.woff2') format('woff2')}
+
+/* Harbour palette, also mapped onto the older token names the pages still use */
+:root{
+--ink:#1d2e45;--deep:#111b2a;--acc:#355f8c;--acc-d:#2a4d75;--acc-l:#e7eef7;--acc-dk:#a9c5e4;--pos:#2c6476;
+--cream:#f2f5f9;--line:#dbe2eb;--tx:#3d4858;--mt:#5c6777;
+--c1:#1d2e45;--c2:#355f8c;--c2d:#2a4d75;--c2l:#e7eef7;--c3:#2c6476;--bg:#f2f5f9;--bd:#dbe2eb}
+body{font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+
+/* header — same as the homepage nav once scrolled */
+header.sn{position:sticky;top:0;z-index:1000;display:block;margin:0;padding:0;background:rgba(255,255,255,.94);-webkit-backdrop-filter:blur(16px) saturate(1.6);backdrop-filter:blur(16px) saturate(1.6);border:0;border-bottom:1px solid var(--line);box-shadow:0 8px 30px rgb(29 46 69 / .07);text-align:left;font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.5}
+.sn-in{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;max-width:1140px;height:72px;margin:0 auto;padding:0 24px}
+.sn a,.sf a{text-decoration:none}
+.sn a:hover,.sf a:hover{text-decoration:none}
+.sn-logo,.sf-logo{font-weight:800;font-size:1.06rem;letter-spacing:-.02em;color:var(--ink);white-space:nowrap}
+.sn-logo span{color:var(--acc)}
+.sn nav{display:flex;gap:1.55rem;margin:0;padding:0;border:0;background:none}
+.sn nav a{font-size:.88rem;font-weight:500;color:var(--tx);transition:color .2s}
+.sn nav a:hover{color:var(--acc)}
+.sn-cta{display:flex;align-items:center;gap:.85rem}
+.sn-lang{font-size:.76rem;font-weight:700;color:var(--ink);border:1.5px solid var(--line);border-radius:999px;padding:.34rem .7rem;transition:border-color .2s}
+.sn-lang:hover{border-color:var(--ink)}
+.sn-btn{display:inline-flex;align-items:center;justify-content:center;font-weight:600;font-size:.85rem;line-height:1.15;padding:.68rem 1.05rem;border-radius:11px;background:var(--ink);color:#fff;box-shadow:0 10px 24px -14px rgb(29 46 69 / .7);transition:background .2s,transform .2s}
+.sn-btn:hover{background:var(--acc-d);color:#fff;transform:translateY(-1px)}
+.sn-hb{display:none;flex-direction:column;gap:5px;padding:10px;margin-right:-10px;background:none;border:0;cursor:pointer}
+.sn-hb span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px}
+.sn-mm{display:none;background:#fff;border-top:1px solid var(--line);padding:.6rem 24px 1.5rem;box-shadow:0 24px 40px -20px rgb(29 46 69 / .3)}
+.sn.open .sn-mm{display:block}
+.sn-mm a{display:block;padding:.9rem 0;border-bottom:1px solid var(--line);font-weight:500;color:var(--ink)}
+.sn-mm a.sn-btn{display:flex;margin-top:1.2rem;border:0;color:#fff}
+@media(max-width:1080px){.sn nav{display:none}.sn-hb{display:flex}}
+@media(max-width:600px){.sn-in{padding:0 18px}.sn-cta .sn-btn{display:none}}
+
+/* footer — same as the homepage footer */
+footer.sf{display:block;margin:0;padding:4.2rem 0 2.1rem;background:var(--deep);border:0;text-align:left;font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.65;color:rgba(255,255,255,.7)}
+.sf-in{max-width:1140px;margin:0 auto;padding:0 24px}
+.sf-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:3rem}
+.sf-logo{color:#fff}
+.sf-logo span{color:var(--acc-dk)}
+.sf p{max-width:270px;margin:.75rem 0 0;font-size:.87rem;color:rgba(255,255,255,.7)}
+.sf ul{list-style:none;margin:0;padding:0}
+.sf-soc{display:flex;gap:.5rem;margin-top:1.25rem}
+.sf-soc a{display:grid;place-items:center;width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.08);font-size:.74rem;font-weight:700;color:rgba(255,255,255,.85);transition:background .2s}
+.sf-soc a:hover{background:var(--acc)}
+.sf h3{margin:0 0 1rem;font-size:.84rem;line-height:1.3;letter-spacing:0;color:#fff}
+.sf-col li{margin:0 0 .6rem}
+.sf-col a,.sf-bot a{font-size:.87rem;color:rgba(255,255,255,.74);transition:color .2s}
+.sf-col a:hover,.sf-bot a:hover{color:#fff}
+.sf-bot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;padding-top:1.6rem;border-top:1px solid rgba(255,255,255,.09);font-size:.8rem;color:rgba(255,255,255,.7)}
+.sf-bot nav{display:flex;flex-wrap:wrap;gap:1.2rem;margin:0;padding:0;border:0;background:none}
+.sf-bot a{font-size:.8rem}
+@media(max-width:900px){.sf-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.sf-grid{grid-template-columns:1fr}.sf-in{padding:0 18px}}
+
+/* landing + partner heroes were padded for an old fixed nav; the header now takes its own space */
+.sn~main>#hero:first-child,.sn~#hero,.sn~#phero,.sn~main>#phero:first-child{padding-top:4.5rem}
+@media(max-width:768px){.sn~main>#hero:first-child,.sn~#hero,.sn~#phero,.sn~main>#phero:first-child{padding-top:2.75rem}}
+
+/* phones: long source URLs and long German button labels wrap instead of widening the page */
+article a,.src a{overflow-wrap:anywhere}
+@media(max-width:600px){main .btn{white-space:normal;max-width:100%;text-align:center;line-height:1.25}}

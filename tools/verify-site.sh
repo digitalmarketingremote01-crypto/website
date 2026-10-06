@@ -54,6 +54,11 @@ if node tools/inject-tracking.mjs --check >/dev/null 2>&1; then
 else
   fail "pages WITHOUT tracking.js — run: node tools/inject-tracking.mjs"
 fi
+if python3 tools/apply-site-chrome.py --check >/dev/null 2>&1; then
+  pass "all pages carry the shared header, footer and palette (/assets/site.css)"
+else
+  fail "pages WITHOUT the shared look — run: python3 tools/apply-site-chrome.py"
+fi
 # spot-check one article LIVE (build-time injection must have run on Vercel)
 art=$(curl -s -H 'Cache-Control: no-cache' "$BASE/ratgeber/google-ads-kosten?cb=$TS")
 grep -qF -- "assets/tracking.js" <<<"$art" && pass "live article page loads tracking.js" || fail "live article page has NO tracking.js"

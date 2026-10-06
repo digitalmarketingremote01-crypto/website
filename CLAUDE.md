@@ -60,11 +60,13 @@ Then deploy with `vercel --prod`.
 ## Website Structure
 Section order (reordered 2026-07-23, proof-first for mobile — Clarity showed 57% of mobile visitors drop in the top 25%): Hero → Pilot → Cases/Erfolge (Success stories) → Reviews/Kundenstimmen → Process (So arbeiten wir / How-we-work) → Services → About → Pricing → FAQ → Contact → CTA. Same order DE+EN, one order for both viewports. Logo strip was removed earlier. Reviews used to sit dead-last; Cases+Reviews are now right after the Pilot offer.
 - Hero: stats badge, headline, CTA buttons, hero form. Descriptive copy is now a scannable two-path (Projekt-Analyse / Konto-Audit — market/keywords vs. where budget is lost), not the old long paragraph.
-- About section (founder background, 72 projects / 15 countries / €1.7M revenue)
+- About section (founder background, 77 projects / 16 countries / €1.7M revenue)
 - Services (Google Ads, Meta Ads, E-Commerce/Lead-Gen/SaaS, SEA, YouTube Ads, Tracking & Analytics)
 - Process (6 steps)
 - Case Studies (6, anonymized; only the Loganberry "E-Commerce Brand Launch" case has a screenshot)
-- Pricing — **£ IS THE PRICE LIST, € AND $ ARE LIVE-CONVERTED since 2026-09-08**
+- Pricing — **£ IS THE PRICE LIST, € AND $ ARE LIVE-CONVERTED since 2026-09-08** (re-confirmed by
+  Danyal 2026-10-06: "keep pounds as the main currency for now" — a switch to $ was built and
+  reverted the same day; he may set $ prices later)
   (Danyal's rule, set the same day the site flipped to English-first). Each `.cur` span
   carries ONLY `data-gbp`. `setCur()` converts at the CURRENT rate (frankfurter
   `from=GBP&to=EUR,USD`, cached per day in `localStorage.dmrFxGbp2`, fallback rates
@@ -182,7 +184,13 @@ Section order (reordered 2026-07-23, proof-first for mobile — Clarity showed 5
   PNG/JPEG originals which are KEPT in repo). `og:image` stays `danyal-hero.jpeg` for social.
 
 ## Key Numbers (always use these)
-- 72 projects total in 15 countries
+- 77 projects total in 16 countries (as of 2026-10-06). The 16 (Danyal's list 2026-10-06 + verified):
+  Pakistan, India, USA, Canada, UK, Germany, Austria, Switzerland, Netherlands, Portugal,
+  Spain, France, Norway, Sweden, Australia (Australian agency work), Romania (PieseFord). The count GROWS: 72 track record
+  + every client in "../DMR Clients" with an Audit & Marketing Plan PDF + 1 (DMR's own
+  marketing). Danyal 2026-10-06: every audit counts, each one is real work and experience.
+  `python3 tools/update-project-count.py` shows site vs folders; `... <N>` rewrites all pages.
+  New country from an audit? Ask him before changing "16 countries".
 - 57 projects in 13 countries — done by founder as INDEPENDENT CONSULTANT for a German
   investment company (Craft AEC GmbH). Never present their end-clients as DMR clients.
 - Over €1.7 million generated revenue (verifiable) — do NOT claim €2M
@@ -191,7 +199,10 @@ Section order (reordered 2026-07-23, proof-first for mobile — Clarity showed 5
 
 ## Legal Constraints (LEARNED — do not violate)
 - ALL tracking must stay consent-gated (loadTracking() only after cookie opt-in)
-- Never name or show logos/screenshots of Craft AEC's end-clients (no permission)
+- Craft AEC end-clients: logos + names MAY appear in the homepage brand strip (Danyal's call,
+  2026-10-06: own clients first, then Craft AEC clients, ONLY brands whose website is still
+  live — re-check before adding). Strip label says "our founder", never "our clients".
+  Still never: their screenshots, case-study names, or presenting them as DMR clients.
 - Only advertise numbers that are provable (UWG § 5)
 - Legal pages are standalone: /impressum, /datenschutz (vercel.json cleanUrls)
 - NO PROMISED SIGNED DOCUMENTS anywhere on the site (user directive 2026-08-07). Removed that day:
@@ -209,6 +220,17 @@ Section order (reordered 2026-07-23, proof-first for mobile — Clarity showed 5
   Stunden". Keep protective/mandatory text (Impressum disclaimers, Datenschutz) — removing
   it adds exposure. Audit new copy for: Garantie, versprechen, verpflichten, "nach
   deutschem Recht", advertised NDAs/AVV.
+
+## Same look on every page — BINDING (Danyal, 2026-10-06)
+"all pages should always use same color scheme and branding and layout."
+- Homepages carry the design inline. Every OTHER page gets the identical header + footer and the
+  Harbour palette from `/assets/site.css` + `python3 tools/apply-site-chrome.py` (markup lives in
+  that script; idempotent; `--check` is wired into verify-site.sh). New page → run it.
+- Old Ember/red colours left in a page: `python3 tools/legacy-colours.py <file>`.
+- Left/right switching uses ONE pattern everywhere: round 44px ‹ › arrows (homepage case
+  filmstrip, reviews, landing-page screenshot sliders). No dots, no in-image arrows.
+- Palette or font change = homepages + site.css + cookie banner in tracking.js, same change.
+- The only conversion action is booking a call (Calendly). No WhatsApp buttons anywhere.
 
 ## Tracking architecture — BINDING (added 2026-08-20 after 60 pages shipped untracked)
 - ALL tracking lives in `/assets/tracking.js` (IDs, GTM/GA4, Meta Pixel, Clarity, consent
