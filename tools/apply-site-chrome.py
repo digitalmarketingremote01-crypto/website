@@ -18,7 +18,7 @@ SKIP = {'index.html', 'de/index.html'}
 T = {
  'en': dict(home='/', nav=[('/#about', 'About'), ('/#services', 'Services'), ('/#pricing', 'Pricing'), ('/#cases', 'Results'), ('/#contact', 'Contact'), ('/en/partner', 'For Agencies')],
             cta='Book a free call', other='DE', other_lang='de', other_home='/de', menu='Menu', navlabel='Main navigation',
-            about='Performance marketing for growing businesses in the US, Canada, the UK and Europe. Data-driven, transparent, results-focused.',
+            about='Performance marketing for growing businesses in the UK, the US, Canada and Australia. Data-driven, transparent, results-focused.',
             cols=[('Services', [('/#services', 'Google Ads'), ('/#services', 'Meta Ads'), ('/ecommerce', 'E-Commerce'), ('/lead-generation', 'Lead Generation'), ('/#services', 'Tracking &amp; Analytics')]),
                   ('Company', [('/#about', 'About'), ('/#cases', 'Success stories'), ('/#pricing', 'Pricing'), ('/#pilot', 'Free marketing plan'), ('/en/partner', 'For agencies'), ('/en/guides', 'Guides')])],
             contact='Contact', lang_name='Deutsch', imprint=('/en/imprint', 'Imprint'), privacy=('/en/privacy', 'Privacy', 'Privacy Policy'), cookies='Cookie settings',

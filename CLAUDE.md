@@ -89,8 +89,9 @@ Section order (reordered 2026-07-23, proof-first for mobile — Clarity showed 5
   the per-platform row/figures were removed. Say "shared across both platforms" / "aufgeteilt auf
   beide Plattformen". The single/dual chips share one grid cell so the price table never moves
   when the toggle is switched — keep anything above the table the same height in both states.
-  **ENGLISH SITE (2026-10-06):** no "DACH focus" and no "campaign copy in German" — English
-  countries first (US, Canada, UK, Europe). German site keeps its DACH wording.
+  **ENGLISH SITE (2026-10-06):** no "DACH focus" and no "campaign copy in German". FIRST FOCUS
+  (Danyal, 2026-10-06): UK, USA, Canada, Australia — copy names these four. German site stays
+  (he decided to keep it) with its DACH wording.
   **DUAL SYSTEM REBUILT 2026-09-26 (Danyal's rule, approved table):** dual = single price
   × 1.5 (second platform at half price, nearest-9 rounding) AND single budget cap × 1.5,
   the total budget being split equally between Google and Meta. Dual caps are TOTAL spend:
