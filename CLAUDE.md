@@ -260,6 +260,11 @@ Section order (reordered 2026-07-23, proof-first for mobile — Clarity showed 5
   colours or fonts change, restyle the banner in `/assets/tracking.js` in the same change.
   Never leave it on an old palette. Both buttons stay equal in size, weight and solidity (DSK).
 
+## Replacing an image — give it a NEW file name (learned 2026-10-06)
+vercel.json caches .webp/.woff2 for a year as "immutable", so a browser that saw the old file never
+re-downloads it. Never overwrite an image in place: save the new version as `name-v2.webp` (v3…)
+and update every reference. The re-cropped car-wrapping shot stayed cut-off for Danyal until renamed.
+
 ## Integrations
 - Google Tag Manager: GTM-MFXPMZ8W (Google Ads Conversion ID constant: 18174154684 — bare number, GTM adds AW- prefix)
 - Google Analytics 4: G-N6G3MVTEH5
