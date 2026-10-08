@@ -41,8 +41,17 @@ for m in "GTM-MFXPMZ8W" "G-N6G3MVTEH5"; do
 done
 
 echo "== 4. mobile-only UI must NOT leak onto desktop =="
-for sel in '#mcta{display:none}' '.pcards{display:none}'; do
+for sel in '#mcta{display:none}'; do
   grep -qF -- "$sel" <<<"$home" && pass "base rule $sel" || fail "base rule $sel missing (mobile UI can leak to desktop)"
+done
+if grep -qF -- 'class="pcards' <<<"$home"; then
+  grep -qF -- '.pcards{display:none}' <<<"$home" && pass "base rule .pcards{display:none}" || fail "base rule .pcards{display:none} missing"
+fi
+
+echo "== 4b. one pricing model (final band model, Danyal 2026-10-08) =="
+grep -qF -- 'class="bands"' <<<"$home" && pass "homepage shows the ad-spend band table" || fail "homepage band price table missing"
+for old in 'half price' '50% more ad budget' '£1,349' '£1,799' '£7,200' 'Dual Starter' 'You risk nothing'; do
+  grep -qiF -- "$old" <<<"$home" && fail "old pricing wording back on the homepage: $old" || pass "no '$old'"
 done
 if grep -qF -- 'class="msw-nav' <<<"$home"; then
   grep -qF -- '.msw-nav{display:none}' <<<"$home" && pass "base rule .msw-nav{display:none}" || fail "base rule .msw-nav{display:none} missing"

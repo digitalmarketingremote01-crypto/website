@@ -14,6 +14,33 @@
   any language (say so; never imply English- or German-only ads). Reports/calls/emails are in English.
   Paid ads currently run in England only. £ stays the main currency.
 
+## ⚠ FINAL PRICING MODEL — 2026-10-08 (Danyal's brief) — supersedes EVERY older price note in this file
+Fixed monthly management fee per band of TOTAL monthly ad spend (across all managed platforms):
+| Total monthly ad spend | One platform | Google + Meta |
+| up to £2,000 | £349 | £499 |  £2,001–5,000 | £499 | £699 |  £5,001–10,000 | £699 | £999 |
+| £10,001–20,000 | £999 | £1,399 |  £20,001–50,000 | £1,499 | £2,099 |  £50,001–100,000 | £2,499 | £3,499 |
+| £100,001–200,000 | £3,999 | £5,599 |  £200,001–500,000 | £5,999 | £8,399 |  £500,001–1,000,000 | £8,499 | £11,899 |
+| above £1,000,000 | custom | custom |
+- Fixed prices, never ranges, never "from £X" for a tier (one-liners "plans start at £349" are fine).
+- Dual = two platforms under the SAME total band; never "50% more ad budget", "second platform at half
+  price", "double budget", per-platform minimums. The dual fee is higher only because two platforms are managed.
+- Philosophy copy: fixed fees that scale with ad budget; effective management cost falls as spend grows.
+  NOT a percentage of spend; no complexity/industry pricing.
+- Breathing room: priced on the normal monthly advertising level — small/temporary changes don't move tier.
+- £99 Marketing Diagnostic, paid up front, credited in full toward the first month. Never call it free;
+  no "<s>£99</s> Free" display any more (removed 2026-10-08).
+- Tracking & conversion setup £99 one platform / £179 Google + Meta, one-off, separate (waiver kept).
+  AI creatives £99/mo, optional, separate.
+- No minimum contract, cancel monthly; ~90 days RECOMMENDED for learning — never a contract term.
+  "You risk nothing" removed → "Low-risk start" / "Start with a clear plan, not a long-term contract."
+- Markup: homepage `#pricing` and /en/partner use one `<table class="bands">` (no platform toggle) + an
+  ad-spend slider (`#spend`, `calcUpd()`, stop list SPEND) that highlights the band. Band labels use
+  `data-after="<prev top>"` so converted € / $ bands never overlap (start = converted prev top + 1).
+  Same table, static £, on /en/services/google-ads and /en/guides/google-ads-agency-pricing.
+  Shared data for scripted edits lived in the session scratchpad (bands.py); the numbers above are the source.
+- REMOVED with this model: Starter/Growth/Pro/Scale/Enterprise names, Dual tier names, budget axis, daily-budget
+  row, fee-at-full-budget row, "You save" row, `togPr`/`ptogPr` toggles, `.pcards` mobile cards.
+
 ## ⚠ AUDIT IS PAID SINCE 2026-10-06 — supersedes every "free marketing plan / free audit" note below
 Danyal: free audits drew low-intent leads who took the plan and left (4 audits → 1 client).
 - The 30-min intro CALL stays free ("Book a free call" is correct everywhere).
