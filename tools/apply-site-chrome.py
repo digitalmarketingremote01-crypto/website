@@ -33,8 +33,8 @@ T = {
             contact='Kontakt', lang_name='English', imprint=('/impressum', 'Impressum'), privacy=('/datenschutz', 'Datenschutz', 'Datenschutzerklärung'), cookies='Cookie-Einstellungen',
             partner_cta='Partner-Gespräch buchen'),
 }
-SOC = ('<div class="sf-soc"><a href="https://www.facebook.com/digitalmarketingremote/" target="_blank" rel="noopener" aria-label="Facebook">fb</a>'
-       '<a href="https://www.instagram.com/digitalmarketing.remote/" target="_blank" rel="noopener" aria-label="Instagram">ig</a>'
+SOC = ('<div class="sf-soc"><a href="https://www.facebook.com/digitalmarketingremote/" target="_blank" rel="noopener" aria-label="fb: Facebook">fb</a>'
+       '<a href="https://www.instagram.com/digitalmarketing.remote/" target="_blank" rel="noopener" aria-label="ig: Instagram">ig</a>'
        '<a href="https://www.linkedin.com/company/121143999/" target="_blank" rel="noopener" aria-label="LinkedIn company page">in</a>'
        '<a href="https://www.linkedin.com/in/mdanyalshahzad/" target="_blank" rel="noopener" aria-label="LinkedIn personal">in↗</a></div>')
 
