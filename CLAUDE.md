@@ -17,10 +17,9 @@
 ## ⚠ FINAL PRICING MODEL — 2026-10-08, THIRD brief ("FINAL WEBSITE UPDATE") — supersedes EVERY older price note
 Fixed monthly management fee per band of TOTAL monthly ad spend (across all managed platforms). FOUR bands + custom:
 | Total monthly ad spend | One platform | Google + Meta |
-| up to £1,500 | £349 (23.3%) | £499 (33.3%) |  £1,501–2,500 | £449 (18%) | £649 (26%) |
-| £2,501–4,000 | £599 (15%) | £799 (20%) |  £4,001–7,500 | £749 (10%) | £999 (13.3%) |  above £7,500 | custom | custom |
-- Effective % = fee / TOP of band, shown SECONDARY under each fee ("Equivalent to 10% at £7,500 spend"; phones show
-  "10% at £7,500"). Homepage computes it in setCur() from the converted figures (`.eff-p` data-fee/data-top), so € and $ stay true.
+| up to £1,500 | £349 | £499 |  £1,501–2,500 | £449 | £649 |
+| £2,501–4,000 | £599 | £799 |  £4,001–7,500 | £749 | £999 |  above £7,500 | custom | custom |
+- NO effective-% lines (added then removed the same day on Danyal's word: "lets remove the percentages"). Fee only.
 - NO Starter / Growth / Scale labels, no tier names at all. NO "40% more" wording. Dual fee is higher "only because two
   platforms are managed". No high-spend tiers on the public page (the £10k–£1M bands of earlier the same day are gone).
 - Fixed prices, never ranges, never "from £X" for a tier (one-liners "plans start at £349" are fine).
@@ -37,7 +36,7 @@ Fixed monthly management fee per band of TOTAL monthly ad spend (across all mana
   the old "month two carries no management fee" pilot line was still on the service page + pricing guide — removed.
 - Markup: homepage `#pricing` = one `<table class="bands">` (5 rows, no fold) + ad-spend slider (`#spend`, `calcUpd()`,
   SPEND stops 500…7,500 then "Over £7,500" = Custom). Band labels use `data-after="<prev top>"` so converted bands never
-  overlap. Same table, static £ with the % line, on /en/services/google-ads and /en/guides/google-ads-agency-pricing.
+  overlap. Same table, static £, on /en/services/google-ads and /en/guides/google-ads-agency-pricing.
   Running-text price lines: homepage FAQ "What does it cost?" + single-vs-dual example (visible AND schema),
   how-much-does-google-ads-cost, meta-ads-cost, lead-generation/ecommerce "Plans from £349".
 - Reassurance kept to the strongest points: the `.assure` pill row was removed (brief: avoid repeated badges/pills).
