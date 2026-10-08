@@ -10,7 +10,7 @@ pass(){ printf "  \033[32mPASS\033[0m  %s\n" "$1"; }
 fail(){ printf "  \033[31mFAIL\033[0m  %s\n" "$1"; FAIL=1; }
 
 echo "== 1. pages reachable (cache-busted) =="
-for p in "" "en/partner" "en/imprint" "en/privacy" "en/guides" "ecommerce" "lead-generation" "sample-audits"; do
+for p in "" "en/imprint" "en/privacy" "en/guides" "ecommerce" "lead-generation" "sample-audits"; do
   code=$(curl -s -o /dev/null -w '%{http_code}' -H 'Cache-Control: no-cache' "$BASE/$p?cb=$TS")
   [ "$code" = "200" ] && pass "/$p ($code)" || fail "/$p returned $code"
 done
@@ -50,7 +50,7 @@ fi
 
 echo "== 4b. one pricing model (final band model, Danyal 2026-10-08) =="
 grep -qF -- 'class="bands"' <<<"$home" && pass "homepage shows the ad-spend band table" || fail "homepage band price table missing"
-for old in 'half price' '50% more ad budget' '£1,349' '£1,799' '£7,200' 'Dual Starter' 'You risk nothing'; do
+for old in 'half price' '50% more ad budget' '£1,349' '£1,799' '£7,200' 'Dual Starter' 'You risk nothing' '£11,899' '£1,399' 'en/partner' 'White-label' 'class="grp'; do
   grep -qiF -- "$old" <<<"$home" && fail "old pricing wording back on the homepage: $old" || pass "no '$old'"
 done
 if grep -qF -- 'class="msw-nav' <<<"$home"; then

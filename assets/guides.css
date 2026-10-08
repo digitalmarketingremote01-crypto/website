@@ -40,8 +40,6 @@ article table{border-collapse:collapse;width:100%;font-size:.95rem}
 article th{background:var(--c1);color:#fff;text-align:left;padding:.6rem .8rem;font-weight:700}
 article td{border:1px solid var(--bd);padding:.55rem .8rem;vertical-align:top}
 article tr:nth-child(even) td{background:var(--bg)}
-article tr.grp td{background:var(--c2l);font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--mt)}
-article tr.grp td b{color:var(--c2d);letter-spacing:.1em}
 
 /* CTA */
 .cta-box{background:var(--c1);color:#fff;border-radius:var(--r);padding:1.8rem;margin:2.5rem 0 1.5rem;text-align:center}

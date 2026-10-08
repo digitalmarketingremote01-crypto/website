@@ -8,13 +8,6 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  <!-- Partner / White-label (EN) -->
-  <url>
-    <loc>https://www.digitalmarketingremote.com/en/partner</loc>
-    <lastmod>2026-07-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
   <!-- Sample audits -->
   <url>
     <loc>https://www.digitalmarketingremote.com/sample-audits</loc>
@@ -86,12 +79,6 @@
   <!-- Guide: Switching Google Ads agencies (EN twin) -->
   <url>
     <loc>https://www.digitalmarketingremote.com/en/guides/switching-google-ads-agency</loc>
-    <lastmod>2026-08-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.digitalmarketingremote.com/en/guides/white-label-ppc</loc>
     <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

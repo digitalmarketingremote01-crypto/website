@@ -14,36 +14,40 @@
   any language (say so; never imply English- or German-only ads). Reports/calls/emails are in English.
   Paid ads currently run in England only. £ stays the main currency.
 
-## ⚠ FINAL PRICING MODEL — 2026-10-08 (Danyal's brief) — supersedes EVERY older price note in this file
-Fixed monthly management fee per band of TOTAL monthly ad spend (across all managed platforms):
+## ⚠ FINAL PRICING MODEL — 2026-10-08, THIRD brief ("FINAL WEBSITE UPDATE") — supersedes EVERY older price note
+Fixed monthly management fee per band of TOTAL monthly ad spend (across all managed platforms). FOUR bands + custom:
 | Total monthly ad spend | One platform | Google + Meta |
-| up to £2,000 | £349 | £499 |  £2,001–5,000 | £499 | £699 |  £5,001–10,000 | £699 | £999 |
-| £10,001–20,000 | £999 | £1,399 |  £20,001–50,000 | £1,499 | £2,099 |  £50,001–100,000 | £2,499 | £3,499 |
-| £100,001–200,000 | £3,999 | £5,599 |  £200,001–500,000 | £5,999 | £8,399 |  £500,001–1,000,000 | £8,499 | £11,899 |
-| above £1,000,000 | custom | custom |
+| up to £1,500 | £349 (23.3%) | £499 (33.3%) |  £1,501–2,500 | £449 (18%) | £649 (26%) |
+| £2,501–4,000 | £599 (15%) | £799 (20%) |  £4,001–7,500 | £749 (10%) | £999 (13.3%) |  above £7,500 | custom | custom |
+- Effective % = fee / TOP of band, shown SECONDARY under each fee ("Equivalent to 10% at £7,500 spend"; phones show
+  "10% at £7,500"). Homepage computes it in setCur() from the converted figures (`.eff-p` data-fee/data-top), so € and $ stay true.
+- NO Starter / Growth / Scale labels, no tier names at all. NO "40% more" wording. Dual fee is higher "only because two
+  platforms are managed". No high-spend tiers on the public page (the £10k–£1M bands of earlier the same day are gone).
 - Fixed prices, never ranges, never "from £X" for a tier (one-liners "plans start at £349" are fine).
 - Dual = two platforms under the SAME total band; never "50% more ad budget", "second platform at half
-  price", "double budget", per-platform minimums. The dual fee is higher only because two platforms are managed.
+  price", "double budget", per-platform minimums.
 - Philosophy copy: fixed fees that scale with ad budget; effective management cost falls as spend grows.
-  NOT a percentage of spend; no complexity/industry pricing.
+  NOT a percentage-of-spend model; no complexity/industry pricing; never "cheap".
 - Breathing room: priced on the normal monthly advertising level — small/temporary changes don't move tier.
-- £99 Marketing Diagnostic, paid up front, credited in full toward the first month. Never call it free;
-  no "<s>£99</s> Free" display any more (removed 2026-10-08).
+- £99 Marketing Diagnostic, "£99 paid upfront. Start with us and the full £99 is credited toward your first month."
+  Never call it free; no crossed-out price; never justify it as "a full day of work" (removed on his brief).
 - Tracking & conversion setup £99 one platform / £179 Google + Meta, one-off, separate (waiver kept).
   AI creatives £99/mo, optional, separate.
-- No minimum contract, cancel monthly; ~90 days RECOMMENDED for learning — never a contract term.
-  "You risk nothing" removed → "Low-risk start" / "Start with a clear plan, not a long-term contract."
-- Markup: homepage `#pricing` and /en/partner use one `<table class="bands">` (no platform toggle) + an
-  ad-spend slider (`#spend`, `calcUpd()`, stop list SPEND) that highlights the band. Bands above £100,000 + custom are folded
-  (`tr.more`, "See higher budgets" button, `bandsMore()`); the slider unfolds them when it reaches them (Danyal 2026-10-08). Band labels use
-  `data-after="<prev top>"` so converted € / $ bands never overlap (start = converted prev top + 1).
-  Same table, static £, on /en/services/google-ads and /en/guides/google-ads-agency-pricing.
-  Shared data for scripted edits lived in the session scratchpad (bands.py); the numbers above are the source.
-- REMOVED with this model: old Starter/Growth/Pro/Scale/Enterprise TIERS with caps, Dual tier names, budget axis, daily-budget
-  row, fee-at-full-budget row, "You save" row, `togPr`/`ptogPr` toggles, `.pcards` mobile cards.
-- Second brief, same day: NO "40% more" anywhere (Danyal picked the brief over his own earlier ask) — say the dual fee is
-  higher "only because two platforms are managed". Band GROUP labels are back as labels only (`tr.grp` rows, skipped by
-  calcUpd): Starter = up to £10,000 · Growth = £10,001–£100,000 · Scale = above £100,000 (folded). On all 4 price tables.
+- No minimum contract, cancel monthly; ~90 days RECOMMENDED for learning — never a contract term. No result guarantees:
+  the old "month two carries no management fee" pilot line was still on the service page + pricing guide — removed.
+- Markup: homepage `#pricing` = one `<table class="bands">` (5 rows, no fold) + ad-spend slider (`#spend`, `calcUpd()`,
+  SPEND stops 500…7,500 then "Over £7,500" = Custom). Band labels use `data-after="<prev top>"` so converted bands never
+  overlap. Same table, static £ with the % line, on /en/services/google-ads and /en/guides/google-ads-agency-pricing.
+  Running-text price lines: homepage FAQ "What does it cost?" + single-vs-dual example (visible AND schema),
+  how-much-does-google-ads-cost, meta-ads-cost, lead-generation/ecommerce "Plans from £349".
+- Reassurance kept to the strongest points: the `.assure` pill row was removed (brief: avoid repeated badges/pills).
+
+## ⚠ AGENCY / WHITE-LABEL OFFER REMOVED — 2026-10-08 (same brief: "one primary commercial audience: businesses")
+- /en/partner deleted → 301 to /. /partner (old DE) → /. White-label guide /en/guides/white-label-ppc deleted → 301 to
+  /en/guides (/ratgeber/white-label-google-ads → /en/guides). Removed from sitemap, guides index, footers, apply-site-chrome.py.
+- Never re-add agency/white-label/reseller content, nav items or pages. Generic "agency" wording (e.g. "without
+  traditional agency overhead", the agency-pricing / red-flags / switching guides aimed at businesses) is fine.
+- Everything further down about /partner, /en/partner, partner pricing or the agency band is HISTORY.
 
 ## ⚠ HOMEPAGE ORDER — 2026-10-08 (Danyal's "calm, clear, trustworthy" brief) — supersedes "Website Structure" below
 Hero ("Your ad budget deserves a clear plan.", CTAs: Book a free call + View pricing) → #trust (Founder-led · 77 projects ·
@@ -52,7 +56,6 @@ Hero ("Your ad budget deserves a clear plan.", CTAs: Book a free call + View pri
 AI creatives) → #about → #voices (3 cards at once, no carousel) → #faq (4 groups: Working together / Pricing & commitment /
 Performance / Data & access) → #contact (ONE final CTA "Let's review your marketing.") → footer.
 - In-page CTAs only: hero, diagnostic, pricing, final. No buttons in the process/FAQ headers; no separate cta-band.
-- "For Agencies" is OUT of the main nav (homepage + apply-site-chrome.py) and the agency band is gone; it lives in the footer.
 - Footer name for #pilot: "Marketing Diagnostic". No hype words, no urgency, no guarantees.
 
 ## ⚠ AUDIT IS PAID SINCE 2026-10-06 — supersedes every "free marketing plan / free audit" note below
