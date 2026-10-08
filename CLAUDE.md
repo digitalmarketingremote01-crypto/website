@@ -39,8 +39,21 @@ Fixed monthly management fee per band of TOTAL monthly ad spend (across all mana
   `data-after="<prev top>"` so converted € / $ bands never overlap (start = converted prev top + 1).
   Same table, static £, on /en/services/google-ads and /en/guides/google-ads-agency-pricing.
   Shared data for scripted edits lived in the session scratchpad (bands.py); the numbers above are the source.
-- REMOVED with this model: Starter/Growth/Pro/Scale/Enterprise names, Dual tier names, budget axis, daily-budget
+- REMOVED with this model: old Starter/Growth/Pro/Scale/Enterprise TIERS with caps, Dual tier names, budget axis, daily-budget
   row, fee-at-full-budget row, "You save" row, `togPr`/`ptogPr` toggles, `.pcards` mobile cards.
+- Second brief, same day: NO "40% more" anywhere (Danyal picked the brief over his own earlier ask) — say the dual fee is
+  higher "only because two platforms are managed". Band GROUP labels are back as labels only (`tr.grp` rows, skipped by
+  calcUpd): Starter = up to £10,000 · Growth = £10,001–£100,000 · Scale = above £100,000 (folded). On all 4 price tables.
+
+## ⚠ HOMEPAGE ORDER — 2026-10-08 (Danyal's "calm, clear, trustworthy" brief) — supersedes "Website Structure" below
+Hero ("Your ad budget deserves a clear plan.", CTAs: Book a free call + View pricing) → #trust (Founder-led · 77 projects ·
+16 countries · Fully remote + quiet grey logo ticker) → #cases → #pilot (= £99 Marketing Diagnostic, no promo styling) →
+#pricing → #process (6 steps) → #services ("Included in monthly management" vs "Available separately": tracking setup +
+AI creatives) → #about → #voices (3 cards at once, no carousel) → #faq (4 groups: Working together / Pricing & commitment /
+Performance / Data & access) → #contact (ONE final CTA "Let's review your marketing.") → footer.
+- In-page CTAs only: hero, diagnostic, pricing, final. No buttons in the process/FAQ headers; no separate cta-band.
+- "For Agencies" is OUT of the main nav (homepage + apply-site-chrome.py) and the agency band is gone; it lives in the footer.
+- Footer name for #pilot: "Marketing Diagnostic". No hype words, no urgency, no guarantees.
 
 ## ⚠ AUDIT IS PAID SINCE 2026-10-06 — supersedes every "free marketing plan / free audit" note below
 Danyal: free audits drew low-intent leads who took the plan and left (4 audits → 1 client).
