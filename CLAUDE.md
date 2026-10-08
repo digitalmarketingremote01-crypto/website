@@ -228,7 +228,7 @@ Section order (reordered 2026-07-23, proof-first for mobile — Clarity showed 5
   includes it). Fee logic Danyal accepted: fee/spend falls smoothly 20%→12.5% up the ladder,
   ≤40% at any band bottom. Caps were lowered 8k→7k / 15k→12k on purpose. "Keine
   Einrichtungsgebühr" claim REMOVED sitewide (guides too) — a setup fee now exists.
-  Only ONE row is highlighted (Pro). B2B-only § 14 BGB note stays.
+  Only ONE row is highlighted (Pro). B2B note REWORDED 2026-10-08 (Danyal): never "exclusively for businesses (B2B)" — say "designed for businesses and brands of all types" (imprint keeps § 14 BGB / not private consumers).
   SAME LIST also lives on `/partner` + `/en/partner` (section `#preise`/`#pricing`, own
   copy of the CSS + a self-contained `ptogPr`/`setCur` script with its own FX fetch) and in the two
   price guides (`ratgeber/google-ads-agentur-kosten`, `en/guides/google-ads-agency-pricing`
