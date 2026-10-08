@@ -34,7 +34,8 @@ Fixed monthly management fee per band of TOTAL monthly ad spend (across all mana
 - No minimum contract, cancel monthly; ~90 days RECOMMENDED for learning — never a contract term.
   "You risk nothing" removed → "Low-risk start" / "Start with a clear plan, not a long-term contract."
 - Markup: homepage `#pricing` and /en/partner use one `<table class="bands">` (no platform toggle) + an
-  ad-spend slider (`#spend`, `calcUpd()`, stop list SPEND) that highlights the band. Band labels use
+  ad-spend slider (`#spend`, `calcUpd()`, stop list SPEND) that highlights the band. Bands above £100,000 + custom are folded
+  (`tr.more`, "See higher budgets" button, `bandsMore()`); the slider unfolds them when it reaches them (Danyal 2026-10-08). Band labels use
   `data-after="<prev top>"` so converted € / $ bands never overlap (start = converted prev top + 1).
   Same table, static £, on /en/services/google-ads and /en/guides/google-ads-agency-pricing.
   Shared data for scripted edits lived in the session scratchpad (bands.py); the numbers above are the source.
