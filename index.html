@@ -860,7 +860,7 @@ els.forEach(function(e){io.observe(e);});
 var stats=document.querySelectorAll('.cn-v');
 var io2=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){countUp(x.target);io2.unobserve(x.target);}});},{threshold:.5});
 stats.forEach(function(e){io2.observe(e);});
-setTimeout(function(){document.querySelectorAll('.rv:not(.in)').forEach(function(e){e.classList.add('in');});},3000);
+setTimeout(function(){document.querySelectorAll('.rv:not(.in)').forEach(function(e){e.style.animation='none';e.classList.add('in');});},3000);/* failsafe shows off-screen content instantly; a fade nobody sees only confuses contrast audits */
 })();
 </script>
 <script>document.addEventListener('click',function(e){document.querySelectorAll('details.tr[open]').forEach(function(d){if(!d.contains(e.target))d.removeAttribute('open');});});</script>
