@@ -589,7 +589,7 @@ a.sv:hover{border-color:var(--acc);transform:translateY(-2px)}
 <h1>Your ad budget deserves a <em>clear plan.</em></h1>
 <p class="hero-sub">Google &amp; Meta Ads managed carefully, transparently and without a long-term contract.</p>
 <div class="hero-ctas"><a href="https://calendly.com/digitalmarketingremote01/30min" onclick="calClick('hero_cta')" class="btn btn-solid btn-lg">Book a free call →</a><a href="#pricing" class="btn btn-line btn-lg">View pricing</a></div>
-<p class="cred-l">Founder-led · 77 projects · 16 countries · Remote</p>
+<p class="cred-l">77 projects · 16 countries · Fully remote</p>
 </div>
 <aside class="book-card">
 <p class="book-k">Step 1</p>
@@ -652,7 +652,7 @@ a.sv:hover{border-color:var(--acc);transform:translateY(-2px)}
 <div class="about-body">
 <p class="eyebrow">Why Digital Marketing Remote</p><h2>International performance marketing, without traditional agency overhead.</h2>
 <p>Before my first campaign I ran a hotel, built a fertiliser distribution business and founded a restaurant, so every pound of ad spend is a business decision to me. Since 2022 I've run performance marketing across Europe, North America and Asia, including 57 projects as an independent consultant for a German investment company — over €1.7 million in verifiably generated revenue.</p>
-<ul class="facts"><li><b>10 years in business</b><span>Running my own companies, 2011–2021</span></li><li><b>Google &amp; Meta Ads since 2022</b><span>E-commerce, lead generation and SaaS</span></li><li><b>Clear communication</b><span>Reports and calls in English, in your time zone</span></li><li><b>Direct accountability</b><span>You work with the founder directly</span></li></ul>
+<ul class="facts"><li><b>10 years in business</b><span>Running my own companies, 2011–2021</span></li><li><b>Google &amp; Meta Ads since 2022</b><span>E-commerce, lead generation and SaaS</span></li><li><b>Clear communication</b><span>Reports and calls in English, in your time zone</span></li><li><b>Your approval first</b><span>Nothing goes live until you approve it</span></li></ul>
 <p class="remote"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Fully remote from Lahore, Pakistan</p>
 </div>
 </div></section>
@@ -832,7 +832,8 @@ var imgs='';if(d.img1)imgs+='<div class="mimg"><img src="'+d.img1+'" alt="Campai
 return '<div class="dlb-card"><div class="mhd"><div class="mt2">'+d.tag+'</div><h2>'+d.t+'</h2><p class="mmt">'+d.m+'</p></div><div class="mms">'+m+'</div>'+imgs+
 '<div class="mbd"><div class="msc"><h4>Challenge</h4><p>'+d.h+'</p></div><div class="msc"><h4>Strategy</h4><p>'+d.s+'</p></div><div class="msc"><h4>Result</h4><p>'+d.r+'</p></div>'+
 '<div style="margin-top:1.25rem;text-align:center"><a href="https://calendly.com/digitalmarketingremote01/30min" onclick="calClick(\'modal_case\')" class="btn bp">Book a free call →</a></div></div></div>';}
-function openCase(i){if(!window.DMRLB)return;DMRLB.open(CASES.map(function(k){return {title:cs[k].t,html:caseHtml(cs[k])};}),i);}
+function openCase(i){if(!window.DMRLB)return;var tr=document.querySelector('.rc .car-track'),cards=tr?tr.children:[];
+DMRLB.open(CASES.map(function(k){return {title:cs[k].t,html:caseHtml(cs[k])};}),i,{onShow:function(k){if(cards[k])tr.scrollLeft=cards[k].offsetLeft-cards[0].offsetLeft;}});}
 
 /* Calendly popup — booking stays on-site; widget JS loads only after a booking click; a scheduled event routes through the existing #danke-termin flow */
 var _calLd=null;

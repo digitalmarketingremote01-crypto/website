@@ -50,8 +50,8 @@ Fixed monthly management fee per band of TOTAL monthly ad spend (across all mana
 - Everything further down about /partner, /en/partner, partner pricing or the agency band is HISTORY.
 
 ## ⚠ HOMEPAGE + LANDING PAGES — COMPACT, MOBILE-FIRST (2026-10-09 brief; scroll depth is only 33–40%)
-Order: Hero ("Your ad budget deserves a clear plan." + ONE-LINE stats `.cred-l` "Founder-led · 77 projects · 16 countries ·
-Remote"; booking card hidden ≤900px) → #trust (logo ticker only) → #cases → #pilot → #pricing → #process → #services → #about
+Order: Hero ("Your ad budget deserves a clear plan." + ONE-LINE stats `.cred-l` "77 projects · 16 countries · Fully remote"
+(NO "founder-led" anywhere — Danyal 2026-10-09: it implies the founder personally runs every project and contact); booking card hidden ≤900px) → #trust (logo ticker only) → #cases → #pilot → #pricing → #process → #services → #about
 → #voices → #faq → #contact (one final CTA) → footer.
 - Carousels everywhere repeated items appear: `[data-car]` + `.car-track` (+ `.car-prev/.car-next/.car-count`), behaviour
   in `/assets/ui.js` (loaded on /, /lead-generation, /ecommerce). Arrows + "n / N" counter + next-card peek — NO dots.
@@ -74,8 +74,11 @@ Remote"; booking card hidden ≤900px) → #trust (logo ticker only) → #cases 
   contract?"; account ownership → FAQ data; the 77/16 stats → hero line (not repeated in About). FAQ schema is rebuilt from
   the visible FAQ (12 items) — keep them identical.
 - Services = 6 compact cards `.svc6` (2×3 on phones); tracking card has NO extra tag (the section intro already says it is a separate one-off — Danyal 2026-10-09). AI creatives are
-  only in the pricing extras. Founder photo 4:3 on phones (object-position 50% 52%), facts 2×2.
-- Landing pages: cases in one `.lc` carousel, stories behind `<details class="cs-more">`, audit covers `.ac` carousel.
+  only in the pricing extras. About facts: 10 years in business · Google & Meta Ads since 2022 · Clear communication · Your approval first. Founder photo 4:3 on phones (object-position 50% 52%), facts 2×2.
+- Landing pages: compact `.lcard` result cards (screenshot + numbers; desktop side by side, phone stacked, ~250/385px tall)
+  in one `.lc` carousel with arrows ON THE SIDES; card click → `openCaseLp(i)` viewer showing the whole result (all
+  screenshots + story + review), next/previous move the row behind too (DMRLB onShow). Ecommerce reviews = `.proofs` row.
+  The "Who this is for" box and the "Plans from £349" line were removed (Danyal 2026-10-09: B2B-sounding, not wanted).
 
 ## ⚠ AUDIT IS PAID SINCE 2026-10-06 — supersedes every "free marketing plan / free audit" note below
 Danyal: free audits drew low-intent leads who took the plan and left (4 audits → 1 client).

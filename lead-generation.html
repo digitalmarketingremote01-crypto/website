@@ -136,6 +136,41 @@ footer a{color:rgba(255,255,255,.72)}footer a:hover{color:#fff}
 .ac-n{margin-top:.45rem;font-weight:600}
 .ac-p{opacity:.8}
 @media(max-width:768px){.lc .car-track>.case{flex-basis:calc(100% - 28px)}.case-shots{height:150px}.case-shots.multi{height:214px}.ac-c{flex-basis:116px}.ac-c img{height:165px}}
+/* result cards (2026-10-09): compact card per result, arrows on the sides, viewer shows the whole result */
+.lc{position:relative}
+.lc .car-track{align-items:stretch}
+.lc .car-track>.lcard{flex-basis:calc(100% - 48px)}
+.lcard{display:grid;grid-template-columns:1.25fr 1fr;margin:0;cursor:pointer;background:#fff;border:1.5px solid rgba(53,95,140,.12);border-radius:20px;overflow:hidden;box-shadow:0 4px 25px rgba(0,0,0,.06)}
+.lc-shot{position:relative;display:flex;align-items:center;justify-content:center;min-height:250px;padding:18px;background:#fff;border:0;border-right:1px solid var(--bd);cursor:zoom-in}
+.lc-shot img{width:100%;max-height:250px;object-fit:contain}
+.lc-tag{position:absolute;top:.7rem;left:.7rem;background:rgba(29,46,69,.72);color:#fff;font-size:.68rem;font-weight:600;padding:.3rem .65rem;border-radius:20px}
+.lc-more{position:absolute;bottom:.7rem;right:.7rem;background:var(--c2l);color:var(--c2d);font-size:.7rem;font-weight:700;padding:.25rem .6rem;border-radius:20px}
+.lcard .case-body{display:flex;flex-direction:column;justify-content:center;padding:1.6rem 1.7rem}
+.lcard .case-nums{margin-bottom:.9rem}
+.lc-link{align-self:flex-start;padding:0;background:none;border:0;font:inherit;font-size:.9rem;font-weight:700;color:var(--c2);cursor:pointer}
+.lc .car-prev,.lc .car-next{position:absolute;top:calc(50% - 22px);z-index:2;transform:translateY(-50%);box-shadow:0 8px 20px rgba(17,27,42,.14)}
+.lc .car-prev{left:-22px}.lc .car-next{right:-22px}
+.lc .car-ctl{justify-content:center;margin-top:.5rem}
+.lc .car-count{margin:0}
+.lc-v{padding:1.3rem 1.4rem 1.5rem}
+.lc-v .case-niche{margin-bottom:.4rem}
+.lc-v h2{font-size:1.25rem;margin-bottom:.9rem}
+.lc-v img{border:1px solid var(--bd)}
+.lc-v .case-story{margin-top:.4rem}
+.lc-vcta{margin-top:1.3rem;text-align:center}
+.proofs{margin-top:1.4rem}
+.proofs .car-track>.proof{flex-basis:calc(50% - 8px);margin:0}
+@media(max-width:768px){
+.lc .car-track>.lcard{flex-basis:calc(100% - 28px)}
+.lcard{grid-template-columns:1fr}
+.lc-shot{min-height:0;height:150px;padding:12px;border-right:0;border-bottom:1px solid var(--bd)}
+.lc-shot img{max-height:126px}
+.lcard .case-body{padding:1.1rem 1.2rem 1.2rem}
+.lc .car-prev,.lc .car-next{top:75px;background:rgba(255,255,255,.94)}
+.lc .car-prev{left:6px}.lc .car-next{right:6px}
+.proofs .car-track>.proof{flex-basis:calc(100% - 28px)}
+.proof{padding:1.2rem}
+}
 </style>
 <link rel="stylesheet" href="/assets/site.css">
 </head>
@@ -162,125 +197,87 @@ footer a{color:rgba(255,255,255,.72)}footer a:hover{color:#fff}
 <div class="sh rv"><span class="sl">Real results</span><h2>No empty promises — just the numbers</h2><p>Five real lead-gen accounts our founder has run. Figures are unedited from the ad platforms, in the currency they actually ran in.</p></div>
 
 <div class="car lc" data-car><div class="car-track" aria-label="Campaign results">
-<div class="case">
-<div class="case-shots">
-<div class="case-img active"><img src="/case-physio-meta-v2.webp" data-label="Meta Ads" alt="Meta Ads lead generation results, UK physical therapy clinic" loading="lazy" onclick="openImg(this)"></div>
-<span class="case-shot-label"></span>
-</div>
-<div class="case-body">
-<div class="case-niche">Physical therapy · Meta Ads · UK</div>
-<h3 class="case-title">38 leads at £19.14 per lead</h3>
-<div class="case-nums">
+<div class="case lcard" onclick="openCaseLp(0)"><button type="button" class="lc-shot" aria-label="View the results: 38 leads at £19.14 per lead"><img src="/case-physio-meta-v2.webp" alt="Meta Ads lead generation results, UK physical therapy clinic" loading="lazy"><span class="lc-tag">Meta Ads</span></button><div class="case-body"><div class="case-niche">Physical therapy · Meta Ads · UK</div><h3 class="case-title">38 leads at £19.14 per lead</h3><div class="case-nums">
 <div><div class="cn-v">38</div><div class="cn-l">Leads</div></div>
 <div><div class="cn-v">£19.14</div><div class="cn-l">Cost per lead</div></div>
 <div><div class="cn-v">£727</div><div class="cn-l">Ad spend</div></div>
-</div>
-<details class="cs-more"><summary>Read the full story</summary><div class="case-story">
+</div><button type="button" class="lc-link">Screenshots &amp; full story →</button></div><template class="lc-story"><p class="case-niche">Physical therapy · Meta Ads · UK</p><h2>38 leads at £19.14 per lead</h2><div class="case-nums">
+<div><div class="cn-v">38</div><div class="cn-l">Leads</div></div>
+<div><div class="cn-v">£19.14</div><div class="cn-l">Cost per lead</div></div>
+<div><div class="cn-v">£727</div><div class="cn-l">Ad spend</div></div>
+</div><img src="/case-physio-meta-v2.webp" alt="Meta Ads lead generation results, UK physical therapy clinic"><div class="case-story">
 <h4>The challenge</h4>
 <p>A UK physical therapy clinic wanted a steady flow of new enquiries at a cost per lead that makes sense for the clinic.</p>
 <h4>What we did</h4>
 <p>Meta Ads on Facebook and Instagram with an Instant Form, so people can enquire in a few taps without leaving the app. An earlier campaign sent people straight to the clinic's booking calendar.</p>
 <h4>The result</h4>
 <p>38 leads at £19.14 each from £727 of spend, with 377 link clicks and 12,446 people reached. The earlier calendar campaign added 2 direct bookings.</p>
-</div></details>
-</div>
-</div>
-<div class="case">
-<div class="case-shots">
-<div class="case-img active"><img src="/case-proptech.webp" data-label="Google Ads" alt="B2B PropTech lead generation results" loading="lazy" onclick="openImg(this)"></div>
-<span class="case-shot-label"></span>
-</div>
-<div class="case-body">
-<div class="case-niche">B2B SaaS · Construction · International</div>
-<h3 class="case-title">63 qualified B2B leads at €11.45 CPA</h3>
-<div class="case-nums">
+</div></template></div>
+<div class="case lcard" onclick="openCaseLp(1)"><button type="button" class="lc-shot" aria-label="View the results: 63 qualified B2B leads at €11.45 CPA"><img src="/case-proptech.webp" alt="B2B PropTech lead generation results" loading="lazy"><span class="lc-tag">Google Ads</span></button><div class="case-body"><div class="case-niche">B2B SaaS · Construction · International</div><h3 class="case-title">63 qualified B2B leads at €11.45 CPA</h3><div class="case-nums">
 <div><div class="cn-v">63</div><div class="cn-l">B2B leads</div></div>
 <div><div class="cn-v">€11.45</div><div class="cn-l">Cost per lead</div></div>
 <div><div class="cn-v">€721</div><div class="cn-l">Total budget</div></div>
-</div>
-<details class="cs-more"><summary>Read the full story</summary><div class="case-story">
+</div><button type="button" class="lc-link">Screenshots &amp; full story →</button></div><template class="lc-story"><p class="case-niche">B2B SaaS · Construction · International</p><h2>63 qualified B2B leads at €11.45 CPA</h2><div class="case-nums">
+<div><div class="cn-v">63</div><div class="cn-l">B2B leads</div></div>
+<div><div class="cn-v">€11.45</div><div class="cn-l">Cost per lead</div></div>
+<div><div class="cn-v">€721</div><div class="cn-l">Total budget</div></div>
+</div><img src="/case-proptech.webp" alt="B2B PropTech lead generation results"><div class="case-story">
 <h4>The challenge</h4>
 <p>German B2B construction software launched into an international market — the goal was getting qualified professionals to register for the app, in a category with no existing brand recognition.</p>
 <h4>What we did</h4>
 <p>Google Ads lead generation with a tight audience built around architects and project developers, and strict budget control from day one — no wide-net targeting hoping something sticks.</p>
 <h4>The result</h4>
 <p>542 clicks turned into 63 verified registrations on just €721 of spend — a €11.45 cost per lead, well below what's typical for B2B SaaS.</p>
-</div></details>
-</div>
-</div>
-
-<div class="case">
-<div class="case-shots">
-<div class="case-img active"><img src="/case-autofolierung-v2.webp" data-label="Google Ads" alt="Car wrapping service lead generation results, Google Ads" loading="lazy" onclick="openImg(this)"></div>
-<span class="case-shot-label"></span>
-</div>
-<div class="case-body">
-<div class="case-niche">Car wrapping · Premium service · Karlsruhe</div>
-<h3 class="case-title">9 high-ticket inquiries at €95 CPA</h3>
-<div class="case-nums">
+</div></template></div>
+<div class="case lcard" onclick="openCaseLp(2)"><button type="button" class="lc-shot" aria-label="View the results: 9 high-ticket inquiries at €95 CPA"><img src="/case-autofolierung-v2.webp" alt="Car wrapping service lead generation results, Google Ads" loading="lazy"><span class="lc-tag">Google Ads</span></button><div class="case-body"><div class="case-niche">Car wrapping · Premium service · Karlsruhe</div><h3 class="case-title">9 high-ticket inquiries at €95 CPA</h3><div class="case-nums">
 <div><div class="cn-v">957</div><div class="cn-l">Clicks</div></div>
 <div><div class="cn-v">9</div><div class="cn-l">Booking inquiries</div></div>
 <div><div class="cn-v">€95</div><div class="cn-l">Cost per inquiry</div></div>
-</div>
-<details class="cs-more"><summary>Read the full story</summary><div class="case-story">
+</div><button type="button" class="lc-link">Screenshots &amp; full story →</button></div><template class="lc-story"><p class="case-niche">Car wrapping · Premium service · Karlsruhe</p><h2>9 high-ticket inquiries at €95 CPA</h2><div class="case-nums">
+<div><div class="cn-v">957</div><div class="cn-l">Clicks</div></div>
+<div><div class="cn-v">9</div><div class="cn-l">Booking inquiries</div></div>
+<div><div class="cn-v">€95</div><div class="cn-l">Cost per inquiry</div></div>
+</div><img src="/case-autofolierung-v2.webp" alt="Car wrapping service lead generation results, Google Ads"><div class="case-story">
 <h4>The challenge</h4>
 <p>Winning premium clients in a competitive local market, for a trade business with order values from €1,500 to €5,000+ — a market where one wasted click can cost real money.</p>
 <h4>What we did</h4>
 <p>Locally targeted Google Ads Search campaigns for the exact service area, built on high-intent keywords with consistent filtering of low-value traffic — not just more clicks, the right clicks.</p>
 <h4>The result</h4>
 <p>957 clicks and 9 verified booking inquiries on an €858 total budget — a €95 cost per inquiry, outstanding for a premium local service.</p>
-</div></details>
-</div>
-</div>
-
-<div class="case">
-<div class="case-shots">
-<div class="case-img active"><img src="/case-solar-webapp.webp" data-label="Google Ads" alt="Solar analysis web app sign-up results" loading="lazy" onclick="openImg(this)"></div>
-<span class="case-shot-label"></span>
-</div>
-<div class="case-body">
-<div class="case-niche">SaaS web app · Solar energy · Germany</div>
-<h3 class="case-title">392 sign-ups in 5 weeks — €2.65 CPA</h3>
-<div class="case-nums">
+</div></template></div>
+<div class="case lcard" onclick="openCaseLp(3)"><button type="button" class="lc-shot" aria-label="View the results: 392 sign-ups in 5 weeks — €2.65 CPA"><img src="/case-solar-webapp.webp" alt="Solar analysis web app sign-up results" loading="lazy"><span class="lc-tag">Google Ads</span></button><div class="case-body"><div class="case-niche">SaaS web app · Solar energy · Germany</div><h3 class="case-title">392 sign-ups in 5 weeks — €2.65 CPA</h3><div class="case-nums">
 <div><div class="cn-v">392</div><div class="cn-l">Sign-ups</div></div>
 <div><div class="cn-v">€2.65</div><div class="cn-l">Cost per sign-up</div></div>
 <div><div class="cn-v">584%</div><div class="cn-l">ROAS</div></div>
-</div>
-<details class="cs-more"><summary>Read the full story</summary><div class="case-story">
+</div><button type="button" class="lc-link">Screenshots &amp; full story →</button></div><template class="lc-story"><p class="case-niche">SaaS web app · Solar energy · Germany</p><h2>392 sign-ups in 5 weeks — €2.65 CPA</h2><div class="case-nums">
+<div><div class="cn-v">392</div><div class="cn-l">Sign-ups</div></div>
+<div><div class="cn-v">€2.65</div><div class="cn-l">Cost per sign-up</div></div>
+<div><div class="cn-v">584%</div><div class="cn-l">ROAS</div></div>
+</div><img src="/case-solar-webapp.webp" alt="Solar analysis web app sign-up results"><div class="case-story">
 <h4>The challenge</h4>
 <p>A specialised web app for photovoltaic analysis needed to launch on the German market — the goal was getting qualified energy professionals to actually register, not just visit.</p>
 <h4>What we did</h4>
 <p>A Google Ads campaign with precise keyword control on technical, industry-specific terms, plus continuous A/B testing of ad copy and landing-page changes as real data came in.</p>
 <h4>The result</h4>
 <p>6,650 clicks and 392 sign-ups in 5 weeks flat. €2.65 cost per sign-up — well below the benchmark for B2B SaaS in the German market.</p>
-</div></details>
-</div>
-</div>
-
-<div class="case">
-<div class="case-shots">
-<div class="case-img active"><img src="/case-design-saas.webp" data-label="Google Ads" alt="Design plugin download campaign results" loading="lazy" onclick="openImg(this)"></div>
-<span class="case-shot-label"></span>
-</div>
-<div class="case-body">
-<div class="case-niche">SaaS plugin · Design software · Germany</div>
-<h3 class="case-title">504 downloads in 26 days — €1.09 CPA</h3>
-<div class="case-nums">
+</div></template></div>
+<div class="case lcard" onclick="openCaseLp(4)"><button type="button" class="lc-shot" aria-label="View the results: 504 downloads in 26 days — €1.09 CPA"><img src="/case-design-saas.webp" alt="Design plugin download campaign results" loading="lazy"><span class="lc-tag">Google Ads</span></button><div class="case-body"><div class="case-niche">SaaS plugin · Design software · Germany</div><h3 class="case-title">504 downloads in 26 days — €1.09 CPA</h3><div class="case-nums">
 <div><div class="cn-v">504</div><div class="cn-l">Downloads</div></div>
 <div><div class="cn-v">€1.09</div><div class="cn-l">Cost per download</div></div>
 <div><div class="cn-v">918%</div><div class="cn-l">ROAS</div></div>
-</div>
-<details class="cs-more"><summary>Read the full story</summary><div class="case-story">
+</div><button type="button" class="lc-link">Screenshots &amp; full story →</button></div><template class="lc-story"><p class="case-niche">SaaS plugin · Design software · Germany</p><h2>504 downloads in 26 days — €1.09 CPA</h2><div class="case-nums">
+<div><div class="cn-v">504</div><div class="cn-l">Downloads</div></div>
+<div><div class="cn-v">€1.09</div><div class="cn-l">Cost per download</div></div>
+<div><div class="cn-v">918%</div><div class="cn-l">ROAS</div></div>
+</div><img src="/case-design-saas.webp" alt="Design plugin download campaign results"><div class="case-story">
 <h4>The challenge</h4>
 <p>A new plugin for a leading design platform, starting from zero — the goal was getting qualified designers and developers to actually download it, not just click an ad.</p>
 <h4>What we did</h4>
 <p>Google Ads targeting designers and developers specifically, with a seamless journey from the ad straight through to the download — no friction to lose people on the way.</p>
 <h4>The result</h4>
 <p>2,560 clicks and 504 downloads in under a month. €1.09 cost per download — exceptional for the German SaaS market.</p>
-</div></details>
-</div>
-</div>
-</div><div class="car-ctl"><span class="car-count" aria-live="polite"></span><button type="button" class="car-btn car-prev" aria-label="Previous result">‹</button><button type="button" class="car-btn car-next" aria-label="Next result">›</button></div></div>
+</div></template></div>
+</div><button type="button" class="car-btn car-prev" aria-label="Previous result">‹</button><button type="button" class="car-btn car-next" aria-label="Next result">›</button><div class="car-ctl"><span class="car-count" aria-live="polite"></span></div></div>
 </div></section>
 
 <section class="sec"><div class="ctn">
@@ -303,11 +300,6 @@ footer a{color:rgba(255,255,255,.72)}footer a:hover{color:#fff}
 <div style="text-align:center"><a href="https://calendly.com/digitalmarketingremote01/30min" onclick="calClick('lp_leadgen_offer')" class="btn bp bl">Book a free call →</a></div>
 </div>
 
-<div class="fit rv">
-<div class="fit-ico">📞</div>
-<p><strong>Who this is for:</strong> service businesses, B2B companies or high-ticket local trades that want a steady flow of qualified enquiries — not vanity clicks. If you're not sure Google or Meta fits your business yet, the free call tells you honestly, including if the answer is "not yet".</p>
-</div>
-<p class="price-line rv">Plans from <b>£349/month</b>, based on your total ad spend. <a href="/#pricing">See the full price list</a>.</p>
 </div></section>
 
 <section class="cta-band"><div class="ctn">
@@ -345,6 +337,11 @@ document.querySelectorAll('.case-shots').forEach(function(box){
   box.querySelector('.case-nav.next').onclick=function(){go(idx+1);};
 });
 
+/* result viewer: next/previous move through whole results (every screenshot + the story), and the row behind follows */
+function openCaseLp(i){if(!window.DMRLB)return;var cards=[].slice.call(document.querySelectorAll('.lcard')),tr=document.querySelector('.lc .car-track');
+var cal=document.querySelector('a[href*="calendly.com/digitalmarketingremote01"]'),cta=cal?'<div class="lc-vcta"><a href="'+cal.href+'" onclick="calClick(\'lp_case_viewer\')" class="btn bp bl">Book a free call →</a></div>':'';
+DMRLB.open(cards.map(function(c){return {title:c.querySelector('.case-title').textContent,html:'<div class="dlb-card lc-v">'+c.querySelector('template.lc-story').innerHTML+cta+'</div>'};}),i,
+{onShow:function(k){var c=cards[k];if(c&&tr)tr.scrollLeft=c.offsetLeft-cards[0].offsetLeft;}});}
 /* screenshots open in the shared viewer (/assets/ui.js): previous/next run through every result on the page */
 function openImg(el){if(!window.DMRLB)return;var imgs=[].slice.call(document.querySelectorAll('.case-img img'));
 DMRLB.open(imgs.map(function(i){var t=i.closest('.case').querySelector('.case-title').textContent;return {title:t+(i.dataset.label?' · '+i.dataset.label:''),html:'<img src="'+i.getAttribute('src')+'" alt="'+i.alt.replace(/"/g,'&quot;')+'">'};}),imgs.indexOf(el));}

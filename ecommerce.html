@@ -142,6 +142,41 @@ footer a{color:rgba(255,255,255,.72)}footer a:hover{color:#fff}
 .ac-n{margin-top:.45rem;font-weight:600}
 .ac-p{opacity:.8}
 @media(max-width:768px){.lc .car-track>.case{flex-basis:calc(100% - 28px)}.case-shots{height:150px}.case-shots.multi{height:214px}.ac-c{flex-basis:116px}.ac-c img{height:165px}}
+/* result cards (2026-10-09): compact card per result, arrows on the sides, viewer shows the whole result */
+.lc{position:relative}
+.lc .car-track{align-items:stretch}
+.lc .car-track>.lcard{flex-basis:calc(100% - 48px)}
+.lcard{display:grid;grid-template-columns:1.25fr 1fr;margin:0;cursor:pointer;background:#fff;border:1.5px solid rgba(53,95,140,.12);border-radius:20px;overflow:hidden;box-shadow:0 4px 25px rgba(0,0,0,.06)}
+.lc-shot{position:relative;display:flex;align-items:center;justify-content:center;min-height:250px;padding:18px;background:#fff;border:0;border-right:1px solid var(--bd);cursor:zoom-in}
+.lc-shot img{width:100%;max-height:250px;object-fit:contain}
+.lc-tag{position:absolute;top:.7rem;left:.7rem;background:rgba(29,46,69,.72);color:#fff;font-size:.68rem;font-weight:600;padding:.3rem .65rem;border-radius:20px}
+.lc-more{position:absolute;bottom:.7rem;right:.7rem;background:var(--c2l);color:var(--c2d);font-size:.7rem;font-weight:700;padding:.25rem .6rem;border-radius:20px}
+.lcard .case-body{display:flex;flex-direction:column;justify-content:center;padding:1.6rem 1.7rem}
+.lcard .case-nums{margin-bottom:.9rem}
+.lc-link{align-self:flex-start;padding:0;background:none;border:0;font:inherit;font-size:.9rem;font-weight:700;color:var(--c2);cursor:pointer}
+.lc .car-prev,.lc .car-next{position:absolute;top:calc(50% - 22px);z-index:2;transform:translateY(-50%);box-shadow:0 8px 20px rgba(17,27,42,.14)}
+.lc .car-prev{left:-22px}.lc .car-next{right:-22px}
+.lc .car-ctl{justify-content:center;margin-top:.5rem}
+.lc .car-count{margin:0}
+.lc-v{padding:1.3rem 1.4rem 1.5rem}
+.lc-v .case-niche{margin-bottom:.4rem}
+.lc-v h2{font-size:1.25rem;margin-bottom:.9rem}
+.lc-v img{border:1px solid var(--bd)}
+.lc-v .case-story{margin-top:.4rem}
+.lc-vcta{margin-top:1.3rem;text-align:center}
+.proofs{margin-top:1.4rem}
+.proofs .car-track>.proof{flex-basis:calc(50% - 8px);margin:0}
+@media(max-width:768px){
+.lc .car-track>.lcard{flex-basis:calc(100% - 28px)}
+.lcard{grid-template-columns:1fr}
+.lc-shot{min-height:0;height:150px;padding:12px;border-right:0;border-bottom:1px solid var(--bd)}
+.lc-shot img{max-height:126px}
+.lcard .case-body{padding:1.1rem 1.2rem 1.2rem}
+.lc .car-prev,.lc .car-next{top:75px;background:rgba(255,255,255,.94)}
+.lc .car-prev{left:6px}.lc .car-next{right:6px}
+.proofs .car-track>.proof{flex-basis:calc(100% - 28px)}
+.proof{padding:1.2rem}
+}
 </style>
 <link rel="stylesheet" href="/assets/site.css">
 </head>
@@ -168,68 +203,56 @@ footer a{color:rgba(255,255,255,.72)}footer a:hover{color:#fff}
 <div class="sh rv"><span class="sl">Real results</span><h2>No empty promises — just the numbers</h2><p>Two real e-commerce accounts our founder has run. Figures are unedited from the ad platforms.</p></div>
 
 <div class="car lc" data-car><div class="car-track" aria-label="Campaign results">
-<div class="case">
-<div class="case-shots multi">
-<div class="case-img active"><img src="/case-ki-startup-ads-v2.webp" data-label="Google Ads" alt="Google Ads results, AI e-commerce store" loading="lazy" onclick="openImg(this)"></div>
-<div class="case-img"><img src="/case-ki-startup-shopify-v2.webp" data-label="Shopify" alt="Shopify revenue dashboard, AI e-commerce store" loading="lazy" onclick="openImg(this)"></div>
-<button class="case-nav prev" aria-label="Previous screenshot">‹</button>
-<button class="case-nav next" aria-label="Next screenshot">›</button>
-<div class="case-dots"></div>
-<span class="case-shot-label"></span>
-</div>
-<div class="case-body">
-<div class="case-niche">E-Commerce · AI product · Pet supplies · International</div>
-<h3 class="case-title">From Germany into 11 markets — €1.7M revenue in 18 months</h3>
-<div class="case-nums">
+<div class="case lcard" onclick="openCaseLp(0)"><button type="button" class="lc-shot" aria-label="View the results: From Germany into 11 markets — €1.7M revenue in 18 months"><img src="/case-ki-startup-ads-v2.webp" alt="Google Ads results, AI e-commerce store" loading="lazy"><span class="lc-tag">Google Ads</span><span class="lc-more">+1 more</span></button><div class="case-body"><div class="case-niche">E-Commerce · AI product · Pet supplies · International</div><h3 class="case-title">From Germany into 11 markets — €1.7M revenue in 18 months</h3><div class="case-nums">
 <div><div class="cn-v">€1.7M</div><div class="cn-l">Total revenue</div></div>
 <div><div class="cn-v">511%</div><div class="cn-l">ROAS (Google)</div></div>
 <div><div class="cn-v">11</div><div class="cn-l">Countries</div></div>
-</div>
-<details class="cs-more"><summary>Read the full story</summary><div class="case-story">
+</div><button type="button" class="lc-link">Screenshots &amp; full story →</button></div><template class="lc-story"><p class="case-niche">E-Commerce · AI product · Pet supplies · International</p><h2>From Germany into 11 markets — €1.7M revenue in 18 months</h2><div class="case-nums">
+<div><div class="cn-v">€1.7M</div><div class="cn-l">Total revenue</div></div>
+<div><div class="cn-v">511%</div><div class="cn-l">ROAS (Google)</div></div>
+<div><div class="cn-v">11</div><div class="cn-l">Countries</div></div>
+</div><img src="/case-ki-startup-ads-v2.webp" alt="Google Ads results, AI e-commerce store"><img src="/case-ki-startup-shopify-v2.webp" alt="Shopify revenue dashboard, AI e-commerce store"><div class="case-story">
 <h4>The challenge</h4>
 <p>Launching an AI product in the e-commerce segment — a product that needs explaining, with zero existing brand awareness anywhere, starting from scratch in Germany before scaling further.</p>
 <h4>What we did</h4>
 <p>A multi-channel approach with localised Google and Meta Ads for each new market, GA4 and Google Tag Manager tracking for complete data capture, and a gradual, deliberate expansion into 10 more European and international markets — each one built on the learning curve from the German launch, not copy-pasted blind.</p>
 <h4>The result</h4>
 <p>€1.7M total revenue, verified in the store's own Shopify dashboard. €1.1M of that is attributed directly to Google Ads at 511% ROAS. A real, paying presence in 11 countries within 18 months of starting from nothing.</p>
-</div></details>
-<div class="proof">
+</div><div class="proof">
 <div class="proof-stars">★★★★★</div>
 <p class="proof-text">"I'm really glad about this much transparency. It gives me a good feeling."</p>
 <div class="proof-author"><div class="proof-av">FM</div><div><div class="proof-name">Florian Marthaler</div><div class="proof-role">Managing Director · GetXdone &amp; Craft AEC · Germany</div></div></div>
-</div>
-</div>
-</div>
-
-<div class="case">
-<div class="case-shots">
-<div class="case-img active"><img src="/case-consumergoods-ads2.webp" data-label="Google Ads" alt="Google Ads results, consumer goods e-commerce store" loading="lazy" onclick="openImg(this)"></div>
-<span class="case-shot-label"></span>
-</div>
-<div class="case-body">
-<div class="case-niche">E-Commerce · Consumer goods · International</div>
-<h3 class="case-title">From zero to 2,350 conversions in 11 months</h3>
-<div class="case-nums">
+</div></template></div>
+<div class="case lcard" onclick="openCaseLp(1)"><button type="button" class="lc-shot" aria-label="View the results: From zero to 2,350 conversions in 11 months"><img src="/case-consumergoods-ads2.webp" alt="Google Ads results, consumer goods e-commerce store" loading="lazy"><span class="lc-tag">Google Ads</span></button><div class="case-body"><div class="case-niche">E-Commerce · Consumer goods · International</div><h3 class="case-title">From zero to 2,350 conversions in 11 months</h3><div class="case-nums">
 <div><div class="cn-v">2,350</div><div class="cn-l">Conversions</div></div>
 <div><div class="cn-v">294%</div><div class="cn-l">ROAS</div></div>
 <div><div class="cn-v">11 mo</div><div class="cn-l">Duration</div></div>
-</div>
-<details class="cs-more"><summary>Read the full story</summary><div class="case-story">
+</div><button type="button" class="lc-link">Screenshots &amp; full story →</button></div><template class="lc-story"><p class="case-niche">E-Commerce · Consumer goods · International</p><h2>From zero to 2,350 conversions in 11 months</h2><div class="case-nums">
+<div><div class="cn-v">2,350</div><div class="cn-l">Conversions</div></div>
+<div><div class="cn-v">294%</div><div class="cn-l">ROAS</div></div>
+<div><div class="cn-v">11 mo</div><div class="cn-l">Duration</div></div>
+</div><img src="/case-consumergoods-ads2.webp" alt="Google Ads results, consumer goods e-commerce store"><div class="case-story">
 <h4>The challenge</h4>
 <p>A new consumer-goods brand with no brand awareness at all, starting from scratch, needing to prove its own online shop could sell profitably before scaling any further.</p>
 <h4>What we did</h4>
 <p>Full Google Ads strategy: market analysis, real keyword research, combined search campaigns, and 11 straight months of continuous optimisation — no set-and-forget, every week's data feeding the next week's decisions.</p>
 <h4>The result</h4>
 <p>2,350 conversions and a stable 294% ROAS held across the entire 11-month period, not just a lucky spike — verified directly in the account, screenshots above.</p>
-</div></details>
-<div class="proof">
+</div><div class="proof">
 <div class="proof-stars">★★★★★</div>
 <p class="proof-text">"Our Google Ads went from nothing to 2.35k conversions at 294% ROAS this year, all handled by Danyal. Profitable, transparent, and always there when we needed him. Would work with him again in a heartbeat."</p>
 <div class="proof-author"><div class="proof-av">AS</div><div><div class="proof-name">Abdullah Sohail</div><div class="proof-role">Founder · E-Commerce Brand</div></div></div>
-</div>
-</div>
-</div>
-</div><div class="car-ctl"><span class="car-count" aria-live="polite"></span><button type="button" class="car-btn car-prev" aria-label="Previous result">‹</button><button type="button" class="car-btn car-next" aria-label="Next result">›</button></div></div>
+</div></template></div>
+</div><button type="button" class="car-btn car-prev" aria-label="Previous result">‹</button><button type="button" class="car-btn car-next" aria-label="Next result">›</button><div class="car-ctl"><span class="car-count" aria-live="polite"></span></div></div>
+<div class="car proofs" data-car><div class="car-track" aria-label="What these clients said"><div class="proof">
+<div class="proof-stars">★★★★★</div>
+<p class="proof-text">"I'm really glad about this much transparency. It gives me a good feeling."</p>
+<div class="proof-author"><div class="proof-av">FM</div><div><div class="proof-name">Florian Marthaler</div><div class="proof-role">Managing Director · GetXdone &amp; Craft AEC · Germany</div></div></div>
+</div><div class="proof">
+<div class="proof-stars">★★★★★</div>
+<p class="proof-text">"Our Google Ads went from nothing to 2.35k conversions at 294% ROAS this year, all handled by Danyal. Profitable, transparent, and always there when we needed him. Would work with him again in a heartbeat."</p>
+<div class="proof-author"><div class="proof-av">AS</div><div><div class="proof-name">Abdullah Sohail</div><div class="proof-role">Founder · E-Commerce Brand</div></div></div>
+</div></div><div class="car-ctl"><span class="car-count" aria-live="polite"></span><button type="button" class="car-btn car-prev" aria-label="Previous review">‹</button><button type="button" class="car-btn car-next" aria-label="Next review">›</button></div></div>
 </div></section>
 
 <section class="sec"><div class="ctn">
@@ -252,11 +275,6 @@ footer a{color:rgba(255,255,255,.72)}footer a:hover{color:#fff}
 <div style="text-align:center"><a href="https://calendly.com/digitalmarketingremote01/30min" onclick="calClick('lp_ecom_offer')" class="btn bp bl">Book a free call →</a></div>
 </div>
 
-<div class="fit rv">
-<div class="fit-ico">🛒</div>
-<p><strong>Who this is for:</strong> online stores already running (or ready to run) Google or Meta Ads, with a live shop and real order data. If you're pre-launch with no site yet, the free call still tells you honestly whether ads make sense yet.</p>
-</div>
-<p class="price-line rv">Plans from <b>£349/month</b>, based on your total ad spend. <a href="/#pricing">See the full price list</a>.</p>
 </div></section>
 
 <section class="cta-band"><div class="ctn">
@@ -294,6 +312,11 @@ document.querySelectorAll('.case-shots').forEach(function(box){
   box.querySelector('.case-nav.next').onclick=function(){go(idx+1);};
 });
 
+/* result viewer: next/previous move through whole results (every screenshot + the story), and the row behind follows */
+function openCaseLp(i){if(!window.DMRLB)return;var cards=[].slice.call(document.querySelectorAll('.lcard')),tr=document.querySelector('.lc .car-track');
+var cal=document.querySelector('a[href*="calendly.com/digitalmarketingremote01"]'),cta=cal?'<div class="lc-vcta"><a href="'+cal.href+'" onclick="calClick(\'lp_case_viewer\')" class="btn bp bl">Book a free call →</a></div>':'';
+DMRLB.open(cards.map(function(c){return {title:c.querySelector('.case-title').textContent,html:'<div class="dlb-card lc-v">'+c.querySelector('template.lc-story').innerHTML+cta+'</div>'};}),i,
+{onShow:function(k){var c=cards[k];if(c&&tr)tr.scrollLeft=c.offsetLeft-cards[0].offsetLeft;}});}
 /* screenshots open in the shared viewer (/assets/ui.js): previous/next run through every result on the page */
 function openImg(el){if(!window.DMRLB)return;var imgs=[].slice.call(document.querySelectorAll('.case-img img'));
 DMRLB.open(imgs.map(function(i){var t=i.closest('.case').querySelector('.case-title').textContent;return {title:t+(i.dataset.label?' · '+i.dataset.label:''),html:'<img src="'+i.getAttribute('src')+'" alt="'+i.alt.replace(/"/g,'&quot;')+'">'};}),imgs.indexOf(el));}
