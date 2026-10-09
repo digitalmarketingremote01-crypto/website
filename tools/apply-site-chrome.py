@@ -22,7 +22,7 @@ T = {
             cta='Book a free call', other='DE', other_lang='de', other_home='/de', menu='Menu', navlabel='Main navigation',
             about='Performance marketing for growing businesses worldwide. Data-driven, transparent, results-focused.',
             cols=[('Services', [('/#services', 'Google Ads'), ('/#services', 'Meta Ads'), ('/ecommerce', 'E-Commerce'), ('/lead-generation', 'Lead Generation'), ('/#services', 'Tracking setup')]),
-                  ('Company', [('/#about', 'About'), ('/#cases', 'Success stories'), ('/#pricing', 'Pricing'), ('/#pilot', 'Marketing Diagnostic'), ('/en/guides', 'Guides')])],
+                  ('Company', [('/#about', 'About'), ('/#cases', 'Success stories'), ('/#pricing', 'Pricing'), ('/#pilot', 'Audit &amp; Action Plan'), ('/en/guides', 'Guides')])],
             contact='Contact', lang_name='Deutsch', imprint=('/en/imprint', 'Imprint'), privacy=('/en/privacy', 'Privacy', 'Privacy Policy'), cookies='Cookie settings',
             partner_cta='Book a partner call'),
  'de': dict(home='/de', nav=[('/de#about', 'Über uns'), ('/de#services', 'Leistungen'), ('/de#pricing', 'Preise'), ('/de#cases', 'Erfolge'), ('/de#contact', 'Kontakt')],
@@ -35,8 +35,8 @@ T = {
 }
 SOC = ('<div class="sf-soc"><a href="https://www.facebook.com/digitalmarketingremote/" target="_blank" rel="noopener" aria-label="fb: Facebook">fb</a>'
        '<a href="https://www.instagram.com/digitalmarketing.remote/" target="_blank" rel="noopener" aria-label="ig: Instagram">ig</a>'
-       '<a href="https://www.linkedin.com/company/121143999/" target="_blank" rel="noopener" aria-label="LinkedIn company page">in</a>'
-       '<a href="https://www.linkedin.com/in/mdanyalshahzad/" target="_blank" rel="noopener" aria-label="LinkedIn personal">in↗</a></div>')
+       '<a href="https://www.linkedin.com/company/121143999/" target="_blank" rel="noopener" aria-label="in: LinkedIn company page">in</a>'
+       '<a href="https://www.linkedin.com/in/mdanyalshahzad/" target="_blank" rel="noopener" aria-label="in↗: LinkedIn personal">in↗</a></div>')
 
 
 def cal(label):

@@ -49,7 +49,8 @@ if grep -qF -- 'class="pcards' <<<"$home"; then
 fi
 
 echo "== 4b. one pricing model (final band model, Danyal 2026-10-08) =="
-grep -qF -- 'class="bands"' <<<"$home" && pass "homepage shows the ad-spend band table" || fail "homepage band price table missing"
+grep -qF -- 'class="pc' <<<"$home" && pass "homepage shows the ad-spend price cards" || fail "homepage price cards missing"
+grep -qF -- '/assets/ui.js' <<<"$home" && pass "homepage loads the shared carousel/viewer script" || fail "homepage lost /assets/ui.js"
 for old in 'half price' '50% more ad budget' '£1,349' '£1,799' '£7,200' 'Dual Starter' 'You risk nothing' '£11,899' '£1,399' 'en/partner' 'White-label' 'class="grp'; do
   grep -qiF -- "$old" <<<"$home" && fail "old pricing wording back on the homepage: $old" || pass "no '$old'"
 done

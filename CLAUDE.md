@@ -48,14 +48,28 @@ Fixed monthly management fee per band of TOTAL monthly ad spend (across all mana
   traditional agency overhead", the agency-pricing / red-flags / switching guides aimed at businesses) is fine.
 - Everything further down about /partner, /en/partner, partner pricing or the agency band is HISTORY.
 
-## ⚠ HOMEPAGE ORDER — 2026-10-08 (Danyal's "calm, clear, trustworthy" brief) — supersedes "Website Structure" below
-Hero ("Your ad budget deserves a clear plan.", CTAs: Book a free call + View pricing) → #trust (Founder-led · 77 projects ·
-16 countries · Fully remote + quiet grey logo ticker) → #cases → #pilot (= £99 Marketing Diagnostic, no promo styling) →
-#pricing → #process (6 steps) → #services ("Included in monthly management" vs "Available separately": tracking setup +
-AI creatives) → #about → #voices (3 cards at once, no carousel) → #faq (4 groups: Working together / Pricing & commitment /
-Performance / Data & access) → #contact (ONE final CTA "Let's review your marketing.") → footer.
-- In-page CTAs only: hero, diagnostic, pricing, final. No buttons in the process/FAQ headers; no separate cta-band.
-- Footer name for #pilot: "Marketing Diagnostic". No hype words, no urgency, no guarantees.
+## ⚠ HOMEPAGE + LANDING PAGES — COMPACT, MOBILE-FIRST (2026-10-09 brief; scroll depth is only 33–40%)
+Order: Hero ("Your ad budget deserves a clear plan." + ONE-LINE stats `.cred-l` "Founder-led · 77 projects · 16 countries ·
+Remote"; booking card hidden ≤900px) → #trust (logo ticker only) → #cases → #pilot → #pricing → #process → #services → #about
+→ #voices → #faq → #contact (one final CTA) → footer.
+- Carousels everywhere repeated items appear: `[data-car]` + `.car-track` (+ `.car-prev/.car-next/.car-count`), behaviour
+  in `/assets/ui.js` (loaded on /, /lead-generation, /ecommerce). Arrows + "n / N" counter + next-card peek — NO dots.
+  Results (`.rc`, 7 cases, one big card each), audit covers (`.ac`), price cards (`.prc`, `data-car-select`), reviews (`.vc`).
+- One viewer for everything: `DMRLB.open(items, i)` in ui.js — prev/next while open, tap image to zoom, swipe, Esc, scroll
+  lock. Audit cards open every page via `data-lb-slug` + `data-lb-pages` (+ "Open the PDF"). NEW AUDIT = one more
+  `<button class="ac-c" data-lb …>` in the row on /, /lead-generation, /ecommerce — nothing else to redesign.
+  Homepage cases open via `openCase(i)` from the `cs` object; landing-page screenshots via `openImg()` (all cases in one viewer).
+- Pricing = platform toggle (`setPlat`) + 5 cards (`.pc`, starts at the lowest band, first card selected) + ONE detail
+  panel (`#pcDet`, `pcUpd()`). New tier above £7,500 = one more `.pc` button. Extras (tracking £99/£179, AI £99/mo) live
+  ONLY in the `<details class="adds">` under it. No table, no slider, no % any more.
+- Offer name: **Marketing Audit & Action Plan — £99** (was "Marketing Diagnostic" / "audit & marketing plan"). The £99
+  credit is explained ONCE per page (homepage #pilot; landing-page offer box). Process step and FAQ only name it.
+- Each message has one home: pricing logic → #pricing; cancel monthly + 90-day recommendation → FAQ "Is there a minimum
+  contract?"; account ownership → FAQ data; the 77/16 stats → hero line (not repeated in About). FAQ schema is rebuilt from
+  the visible FAQ (12 items) — keep them identical.
+- Services = 6 compact cards `.svc6` (2×3 on phones); tracking card tagged "One-off, priced separately". AI creatives are
+  only in the pricing extras. Founder photo 4:3 on phones (object-position 50% 52%), facts 2×2.
+- Landing pages: cases in one `.lc` carousel, stories behind `<details class="cs-more">`, audit covers `.ac` carousel.
 
 ## ⚠ AUDIT IS PAID SINCE 2026-10-06 — supersedes every "free marketing plan / free audit" note below
 Danyal: free audits drew low-intent leads who took the plan and left (4 audits → 1 client).

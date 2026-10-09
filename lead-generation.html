@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
 <title>Google & Meta Ads for Lead Generation | Digital Marketing Remote</title>
-<meta name="description" content="63 qualified B2B leads at €11.45 CPA. Real lead-gen campaign data. Google & Meta Ads for businesses that need booked calls and quote requests. Audit & marketing plan credited to your first month.">
+<meta name="description" content="63 qualified B2B leads at €11.45 CPA. Real lead-gen campaign data. Google & Meta Ads for businesses that need booked calls and quote requests. Marketing Audit & Action Plan credited to your first month.">
 <meta name="robots" content="noindex,follow">
 <link rel="canonical" href="https://www.digitalmarketingremote.com/lead-generation">
 <link rel="alternate" hreflang="en" href="https://www.digitalmarketingremote.com/lead-generation">
@@ -17,7 +17,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.digitalmarketingremote.com/lead-generation">
 <meta property="og:title" content="Google & Meta Ads for Lead Generation — Digital Marketing Remote">
-<meta property="og:description" content="63 qualified leads at €11.45 CPA. Real lead-gen results. Audit & marketing plan credited to your first month.">
+<meta property="og:description" content="63 qualified leads at €11.45 CPA. Real lead-gen results. Marketing Audit & Action Plan credited to your first month.">
 <meta property="og:image" content="https://www.digitalmarketingremote.com/danyal-hero.jpeg">
 <meta name="twitter:card" content="summary_large_image">
 <style>
@@ -75,17 +75,6 @@ p{color:var(--tx)}
 .case-story h4{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--mt);margin:.9rem 0 .3rem}
 .case-story h4:first-child{margin-top:0}
 .case-story p{font-size:.9rem;color:var(--tx);line-height:1.7;margin:0}
-.lightbox{display:none;position:fixed;inset:0;z-index:3000;background:rgba(17,27,42,.92);align-items:center;justify-content:center;padding:2rem}
-.lightbox.open{display:flex}
-.lightbox img{max-width:100%;max-height:100%;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,.5);cursor:default}
-.lightbox-close{position:absolute;top:1.25rem;right:1.5rem;background:rgba(255,255,255,.12);color:#fff;border:0;width:40px;height:40px;border-radius:50%;font-size:1.1rem;cursor:pointer;z-index:1}
-.lightbox-nav{position:absolute;top:0;bottom:0;width:15%;min-width:60px;display:none;align-items:center;justify-content:center;background:0;border:0;color:#fff;font-size:2rem;cursor:pointer;transition:background .2s}
-.lightbox-nav:hover{background:rgba(255,255,255,.06)}
-.lightbox-nav.prev{left:0}
-.lightbox-nav.next{right:0}
-.lightbox.has-nav .lightbox-nav{display:flex}
-.lightbox-count{position:absolute;bottom:1.25rem;left:50%;transform:translateX(-50%);background:rgba(255,255,255,.12);color:#fff;font-size:.75rem;font-weight:600;padding:.3rem .8rem;border-radius:20px;display:none}
-.lightbox.has-nav .lightbox-count{display:block}
 .offer{background:linear-gradient(135deg,#17263a 0%,var(--c1) 100%);border-radius:24px;padding:3rem;color:#fff}
 .offer h2{color:#fff;margin-bottom:.6rem}
 .offer>p{color:rgba(255,255,255,.65);margin-bottom:1.5rem;font-size:.95rem}
@@ -119,6 +108,31 @@ footer a{color:rgba(255,255,255,.72)}footer a:hover{color:#fff}
 .rv{opacity:0;transform:translateY(20px);transition:opacity .7s var(--ease),transform .7s var(--ease)}.rv.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
 @media(max-width:768px){#hero{padding:7.5rem 0 3rem}.sec{padding:3.25rem 0}.case-shots{height:230px}.case-shots.multi{height:294px}.case-body{padding:1.5rem}.case-nums{gap:1.25rem}.offer{padding:1.75rem}.fit{flex-direction:column}.hero-stats{gap:1.5rem}}
+/* carousels + viewer: behaviour in /assets/ui.js (shared with the homepage) */
+.car{position:relative}
+.car-track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain;padding:4px 2px 10px;margin:0 -2px}
+.car-track::-webkit-scrollbar{display:none}
+.car-track>*{flex:0 0 auto;scroll-snap-align:start}
+.car-track:focus-visible{outline:2px solid var(--c2);outline-offset:4px}
+.car-ctl{display:flex;align-items:center;justify-content:flex-end;gap:.5rem;margin-top:.4rem}
+.car-count{margin-right:auto;font-size:.82rem;font-weight:600;color:var(--mt)}
+.offer .car-count{color:rgba(255,255,255,.75)}
+.car-static .car-ctl{display:none}
+.car-btn{width:44px;height:44px;display:grid;place-items:center;border-radius:50%;border:1.5px solid var(--bd);background:#fff;color:var(--c1);font:inherit;font-size:1.25rem;line-height:1;cursor:pointer;transition:border-color .2s}
+.car-btn:hover{border-color:var(--c1)}.car-btn:disabled{opacity:.35;cursor:default}
+.offer .car-btn{background:transparent;border-color:rgba(255,255,255,.35);color:#fff}
+.lc .car-track{align-items:flex-start}
+.lc .car-track>.case{flex-basis:calc(100% - 56px);margin:0}
+.cs-more summary{display:inline-block;cursor:pointer;font-size:.88rem;font-weight:700;color:var(--c2);list-style:none;margin-top:.1rem}
+.cs-more summary::-webkit-details-marker{display:none}
+.cs-more summary::after{content:' +'}.cs-more[open] summary::after{content:' –'}
+.cs-more .case-story{margin-top:.7rem}
+.ac{margin:.8rem 0 1.4rem}
+.ac-c{flex-basis:170px;display:block;text-align:left;color:rgba(255,255,255,.82);font:inherit;font-size:.8rem;background:none;border:0;cursor:pointer}
+.ac-c img{width:100%;height:210px;object-fit:cover;object-position:left top;border-radius:10px;background:#fff;box-shadow:0 14px 30px -16px rgb(0 0 0 / .6);transition:transform .2s}
+.ac-c:hover img{transform:translateY(-3px)}
+.ac-c span{display:block;margin-top:.45rem}
+@media(max-width:768px){.lc .car-track>.case{flex-basis:calc(100% - 28px)}.case-shots{height:150px}.case-shots.multi{height:214px}.ac-c{flex-basis:116px}.ac-c img{height:165px}}
 </style>
 <link rel="stylesheet" href="/assets/site.css">
 </head>
@@ -142,9 +156,10 @@ footer a{color:rgba(255,255,255,.72)}footer a:hover{color:#fff}
 </div></section>
 
 <section class="sec" style="background:var(--bg)"><div class="ctn">
-<div class="sh rv"><span class="sl">Real results</span><h2>No empty promises — just the numbers</h2><p>Four real lead-gen accounts our founder has run. Figures are unedited from the ad platforms, in the currency they actually ran in.</p></div>
+<div class="sh rv"><span class="sl">Real results</span><h2>No empty promises — just the numbers</h2><p>Five real lead-gen accounts our founder has run. Figures are unedited from the ad platforms, in the currency they actually ran in.</p></div>
 
-<div class="case rv">
+<div class="car lc" data-car><div class="car-track" aria-label="Campaign results">
+<div class="case">
 <div class="case-shots">
 <div class="case-img active"><img src="/case-physio-meta-v2.webp" data-label="Meta Ads" alt="Meta Ads lead generation results, UK physical therapy clinic" loading="lazy" onclick="openImg(this)"></div>
 <span class="case-shot-label"></span>
@@ -157,17 +172,17 @@ footer a{color:rgba(255,255,255,.72)}footer a:hover{color:#fff}
 <div><div class="cn-v">£19.14</div><div class="cn-l">Cost per lead</div></div>
 <div><div class="cn-v">£727</div><div class="cn-l">Ad spend</div></div>
 </div>
-<div class="case-story">
+<details class="cs-more"><summary>Read the full story</summary><div class="case-story">
 <h4>The challenge</h4>
 <p>A UK physical therapy clinic wanted a steady flow of new enquiries at a cost per lead that makes sense for the clinic.</p>
 <h4>What we did</h4>
 <p>Meta Ads on Facebook and Instagram with an Instant Form, so people can enquire in a few taps without leaving the app. An earlier campaign sent people straight to the clinic's booking calendar.</p>
 <h4>The result</h4>
 <p>38 leads at £19.14 each from £727 of spend, with 377 link clicks and 12,446 people reached. The earlier calendar campaign added 2 direct bookings.</p>
+</div></details>
 </div>
 </div>
-</div>
-<div class="case rv">
+<div class="case">
 <div class="case-shots">
 <div class="case-img active"><img src="/case-proptech.webp" data-label="Google Ads" alt="B2B PropTech lead generation results" loading="lazy" onclick="openImg(this)"></div>
 <span class="case-shot-label"></span>
@@ -180,18 +195,18 @@ footer a{color:rgba(255,255,255,.72)}footer a:hover{color:#fff}
 <div><div class="cn-v">€11.45</div><div class="cn-l">Cost per lead</div></div>
 <div><div class="cn-v">€721</div><div class="cn-l">Total budget</div></div>
 </div>
-<div class="case-story">
+<details class="cs-more"><summary>Read the full story</summary><div class="case-story">
 <h4>The challenge</h4>
 <p>German B2B construction software launched into an international market — the goal was getting qualified professionals to register for the app, in a category with no existing brand recognition.</p>
 <h4>What we did</h4>
 <p>Google Ads lead generation with a tight audience built around architects and project developers, and strict budget control from day one — no wide-net targeting hoping something sticks.</p>
 <h4>The result</h4>
 <p>542 clicks turned into 63 verified registrations on just €721 of spend — a €11.45 cost per lead, well below what's typical for B2B SaaS.</p>
-</div>
+</div></details>
 </div>
 </div>
 
-<div class="case rv">
+<div class="case">
 <div class="case-shots">
 <div class="case-img active"><img src="/case-autofolierung-v2.webp" data-label="Google Ads" alt="Car wrapping service lead generation results, Google Ads" loading="lazy" onclick="openImg(this)"></div>
 <span class="case-shot-label"></span>
@@ -204,18 +219,18 @@ footer a{color:rgba(255,255,255,.72)}footer a:hover{color:#fff}
 <div><div class="cn-v">9</div><div class="cn-l">Booking inquiries</div></div>
 <div><div class="cn-v">€95</div><div class="cn-l">Cost per inquiry</div></div>
 </div>
-<div class="case-story">
+<details class="cs-more"><summary>Read the full story</summary><div class="case-story">
 <h4>The challenge</h4>
 <p>Winning premium clients in a competitive local market, for a trade business with order values from €1,500 to €5,000+ — a market where one wasted click can cost real money.</p>
 <h4>What we did</h4>
 <p>Locally targeted Google Ads Search campaigns for the exact service area, built on high-intent keywords with consistent filtering of low-value traffic — not just more clicks, the right clicks.</p>
 <h4>The result</h4>
 <p>957 clicks and 9 verified booking inquiries on an €858 total budget — a €95 cost per inquiry, outstanding for a premium local service.</p>
-</div>
+</div></details>
 </div>
 </div>
 
-<div class="case rv">
+<div class="case">
 <div class="case-shots">
 <div class="case-img active"><img src="/case-solar-webapp.webp" data-label="Google Ads" alt="Solar analysis web app sign-up results" loading="lazy" onclick="openImg(this)"></div>
 <span class="case-shot-label"></span>
@@ -228,18 +243,18 @@ footer a{color:rgba(255,255,255,.72)}footer a:hover{color:#fff}
 <div><div class="cn-v">€2.65</div><div class="cn-l">Cost per sign-up</div></div>
 <div><div class="cn-v">584%</div><div class="cn-l">ROAS</div></div>
 </div>
-<div class="case-story">
+<details class="cs-more"><summary>Read the full story</summary><div class="case-story">
 <h4>The challenge</h4>
 <p>A specialised web app for photovoltaic analysis needed to launch on the German market — the goal was getting qualified energy professionals to actually register, not just visit.</p>
 <h4>What we did</h4>
 <p>A Google Ads campaign with precise keyword control on technical, industry-specific terms, plus continuous A/B testing of ad copy and landing-page changes as real data came in.</p>
 <h4>The result</h4>
 <p>6,650 clicks and 392 sign-ups in 5 weeks flat. €2.65 cost per sign-up — well below the benchmark for B2B SaaS in the German market.</p>
-</div>
+</div></details>
 </div>
 </div>
 
-<div class="case rv">
+<div class="case">
 <div class="case-shots">
 <div class="case-img active"><img src="/case-design-saas.webp" data-label="Google Ads" alt="Design plugin download campaign results" loading="lazy" onclick="openImg(this)"></div>
 <span class="case-shot-label"></span>
@@ -252,24 +267,24 @@ footer a{color:rgba(255,255,255,.72)}footer a:hover{color:#fff}
 <div><div class="cn-v">€1.09</div><div class="cn-l">Cost per download</div></div>
 <div><div class="cn-v">918%</div><div class="cn-l">ROAS</div></div>
 </div>
-<div class="case-story">
+<details class="cs-more"><summary>Read the full story</summary><div class="case-story">
 <h4>The challenge</h4>
 <p>A new plugin for a leading design platform, starting from zero — the goal was getting qualified designers and developers to actually download it, not just click an ad.</p>
 <h4>What we did</h4>
 <p>Google Ads targeting designers and developers specifically, with a seamless journey from the ad straight through to the download — no friction to lose people on the way.</p>
 <h4>The result</h4>
 <p>2,560 clicks and 504 downloads in under a month. €1.09 cost per download — exceptional for the German SaaS market.</p>
+</div></details>
 </div>
 </div>
-</div>
-
+</div><div class="car-ctl"><span class="car-count" aria-live="polite"></span><button type="button" class="car-btn car-prev" aria-label="Previous result">‹</button><button type="button" class="car-btn car-next" aria-label="Next result">›</button></div></div>
 </div></section>
 
 <section class="sec"><div class="ctn">
 <div class="offer rv">
-<span class="sl" style="background:rgba(53,95,140,.18);color:#a9c5e4">Your Complete Marketing Plan</span>
-<h2>Audit &amp; marketing plan for your business</h2>
-<p>Free call first. Then we look at your business and your ads, you get a written plan and you decide.</p>
+<span class="sl" style="background:rgba(53,95,140,.18);color:#a9c5e4">£99 one-off</span>
+<h2>Marketing Audit &amp; Action Plan for your business</h2>
+<p>An independent review of your current marketing, campaigns and opportunities, with clear recommendations on what to improve next.</p>
 <div class="offer-checks">
 <div class="offer-check">Your service, pricing &amp; customer journey understood properly</div>
 <div class="offer-check">Competitor analysis: what makes you the better call to book</div>
@@ -277,10 +292,10 @@ footer a{color:rgba(255,255,255,.72)}footer a:hover{color:#fff}
 <div class="offer-check">Audit of any running campaigns &amp; creatives</div>
 <div class="offer-check">Recommendations &amp; a realistic budget to launch or scale</div>
 </div>
-<p class="smp-h">Real audits we sent, client details blurred: each is different, 6 to 11 pages. <a href="/sample-audits">See the sample audits</a></p><div class="smp"><a href="/sample-audits#facilities"><img src="/audits/facilities-1.webp" alt="Sample audit cover: Facilities company (client details blurred)" width="520" height="735" loading="lazy" decoding="async"><span>Facilities · 9 pages</span></a><a href="/sample-audits#food-shop"><img src="/audits/food-shop-1.webp" alt="Sample audit cover: Online food shop (client details blurred)" width="520" height="735" loading="lazy" decoding="async"><span>Food shop · 11 pages</span></a><a href="/sample-audits#physio"><img src="/audits/physio-1.webp" alt="Sample audit cover: Physio clinic (client details blurred)" width="520" height="735" loading="lazy" decoding="async"><span>Physio clinic · 9 pages</span></a><a href="/sample-audits#tiktok-agency"><img src="/audits/tiktok-agency-1.webp" alt="Sample audit cover: TikTok Shop agency (client details blurred)" width="520" height="735" loading="lazy" decoding="async"><span>TikTok agency · 6 pages</span></a></div>
+<p class="smp-h">Real audits we sent, client details blurred: each is different, 6 to 11 pages. Tap one to read it, or <a href="/sample-audits">see all sample audits</a>.</p><div class="car ac" data-car data-lb-group><div class="car-track" aria-label="Sample audits"><button type="button" class="ac-c" data-lb data-lb-title="Facilities company · 9 pages" data-lb-slug="facilities" data-lb-pages="9" data-lb-pdf="/audits/facilities.pdf"><img src="/audits/facilities-1.webp" alt="Sample audit cover: Facilities company (client details blurred)" width="520" height="736" loading="lazy" decoding="async"><span>Facilities · 9 pages</span></button><button type="button" class="ac-c" data-lb data-lb-title="Online food shop · 11 pages" data-lb-slug="food-shop" data-lb-pages="11" data-lb-pdf="/audits/food-shop.pdf"><img src="/audits/food-shop-1.webp" alt="Sample audit cover: Online food shop (client details blurred)" width="520" height="736" loading="lazy" decoding="async"><span>Food shop · 11 pages</span></button><button type="button" class="ac-c" data-lb data-lb-title="Physio clinic · 9 pages" data-lb-slug="physio" data-lb-pages="9" data-lb-pdf="/audits/physio.pdf"><img src="/audits/physio-1.webp" alt="Sample audit cover: Physio clinic (client details blurred)" width="520" height="736" loading="lazy" decoding="async"><span>Physio clinic · 9 pages</span></button><button type="button" class="ac-c" data-lb data-lb-title="TikTok Shop agency · 6 pages" data-lb-slug="tiktok-agency" data-lb-pages="6" data-lb-pdf="/audits/tiktok-agency.pdf"><img src="/audits/tiktok-agency-1.webp" alt="Sample audit cover: TikTok Shop agency (client details blurred)" width="520" height="736" loading="lazy" decoding="async"><span>TikTok agency · 6 pages</span></button></div><div class="car-ctl"><span class="car-count" aria-live="polite"></span><button type="button" class="car-btn car-prev" aria-label="Previous audit">‹</button><button type="button" class="car-btn car-next" aria-label="Next audit">›</button></div></div>
 <div class="offer-guarantee">
 <strong>✅ £99 paid upfront — credited in full to your first month</strong>
-<p>The intro call is free. Start with us and the full £99 is credited toward your first month. If you decide not to continue, the plan is still yours.</p>
+<p>The intro call is free. If you decide not to continue, the plan is still yours.</p>
 </div>
 <div style="text-align:center"><a href="https://calendly.com/digitalmarketingremote01/30min" onclick="calClick('lp_leadgen_offer')" class="btn bp bl">Book a free call →</a></div>
 </div>
@@ -307,15 +322,7 @@ footer a{color:rgba(255,255,255,.72)}footer a:hover{color:#fff}
 <a href="/lead-generation" class="btn bo bl">Back to this page</a>
 </div></div>
 
-<div class="lightbox" id="lightbox" onclick="closeImg()">
-<button class="lightbox-close" onclick="closeImg();event.stopPropagation()">✕</button>
-<button class="lightbox-nav prev" onclick="navImg(-1);event.stopPropagation()" aria-label="Previous screenshot">‹</button>
-<img id="lightboxImg" src="" alt="Full-size screenshot" onclick="event.stopPropagation()">
-<button class="lightbox-nav next" onclick="navImg(1);event.stopPropagation()" aria-label="Next screenshot">›</button>
-<span class="lightbox-count" id="lightboxCount"></span>
-</div>
-
-<footer class="sf"><div class="sf-in"><div class="sf-grid"><div><div class="sf-logo" translate="no">Digital<span>Marketing</span>Remote</div><p>Performance marketing for growing businesses worldwide. Data-driven, transparent, results-focused.</p><div class="sf-soc"><a href="https://www.facebook.com/digitalmarketingremote/" target="_blank" rel="noopener" aria-label="fb: Facebook">fb</a><a href="https://www.instagram.com/digitalmarketing.remote/" target="_blank" rel="noopener" aria-label="ig: Instagram">ig</a><a href="https://www.linkedin.com/company/121143999/" target="_blank" rel="noopener" aria-label="LinkedIn company page">in</a><a href="https://www.linkedin.com/in/mdanyalshahzad/" target="_blank" rel="noopener" aria-label="LinkedIn personal">in↗</a></div></div><div class="sf-col"><h3>Services</h3><ul><li><a href="/#services">Google Ads</a></li><li><a href="/#services">Meta Ads</a></li><li><a href="/ecommerce">E-Commerce</a></li><li><a href="/lead-generation">Lead Generation</a></li><li><a href="/#services">Tracking setup</a></li></ul></div><div class="sf-col"><h3>Company</h3><ul><li><a href="/#about">About</a></li><li><a href="/#cases">Success stories</a></li><li><a href="/#pricing">Pricing</a></li><li><a href="/#pilot">Marketing Diagnostic</a></li><li><a href="/en/guides">Guides</a></li></ul></div><div class="sf-col"><h3>Contact</h3><ul><li><a href="https://calendly.com/digitalmarketingremote01/30min" onclick="window.calClick&amp;&amp;calClick('footer_termin')">Book a free call</a></li><li><a href="/en/imprint">Imprint</a></li><li><a href="/en/privacy">Privacy</a></li><li><a href="#" onclick="window.ckSettings&amp;&amp;ckSettings();return false;">Cookie settings</a></li></ul></div></div><div class="sf-bot"><span>© 2024–2026 Digital Marketing Remote · Mohammad Danyal Shahzad</span><nav><a href="/en/imprint">Imprint</a><a href="/en/privacy">Privacy Policy</a><a href="#" onclick="window.ckSettings&amp;&amp;ckSettings();return false;">Cookie settings</a></nav></div></div></footer>
+<footer class="sf"><div class="sf-in"><div class="sf-grid"><div><div class="sf-logo" translate="no">Digital<span>Marketing</span>Remote</div><p>Performance marketing for growing businesses worldwide. Data-driven, transparent, results-focused.</p><div class="sf-soc"><a href="https://www.facebook.com/digitalmarketingremote/" target="_blank" rel="noopener" aria-label="fb: Facebook">fb</a><a href="https://www.instagram.com/digitalmarketing.remote/" target="_blank" rel="noopener" aria-label="ig: Instagram">ig</a><a href="https://www.linkedin.com/company/121143999/" target="_blank" rel="noopener" aria-label="in: LinkedIn company page">in</a><a href="https://www.linkedin.com/in/mdanyalshahzad/" target="_blank" rel="noopener" aria-label="in↗: LinkedIn personal">in↗</a></div></div><div class="sf-col"><h3>Services</h3><ul><li><a href="/#services">Google Ads</a></li><li><a href="/#services">Meta Ads</a></li><li><a href="/ecommerce">E-Commerce</a></li><li><a href="/lead-generation">Lead Generation</a></li><li><a href="/#services">Tracking setup</a></li></ul></div><div class="sf-col"><h3>Company</h3><ul><li><a href="/#about">About</a></li><li><a href="/#cases">Success stories</a></li><li><a href="/#pricing">Pricing</a></li><li><a href="/#pilot">Audit &amp; Action Plan</a></li><li><a href="/en/guides">Guides</a></li></ul></div><div class="sf-col"><h3>Contact</h3><ul><li><a href="https://calendly.com/digitalmarketingremote01/30min" onclick="window.calClick&amp;&amp;calClick('footer_termin')">Book a free call</a></li><li><a href="/en/imprint">Imprint</a></li><li><a href="/en/privacy">Privacy</a></li><li><a href="#" onclick="window.ckSettings&amp;&amp;ckSettings();return false;">Cookie settings</a></li></ul></div></div><div class="sf-bot"><span>© 2024–2026 Digital Marketing Remote · Mohammad Danyal Shahzad</span><nav><a href="/en/imprint">Imprint</a><a href="/en/privacy">Privacy Policy</a><a href="#" onclick="window.ckSettings&amp;&amp;ckSettings();return false;">Cookie settings</a></nav></div></div></footer>
 
 <script>
 function calClick(label){window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'calendly_click','btn_label':label});}
@@ -335,16 +342,9 @@ document.querySelectorAll('.case-shots').forEach(function(box){
   box.querySelector('.case-nav.next').onclick=function(){go(idx+1);};
 });
 
-var lbImgs=[],lbIdx=0;
-function openImg(el){lbImgs=Array.from(el.closest('.case-shots').querySelectorAll('img'));lbIdx=lbImgs.indexOf(el);
-var box=document.getElementById('lightbox');box.classList.toggle('has-nav',lbImgs.length>1);
-showLbImg();box.classList.add('open');document.body.style.overflow='hidden';}
-function showLbImg(){document.getElementById('lightboxImg').src=lbImgs[lbIdx].src;
-if(lbImgs.length>1)document.getElementById('lightboxCount').textContent=(lbIdx+1)+' / '+lbImgs.length;}
-function navImg(dir){if(lbImgs.length<2)return;lbIdx=(lbIdx+dir+lbImgs.length)%lbImgs.length;showLbImg();}
-function closeImg(){document.getElementById('lightbox').classList.remove('open');document.body.style.overflow='';}
-document.addEventListener('keydown',function(e){if(!document.getElementById('lightbox').classList.contains('open'))return;
-if(e.key==='Escape')closeImg();else if(e.key==='ArrowLeft')navImg(-1);else if(e.key==='ArrowRight')navImg(1);});
+/* screenshots open in the shared viewer (/assets/ui.js): previous/next run through every result on the page */
+function openImg(el){if(!window.DMRLB)return;var imgs=[].slice.call(document.querySelectorAll('.case-img img'));
+DMRLB.open(imgs.map(function(i){var t=i.closest('.case').querySelector('.case-title').textContent;return {title:t+(i.dataset.label?' · '+i.dataset.label:''),html:'<img src="'+i.getAttribute('src')+'" alt="'+i.alt.replace(/"/g,'&quot;')+'">'};}),imgs.indexOf(el));}
 function dmrConv(v){window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'dmr_conversion','conv_value':v});
 if(window.fbq)fbq('trackCustom','DMRConversion',{value:v,currency:'USD'});}
 
@@ -420,5 +420,6 @@ els.forEach(function(e){io.observe(e);});
 setTimeout(function(){document.querySelectorAll('.rv:not(.in)').forEach(function(e){e.classList.add('in');});},3000);
 })();
 </script>
+<script src="/assets/ui.js" defer></script>
 </body>
 </html>
