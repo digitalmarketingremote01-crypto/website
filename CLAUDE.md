@@ -75,6 +75,9 @@ Order: Hero ("Your ad budget deserves a clear plan." + ONE-LINE stats `.cred-l` 
   the visible FAQ (12 items) — keep them identical.
 - Services = 6 compact cards `.svc6` (2×3 on phones); tracking card has NO extra tag (the section intro already says it is a separate one-off — Danyal 2026-10-09). AI creatives are
   only in the pricing extras. About facts: 10 years in business · Google & Meta Ads since 2022 · Clear communication · Your approval first. Founder photo 4:3 on phones (object-position 50% 52%), facts 2×2.
+- RESULTS ORDER (Danyal 2026-10-09: "always show the best results"): strongest first on /lead-generation and /ecommerce —
+  rank by volume, cost per result and ROAS. Lead-gen now: 504 downloads €1.09 918% · 392 sign-ups €2.65 584% · 63 B2B leads
+  €11.45 · 38 leads £19.14 · 9 inquiries €95. Ecommerce: €1.7M / 511% first. A new case goes where its numbers rank.
 - Landing pages: compact `.lcard` result cards (screenshot + numbers; desktop side by side, phone stacked, ~250/385px tall)
   in one `.lc` carousel with arrows ON THE SIDES; card click → `openCaseLp(i)` viewer showing the whole result (all
   screenshots + story + review), next/previous move the row behind too (DMRLB onShow). Reviews: ALL three on both landing pages
