@@ -14,14 +14,15 @@
   any language (say so; never imply English- or German-only ads). Reports/calls/emails are in English.
   Paid ads currently run in England only. £ stays the main currency.
 
-## ⚠ FINAL PRICING MODEL — 2026-10-08, THIRD brief ("FINAL WEBSITE UPDATE") — supersedes EVERY older price note
-Fixed monthly management fee per band of TOTAL monthly ad spend (across all managed platforms). FOUR bands + custom:
+## ⚠ FINAL PRICING MODEL — 2026-10-08 brief + 2026-10-09 two higher tiers — supersedes EVERY older price note
+Fixed monthly management fee per band of TOTAL monthly ad spend (across all managed platforms). SIX bands + custom:
 | Total monthly ad spend | One platform | Google + Meta |
 | up to £1,500 | £349 | £499 |  £1,501–2,500 | £449 | £649 |
-| £2,501–4,000 | £599 | £799 |  £4,001–7,500 | £749 | £999 |  above £7,500 | custom | custom |
+| £2,501–4,000 | £599 | £799 |  £4,001–7,500 | £749 | £999 |
+| £7,501–12,500 | £899 | £1,199 |  £12,501–20,000 | £1,199 | £1,599 |  above £20,000 | custom ("Discuss your budget") |
 - NO effective-% lines (added then removed the same day on Danyal's word: "lets remove the percentages"). Fee only.
 - NO Starter / Growth / Scale labels, no tier names at all. NO "40% more" wording. Dual fee is higher "only because two
-  platforms are managed". No high-spend tiers on the public page (the £10k–£1M bands of earlier the same day are gone).
+  platforms are managed". Public tiers stop at £20,000; above that is custom (no invented price).
 - Fixed prices, never ranges, never "from £X" for a tier (one-liners "plans start at £349" are fine).
 - Dual = two platforms under the SAME total band; never "50% more ad budget", "second platform at half
   price", "double budget", per-platform minimums.
@@ -59,9 +60,10 @@ Remote"; booking card hidden ≤900px) → #trust (logo ticker only) → #cases 
   lock. Audit cards open every page via `data-lb-slug` + `data-lb-pages` (+ "Open the PDF"). NEW AUDIT = one more
   `<button class="ac-c" data-lb …>` in the row on /, /lead-generation, /ecommerce — nothing else to redesign.
   Homepage cases open via `openCase(i)` from the `cs` object; landing-page screenshots via `openImg()` (all cases in one viewer).
-- Pricing = platform toggle (`setPlat`) + 5 cards (`.pc`, starts at the lowest band, first card selected) + ONE detail
-  panel (`#pcDet`, `pcUpd()`). New tier above £7,500 = one more `.pc` button. Extras (tracking £99/£179, AI £99/mo) live
-  ONLY in the `<details class="adds">` under it. No table, no slider, no % any more.
+- Pricing (Danyal 2026-10-09) = 7 cards in a `.prc` carousel, each showing BOTH fees (One platform + Google + Meta) — NO
+  platform toggle, NO selection, NO detail panel under the cards. Last card = custom "Above £20,000" with a "Discuss your
+  budget" button. One `.pr-note` line under the row (what every plan includes, total ad spend, breathing room). New tier =
+  one more `.pc` div. Extras (tracking £99/£179, AI £99/mo) live ONLY in `<details class="adds">`. No table/slider/%.
 - Offer name: **Marketing Audit & Action Plan — £99** (was "Marketing Diagnostic" / "audit & marketing plan"). The £99
   credit is explained ONCE per page (homepage #pilot; landing-page offer box). Process step and FAQ only name it.
 - Each message has one home: pricing logic → #pricing; cancel monthly + 90-day recommendation → FAQ "Is there a minimum
