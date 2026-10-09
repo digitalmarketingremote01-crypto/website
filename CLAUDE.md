@@ -73,7 +73,7 @@ Remote"; booking card hidden ≤900px) → #trust (logo ticker only) → #cases 
 - Each message has one home: pricing logic → #pricing; cancel monthly + 90-day recommendation → FAQ "Is there a minimum
   contract?"; account ownership → FAQ data; the 77/16 stats → hero line (not repeated in About). FAQ schema is rebuilt from
   the visible FAQ (12 items) — keep them identical.
-- Services = 6 compact cards `.svc6` (2×3 on phones); tracking card tagged "One-off, priced separately". AI creatives are
+- Services = 6 compact cards `.svc6` (2×3 on phones); tracking card has NO extra tag (the section intro already says it is a separate one-off — Danyal 2026-10-09). AI creatives are
   only in the pricing extras. Founder photo 4:3 on phones (object-position 50% 52%), facts 2×2.
 - Landing pages: cases in one `.lc` carousel, stories behind `<details class="cs-more">`, audit covers `.ac` carousel.
 
