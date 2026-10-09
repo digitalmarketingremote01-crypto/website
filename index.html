@@ -544,8 +544,7 @@ a.sv:hover{border-color:var(--acc);transform:translateY(-2px)}
 .sv .svc-link{margin-top:auto;padding-top:.5rem;font-size:.84rem}
 .sv-tag{margin-top:auto;padding-top:.5rem;font-size:.76rem;font-weight:700;color:var(--pos)}
 .sv-sep{background:var(--cream)}
-.vc .qt-card{flex-basis:calc((100% - 32px)/3)}
-@media(max-width:900px){.book-card{display:none}.vc .qt-card{flex-basis:calc((100% - 16px)/2)}.about{gap:1.6rem}}
+@media(max-width:900px){.book-card{display:none}.about{gap:1.6rem}}
 @media(max-width:700px){.svc6{grid-template-columns:1fr 1fr;gap:10px}.sv{padding:.85rem .8rem}.sv .svc-ic{width:34px;height:34px;margin-bottom:.5rem}.sv .svc-ic svg{width:18px;height:18px}.sv h3{font-size:.95rem}.sv p{font-size:.8rem}.pd-l{grid-template-columns:1fr 1fr}.pd{padding:1rem}}
 @media(max-width:600px){
 .sec,#pilot,#voices{padding:3.4rem 0}
@@ -562,10 +561,20 @@ a.sv:hover{border-color:var(--acc);transform:translateY(-2px)}
 .facts{grid-template-columns:1fr 1fr;gap:.5rem;margin:1rem 0}
 .facts li{padding:.65rem .75rem}
 .facts span{font-size:.78rem}
-.vc .qt-card{flex-basis:88%}
 .qt-card{padding:1.3rem 1.2rem}
 }
 
+/* reviews: same card as the landing pages, two at a time with arrows, one on phones */
+.vc .car-track{align-items:stretch}
+.vc .car-track>.proof{flex-basis:calc(50% - 8px);display:flex;flex-direction:column}
+.proof{background:var(--cream);border:1.5px solid var(--line);border-radius:16px;padding:1.75rem}
+.proof-stars{color:#fbbf24;font-size:.85rem;margin-bottom:.6rem;letter-spacing:2px}
+.dark .proof-text{font-size:.95rem;color:var(--tx);margin-bottom:1rem;line-height:1.75;font-style:italic}
+.proof-author{display:flex;align-items:flex-start;gap:.6rem;margin-top:auto;min-height:2.9rem}
+.proof-av{flex:none;display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--acc);color:#fff;font-weight:700;font-size:.8rem}
+.proof-name{font-weight:700;color:var(--ink);font-size:.88rem}
+.proof-role{font-size:.76rem;color:var(--mt)}
+@media(max-width:600px){.vc .car-track>.proof{flex-basis:calc(100% - 28px)}.proof{padding:1.3rem 1.2rem}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}html{scroll-behavior:auto}.rv{opacity:1}}
 </style>
 </head>
@@ -661,7 +670,7 @@ a.sv:hover{border-color:var(--acc);transform:translateY(-2px)}
 <div class="orb orb-c" aria-hidden="true"></div>
 <div class="wrap">
 <header class="sec-h"><p class="eyebrow gold">Testimonials</p><h2>What our clients say</h2></header>
-<div class="car vc" data-car><div class="car-track qt" aria-label="Client reviews"><figure class="qt-card"><div class="stars" role="img" aria-label="5/5">★★★★★</div><blockquote>"Our Google Ads went from nothing to 2.35k conversions at 294% ROAS this year, all handled by Danyal. Profitable, transparent, and always there when we needed him. Would work with him again in a heartbeat."</blockquote><figcaption><span class="av" aria-hidden="true">AS</span><span><b>Abdullah Sohail</b><small>Founder · E-Commerce Brand</small></span></figcaption></figure><figure class="qt-card"><div class="stars" role="img" aria-label="5/5">★★★★★</div><blockquote>"I'm really glad about this much transparency. It gives me a good feeling."</blockquote><figcaption><span class="av" aria-hidden="true">FM</span><span><b>Florian Marthaler</b><small>Managing Director · GetXdone &amp; Craft AEC · Germany</small></span></figcaption></figure><figure class="qt-card"><div class="stars" role="img" aria-label="5/5">★★★★★</div><blockquote>"Absolutely great collaboration on Google Ads — many urgent tasks were handled efficiently, even presentations. Believe me: you won't waste your time here."</blockquote><figcaption><span class="av" aria-hidden="true">TM</span><span><b>Troymendous</b><small>Google Ads project · Australia · Upwork-verified ✓</small></span></figcaption></figure></div><div class="car-ctl"><span class="car-count" aria-live="polite"></span><button type="button" class="film-arrow on-dark car-prev" aria-label="Previous review">‹</button><button type="button" class="film-arrow on-dark car-next" aria-label="Next review">›</button></div></div>
+<div class="car vc" data-car><div class="car-track" aria-label="Client reviews"><div class="proof"><div class="proof-stars" role="img" aria-label="5 out of 5 stars">★★★★★</div><p class="proof-text">"Our Google Ads went from nothing to 2.35k conversions at 294% ROAS this year, all handled by Danyal. Profitable, transparent, and always there when we needed him. Would work with him again in a heartbeat."</p><div class="proof-author"><div class="proof-av" aria-hidden="true">AS</div><div><div class="proof-name">Abdullah Sohail</div><div class="proof-role">Founder · E-Commerce Brand</div></div></div></div><div class="proof"><div class="proof-stars" role="img" aria-label="5 out of 5 stars">★★★★★</div><p class="proof-text">"I'm really glad about this much transparency. It gives me a good feeling."</p><div class="proof-author"><div class="proof-av" aria-hidden="true">FM</div><div><div class="proof-name">Florian Marthaler</div><div class="proof-role">Managing Director · GetXdone &amp; Craft AEC · Germany</div></div></div></div><div class="proof"><div class="proof-stars" role="img" aria-label="5 out of 5 stars">★★★★★</div><p class="proof-text">"Absolutely great collaboration on Google Ads — many urgent tasks were handled efficiently, even presentations. Believe me: you won't waste your time here."</p><div class="proof-author"><div class="proof-av" aria-hidden="true">TM</div><div><div class="proof-name">Troymendous</div><div class="proof-role">Google Ads project · Australia · Upwork-verified ✓</div></div></div></div></div><div class="car-ctl"><span class="car-count" aria-live="polite"></span><button type="button" class="film-arrow on-dark car-prev" aria-label="Previous review">‹</button><button type="button" class="film-arrow on-dark car-next" aria-label="Next review">›</button></div></div>
 <p class="qt-note">Real client reviews, verified via Upwork or direct collaboration. Some are translated from German; originals on request.</p>
 </div>
 </section>

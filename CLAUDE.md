@@ -55,7 +55,7 @@ Order: Hero ("Your ad budget deserves a clear plan." + ONE-LINE stats `.cred-l` 
 → #voices → #faq → #contact (one final CTA) → footer.
 - Carousels everywhere repeated items appear: `[data-car]` + `.car-track` (+ `.car-prev/.car-next/.car-count`), behaviour
   in `/assets/ui.js` (loaded on /, /lead-generation, /ecommerce). Arrows + "n / N" counter + next-card peek — NO dots.
-  Results (`.rc`, 7 cases, one big card each), audit covers (`.ac`), price cards (`.prc`, `data-car-select`), reviews (`.vc`).
+  Results (`.rc`, 7 cases, one big card each), audit covers (`.ac`), price cards (`.prc`), reviews (`.vc`, 2 per view).
 - One viewer for everything: `DMRLB.open(items, i)` in ui.js — prev/next while open, swipe, Esc, scroll lock. Tapping an
   image opens a full-screen ZOOM LAYER (2.5× size, centred on the tapped point, drag/swipe to pan, tap or Esc to zoom out) —
   Danyal 2026-10-09: the old in-card zoom showed only one corner. Whole homepage result cards are clickable.
@@ -77,7 +77,9 @@ Order: Hero ("Your ad budget deserves a clear plan." + ONE-LINE stats `.cred-l` 
   only in the pricing extras. About facts: 10 years in business · Google & Meta Ads since 2022 · Clear communication · Your approval first. Founder photo 4:3 on phones (object-position 50% 52%), facts 2×2.
 - Landing pages: compact `.lcard` result cards (screenshot + numbers; desktop side by side, phone stacked, ~250/385px tall)
   in one `.lc` carousel with arrows ON THE SIDES; card click → `openCaseLp(i)` viewer showing the whole result (all
-  screenshots + story + review), next/previous move the row behind too (DMRLB onShow). Ecommerce reviews = `.proofs` row.
+  screenshots + story + review), next/previous move the row behind too (DMRLB onShow). Reviews: ALL three on both landing pages
+  (`.proofs` row, 3 across on desktop) in the light `.proof` card; client name pinned to the card bottom (min-height
+  block) so names sit level. Homepage #voices uses the SAME `.proof` card, two at a time with arrows, one on phones.
   The "Who this is for" box and the "Plans from £349" line were removed (Danyal 2026-10-09: B2B-sounding, not wanted).
 
 ## ⚠ AUDIT IS PAID SINCE 2026-10-06 — supersedes every "free marketing plan / free audit" note below

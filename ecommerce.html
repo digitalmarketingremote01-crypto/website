@@ -75,7 +75,7 @@ p{color:var(--tx)}
 .case-story h4{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--mt);margin:.9rem 0 .3rem}
 .case-story h4:first-child{margin-top:0}
 .case-story p{font-size:.9rem;color:var(--tx);line-height:1.7;margin:0}
-.proof{background:var(--bg);border:1.5px solid var(--bd);border-radius:16px;padding:1.75rem;margin-top:1.5rem}
+.proof{background:var(--bg);border:1.5px solid var(--bd);border-radius:16px;padding:1.75rem}
 .proof-stars{color:#fbbf24;font-size:.85rem;margin-bottom:.6rem;letter-spacing:2px}
 .proof-text{font-size:.92rem;color:var(--tx);margin-bottom:1rem;line-height:1.75;font-style:italic}
 .proof-author{display:flex;align-items:center;gap:.6rem}
@@ -165,7 +165,6 @@ footer a{color:rgba(255,255,255,.72)}footer a:hover{color:#fff}
 .lc-v .case-story{margin-top:.4rem}
 .lc-vcta{margin-top:1.3rem;text-align:center}
 .proofs{margin-top:1.4rem}
-.proofs .car-track>.proof{flex-basis:calc(50% - 8px);margin:0}
 @media(max-width:768px){
 .lc .car-track>.lcard{flex-basis:calc(100% - 28px)}
 .lcard{grid-template-columns:1fr}
@@ -177,6 +176,13 @@ footer a{color:rgba(255,255,255,.72)}footer a:hover{color:#fff}
 .proofs .car-track>.proof{flex-basis:calc(100% - 28px)}
 .proof{padding:1.2rem}
 }
+/* reviews: same card on both landing pages, all three shown, names level at the bottom */
+.proofs-h{margin:2.2rem 0 .8rem;font-size:1.05rem;text-align:center}
+.proofs .car-track{align-items:stretch}
+.proofs .car-track>.proof{flex-basis:calc((100% - 32px)/3);margin:0;display:flex;flex-direction:column}
+.proof-author{margin-top:auto;min-height:3.9rem;align-items:flex-start}
+@media(max-width:900px){.proofs .car-track>.proof{flex-basis:calc((100% - 16px)/2)}}
+@media(max-width:600px){.proofs .car-track>.proof{flex-basis:calc(100% - 28px)}}
 </style>
 <link rel="stylesheet" href="/assets/site.css">
 </head>
@@ -244,15 +250,8 @@ footer a{color:rgba(255,255,255,.72)}footer a:hover{color:#fff}
 <div class="proof-author"><div class="proof-av">AS</div><div><div class="proof-name">Abdullah Sohail</div><div class="proof-role">Founder · E-Commerce Brand</div></div></div>
 </div></template></div>
 </div><button type="button" class="car-btn car-prev" aria-label="Previous result">‹</button><button type="button" class="car-btn car-next" aria-label="Next result">›</button><div class="car-ctl"><span class="car-count" aria-live="polite"></span></div></div>
-<div class="car proofs" data-car><div class="car-track" aria-label="What these clients said"><div class="proof">
-<div class="proof-stars">★★★★★</div>
-<p class="proof-text">"I'm really glad about this much transparency. It gives me a good feeling."</p>
-<div class="proof-author"><div class="proof-av">FM</div><div><div class="proof-name">Florian Marthaler</div><div class="proof-role">Managing Director · GetXdone &amp; Craft AEC · Germany</div></div></div>
-</div><div class="proof">
-<div class="proof-stars">★★★★★</div>
-<p class="proof-text">"Our Google Ads went from nothing to 2.35k conversions at 294% ROAS this year, all handled by Danyal. Profitable, transparent, and always there when we needed him. Would work with him again in a heartbeat."</p>
-<div class="proof-author"><div class="proof-av">AS</div><div><div class="proof-name">Abdullah Sohail</div><div class="proof-role">Founder · E-Commerce Brand</div></div></div>
-</div></div><div class="car-ctl"><span class="car-count" aria-live="polite"></span><button type="button" class="car-btn car-prev" aria-label="Previous review">‹</button><button type="button" class="car-btn car-next" aria-label="Next review">›</button></div></div>
+<h3 class="proofs-h">What our clients say</h3>
+<div class="car proofs" data-car><div class="car-track" aria-label="Client reviews"><div class="proof"><div class="proof-stars">★★★★★</div><p class="proof-text">"Our Google Ads went from nothing to 2.35k conversions at 294% ROAS this year, all handled by Danyal. Profitable, transparent, and always there when we needed him. Would work with him again in a heartbeat."</p><div class="proof-author"><div class="proof-av">AS</div><div><div class="proof-name">Abdullah Sohail</div><div class="proof-role">Founder · E-Commerce Brand</div></div></div></div><div class="proof"><div class="proof-stars">★★★★★</div><p class="proof-text">"I'm really glad about this much transparency. It gives me a good feeling."</p><div class="proof-author"><div class="proof-av">FM</div><div><div class="proof-name">Florian Marthaler</div><div class="proof-role">Managing Director · GetXdone &amp; Craft AEC · Germany</div></div></div></div><div class="proof"><div class="proof-stars">★★★★★</div><p class="proof-text">"Absolutely great collaboration on Google Ads — many urgent tasks were handled efficiently, even presentations. Believe me: you won't waste your time here."</p><div class="proof-author"><div class="proof-av">TM</div><div><div class="proof-name">Troymendous</div><div class="proof-role">Google Ads project · Australia · Upwork-verified ✓</div></div></div></div></div><div class="car-ctl"><span class="car-count" aria-live="polite"></span><button type="button" class="car-btn car-prev" aria-label="Previous review">‹</button><button type="button" class="car-btn car-next" aria-label="Next review">›</button></div></div>
 </div></section>
 
 <section class="sec"><div class="ctn">
