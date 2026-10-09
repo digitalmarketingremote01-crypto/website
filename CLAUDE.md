@@ -78,6 +78,7 @@ Order: Hero ("Your ad budget deserves a clear plan." + ONE-LINE stats `.cred-l` 
 - RESULTS ORDER (Danyal 2026-10-09: "always show the best results"): strongest first on /lead-generation and /ecommerce —
   rank by volume, cost per result and ROAS. Lead-gen now: 504 downloads €1.09 918% · 392 sign-ups €2.65 584% · 63 B2B leads
   €11.45 · 38 leads £19.14 · 9 inquiries €95. Ecommerce: €1.7M / 511% first. A new case goes where its numbers rank.
+  Lead-gen hero stats = the strongest numbers (504 downloads · 392 sign-ups · 918% ROAS), never the 9-inquiry case.
 - Landing pages: compact `.lcard` result cards (screenshot + numbers; desktop side by side, phone stacked, ~250/385px tall)
   in one `.lc` carousel with arrows ON THE SIDES; card click → `openCaseLp(i)` viewer showing the whole result (all
   screenshots + story + review), next/previous move the row behind too (DMRLB onShow). Reviews: ALL three on both landing pages
