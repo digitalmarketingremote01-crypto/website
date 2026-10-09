@@ -60,11 +60,11 @@ Remote"; booking card hidden ≤900px) → #trust (logo ticker only) → #cases 
   image opens a full-screen ZOOM LAYER (2.5× size, centred on the tapped point, drag/swipe to pan, tap or Esc to zoom out) —
   Danyal 2026-10-09: the old in-card zoom showed only one corner. Whole homepage result cards are clickable.
   Process step / onboarding text for the audit says what the client gets, never the price. Audit cards open every page via `data-lb-slug` + `data-lb-pages` (+ "Open the PDF"). NEW AUDIT = one more
-  `<button class="ac-c" data-lb …>` in the row on /, /lead-generation, /ecommerce — nothing else to redesign.
+  `<button class="ac-c" data-lb …>` (label = `.ac-n` name + `.ac-p` "N pages", two lines on every card so they stay level) in the row on /, /lead-generation, /ecommerce — nothing else to redesign.
   Homepage cases open via `openCase(i)` from the `cs` object; landing-page screenshots via `openImg()` (all cases in one viewer).
 - Pricing (Danyal 2026-10-09) = 7 cards in a `.prc` carousel, each showing BOTH fees (One platform + Google + Meta) — NO
   platform toggle, NO selection, NO detail panel under the cards. Last card = custom "Above £20,000" with a "Discuss your
-  budget" button. Under the row: `.pr-inc` = ticked LIST "Included in every plan" (3 columns desktop, 2 on phones) + two
+  budget" button. Under the row: `.pr-inc` = ticked LIST "Included in every plan" (3 columns desktop; ONE column on phones, every item on one line — keep items short) + two
   small bullets (total ad spend; breathing room) — Danyal: a paragraph here is "most unprofessional", never go back to it.
   Then "Separate from the monthly fee" = three always-visible `.add` cards (Audit & Action Plan £99, tracking £99/£179,
   AI £99/mo) — NEVER hidden behind a +/accordion. New tier = one more `.pc` div. No table/slider/%.
