@@ -72,3 +72,6 @@ article a,.src a{overflow-wrap:anywhere}
 #hero h1{max-width:1000px}
 p,li{text-wrap:pretty}
 h1,h2,h3{text-wrap:balance}
+
+/* the consent banner (injected by assets/tracking.js) styles its own card; a page's global p colour must not leak into it */
+#ck p,#ck p strong{color:#fff}
