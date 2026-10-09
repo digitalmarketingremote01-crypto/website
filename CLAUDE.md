@@ -76,9 +76,11 @@ Order: Hero ("Your ad budget deserves a clear plan." + ONE-LINE stats `.cred-l` 
 - Services = 6 compact cards `.svc6` (2×3 on phones); tracking card has NO extra tag (the section intro already says it is a separate one-off — Danyal 2026-10-09). AI creatives are
   only in the pricing extras. About facts: 10 years in business · Google & Meta Ads since 2022 · Clear communication · Your approval first. Founder photo 4:3 on phones (object-position 50% 52%), facts 2×2.
 - RESULTS ORDER (Danyal 2026-10-09: "always show the best results"): strongest first on /lead-generation and /ecommerce —
-  rank by volume, cost per result and ROAS. Lead-gen now: 504 downloads €1.09 918% · 392 sign-ups €2.65 584% · 63 B2B leads
+  rank by volume, cost per result and ROAS. Lead-gen now: 392 sign-ups €2.65 584% · 504 downloads €1.09 918% · 63 B2B leads
   €11.45 · 38 leads £19.14 · 9 inquiries €95. Ecommerce: €1.7M / 511% first. A new case goes where its numbers rank.
-  Lead-gen hero stats = the strongest numbers (504 downloads · 392 sign-ups · 918% ROAS), never the 9-inquiry case.
+  HERO (Danyal 2026-10-09: "you fix one thing and damage another"): NO stats strip on either page; one benefit headline + ONE
+  result in the sub-line, and that result is the FIRST card below (lead-gen 392 sign-ups; ecommerce €1.7M / 11 countries).
+  Never show two different results in the hero.
 - Landing pages: compact `.lcard` result cards (screenshot + numbers; desktop side by side, phone stacked, ~250/385px tall)
   in one `.lc` carousel with arrows ON THE SIDES; card click → `openCaseLp(i)` viewer showing the whole result (all
   screenshots + story + review), next/previous move the row behind too (DMRLB onShow). Reviews: ALL three on both landing pages
