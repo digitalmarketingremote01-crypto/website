@@ -56,14 +56,18 @@ Remote"; booking card hidden ≤900px) → #trust (logo ticker only) → #cases 
 - Carousels everywhere repeated items appear: `[data-car]` + `.car-track` (+ `.car-prev/.car-next/.car-count`), behaviour
   in `/assets/ui.js` (loaded on /, /lead-generation, /ecommerce). Arrows + "n / N" counter + next-card peek — NO dots.
   Results (`.rc`, 7 cases, one big card each), audit covers (`.ac`), price cards (`.prc`, `data-car-select`), reviews (`.vc`).
-- One viewer for everything: `DMRLB.open(items, i)` in ui.js — prev/next while open, tap image to zoom, swipe, Esc, scroll
-  lock. Audit cards open every page via `data-lb-slug` + `data-lb-pages` (+ "Open the PDF"). NEW AUDIT = one more
+- One viewer for everything: `DMRLB.open(items, i)` in ui.js — prev/next while open, swipe, Esc, scroll lock. Tapping an
+  image opens a full-screen ZOOM LAYER (2.5× size, centred on the tapped point, drag/swipe to pan, tap or Esc to zoom out) —
+  Danyal 2026-10-09: the old in-card zoom showed only one corner. Whole homepage result cards are clickable.
+  Process step / onboarding text for the audit says what the client gets, never the price. Audit cards open every page via `data-lb-slug` + `data-lb-pages` (+ "Open the PDF"). NEW AUDIT = one more
   `<button class="ac-c" data-lb …>` in the row on /, /lead-generation, /ecommerce — nothing else to redesign.
   Homepage cases open via `openCase(i)` from the `cs` object; landing-page screenshots via `openImg()` (all cases in one viewer).
 - Pricing (Danyal 2026-10-09) = 7 cards in a `.prc` carousel, each showing BOTH fees (One platform + Google + Meta) — NO
   platform toggle, NO selection, NO detail panel under the cards. Last card = custom "Above £20,000" with a "Discuss your
-  budget" button. One `.pr-note` line under the row (what every plan includes, total ad spend, breathing room). New tier =
-  one more `.pc` div. Extras (tracking £99/£179, AI £99/mo) live ONLY in `<details class="adds">`. No table/slider/%.
+  budget" button. Under the row: `.pr-inc` = ticked LIST "Included in every plan" (3 columns desktop, 2 on phones) + two
+  small bullets (total ad spend; breathing room) — Danyal: a paragraph here is "most unprofessional", never go back to it.
+  Then "Separate from the monthly fee" = three always-visible `.add` cards (Audit & Action Plan £99, tracking £99/£179,
+  AI £99/mo) — NEVER hidden behind a +/accordion. New tier = one more `.pc` div. No table/slider/%.
 - Offer name: **Marketing Audit & Action Plan — £99** (was "Marketing Diagnostic" / "audit & marketing plan"). The £99
   credit is explained ONCE per page (homepage #pilot; landing-page offer box). Process step and FAQ only name it.
 - Each message has one home: pricing logic → #pricing; cancel monthly + 90-day recommendation → FAQ "Is there a minimum
@@ -244,7 +248,7 @@ Section order (reordered 2026-07-23, proof-first for mobile — Clarity showed 5
   includes it). Fee logic Danyal accepted: fee/spend falls smoothly 20%→12.5% up the ladder,
   ≤40% at any band bottom. Caps were lowered 8k→7k / 15k→12k on purpose. "Keine
   Einrichtungsgebühr" claim REMOVED sitewide (guides too) — a setup fee now exists.
-  Only ONE row is highlighted (Pro). B2B note REWORDED 2026-10-08 (Danyal): never "exclusively for businesses (B2B)" — say "designed for businesses and brands of all types" (imprint keeps § 14 BGB / not private consumers).
+  Only ONE row is highlighted (Pro). B2B note: never "exclusively for businesses (B2B)"; the homepage VAT note has NO audience line at all (Danyal 2026-10-09 removed "designed for businesses and brands of all types"; imprint keeps its § 14 BGB sentence).
   SAME LIST also lives on `/partner` + `/en/partner` (section `#preise`/`#pricing`, own
   copy of the CSS + a self-contained `ptogPr`/`setCur` script with its own FX fetch) and in the two
   price guides (`ratgeber/google-ads-agentur-kosten`, `en/guides/google-ads-agency-pricing`
