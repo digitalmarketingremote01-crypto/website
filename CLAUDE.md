@@ -78,7 +78,7 @@ Order: Hero ("Your ad budget deserves a clear plan." + ONE-LINE stats `.cred-l` 
 - Landing pages: compact `.lcard` result cards (screenshot + numbers; desktop side by side, phone stacked, ~250/385px tall)
   in one `.lc` carousel with arrows ON THE SIDES; card click → `openCaseLp(i)` viewer showing the whole result (all
   screenshots + story + review), next/previous move the row behind too (DMRLB onShow). Reviews: ALL three on both landing pages
-  (`.proofs` row, 3 across on desktop) in the light `.proof` card; client name pinned to the card bottom (min-height
+  (`.proofs` row, TWO at a time with arrows like the homepage — Danyal: same pattern everywhere) in the light `.proof` card; client name pinned to the card bottom (min-height
   block) so names sit level. Homepage #voices uses the SAME `.proof` card, two at a time with arrows, one on phones.
   The "Who this is for" box and the "Plans from £349" line were removed (Danyal 2026-10-09: B2B-sounding, not wanted).
 
