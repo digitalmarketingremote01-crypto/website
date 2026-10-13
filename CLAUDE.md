@@ -386,7 +386,7 @@ and update every reference. The re-cropped car-wrapping shot stayed cut-off for 
 - Meta Pixel / dataset: 1033196126360558 (swapped 2026-08-11; the old 957297367335870 is retired — never reuse it)
 - Microsoft Clarity: x4vko0dld9
 - Calendly booking: digitalmarketingremote01@gmail.com
-- Calendly redirect hash: #danke-termin
+- Calendly redirect hash: #booking-confirmed (renamed from #danke-termin 2026-10-13; the old hash is still accepted as a fallback)
 - Form emails: Google Apps Script "Formspree | Form Script" (owner digitalmarketingremote01@gmail.com)
 - Meta CAPI server-side (GAS, mirror in `tools/meta-capi.gs`): form leads fire 'Lead' from doPost;
   Calendly bookings fire custom event 'CalendlyBooking' from syncCalendlyBookings (renamed from

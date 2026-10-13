@@ -791,12 +791,12 @@ try{localStorage.setItem(k,JSON.stringify({date:today,EUR:j.rates.EUR,USD:j.rate
 }).catch(function(){});
 })();
 
-/* Pages: main vs. the Calendly thank-you view (#danke-termin drives the booking conversion) */
+/* Pages: main vs. the Calendly thank-you view (#booking-confirmed drives the booking conversion) */
 function hideAll(){['main','ty-cal'].forEach(function(id){var e=document.getElementById(id);if(e){e.style.display='none';e.classList.remove('active');}});}
 function showM(){hideAll();document.getElementById('main').style.display='block';window.scrollTo(0,0);if(location.hash){history.replaceState(null,'',location.pathname);}}
 function showTY(t){hideAll();var el=document.getElementById('ty-'+t);el.style.display='flex';el.classList.add('active');window.scrollTo(0,0);}
 function handleHash(initial){
-  if(location.hash==='#danke-termin'){showTY('cal');
+  if(/^#(booking-confirmed|danke-termin)$/.test(location.hash)){showTY('cal');
     /* initial===true + fresh calB flag = this pageload follows an in-popup booking that already pushed the event */
     var skip=false;
     if(initial===true){try{var t=+sessionStorage.getItem('calB')||0;skip=(Date.now()-t<120000);sessionStorage.removeItem('calB');}catch(e){}}
@@ -844,7 +844,7 @@ return '<div class="dlb-card"><div class="mhd"><div class="mt2">'+d.tag+'</div><
 function openCase(i){if(!window.DMRLB)return;var tr=document.querySelector('.rc .car-track'),cards=tr?tr.children:[];
 DMRLB.open(CASES.map(function(k){return {title:cs[k].t,html:caseHtml(cs[k])};}),i,{onShow:function(k){if(cards[k])tr.scrollLeft=cards[k].offsetLeft-cards[0].offsetLeft;}});}
 
-/* Calendly popup — booking stays on-site; widget JS loads only after a booking click; a scheduled event routes through the existing #danke-termin flow */
+/* Calendly popup — booking stays on-site; widget JS loads only after a booking click; a scheduled event routes through the existing #booking-confirmed flow */
 var _calLd=null;
 function _calLoad(){if(window.Calendly&&window.Calendly.initPopupWidget)return Promise.resolve();
 if(!_calLd){var l=document.createElement('link');l.rel='stylesheet';l.href='https://assets.calendly.com/assets/external/widget.css';document.head.appendChild(l);
@@ -875,8 +875,8 @@ if(e.origin==='https://calendly.com'&&e.data&&e.data.event==='calendly.event_sch
 try{sessionStorage.setItem('calB',String(Date.now()))}catch(err){}
 try{dmrBook_()}catch(err){}
 if(window.Calendly&&Calendly.closePopupWidget)Calendly.closePopupWidget();
-if(location.hash==='#danke-termin'){window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'calendly_booking'});if(window.fbq)fbq('trackCustom','CalendlyBooking',{},{eventID:dmrBookId_()});dmrConv(100);}
-else{location.hash='#danke-termin';}
+if(/^#(booking-confirmed|danke-termin)$/.test(location.hash)){window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'calendly_booking'});if(window.fbq)fbq('trackCustom','CalendlyBooking',{},{eventID:dmrBookId_()});dmrConv(100);}
+else{location.hash='#booking-confirmed';}
 }});
 handleHash(true);
 window.addEventListener('hashchange',function(){handleHash(false);});

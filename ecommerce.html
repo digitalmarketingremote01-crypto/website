@@ -351,7 +351,7 @@ function hideAll(){['main','ty-cal'].forEach(function(id){var e=document.getElem
 function showM(){hideAll();document.getElementById('main').style.display='block';window.scrollTo(0,0);if(location.hash){history.replaceState(null,'',location.pathname);}}
 function showTY(t){hideAll();var el=document.getElementById('ty-'+t);el.style.display='flex';el.classList.add('active');window.scrollTo(0,0);}
 function handleHash(initial){
-  if(location.hash==='#danke-termin'){showTY('cal');
+  if(/^#(booking-confirmed|danke-termin)$/.test(location.hash)){showTY('cal');
     var skip=false;
     if(initial===true){try{var t=+sessionStorage.getItem('calB')||0;skip=(Date.now()-t<120000);sessionStorage.removeItem('calB');}catch(e){}}
     if(!skip){window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'calendly_booking'});if(window.fbq)fbq('trackCustom','CalendlyBooking');dmrConv(100);}}
@@ -373,8 +373,8 @@ window.addEventListener('message',function(e){
 if(e.origin==='https://calendly.com'&&e.data&&e.data.event==='calendly.event_scheduled'){
 try{sessionStorage.setItem('calB',String(Date.now()))}catch(err){}
 if(window.Calendly&&Calendly.closePopupWidget)Calendly.closePopupWidget();
-if(location.hash==='#danke-termin'){window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'calendly_booking'});if(window.fbq)fbq('trackCustom','CalendlyBooking');dmrConv(100);}
-else{location.hash='#danke-termin';}
+if(/^#(booking-confirmed|danke-termin)$/.test(location.hash)){window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'calendly_booking'});if(window.fbq)fbq('trackCustom','CalendlyBooking');dmrConv(100);}
+else{location.hash='#booking-confirmed';}
 }});
 
 /* scroll reveal */
