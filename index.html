@@ -719,11 +719,9 @@ a.sv:hover{border-color:var(--acc);transform:translateY(-2px)}
 <script>
 /* CTA click tracking — fires before same-tab navigation */
 function calClick(label){window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'calendly_click','btn_label':label});}
-/* DMRConversion — the single event the Meta campaign optimizes on. 'Lead' and
-   'CalendlyBooking' stay untouched as the reporting events; this one fires
-   alongside them, valued so Meta learns a booking is worth double a form. */
-function dmrConv(v){window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'dmr_conversion','conv_value':v});
-if(window.fbq)fbq('trackCustom','DMRConversion',{value:v,currency:'USD'});}
+/* dmr_conversion — GTM/GA4 only. Meta gets every booking step from Calendly's own pixel
+   (invitee_meeting_scheduled etc., connected 2026-10-13), so the website sends no Meta booking event. */
+function dmrConv(v){window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'dmr_conversion','conv_value':v});}
 
 /* ===== Lead-source attribution (added 2026-07-29) =====
    Captures the session's FIRST pageview params (first touch wins) and attaches them as
@@ -791,16 +789,16 @@ try{localStorage.setItem(k,JSON.stringify({date:today,EUR:j.rates.EUR,USD:j.rate
 }).catch(function(){});
 })();
 
-/* Pages: main vs. the Calendly thank-you view (#booking-confirmed drives the booking conversion) */
+/* Pages: main vs. the Calendly thank-you view (#thank-you drives the booking conversion) */
 function hideAll(){['main','ty-cal'].forEach(function(id){var e=document.getElementById(id);if(e){e.style.display='none';e.classList.remove('active');}});}
 function showM(){hideAll();document.getElementById('main').style.display='block';window.scrollTo(0,0);if(location.hash){history.replaceState(null,'',location.pathname);}}
 function showTY(t){hideAll();var el=document.getElementById('ty-'+t);el.style.display='flex';el.classList.add('active');window.scrollTo(0,0);}
 function handleHash(initial){
-  if(/^#(booking-confirmed|danke-termin)$/.test(location.hash)){showTY('cal');
+  if(/^#(thank-you|booking-confirmed|danke-termin)$/.test(location.hash)){showTY('cal');
     /* initial===true + fresh calB flag = this pageload follows an in-popup booking that already pushed the event */
     var skip=false;
     if(initial===true){try{var t=+sessionStorage.getItem('calB')||0;skip=(Date.now()-t<120000);sessionStorage.removeItem('calB');}catch(e){}}
-    if(!skip){window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'calendly_booking'});if(window.fbq)fbq('trackCustom','CalendlyBooking',{},{eventID:dmrBookId_()});dmrConv(100);}}
+    if(!skip){window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'calendly_booking'});dmrConv(100);}}
 }
 
 /* Modal data */
@@ -844,7 +842,7 @@ return '<div class="dlb-card"><div class="mhd"><div class="mt2">'+d.tag+'</div><
 function openCase(i){if(!window.DMRLB)return;var tr=document.querySelector('.rc .car-track'),cards=tr?tr.children:[];
 DMRLB.open(CASES.map(function(k){return {title:cs[k].t,html:caseHtml(cs[k])};}),i,{onShow:function(k){if(cards[k])tr.scrollLeft=cards[k].offsetLeft-cards[0].offsetLeft;}});}
 
-/* Calendly popup — booking stays on-site; widget JS loads only after a booking click; a scheduled event routes through the existing #booking-confirmed flow */
+/* Calendly popup — booking stays on-site; widget JS loads only after a booking click; a scheduled event routes through the existing #thank-you flow */
 var _calLd=null;
 function _calLoad(){if(window.Calendly&&window.Calendly.initPopupWidget)return Promise.resolve();
 if(!_calLd){var l=document.createElement('link');l.rel='stylesheet';l.href='https://assets.calendly.com/assets/external/widget.css';document.head.appendChild(l);
@@ -873,10 +871,9 @@ try{if(navigator.sendBeacon)navigator.sendBeacon(u,d);else fetch(u,{method:'POST
 window.addEventListener('message',function(e){
 if(e.origin==='https://calendly.com'&&e.data&&e.data.event==='calendly.event_scheduled'){
 try{sessionStorage.setItem('calB',String(Date.now()))}catch(err){}
-try{dmrBook_()}catch(err){}
 if(window.Calendly&&Calendly.closePopupWidget)Calendly.closePopupWidget();
-if(/^#(booking-confirmed|danke-termin)$/.test(location.hash)){window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'calendly_booking'});if(window.fbq)fbq('trackCustom','CalendlyBooking',{},{eventID:dmrBookId_()});dmrConv(100);}
-else{location.hash='#booking-confirmed';}
+if(/^#(thank-you|booking-confirmed|danke-termin)$/.test(location.hash)){window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'calendly_booking'});dmrConv(100);}
+else{location.hash='#thank-you';}
 }});
 handleHash(true);
 window.addEventListener('hashchange',function(){handleHash(false);});

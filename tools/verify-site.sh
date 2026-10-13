@@ -29,7 +29,7 @@ home=$(curl -s -H 'Cache-Control: no-cache' "$BASE/?cb=$TS")
 # the page and the module so this doesn't false-positive on that split.
 trackjs=$(curl -s -H 'Cache-Control: no-cache' "$BASE/assets/tracking.js?cb=$TS")
 grep -qF -- "assets/tracking.js" <<<"$home" && pass "tracking.js referenced on homepage" || fail "tracking.js NOT referenced on homepage"
-for m in "booking-confirmed" "calendly_booking" "_calLoad"; do
+for m in "thank-you" "calendly_booking" "_calLoad"; do
   grep -qF -- "$m" <<<"$home" && pass "$m present" || fail "$m MISSING"
 done
 # the homepage is Calendly-only since the 2026-10 redesign; only check the form event if a form exists
