@@ -15,9 +15,11 @@
   Paid ads currently run in England only. £ stays the main currency.
 
 ## ⚠ FINAL PRICING MODEL — 2026-10-08 brief + 2026-10-09 two higher tiers — supersedes EVERY older price note
-Fixed monthly management fee per band of TOTAL monthly ad spend (across all managed platforms). SIX bands + custom:
+Fixed monthly management fee per band of TOTAL monthly ad spend (across all managed platforms). FIVE bands + custom
+(2026-10-13 Danyal: base £349 now covers up to £2,500 — the £449/£649 tier is gone; list £349, real floor ~£300 when a
+client negotiates; "we think about other tiers later"):
 | Total monthly ad spend | One platform | Google + Meta |
-| up to £1,500 | £349 | £499 |  £1,501–2,500 | £449 | £649 |
+| up to £2,500 | £349 | £499 |
 | £2,501–4,000 | £599 | £799 |  £4,001–7,500 | £749 | £999 |
 | £7,501–12,500 | £899 | £1,199 |  £12,501–20,000 | £1,199 | £1,599 |  above £20,000 | custom ("Discuss your budget") |
 - NO effective-% lines (added then removed the same day on Danyal's word: "lets remove the percentages"). Fee only.
@@ -62,7 +64,7 @@ Order: Hero ("Your ad budget deserves a clear plan." + ONE-LINE stats `.cred-l` 
   Process step / onboarding text for the audit says what the client gets, never the price. Audit cards open every page via `data-lb-slug` + `data-lb-pages` (+ "Open the PDF"). NEW AUDIT = one more
   `<button class="ac-c" data-lb …>` (label = `.ac-n` name + `.ac-p` "N pages", two lines on every card so they stay level) in the row on /, /lead-generation, /ecommerce — nothing else to redesign.
   Homepage cases open via `openCase(i)` from the `cs` object; landing-page screenshots via `openImg()` (all cases in one viewer).
-- Pricing (Danyal 2026-10-09) = 7 cards in a `.prc` carousel, each showing BOTH fees (One platform + Google + Meta) — NO
+- Pricing (Danyal 2026-10-09; 6 cards since 2026-10-13) = cards in a `.prc` carousel, each showing BOTH fees (One platform + Google + Meta) — NO
   platform toggle, NO selection, NO detail panel under the cards. Last card = custom "Above £20,000" with a "Discuss your
   budget" button. Under the row: `.pr-inc` = ticked LIST "Included in every plan" (3 columns desktop; ONE column on phones, every item on one line — keep items short) + two
   small bullets (total ad spend; breathing room) — Danyal: a paragraph here is "most unprofessional", never go back to it.
