@@ -17,10 +17,12 @@
 ## ⚠ FINAL PRICING MODEL — 2026-10-08 brief + 2026-10-09 two higher tiers — supersedes EVERY older price note
 Fixed monthly management fee per band of TOTAL monthly ad spend (across all managed platforms). FIVE bands + custom
 (2026-10-13 Danyal: base £349 now covers up to £2,500 — the £449/£649 tier is gone; list £349, real floor ~£300 when a
-client negotiates; "we think about other tiers later"):
+client negotiates). Dual rule (Danyal 2026-10-13): Google + Meta ≈ one platform + 30–35%; the base £499 (43%) is
+awaiting his yes on £469:
 | Total monthly ad spend | One platform | Google + Meta |
 | up to £2,500 | £349 | £499 |
-| £2,501–4,000 | £599 | £799 |  £4,001–7,500 | £749 | £999 |
+| £2,501–4,500 | £549 | £729 | (2026-10-13 Danyal: "349, next should be 549 for up to 4500"; G+M by his ~30–35% rule)
+| £4,501–7,500 | £749 | £999 |
 | £7,501–12,500 | £899 | £1,199 |  £12,501–20,000 | £1,199 | £1,599 |  above £20,000 | custom ("Discuss your budget") |
 - NO effective-% lines (added then removed the same day on Danyal's word: "lets remove the percentages"). Fee only.
 - NO Starter / Growth / Scale labels, no tier names at all. NO "40% more" wording. Dual fee is higher "only because two
