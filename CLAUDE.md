@@ -21,7 +21,7 @@ client negotiates). Dual rule (Danyal 2026-10-13): Google + Meta ≈ one platfor
 awaiting his yes on £469:
 | Total monthly ad spend | One platform | Google + Meta |
 | up to £2,500 | £349 | £499 |
-| £2,501–4,500 | £549 | £729 | (2026-10-13 Danyal: "349, next should be 549 for up to 4500"; G+M by his ~30–35% rule)
+| £2,501–4,500 | £549 | £749 | (2026-10-13 Danyal: "349, next should be 549 for up to 4500"; G+M £749 on his word, was £729)
 | £4,501–7,500 | £749 | £999 |
 | £7,501–12,500 | £899 | £1,199 |  £12,501–20,000 | £1,199 | £1,599 |  above £20,000 | custom ("Discuss your budget") |
 - NO effective-% lines (added then removed the same day on Danyal's word: "lets remove the percentages"). Fee only.
